@@ -1,3 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "shared/nav";
+@import "shared/variables";
+@import "shared/hero";
+
 html,
 body {
   padding: 0;
