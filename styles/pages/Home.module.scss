@@ -1,19 +1,29 @@
 .hero {
-  padding-top: 115px;
+  padding-top: 8rem;
   background-image: url('/images/heros/home.png');
   background-size: cover;
   background-position: center center;
-  height: 800px;
+  height: 900px;
+
+    &__text {
+      max-width: 600px;
+    }
 
     &__title {
       color: #fff;
-      font-size: 3.4rem;
-      line-height: 135%;
+      font-size: 6rem;
+      line-height: 127%;
+    }
+
+    &__description {
+      font-size: 2.1rem;
+      line-height: 3.4rem;
+      margin-bottom: 3rem;
     }
 
     &__image {
-      max-width: 400px;
-
+      max-width: 500px;
+      margin-top: 10rem;
     }   
 
 }
