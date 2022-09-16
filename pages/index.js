@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import styles from '../styles/pages/Home.module.scss'
-import Button from '../components/button'
 import walletImage from '../public/images/hardware/wallet-hero.png'
 
 export default function Home() {
