@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+
 import styles from '../styles/pages/Home.module.scss'
 import Button from '../components/button'
 import walletImage from '../public/images/hardware/wallet-hero.png'
@@ -12,7 +13,7 @@ export default function Home() {
           <h1 className={`${styles.hero__title} font-bold text-white mb-4`}>The Next Frontier of Crypto Security</h1>
           <p className={`${styles.hero__description} text-white mb-4`}>Protect your cryptocurrencies, store your private keys offline, and safeguard your 
             assets from hackers. It’s time to achieve financial freedom in the most secure way with KeepKey.</p>
-          <a href="/" className="btn btn-primary mt-4">Buy Now</a>
+          <a href="#" className="btn btn-primary mt-4">Buy Now</a>
         </div>
         <div className={styles.hero__image} >
           <Image
