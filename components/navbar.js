@@ -16,16 +16,16 @@ export default function Navbar() {
           </Image>
         </a>
         <Link href="/community">
-          <a  className="nav__link">Community</a>
+          <a  className="nav__link transition-colors">Community</a>
         </Link>
         <Link href="/supported-applications">
           <a  className="nav__link">Supported Applications</a>
         </Link>
         <Link href="/integration-guide">
-          <a  className="nav__link">Integration Guide</a>
+          <a  className="nav__link transition-colors">Integration Guide</a>
         </Link>
         <Link href="/onboarding">
-          <a className="nav__link">Onboarding</a>
+          <a className="nav__link transition-colors">Onboarding</a>
         </Link>
         <Link href="https://app.shapeshift.com">
           <a target="_blank" className="btn btn--round btn--blue ml-auto">Launch Shapeshift</a>

@@ -8,6 +8,11 @@
     font-size: 1.6rem;
     letter-spacing: .2px;
     font-weight: 400;
+
+    &:hover {
+      color: #fff;
+    }
+
   }
 
   &__logo-wrap {
