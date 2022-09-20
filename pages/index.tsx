@@ -50,6 +50,7 @@ const Hero = () => {
 
 //Features
 interface Feature {
+  key: number
   icon: string
   title: string
   description: string
@@ -57,21 +58,25 @@ interface Feature {
 
 export const features: Feature[] = [
   {
+    key: 1,
     icon: computerLockImage,
     title: 'Stress-Free Security',
     description: 'Generate and manage your private keys offline in cold storage, guarded from computer vulnerabilities and viruses, while utilizing wallet software for safe transactions.'
   },
-  {
+  { 
+    key: 2,
     icon: backupImage,
     title: 'Straightforward Backup and Recovery',
     description: 'Each device generates a 12-word recovery sentence during initialization that can be used to retrieve your private keys. Have peace of mind that your funds are secure, even if you lose or break your KeepKey.'
   },
   {
+    key: 3,
     icon: ebStorageImage,
     title: 'Sleek and Simple Display',
     description: 'The large display gives clarity to every digital asset sent and received on your device. Each transaction must be manually approved using the confirmation button, giving you control and visibility over your transactions.'
   },
-  {
+  { 
+    key: 4,
     icon: openSourceImage,
     title: 'Effortless Exchanges',
     description: 'Quickly exchange cryptocurrencies via the ShapeShift integration, directly from your wallet.'
@@ -84,12 +89,13 @@ const Features = () => {
       <h2 className="text-center text-4xl mb-20 tracking-wide">The Premier Hardware Wallet</h2>
       <div className="container mx-auto grid gap-24 md:grid-cols-2 xl:grid-cols-4">
       {features.map(feature => 
-        <FeatureCard
+        <FeatureCard 
+          key = {feature.key}
           icon = {feature.icon}
           title = {feature.title}
           description = {feature.description}
         />
-
+        
       )}
       </div>
     </section>
@@ -101,6 +107,7 @@ const FeatureCard = (props: Feature) => {
       <div className="text-center">
         <Image
           src={props.icon}
+          alt='image'
           width={60}
           height={60}
           >
