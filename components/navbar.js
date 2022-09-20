@@ -6,15 +6,17 @@ export default function Navbar() {
   return(
     <nav className="nav fixed w-full">
       <div className="container mx-auto flex flex flex-wrap items-center mx-auto">
-        <a href="/" className="nav__logo-wrap">
-          <Image
-            alt="KeepKey logo"
-            src={keepkeyLogo}
-            className="nav__logo"
-            layout="responsive"
-                  >
-          </Image>
-        </a>
+        <Link href="/">
+          <a className="nav__logo-wrap">
+            <Image
+              alt="KeepKey logo"
+              src={keepkeyLogo}
+              className="nav__logo"
+              layout="responsive"
+                    >
+            </Image>
+          </a>
+        </Link>
         <Link href="/community">
           <a  className="nav__link transition-colors">Community</a>
         </Link>

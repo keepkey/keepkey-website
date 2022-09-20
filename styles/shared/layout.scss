@@ -4,11 +4,13 @@ body {
   margin: 0;
   font-family: Roboto, sans-serif;
   font-size: 10px;
+  color: #333;
 }
 
 p, a, ul, li, i {
   font-size: 1.6rem;
   font-weight: 300;
+  
 }
 
 a {
@@ -21,15 +23,15 @@ a {
 }
 
 section {
-  padding: 22.5rem 0;
+  padding: 10.5rem 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+//   body {
+//     color: white;
+//     background: black;
+//   }
+// }

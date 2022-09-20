@@ -6,7 +6,7 @@ import walletImage from '../public/images/hardware/wallet-hero.png'
 import Link from 'next/link'
 
 export default function Home() {
-  return(
+  return (
     <div>
       <div className={`${styles.hero} flex items-center`}>
         <div className="container mx-auto px-4 relative grid grid-cols-2 items-center mw-1200">
@@ -41,12 +41,13 @@ export default function Home() {
 
 
 function Features()  {
-    return(
-    <section class="container mx-auto">
-      <div className="grid grid-cols-3">
-        <div>GRID ITEM</div>
-      </div>
+    return (
+      <section className="bg-white">
+        <h2 className="text-center text-6xl">Features</h2>
+        <div className="container mx-auto grid grid-cols-3">
+          <div></div>
+        </div>
 
-    </section>
+      </section>
   )
 }
