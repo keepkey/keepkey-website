@@ -1,6 +1,6 @@
 export default function ShopifyBuyButton() { 
   return(
-    <div className="buy-button-wrap">
+    <div className="buy-button-wrap mr-6">
       <div id='product-component-1663605399427'></div>
     </div>
   )
@@ -45,7 +45,7 @@ if (typeof window !== "undefined") {
             "margin-left": "20px",
             "margin-bottom": "50px"
           },
-          "text-align": "left"
+          // "text-align": "left"
         },
         "title": {
           "font-family": "Roboto, sans-serif",
@@ -54,9 +54,13 @@ if (typeof window !== "undefined") {
         "button": {
           "font-family": "Roboto, sans-serif",
           "font-weight": "600",
-          "font-size": "16px",
-          "padding-top": "15px",
-          "padding-bottom": "15px",
+          "font-size": "18px",
+          "padding-top": "10px",
+          "padding-bottom": "10px",
+          "white-space": "nowrap",
+          "border": "2px solid #a58958",
+          "letter-spacing": ".8px",
+          "height": "100%",
           "margin-top": "-20px !important",
           ":hover": {
             "background-color": "#a58958"
@@ -66,8 +70,8 @@ if (typeof window !== "undefined") {
             "background-color": "#a58958"
           },
           "border-radius": "2px",
-          "padding-left": "26px",
-          "padding-right": "26px"
+          "padding-left": "35px",
+          "padding-right": "35px"
         },
         "quantityInput": {
           "font-size": "14px",
@@ -96,7 +100,7 @@ if (typeof window !== "undefined") {
         "button": "Buy Now"
       },
       "googleFonts": [
-        "Open Sans"
+        "Roboto:wght@400;700&display=swap"
       ]
     },
     "productSet": {
@@ -118,13 +122,13 @@ if (typeof window !== "undefined") {
       "styles": {
         "product": {
           "@media (min-width: 601px)": {
-            // "max-width": "100%",
+            "max-width": "100%",
             "margin-left": "0px",
             "margin-bottom": "0px"
           }
         },
         "button": {
-          "font-family": "Open Sans, sans-serif",
+          "font-family": "Roboto, sans-serif",
           "font-weight": "bold",
           "font-size": "14px",
           "padding-top": "15px",
@@ -146,57 +150,57 @@ if (typeof window !== "undefined") {
           "padding-bottom": "15px"
         },
         "title": {
-          "font-family": "Open Sans, sans-serif",
+          "font-family": "Roboto, sans-serif",
           "font-weight": "normal",
           "font-size": "26px",
           "color": "#4c4c4c"
         },
         "price": {
-          "font-family": "Open Sans, sans-serif",
+          "font-family": "Roboto, sans-serif",
           "font-weight": "normal",
           "font-size": "18px",
           "color": "#4c4c4c"
         },
         "compareAt": {
-          "font-family": "Open Sans, sans-serif",
+          "font-family": "Roboto, sans-serif",
           "font-weight": "normal",
           "font-size": "15.299999999999999px",
           "color": "#4c4c4c"
         },
         "unitPrice": {
-          "font-family": "Open Sans, sans-serif",
+          "font-family": "Roboto, sans-serif",
           "font-weight": "normal",
           "font-size": "15.299999999999999px",
           "color": "#4c4c4c"
         },
         "description": {
-          "font-family": "Open Sans, sans-serif",
+          "font-family": "Roboto, sans-serif",
           "font-weight": "normal",
           "font-size": "14px",
           "color": "#4c4c4c"
         }
       },
       "googleFonts": [
-        "Open Sans"
+        "Roboto:wght@400;700&display=swap"
       ]
     },
     "option": {
       "styles": {
         "label": {
-          "font-family": "Open Sans, sans-serif"
+          "font-family": "Roboto, sans-serif"
         },
         "select": {
-          "font-family": "Open Sans, sans-serif"
+          "font-family": "Roboto, sans-serif"
         }
       },
       "googleFonts": [
-        "Open Sans"
+        "Roboto"
       ]
     },
     "cart": {
       "styles": {
         "button": {
-          "font-family": "Open Sans, sans-serif",
+          "font-family": "Roboto, sans-serif",
           "font-weight": "bold",
           "font-size": "14px",
           "padding-top": "15px",
@@ -257,13 +261,13 @@ if (typeof window !== "undefined") {
         "notice": "Shipping is added at checkout. Buyers outside the US may be responsible for additional customs duties and fees."
       },
       "googleFonts": [
-        "Open Sans"
+        "Roboto"
       ]
     },
     "toggle": {
       "styles": {
         "toggle": {
-          "font-family": "Open Sans, sans-serif",
+          "font-family": "Roboto, sans-serif",
           "font-weight": "bold",
           "background-color": "#b79862",
           ":hover": {
@@ -278,7 +282,7 @@ if (typeof window !== "undefined") {
         }
       },
       "googleFonts": [
-        "Open Sans"
+        "Roboto"
       ]
     },
     "lineItem": {

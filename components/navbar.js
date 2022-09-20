@@ -6,7 +6,7 @@ export default function Navbar() {
   return(
     <nav className="nav fixed w-full">
       <div className="container mx-auto flex flex flex-wrap items-center mx-auto">
-        <a href="#" className="nav__logo-wrap">
+        <a href="/" className="nav__logo-wrap">
           <Image
             alt="KeepKey logo"
             src={keepkeyLogo}
