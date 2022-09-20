@@ -20,6 +20,10 @@ a {
   box-sizing: border-box;
 }
 
+section {
+  padding: 22.5rem 0;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
