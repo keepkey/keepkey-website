@@ -3,6 +3,12 @@
   &__logo-wrap {
     width: 80px;
     margin-right: 3rem;
+
+    &--scrolled {
+      width: 65px;
+      @apply transition-all;
+    }
+
   }
 
 }

@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <Hero />
       <Features />
-
+      <PromoSection />
     </>
 
   )
@@ -86,7 +86,7 @@ export const features: Feature[] = [
 const Features = () => {
   return (
     <section className="bg-white">
-      <h2 className="text-center text-4xl mb-20 tracking-wide">The Premier Hardware Wallet</h2>
+      <h2 className="text-center mb-20 tracking-wide">The Premier Hardware Wallet</h2>
       <div className="container mx-auto grid gap-24 md:grid-cols-2 xl:grid-cols-4">
       {features.map(feature => 
         <FeatureCard 
@@ -112,8 +112,19 @@ const FeatureCard = (props: Feature) => {
           height={60}
           >
         </Image>
-        <h4 className="text-2xl tracking-wide mt-6">{props.title}</h4>
-        <p className="mt-3 text-lg tracking-wide">{props.description}</p>
+        <h4 className="mt-6">{props.title}</h4>
+        <p className="mt-3 tracking-wide">{props.description}</p>
       </div>
+  )
+}
+
+
+const PromoSection = () => {
+  return (
+    <section className="bg-zinc-100">
+      <div className="container">
+        <h2 className="text-center">Now Available!</h2>
+      </div>
+    </section>
   )
 }
