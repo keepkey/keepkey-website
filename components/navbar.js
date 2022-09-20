@@ -4,7 +4,7 @@ import keepkeyLogo from '../public/images/logos/keepkey_logo.png'
 
 export default function Navbar() {
   return(
-    <nav className="nav fixed w-full">
+    <nav className="nav fixed w-full pt-8">
       <div className="container mx-auto flex flex flex-wrap items-center mx-auto">
         <Link href="/">
           <a className="nav__logo-wrap">
@@ -18,16 +18,16 @@ export default function Navbar() {
           </a>
         </Link>
         <Link href="/community">
-          <a  className="nav__link transition-colors">Community</a>
+          <a  className="nav__link transition-colors text-white text-lg px-8 font-normal opacity-80 hover:opacity-1">Community</a>
         </Link>
         <Link href="/supported-applications">
-          <a  className="nav__link">Supported Applications</a>
+          <a  className="nav__link transition-colors text-white text-lg px-8 font-normal opacity-80 hover:opacity-1">Supported Applications</a>
         </Link>
         <Link href="/integration-guide">
-          <a  className="nav__link transition-colors">Integration Guide</a>
+          <a  className="nav__link transition-colors text-white text-lg px-8 font-normal opacity-80 hover:opacity-1">Integration Guide</a>
         </Link>
         <Link href="/onboarding">
-          <a className="nav__link transition-colors">Onboarding</a>
+          <a className="nav__link transition-colors text-white text-lg px-8 font-normal opacity-80 hover:opacity-1">Onboarding</a>
         </Link>
         <Link href="https://app.shapeshift.com">
           <a target="_blank" className="btn btn--round btn--blue ml-auto">Launch Shapeshift</a>
