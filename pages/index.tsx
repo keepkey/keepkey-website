@@ -26,7 +26,7 @@ const Hero = () => {
     <div className="container mx-auto px-4 relative grid lg:grid-cols-2 items-center mw-1200">
       <div className="max-w-2xl">
         <h1 className="text-6xl leading-snug tracking-wide font-bold text-white mb-4">The Next Frontier of Crypto Security</h1>
-        <p className="text-2xl text-white mb-4 leading-relaxed tracking-wide">Protect your cryptocurrencies, store your private keys offline, and safeguard your 
+        <p className="text-2xl text-white mb-10 leading-relaxed tracking-wide">Protect your cryptocurrencies, store your private keys offline, and safeguard your 
           assets from hackers. It’s time to achieve financial freedom in the most secure way with KeepKey.</p>
         <ShopifyBuyButton></ShopifyBuyButton>
         <Link href="/onboarding">

@@ -17,15 +17,17 @@ export default function Navbar() {
     <nav className={`nav fixed w-full pt-8 pb-3 z-10 transition-all ease-in-out duration-400 ${scroll ? 'bg-black pt-4' : ''}`}>
       <div className="container mx-auto flex flex flex-wrap items-center mx-auto">
         <Link href="/">
-          <a className={`nav__logo-wrap ${scroll ? 'nav__logo-wrap--scrolled' : '' }`}>
-            <Image
-              alt="KeepKey logo"
-              src={keepkeyLogo}
-              className="nav__logo transition-all ease-in-out duration-400"
-              layout="responsive"
-                    >
-            </Image>
-          </a>
+          <div className="nav__logo-wrap-fixed-width">
+            <a className={`nav__logo-wrap ${scroll ? 'nav__logo-wrap--scrolled' : '' }`}>
+              <Image
+                alt="KeepKey logo"
+                src={keepkeyLogo}
+                className="nav__logo transition-all ease-in-out duration-400"
+                layout="responsive"
+                      >
+              </Image>
+            </a>
+          </div>
         </Link>
         <Link href="/community">
           <a  className="nav__link transition-colors text-white text-lg px-8 font-normal opacity-80 hover:opacity-100">Community</a>
