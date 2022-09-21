@@ -70,8 +70,8 @@ if (typeof window !== "undefined") {
             "background-color": "#a58958"
           },
           "border-radius": "2px",
-          "padding-left": "35px",
-          "padding-right": "35px"
+          "padding-left": "40px",
+          "padding-right": "40px"
         },
         "quantityInput": {
           "font-size": "14px",

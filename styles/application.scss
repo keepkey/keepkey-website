@@ -1,13 +1,24 @@
+//tailwind
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+// custom sass
+@import "shared/variables";
+@import "shared/layout";
+@import "shared/nav";
+@import "shared/utils";
+@import "components/buttons";
+@import "components/overrides";
+
+//tailwind custom config 
 @layer base {
   h1 {
     @apply text-6xl;
   }
   h2 {
     @apply text-4xl;
+    @apply leading-snug;
   }
   h3 {
     @apply text-3xl;
@@ -39,9 +50,36 @@
 //   }
 // }
 
-@import "shared/variables";
-@import "shared/layout";
-@import "shared/nav";
-@import "shared/utils";
-@import "components/buttons";
-@import "components/overrides";
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  color: #161721;
+}
+
+p, a, ul, li, i {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+//   body {
+//     color: white;
+//     background: black;
+//   }
+// }
+
+

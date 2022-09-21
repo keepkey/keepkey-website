@@ -1,13 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import ShopifyBuyButton from '../components/ShopifyBuyButton'
+import ShopifyBuyButton from 'components/ShopifyBuyButton'
 import styles from '../styles/pages/Home.module.scss'
-import walletImage from '../public/images/hardware/wallet-hero.png'
-import computerLockImage from '../public/images/icons/computer-lock.svg'
-import backupImage from '../public/images/icons/backup.svg'
-import ebStorageImage from '../public/images/icons/eb-storage.svg'
-import openSourceImage from '../public/images/icons/open-source.svg'
-import shapeshiftDemoImage from '../public/images/software/shapeshift-demo.png'
+import walletImage from 'public/images/hardware/wallet-hero.png'
+import computerLockImage from 'public/images/icons/computer-lock.svg'
+import backupImage from 'public/images/icons/backup.svg'
+import ebStorageImage from 'public/images/icons/eb-storage.svg'
+import openSourceImage from 'public/images/icons/open-source.svg'
+import shapeshiftDemoImage from 'public/images/software/shapeshift-demo.png'
+import walletDeskImage from 'public/images/heros/wallet-desk-grayscale.png'
 import Link from 'next/link'
 
 export default function Home() {
@@ -16,6 +17,8 @@ export default function Home() {
       <Hero />
       <Features />
       <PromoSection />
+      <LeadingCryptos />
+      <ProductInfo />
     </>
 
   )
@@ -24,14 +27,14 @@ export default function Home() {
 const Hero = () => {
   return(
     <div className={`${styles.hero} flex items-center py-28`}>
-    <div className="container relative grid lg:grid-cols-2 items-center mw-1200">
-      <div className="max-w-2xl">
-        <h1 className="text-6xl leading-snug tracking-wide font-bold text-white mb-4">The Next Frontier of Crypto Security</h1>
-        <p className="text-2xl text-white mb-10 leading-relaxed tracking-wide">Protect your cryptocurrencies, store your private keys offline, and safeguard your 
+    <div className="container 2xl:max-w-[1300px] relative grid xl:grid-cols-[800px_1fr] items-center">
+      <div>
+        <h1 className="text-6xl leading-tight tracking-wide font-bold text-white mb-4">The Next Frontier <br/> of Crypto Security</h1>
+        <p className="text-2xl text-white mb-8 leading-relaxed tracking-wide">Protect your cryptocurrencies, store your private keys offline, and safeguard your 
           assets from hackers. It’s time to achieve financial freedom in the most secure way with KeepKey.</p>
         <ShopifyBuyButton></ShopifyBuyButton>
         <Link href="/onboarding">
-          <a className="btn btn-lg btn--transparent mt-4">Get Started</a>
+          <a className="btn btn-lg btn--transparent mt-4 ml-4">Get Started</a>
         </Link>
 
       </div>
@@ -39,7 +42,10 @@ const Hero = () => {
         <Image
           alt="KeepKey wallet"
           src={walletImage}
+          height={800}
           unoptimized={true}
+          objectFit="cover"
+          // objectPosition="center"
           layout="responsive"
                   >
         </Image>
@@ -57,7 +63,7 @@ interface Feature {
   description: string
 }
 
-export const features: Feature[] = [
+const features: Feature[] = [
   {
     key: 1,
     icon: computerLockImage,
@@ -87,7 +93,7 @@ export const features: Feature[] = [
 const Features = () => {
   return (
     <section className="bg-white">
-      <h2 className="text-center mb-20 tracking-wide">The Premier Hardware Wallet</h2>
+      <h2 className="text-center mb-20">The Premier Hardware Wallet</h2>
       <div className="container grid gap-24 md:grid-cols-2 xl:grid-cols-4">
       {features.map(feature => 
         <FeatureCard 
@@ -123,8 +129,8 @@ const FeatureCard = (props: Feature) => {
 const PromoSection = () => {
   return (
     <section className="bg-zinc-100">
-      <div className="container grid md:grid-cols-2">
-        <div>
+      <div className="container grid gap-24 md:grid-cols-2">
+        <div className="my-auto">
           <h2>Now Available!</h2>
           <p className="font-bold mt-6 mb-4">A KeepKey-secured platform built to handle all of your crypto needs</p>
           <p>KeepKey is the premier wallet in the new ShapeShift Platform, a web-based interface that consolidates your many crypto tools into one, beautiful environment. Click below to experience a new era in hardware security.</p>
@@ -136,12 +142,83 @@ const PromoSection = () => {
           <Image
             src={shapeshiftDemoImage}
             alt='shapeshift demo'
-            unoptimized={true}
             layout="responsive"
-            // objectFit='contain'
+            quality={100}
             >
           </Image>
         </div>
+      </div>
+    </section>
+  )
+}
+
+
+import binanceIcon from 'public/images/icons/binance.png'
+import ethIcon from 'public/images/icons/ethereum.png'
+import bchIcon from 'public/images/icons/bch.png'
+import litecoinIcon from 'public/images/icons/litecoin.png'
+import dashIcon from 'public/images/icons/dash.png'
+import btgIcon from 'public/images/icons/btg.png'
+import goIcon from 'public/images/icons/go.png'
+
+const LeadingCryptos = () => {
+  return (
+    <section className="relative z-0">
+      <Image
+        src={walletDeskImage}
+        alt='keepkey wallet on desk'
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        objectPosition="center"
+        >
+      </Image>
+      <div className="container text-center z-10 relative">
+        <h2 className="text-white z-10">Supports the World’s Leading Cryptocurrencies</h2>
+        <p className="text-white my-6">Send, receive, and store dozens of the leading tokens and coins available on the market.</p>
+        <div className="flex justify-center mt-6">
+          <div className="w-40"><Image src={binanceIcon} unoptimized={true}></Image></div>
+          <div className="w-40"><Image src={ethIcon} unoptimized={true}></Image></div>
+          <div className="w-40"><Image src={bchIcon} unoptimized={true}></Image></div>
+          <div className="w-40"><Image src={litecoinIcon} unoptimized={true}></Image></div>
+          <div className="w-40"><Image src={dashIcon} unoptimized={true}></Image></div>
+          <div className="w-40"><Image src={btgIcon} unoptimized={true}></Image></div>
+          <div className="w-40"><Image src={goIcon} unoptimized={true}></Image></div>
+        </div>
+        <Link href="https://beta.shapeshift.com">
+          <a className="btn mt-7">View all 40+ Coins!</a>
+        </Link>
+      </div>
+    </section>
+  )
+}
+
+import walletsStackedImage from 'public/images/hardware/wallets-stacked.png' 
+
+const ProductInfo = () => {
+  return (
+    <section>
+      <div className="container grid md:grid-cols-2 gap-24">
+        <div>
+          <h2>A Hardware Wallet that’s as <br /> Serious About Crypto as You Are</h2>
+          <p className="my-6">Whether you’re a newcomer or a veteran to the crypto community, we all have one thing in common: the critical need for secure storage of private keys for our digital assets.</p>
+          <p className="font-bold">KeepKey gives you:</p>
+          <ul className="list-disc pl-10">
+            <li className="pt-4">PIN protection against unauthorized use</li>
+            <li>Additional passphrase protection</li>
+            <li>Customizable transaction speeds</li>
+            <li>Limitless wallet addresses on one device</li>
+          </ul>
+          <Link href="/onboarding">
+          <a className="btn mt-8">View all 40+ Coins!</a>
+        </Link>
+        </div>
+        <Image
+          src={walletsStackedImage}
+          alt='keepkey wallet on desk'
+          quality={100}
+          >
+      </Image>
       </div>
     </section>
   )
