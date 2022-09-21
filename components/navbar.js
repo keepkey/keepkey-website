@@ -30,16 +30,16 @@ export default function Navbar() {
           </div>
         </Link>
         <Link href="/community">
-          <a  className="nav__link transition-colors text-white text-lg px-8 font-normal opacity-80 hover:opacity-100">Community</a>
+          <a  className="nav__link transition-opacity text-white text-lg px-8 font-normal opacity-80 hover:opacity-100">Community</a>
         </Link>
         <Link href="/supported-applications">
-          <a  className="nav__link transition-colors text-white text-lg px-8 font-normal opacity-80 hover:opacity-100">Supported Applications</a>
+          <a  className="nav__link transition-opacity text-white text-lg px-8 font-normal opacity-80 hover:opacity-100">Supported Applications</a>
         </Link>
         <Link href="/integration-guide">
-          <a  className="nav__link transition-colors text-white text-lg px-8 font-normal opacity-80 hover:opacity-100">Integration Guide</a>
+          <a  className="nav__link transition-opacity text-white text-lg px-8 font-normal opacity-80 hover:opacity-100">Integration Guide</a>
         </Link>
         <Link href="/onboarding">
-          <a className="nav__link transition-colors text-white text-lg px-8 font-normal opacity-80 hover:opacity-100">Onboarding</a>
+          <a className="nav__link transition-opacity text-white text-lg px-8 font-normal opacity-80 hover:opacity-100">Onboarding</a>
         </Link>
         <Link href="https://app.shapeshift.com">
           <a target="_blank" className="btn btn--round btn--blue ml-auto">Launch Shapeshift</a>

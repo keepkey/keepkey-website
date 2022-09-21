@@ -54,14 +54,14 @@ if (typeof window !== "undefined") {
         "button": {
           "font-family": "Roboto, sans-serif",
           "font-weight": "600",
-          "font-size": "18px",
+          "font-size": "20px",
           "padding-top": "10px",
-          "padding-bottom": "10px",
+          "padding-bottom": "16px",
           "white-space": "nowrap",
           "border": "2px solid #a58958",
           "letter-spacing": ".8px",
           "height": "100%",
-          "margin-top": "-20px !important",
+          "margin-top": "-15px !important",
           ":hover": {
             "background-color": "#a58958"
           },
