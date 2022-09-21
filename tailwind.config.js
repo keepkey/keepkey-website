@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         'gold': '#b79862',
+        'dark-gold': '#b59761',
         'tan': 'rgba(247,220,174,.14)'
       },
     },

@@ -21,6 +21,7 @@ export default function Home() {
       <LeadingCryptos />
       <ProductInfo />
       <SecurityWarning />
+      <TrustedBy />
     </>
 
   )
@@ -179,13 +180,13 @@ const LeadingCryptos = () => {
         <h2 className="text-white z-10">Supports the World’s Leading Cryptocurrencies</h2>
         <p className="text-white my-6">Send, receive, and store dozens of the leading tokens and coins available on the market.</p>
         <div className="flex justify-center mt-6">
-          <div className="w-40"><Image src={binanceIcon} unoptimized={true}></Image></div>
-          <div className="w-40"><Image src={ethIcon} unoptimized={true}></Image></div>
-          <div className="w-40"><Image src={bchIcon} unoptimized={true}></Image></div>
-          <div className="w-40"><Image src={litecoinIcon} unoptimized={true}></Image></div>
-          <div className="w-40"><Image src={dashIcon} unoptimized={true}></Image></div>
-          <div className="w-40"><Image src={btgIcon} unoptimized={true}></Image></div>
-          <div className="w-40"><Image src={goIcon} unoptimized={true}></Image></div>
+          <div className="w-40"><Image src={binanceIcon} alt="binance icon" unoptimized={true}></Image></div>
+          <div className="w-40"><Image src={ethIcon} alt="eth icon" unoptimized={true}></Image></div>
+          <div className="w-40"><Image src={bchIcon} alt="bch icon" unoptimized={true}></Image></div>
+          <div className="w-40"><Image src={litecoinIcon} alt="litecoin icon" unoptimized={true}></Image></div>
+          <div className="w-40"><Image src={dashIcon} alt="dash icon" unoptimized={true}></Image></div>
+          <div className="w-40"><Image src={btgIcon} alt="btg icon" unoptimized={true}></Image></div>
+          <div className="w-40"><Image src={goIcon} alt="go icon" unoptimized={true}></Image></div>
         </div>
         <Link href="https://beta.shapeshift.com">
           <a className="btn mt-7">View all 40+ Coins!</a>
@@ -233,11 +234,31 @@ const ProductInfo = () => {
           </div>
           <div>
             <h2>Become a KeepKey Affiliate</h2>
-            <p className="mt-6">Earn commission on every KeepKey sale you generate! KeepKey believes that everyone should be their own bank. That's why we’ve designed our program and product, to set you up for success.</p>
+            <p className="mt-6">Earn commission on every KeepKey sale you generate! KeepKey believes that everyone should be their own bank. {`That's`} why {`we've`} designed our program and product, to set you up for success.</p>
             <Link href="https://shapeshift.com/keepkey-affiliate">
             <a className="btn mt-8" target="_blank">Apply Now</a>
             </Link>
         </div>
+      </div>
+    </section>
+  )
+}
+
+import forbesImg from 'public/images/customers/forbes.png' 
+import cointelegraphImg from 'public/images/customers/cointelegraph.png' 
+import coindeskImg from 'public/images/customers/coindesk.png' 
+import nasdaqImg from 'public/images/customers/nasdaq.png' 
+import bitcoinMagazineImg from 'public/images/customers/bitcoin-magazine.png' 
+
+const TrustedBy = () => {
+  return (
+    <section className="bg-zinc-100 py-16 mt-32">
+      <div className="container flex justify-between align-center">
+          <div className="w-40"><Image src={forbesImg} alt="forbes logo" quality={100}></Image></div>
+          <div className="w-40"><Image src={cointelegraphImg} alt="coin telegraph logo" quality={100}></Image></div>
+          <div className="w-40"><Image src={coindeskImg} alt="coindesk logo" quality={100}></Image></div>
+          <div className="w-40"><Image src={nasdaqImg} alt="nasdaq logo" quality={100}></Image></div>
+          <div className="w-40"><Image src={bitcoinMagazineImg} alt="bitcoin magazine logo" quality={100}></Image></div>
       </div>
     </section>
   )
