@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import ShopifyBuyButton from 'components/ShopifyBuyButton'
+import ShopifyBuyButton from '../components/ShopifyBuyButton'
 import styles from '../styles/pages/Home.module.scss'
 import walletImage from 'public/images/hardware/wallet-hero.png'
 import computerLockImage from 'public/images/icons/computer-lock.svg'
