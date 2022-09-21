@@ -13,6 +13,10 @@
 
 //tailwind custom config 
 @layer base {
+  h1, h2, h3, h4 {
+    @apply font-medium;
+  }
+
   h1 {
     @apply text-6xl;
   }
@@ -24,11 +28,10 @@
     @apply text-3xl;
   }
   h4 {
-    @apply text-2xl tracking-wide;
+    @apply text-xl tracking-wide;
   }
-  p {
-    @apply text-lg;
-    @apply tracking-wide;
+  p, a, ul, li, i {
+    @apply text-[17px] tracking-wide font-light;
   }
   section {
     @apply py-32;
@@ -56,11 +59,6 @@ body {
   margin: 0;
   font-family: Roboto, sans-serif;
   color: #161721;
-}
-
-p, a, ul, li, i {
-  font-size: 18px;
-  font-weight: 300;
 }
 
 a {

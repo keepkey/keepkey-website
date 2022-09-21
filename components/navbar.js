@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     
-    <nav className={`nav fixed w-full pt-8 pb-3 z-10 transition-all ease-in-out duration-400 ${scroll ? 'bg-black pt-4' : ''}`}>
+    <nav className={`nav fixed w-full pb-3 z-10 transition-all ease-in-out duration-400 ${scroll ? 'bg-black pt-4' : 'pt-8'}`}>
       <div className="container mx-auto flex flex flex-wrap items-center mx-auto">
         <Link href="/">
           <div className="nav__logo-wrap-fixed-width">

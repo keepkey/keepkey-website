@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import ShopifyBuyButton from '../components/ShopifyBuyButton'
+import SecurityWarning from '../components/SecurityWarning'
 import styles from '../styles/pages/Home.module.scss'
 import walletImage from 'public/images/hardware/wallet-hero.png'
 import computerLockImage from 'public/images/icons/computer-lock.svg'
@@ -19,6 +20,7 @@ export default function Home() {
       <PromoSection />
       <LeadingCryptos />
       <ProductInfo />
+      <SecurityWarning />
     </>
 
   )
@@ -26,8 +28,8 @@ export default function Home() {
 
 const Hero = () => {
   return(
-    <div className={`${styles.hero} flex items-center py-28`}>
-    <div className="container 2xl:max-w-[1300px] relative grid xl:grid-cols-[800px_1fr] items-center">
+    <div className={`${styles.hero} flex items-center py-24`}>
+    <div className="container relative grid xl:grid-cols-[730px_1fr] items-center">
       <div>
         <h1 className="text-6xl leading-tight tracking-wide font-bold text-white mb-4">The Next Frontier <br/> of Crypto Security</h1>
         <p className="text-2xl text-white mb-8 leading-relaxed tracking-wide">Protect your cryptocurrencies, store your private keys offline, and safeguard your 
@@ -194,11 +196,12 @@ const LeadingCryptos = () => {
 }
 
 import walletsStackedImage from 'public/images/hardware/wallets-stacked.png' 
+import walletHorizontal from 'public/images/hardware/wallet-horizontal.png' 
 
 const ProductInfo = () => {
   return (
     <section>
-      <div className="container grid md:grid-cols-2 gap-24">
+      <div className="container grid md:grid-cols-2 gap-32 gap-y-52">
         <div>
           <h2>A Hardware Wallet that’s as <br /> Serious About Crypto as You Are</h2>
           <p className="my-6">Whether you’re a newcomer or a veteran to the crypto community, we all have one thing in common: the critical need for secure storage of private keys for our digital assets.</p>
@@ -210,15 +213,31 @@ const ProductInfo = () => {
             <li>Limitless wallet addresses on one device</li>
           </ul>
           <Link href="/onboarding">
-          <a className="btn mt-8">View all 40+ Coins!</a>
-        </Link>
+          <a className="btn mt-8">Get Started</a>
+          </Link>
         </div>
         <Image
           src={walletsStackedImage}
           alt='keepkey wallet on desk'
           quality={100}
           >
-      </Image>
+        </Image>
+        <div className="">
+          <Image
+            src={walletHorizontal}
+            alt='keepkey wallet on desk'
+            quality={100}
+            layout="responsive"
+            >
+          </Image>
+          </div>
+          <div>
+            <h2>Become a KeepKey Affiliate</h2>
+            <p className="mt-6">Earn commission on every KeepKey sale you generate! KeepKey believes that everyone should be their own bank. That's why we’ve designed our program and product, to set you up for success.</p>
+            <Link href="https://shapeshift.com/keepkey-affiliate">
+            <a className="btn mt-8" target="_blank">Apply Now</a>
+            </Link>
+        </div>
       </div>
     </section>
   )
