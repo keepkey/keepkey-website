@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import ShopifyBuyButton from '../components/ShopifyBuyButton'
 import SecurityWarning from '../components/SecurityWarning'
-import Link from 'next/link'
 import styles from '../styles/pages/Home.module.scss'
 import walletImage from 'public/images/hardware/wallet-hero.png'
 import computerLockImage from 'public/images/icons/computer-lock.svg'
@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Features />
+      <FeaturesSection />
       <PromoSection />
       <LeadingCryptos />
       <ProductInfo />
@@ -94,7 +94,7 @@ const features: Feature[] = [
   },
 ]
 
-const Features = () => {
+const FeaturesSection = () => {
   return (
     <section className="bg-white">
       <h2 className="text-center mb-20">The Premier Hardware Wallet</h2>

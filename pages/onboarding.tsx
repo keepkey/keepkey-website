@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import shapeShiftDemoImg from 'public/images/hardware/shapeshift-with-keepkey.png'
+import shapeShiftDemoWalletImg from 'public/images/hardware/shapeshift-with-keepkey.png'
+import shapeShiftDemoImg from 'public/images/software/shapeshift-demo-mac-md.png'
 import styles from '../styles/pages/Onboarding.module.scss'
 import heroBgImage from 'public/images/heros/golden-lines-lg.jpg'
 import SecurityWarning from "../components/SecurityWarning"
@@ -38,8 +39,8 @@ const Hero = () => {
             <div className="absolute max-w-[850px] top-[-50px] right-[-150px]">
               <Image
                 alt="KeepKey wallet"
-                src={shapeShiftDemoImg}
-                width={1200}
+                src={shapeShiftDemoWalletImg}
+                quality={100}
                         >
               </Image>
             </div>
@@ -50,13 +51,106 @@ const Hero = () => {
   )
 }
 
+//Steps
+interface Step {
+  key: number
+  title: string
+  description?: string
+  image?: any
+  hasVideo: boolean
+  video?: string
+  listItems?: string[]
+}
+
+const steps: Step[] = [
+  {
+    key: 1,
+    image: shapeShiftDemoImg,
+    hasVideo: false,
+    title: '1. Go to <a class="text-gold font-medium text-3xl hover:underline" target="_blank" href="https://app.shapeshift.com">app.shapeshift.com</a>',
+    listItems: [
+      'Plug the KeepKey into your computer.',
+      'On upper left corner of the screen, select “Connect a wallet”, then select “KeepKey” in the window that opens.',
+      'In the next screen that opens, agree to the terms and click “Pair KeepKey.”',
+      'Highlight the KeepKey you would like to pair and then click "Connect".'
+    ]
+  },
+  {
+    key: 2,
+    hasVideo: true,
+    video: '<iframe width="560" height="315" src="https://www.youtube.com/embed/FO-k684Dti4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    title: '2. Update your device',
+    listItems: [
+      'If see a message to update your device. Select “Download Updater App”.Then, select “Get the app.”',
+      'Install and launch the software (Important: make sure to close ShapeShift on your browser, since only one application can interact with the KeepKey at a time).',
+      'Once the application has detected your device, select “update now.”',
+      'Please follow the on-screen instruction carefully. If you get confused at any point, please make sure to watch the video.',
+      'Once you have updated your device, close the application. Then go to <a class="text-gold hover:underline" target="_blank" href="https://app.shapeshift.com">app.shapeshift.com</a>'
+    ]
+  },
+  {
+    key: 3,
+    hasVideo: true,
+    video: '<iframe width="560" height="315" src="https://www.youtube.com/embed/YSeLTYhkQf8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    title: '3. Initialize your Device',
+    listItems: [
+      'On the upper left corner of the screen, select “Connect a wallet”, then select “KeepKey” in the window that opens.',
+      'On the screen that opens select “Initialize KeepKey”.',
+      'On the following screen, select “Continue”.”',
+      'Follow the instructions on the next few screens, to label your wallet, set up a PIN code and get your back up phrase, as seen in the video.',
+      'Once you have finished setting up your KeepKey, you’re ready to go.'
+    ]
+  },
+]
+
+const Step = (props: Step) => {
+  return (
+    <div className="divide-y">
+      <div className="grid lg:grid-cols-2 gap-24 align-center py-40 pb-20 border-solid border-2 border-blue-900">
+        <div>
+          <h3 className="mb-6" dangerouslySetInnerHTML={{__html: props.title}}></h3>
+          <p className="mb-6" dangerouslySetInnerHTML={{__html: props.description}}></p>
+          <ul className="list-disc pl-10">
+            {props.listItems.map((item) => 
+              <li className="py-2"
+                key="props.key" 
+                dangerouslySetInnerHTML={{__html: item}}></li>
+              )}
+          </ul>
+        </div>
+        <div className="self-center w-100">
+          {props.hasVideo ? 
+            <div dangerouslySetInnerHTML={{__html: props.video}}></div>
+            :
+            <Image
+              alt="KeepKey wallet"
+              src={props.image}
+              width={1200}
+              quality={100}
+                      >
+            </Image>
+          }
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const Main = () => {
   return (
-    <section>
+    <section className="container">
       <SecurityWarning/>
-      <div className="grid lg:grid-cols-2 py-20">
-
-      </div>
+      {steps.map((step, i, arr) => 
+        <Step 
+          key= {step.key}
+          image= {step.image}
+          hasVideo = {step.hasVideo}
+          video = {step.video}
+          title= {step.title}
+          description = {step.description}
+          listItems = {step.listItems}
+        />
+      )}
     </section>
   )
 }
