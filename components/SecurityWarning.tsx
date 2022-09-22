@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function SecurityWarning() {
   return (
-    <div className="container flex align-center justify-center max-w-5xl border-3 rounded-xl py-5 border-gold bg-tan">
+    <div className="container flex align-center justify-center max-w-5xl border-3 rounded-xl py-5 border-gold bg-tan mx-4">
       <div className="w-32 self-end">
       < Image
           src={alertIcon}

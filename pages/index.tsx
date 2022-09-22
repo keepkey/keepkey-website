@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import ShopifyBuyButton from '../components/ShopifyBuyButton'
 import SecurityWarning from '../components/SecurityWarning'
+import Link from 'next/link'
 import styles from '../styles/pages/Home.module.scss'
 import walletImage from 'public/images/hardware/wallet-hero.png'
 import computerLockImage from 'public/images/icons/computer-lock.svg'
@@ -10,7 +11,7 @@ import ebStorageImage from 'public/images/icons/eb-storage.svg'
 import openSourceImage from 'public/images/icons/open-source.svg'
 import shapeshiftDemoImage from 'public/images/software/shapeshift-demo.png'
 import walletDeskImage from 'public/images/heros/wallet-desk-grayscale.png'
-import Link from 'next/link'
+
 
 export default function Home() {
   return (
