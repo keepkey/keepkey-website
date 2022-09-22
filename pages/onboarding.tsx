@@ -18,7 +18,7 @@ export default function Onboarding() {
 const Hero = () => {
   return(
     <>
-      <div className="relative z-0 py-80">
+      <div className="relative z-0 py-80 bg-black">
         <div className={styles.hero__img}>
           <Image
           src={heroBgImage}
