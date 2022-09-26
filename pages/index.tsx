@@ -135,7 +135,7 @@ const PromoSection = () => {
     <section className="bg-zinc-100">
       <div className="container grid gap-24 md:grid-cols-2">
         <div className="my-auto">
-          <h2>Now Available!</h2>
+          <h2>Now Available on ShapeShift!</h2>
           <p className="font-bold mt-6 mb-4">A KeepKey-secured platform built to handle all of your crypto needs</p>
           <p>KeepKey is the premier wallet in the new ShapeShift Platform, a web-based interface that consolidates your many crypto tools into one, beautiful environment. Click below to experience a new era in hardware security.</p>
           <Link href="https://beta.shapeshift.com">

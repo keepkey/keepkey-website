@@ -24,6 +24,7 @@ export default function Navbar() {
                 src={keepkeyLogo}
                 className="cursor-pointer nav__logo transition-all ease-in-out duration-400"
                 layout="responsive"
+                quality={100}
                       >
               </Image>
             </a>
