@@ -29,7 +29,7 @@ const Hero = () => {
           layout="fill"
           objectFit="cover"
           quality={100}
-          objectPosition="top right"
+          objectPosition="center center"
           >
           </Image>
         </div>
