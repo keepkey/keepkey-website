@@ -19,17 +19,16 @@ const Hero = () => {
   return(
     <>
       <div className="relative z-0 py-80 bg-black">
-        <div className={styles.hero__img}>
-          <Image
-          src={heroBgImage}
-          alt='keepkey wallet on desk'
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-          objectPosition="center"
-          >
-          </Image>
-        </div>
+        <Image
+        src={heroBgImage}
+        alt='keepkey wallet on desk'
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        objectPosition="center"
+        priority={true}
+        >
+        </Image>
         <div className="container relative grid xl:grid-cols-2 items-center z-10">
           <div>
             <h1 className="text-5xl leading-tight tracking-wide font-bold text-white mb-4">KeepKey Works Seamlessly with the ShapeShift Platform</h1>
@@ -111,9 +110,9 @@ const Step = (props: Step) => {
           <h3 className="mb-6" dangerouslySetInnerHTML={{__html: props.title}}></h3>
           <p className="mb-6" dangerouslySetInnerHTML={{__html: props.description}}></p>
           <ul className="list-disc pl-10">
-            {props.listItems.map((item) => 
+            {props.listItems.map((item, index) => 
               <li className="py-2"
-                key="props.key" 
+                key={index}
                 dangerouslySetInnerHTML={{__html: item}}></li>
               )}
           </ul>

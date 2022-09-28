@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 export default function ShopifyBuyButton() { 
   return(
     <div className="buy-button-wrap mr-6">

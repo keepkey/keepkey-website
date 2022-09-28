@@ -19,17 +19,16 @@ const Hero = () => {
   return(
     <>
       <div className="relative z-0 py-80 bg-black">
-        <div className={styles.hero__img}>
-          <Image
-          src={heroBgImage}
-          alt='keepkey wallet on desk'
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-          objectPosition="center center"
-          >
-          </Image>
-        </div>
+        <Image
+        src={heroBgImage}
+        alt='keepkey wallet on desk'
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        objectPosition="center center"
+        priority={true}
+        >
+        </Image>
         <div className="container relative grid xl:grid-cols-[650px_1fr] items-center z-10">
           <div>
             <h1 className="text-6xl leading-tight tracking-wide font-bold text-white mb-4">Support for Leading Crypto Applications</h1>

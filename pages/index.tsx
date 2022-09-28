@@ -30,7 +30,7 @@ export default function Home() {
 
 const Hero = () => {
   return(
-    <div className={`${styles.hero} bg-cover bg-no-repeat bg-center flex items-center py-24 bg-black`}>
+    <div className={`${styles.hero} bg-cover bg-no-repeat bg-center flex items-center py-12 bg-black`}>
     <div className="container relative grid xl:grid-cols-[730px_1fr] items-center">
       <div>
         <h1 className="text-6xl leading-tight tracking-wide font-bold text-white mb-4">The Next Frontier <br/> of Crypto Security</h1>
@@ -49,6 +49,7 @@ const Hero = () => {
           height={800}
           unoptimized={true}
           objectFit="cover"
+          priority={true}
           // objectPosition="center"
           layout="responsive"
                   >
