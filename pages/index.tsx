@@ -21,7 +21,9 @@ export default function Home() {
       <PromoSection />
       <LeadingCryptos />
       <ProductInfo />
-      <SecurityWarning />
+      <div className="container">
+        <SecurityWarning />
+      </div>
       <TrustedBy />
     </>
 
@@ -208,7 +210,7 @@ import walletHorizontal from 'public/images/hardware/wallet-horizontal.png'
 const ProductInfo = () => {
   return (
     <section>
-      <div className="container grid md:grid-cols-2 gap-32 gap-y-52">
+      <div className="container grid md:grid-cols-2 gap-16 gap-y-28 lg:gap-32 lg:gap-y-52">
         <div>
           <h2>A Hardware Wallet that’s as <br /> Serious About Crypto as You Are</h2>
           <p className="my-6">Whether you’re a newcomer or a veteran to the crypto community, we all have one thing in common: the critical need for secure storage of private keys for our digital assets.</p>
@@ -229,7 +231,7 @@ const ProductInfo = () => {
           quality={100}
           >
         </Image>
-        <div className="">
+        <div className="order-2 md:order-none">
           <Image
             src={walletHorizontal}
             alt='keepkey wallet on desk'

@@ -58,7 +58,7 @@ export default function Navbar() {
 
   return (
 
-     <nav className={`nav fixed w-full pb-3 z-10 transition-all pt-6 ease-in-out duration-400 ${scroll ? 'bg-black lg:pt-8' : 'lg:pt-6'} ${isActive ? 'nav--is-open' : ''}`}>
+     <nav className={`nav fixed w-full py-3 z-10 transition-all ease-in-out duration-400 ${scroll && !isActive ? 'bg-black lg:pt-4' : 'lg:pt-6'} ${isActive ? 'nav--is-open' : ''}`}>
         <div className="container mx-auto flex flex-wrap items-center">
           <Link href="/">
             <div className="nav__logo-wrap-fixed-width mr-5">
