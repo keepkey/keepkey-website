@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 export default function ShopifyBuyButton() { 
   return(
-    <div className="buy-button-wrap mr-6">
+    <div className="buy-button-wrap lg:mr-6">
       <div id='product-component-1663605399427'></div>
     </div>
   )
@@ -56,24 +56,37 @@ if (typeof window !== "undefined") {
         "button": {
           "font-family": "Roboto, sans-serif",
           "font-weight": "600",
-          "font-size": "20px",
+          "font-size": "15px",
           "padding-top": "10px",
-          "padding-bottom": "16px",
+          "padding-bottom": "10px",
           "white-space": "nowrap",
           "border": "2px solid #a58958",
-          "letter-spacing": ".8px",
-          "height": "100%",
+          "letter-spacing": "0px",
+          "height": "57px",
           "margin-top": "-15px !important",
+          "border-radius": "2px",
+          "padding-left": "22%",
+          "padding-right": "22%",
           ":hover": {
             "background-color": "#a58958"
+          },
+          "@media (min-device-width: 375px)": {
+            "font-size": "17px !important",
+            "font-size": "17px !important"
+          },
+          "@media (min-device-width: 1024px)": {
+            "font-size": "20px !important",
+            "letter-spacing": ".8px !important",
+            "padding-left": "40px !important",
+            "padding-right": "40px !important",
+            "height": "100% !important",
+            "padding-bottom": "16px !important"
           },
           "background-color": "#b79862",
           ":focus": {
             "background-color": "#a58958"
           },
-          "border-radius": "2px",
-          "padding-left": "40px",
-          "padding-right": "40px"
+
         },
         "quantityInput": {
           "font-size": "14px",

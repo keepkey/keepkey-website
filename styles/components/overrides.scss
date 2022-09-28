@@ -1,11 +1,17 @@
 
 // shopify buy button
 iframe[name="frame-product-9270065358"] {
-  height: 72px !important;
+  height: 62px !important;
+  @media (min-width: 1024px) {
+    height: 72px !important;
+  }
 }
 
 .buy-button-wrap {
-  max-width: 169px;
+  max-width: 140px;
+  @media (min-width: 1024px) {
+    max-width: 169px;
+  }
   border-radius: 4px;
   overflow: hidden;
   display: inline-block;

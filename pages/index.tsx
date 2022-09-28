@@ -30,19 +30,23 @@ export default function Home() {
 
 const Hero = () => {
   return(
-    <div className={`${styles.hero} bg-cover bg-no-repeat bg-center flex items-center py-12 bg-black`}>
-    <div className="container relative grid xl:grid-cols-[730px_1fr] items-center">
+    <div className={`${styles.hero} bg-cover bg-no-repeat bg-center flex items-center pt-44 pb-20 lg:py-12 bg-black`}>
+    <div className="container relative grid lg:grid-cols-[730px_1fr] items-center">
       <div>
-        <h1 className="text-6xl leading-tight tracking-wide font-bold text-white mb-4">The Next Frontier <br/> of Crypto Security</h1>
-        <p className="text-2xl text-white mb-8 leading-relaxed tracking-wide">Protect your cryptocurrencies, store your private keys offline, and safeguard your 
+        <h1 className="text-4xl leading-tight tracking-wide lg:text-6xl lg:leading-tight font-bold text-white mb-4">The Next Frontier <br/> of Crypto Security</h1>
+        <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8  tracking-wide">Protect your cryptocurrencies, store your private keys offline, and safeguard your 
           assets from hackers. It’s time to achieve financial freedom in the most secure way with KeepKey.</p>
-        <ShopifyBuyButton></ShopifyBuyButton>
-        <Link href="/onboarding">
-          <a className="btn btn-lg btn--transparent mt-4 ml-4">Get Started</a>
-        </Link>
+        <div className="text-left">
+          <div className="mr-4 mb-4 sm:mr-4 inline-block">
+            <ShopifyBuyButton></ShopifyBuyButton>
+          </div>
+          <Link href="/onboarding">
+            <a className="btn btn-lg btn--transparent">Get Started</a>
+          </Link>
+        </div>
 
       </div>
-      <div className={styles.hero__image} >
+      <div className="w-full mx-auto max-w-[200px] md:max-w-[400px] lg:max-w-[500px] mt-10 lg:mt-40">
         <Image
           alt="KeepKey wallet"
           src={walletImage}

@@ -1,8 +1,3 @@
-//tailwind
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 // custom sass
 @import "shared/variables";
 @import "shared/layout";
@@ -10,6 +5,11 @@
 @import "shared/utils";
 @import "components/buttons";
 @import "components/overrides";
+
+//tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 //tailwind custom config 
 @layer base {
