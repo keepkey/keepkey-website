@@ -130,7 +130,7 @@ const MobileNav = (props) => {
               <button className="nav-mobile__category-item-link accordion-toggle" type="button">
               <div className="nav-mobile__category-item-layout">
                   <Link href={link.url}>
-                    <a className="nav-mobile__title-wrapper">
+                    <a onClick={props.handleClick} className="nav-mobile__title-wrapper">
                       <span className="nav-mobile__title">
                           <span>{link.name}</span>
                       </span>

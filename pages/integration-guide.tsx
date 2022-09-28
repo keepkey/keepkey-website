@@ -28,13 +28,13 @@ const Hero = () => {
         layout="fill"
         objectFit="cover"
         quality={100}
-        objectPosition="center center"
+        objectPosition="top right"
         priority={true}
         >
         </Image>
         <div className="container relative grid xl:grid-cols-[650px_1fr] items-center z-10">
           <div>
-            <h1 className="text-6xl leading-tight tracking-wide font-bold text-white mb-4">Integration Guide</h1>
+            <h1 className="text-5xl lg:text-6xl leading-tight tracking-wide font-bold text-white mb-4">Integration Guide</h1>
             {/* <p className="text-2xl text-white mb-8 leading-relaxed tracking-wide">See below for a list of our recommendations.</p> */}
 
           </div>

@@ -3,7 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ShopifyBuyButton from '../components/ShopifyBuyButton'
 import SecurityWarning from '../components/SecurityWarning'
-import styles from '../styles/pages/Home.module.scss'
+// import styles from '../styles/pages/Home.module.scss'
+import heroBgImage from 'public/images/heros/home.png'
 import walletImage from 'public/images/hardware/wallet-hero.png'
 import computerLockImage from 'public/images/icons/computer-lock.svg'
 import backupImage from 'public/images/icons/backup.svg'
@@ -32,37 +33,49 @@ export default function Home() {
 
 const Hero = () => {
   return(
-    <div className={`${styles.hero} bg-cover bg-no-repeat bg-center flex items-center pt-44 pb-20 lg:py-12 bg-black`}>
-    <div className="container relative grid lg:grid-cols-[730px_1fr] items-center">
-      <div>
-        <h1 className="text-4xl leading-tight tracking-wide lg:text-6xl lg:leading-tight font-bold text-white mb-4">The Next Frontier <br/> of Crypto Security</h1>
-        <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8  tracking-wide">Protect your cryptocurrencies, store your private keys offline, and safeguard your 
-          assets from hackers. It’s time to achieve financial freedom in the most secure way with KeepKey.</p>
-        <div className="text-left">
-          <div className="mr-4 mb-4 sm:mr-4 inline-block">
-            <ShopifyBuyButton></ShopifyBuyButton>
-          </div>
-          <Link href="/onboarding">
-            <a className="btn btn-lg btn--transparent">Get Started</a>
-          </Link>
-        </div>
-
-      </div>
-      <div className="w-full mx-auto max-w-[200px] md:max-w-[400px] lg:max-w-[500px] mt-10 lg:mt-40">
-        <Image
-          alt="KeepKey wallet"
-          src={walletImage}
-          height={800}
-          unoptimized={true}
-          objectFit="cover"
-          priority={true}
-          // objectPosition="center"
-          layout="responsive"
-                  >
+    <div className="relative z-0 pt-44 pb-20 lg:py-4 bg-black">
+      <Image
+        src={heroBgImage}
+        alt='keepkey wallet on desk'
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        objectPosition="center"
+        priority={true}
+        >
         </Image>
+      <div className="flex items-center">
+        <div className="container relative grid lg:grid-cols-[730px_1fr] items-center">
+          <div>
+            <h1 className="text-4xl leading-tight tracking-wide lg:text-6xl lg:leading-tight font-bold text-white mb-4">The Next Frontier <br/> of Crypto Security</h1>
+            <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8  tracking-wide">Protect your cryptocurrencies, store your private keys offline, and safeguard your 
+              assets from hackers. It’s time to achieve financial freedom in the most secure way with KeepKey.</p>
+            <div className="text-left">
+              <div className="mr-4 mb-4 sm:mr-4 inline-block">
+                <ShopifyBuyButton></ShopifyBuyButton>
+              </div>
+              <Link href="/onboarding">
+                <a className="btn btn-lg btn--transparent">Get Started</a>
+              </Link>
+            </div>
+
+          </div>
+          <div className="w-full mx-auto max-w-[200px] md:max-w-[400px] lg:max-w-[500px] lg:mt-40">
+            <Image
+              alt="KeepKey wallet"
+              src={walletImage}
+              height={760}
+              unoptimized={true}
+              objectFit="cover"
+              priority={true}
+              // objectPosition="center"
+              layout="responsive"
+                      >
+            </Image>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
   )
 }
 

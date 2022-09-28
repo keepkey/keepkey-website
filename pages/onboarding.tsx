@@ -2,9 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import shapeShiftDemoWalletImg from 'public/images/hardware/shapeshift-with-keepkey.png'
 import shapeShiftDemoImg from 'public/images/software/shapeshift-demo-mac-md.png'
-import styles from '../styles/pages/Onboarding.module.scss'
 import heroBgImage from 'public/images/heros/golden-lines-lg.jpg'
 import SecurityWarning from "../components/SecurityWarning"
+
 export default function Onboarding() {
   return (
     <>
@@ -17,36 +17,34 @@ export default function Onboarding() {
 
 const Hero = () => {
   return(
-    <>
-      <div className="relative z-0 py-80 bg-black">
-        <Image
-        src={heroBgImage}
-        alt='keepkey wallet on desk'
-        layout="fill"
-        objectFit="cover"
-        quality={100}
-        objectPosition="center"
-        priority={true}
-        >
-        </Image>
-        <div className="container relative grid xl:grid-cols-2 items-center z-10">
-          <div>
-            <h1 className="text-5xl leading-tight tracking-wide font-bold text-white mb-4">KeepKey Works Seamlessly with the ShapeShift Platform</h1>
-            <p className="text-2xl text-white mb-8 leading-relaxed tracking-wide">Follow the guide below to get started using your KeepKey.</p>
+    <div className="relative z-0 pt-44 pb-20 xl:py-72 bg-black">
+      <Image
+      src={heroBgImage}
+      alt='keepkey wallet on desk'
+      layout="fill"
+      objectFit="cover"
+      quality={100}
+      objectPosition="center"
+      priority={true}
+      >
+      </Image>
+      <div className="container relative grid lg:grid-cols-2 items-center z-10">
+        <div>
+          <h1 className="text-4xl leading-tight tracking-wide lg:text-6xl lg:leading-tight font-bold text-white mb-4">KeepKey Works Seamlessly with the ShapeShift Platform</h1>
+          <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">Follow the guide below to get started using your KeepKey.</p>
 
-          </div>
-            <div className="absolute max-w-[850px] top-[-50px] right-[-150px]">
-              <Image
-                alt="KeepKey wallet"
-                src={shapeShiftDemoWalletImg}
-                quality={100}
-                        >
-              </Image>
-            </div>
         </div>
-
+          <div className="xl:absolute xl:max-w-[700px] xl:right-0 2xl:max-w-[850px] top-[-100px] 2xl:right-[-150px]">
+            <Image
+              alt="KeepKey wallet"
+              src={shapeShiftDemoWalletImg}
+              quality={100}
+                      >
+            </Image>
+          </div>
       </div>
-  </>
+
+    </div>
   )
 }
 
@@ -105,7 +103,7 @@ const steps: Step[] = [
 const Step = (props: Step) => {
   return (
     <div className="divide-y">
-      <div className="grid lg:grid-cols-2 gap-24 align-center py-40 pb-20 border-solid border-2 border-blue-900">
+      <div className="grid xl:grid-cols-2 gap-16 xl:gap-26 2xl:gap-36 align-center py-40 pb-20 border-solid border-2 border-blue-900">
         <div>
           <h3 className="mb-6" dangerouslySetInnerHTML={{__html: props.title}}></h3>
           <p className="mb-6" dangerouslySetInnerHTML={{__html: props.description}}></p>
