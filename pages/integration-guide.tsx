@@ -78,6 +78,9 @@ const Main = () => {
         <TabPanel>
           <h2 className="mb-6">HDwallet</h2>
           <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem provident animi aperiam, pariatur tenetur ea ad totam, repudiandae voluptas itaque libero, nihil molestiae nostrum quos reiciendis ab aut alias atque.
+            <br />
+            <br />
             <a className="text-xl text-gold" href="https://github.com/shapeshift/hdwallet" target="_blank" rel="noreferrer" >Shapeshift HDwallet</a>
           </p>
         </TabPanel>
