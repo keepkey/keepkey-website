@@ -4,6 +4,7 @@ import shapeShiftDemoWalletImg from 'public/images/hardware/shapeshift-with-keep
 import shapeShiftDemoImg from 'public/images/software/shapeshift-demo-mac-md.png'
 import heroBgImage from 'public/images/heros/golden-lines-lg.jpg'
 import SecurityWarning from "../components/SecurityWarning"
+import { arrayBuffer } from "stream/consumers"
 
 export default function Onboarding() {
   return (
@@ -28,13 +29,13 @@ const Hero = () => {
       priority={true}
       >
       </Image>
-      <div className="container relative grid lg:grid-cols-2 items-center z-10">
+      <div className="container relative grid lg:grid-cols-2 gap-20 items-center z-10">
         <div>
-          <h1 className="text-4xl leading-tight tracking-wide lg:text-6xl lg:leading-tight font-bold text-white mb-4">KeepKey Works Seamlessly with the ShapeShift Platform</h1>
+          <h1 className="text-4xl leading-tight tracking-wide lg:text-5xl lg:leading-tight 2xl:text-6xl 2xl:leading-tight font-bold text-white mb-4">KeepKey Works Seamlessly with the ShapeShift Platform</h1>
           <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">Follow the guide below to get started using your KeepKey.</p>
 
         </div>
-          <div className="xl:absolute xl:max-w-[700px] xl:right-0 2xl:max-w-[850px] top-[-100px] 2xl:right-[-150px]">
+          <div className="xl:absolute xl:max-w-[650px] xl:right-0 2xl:max-w-[765px] 2xl:right-[-150px]">
             <Image
               alt="KeepKey wallet"
               src={shapeShiftDemoWalletImg}
@@ -75,7 +76,7 @@ const steps: Step[] = [
   {
     key: 2,
     hasVideo: true,
-    video: '<iframe width="560" height="315" src="https://www.youtube.com/embed/FO-k684Dti4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    video: '<iframe class="responsive-video" src="https://www.youtube.com/embed/FO-k684Dti4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
     title: '2. Update your device',
     listItems: [
       'If see a message to update your device. Select “Download Updater App”.Then, select “Get the app.”',
@@ -88,7 +89,7 @@ const steps: Step[] = [
   {
     key: 3,
     hasVideo: true,
-    video: '<iframe width="560" height="315" src="https://www.youtube.com/embed/YSeLTYhkQf8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    video: '<iframe class="responsive-video" src="https://www.youtube.com/embed/YSeLTYhkQf8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
     title: '3. Initialize your Device',
     listItems: [
       'On the upper left corner of the screen, select “Connect a wallet”, then select “KeepKey” in the window that opens.',
@@ -102,32 +103,32 @@ const steps: Step[] = [
 
 const Step = (props: Step) => {
   return (
-    <div className="divide-y">
-      <div className="grid xl:grid-cols-2 gap-16 xl:gap-26 2xl:gap-36 align-center py-40 pb-20 border-solid border-2 border-blue-900">
-        <div>
-          <h3 className="mb-6" dangerouslySetInnerHTML={{__html: props.title}}></h3>
-          <p className="mb-6" dangerouslySetInnerHTML={{__html: props.description}}></p>
-          <ul className="list-disc pl-10">
-            {props.listItems.map((item, index) => 
-              <li className="py-2"
-                key={index}
-                dangerouslySetInnerHTML={{__html: item}}></li>
-              )}
-          </ul>
-        </div>
-        <div className="self-center w-100">
-          {props.hasVideo ? 
+    <div className="grid xl:grid-cols-2 gap-16 xl:gap-26 2xl:gap-36 align-center py-20 lg:py-32 border-solid border-2 border-blue-900">
+      <div>
+        <h3 className="mb-6" dangerouslySetInnerHTML={{__html: props.title}}></h3>
+        <p className="mb-6" dangerouslySetInnerHTML={{__html: props.description}}></p>
+        <ul className="list-disc pl-10">
+          {props.listItems.map((item, index) => 
+            <li className="py-2"
+              key={index}
+              dangerouslySetInnerHTML={{__html: item}}></li>
+            )}
+        </ul>
+      </div>
+      <div className="self-center w-100">
+        {props.hasVideo ? 
+          <div className="">
             <div dangerouslySetInnerHTML={{__html: props.video}}></div>
-            :
-            <Image
-              alt="KeepKey wallet"
-              src={props.image}
-              width={1200}
-              quality={100}
-                      >
-            </Image>
-          }
-        </div>
+          </div>
+          :
+          <Image
+            alt="KeepKey wallet"
+            src={props.image}
+            width={1200}
+            quality={100}
+                    >
+          </Image>
+        }
       </div>
     </div>
   )
@@ -138,6 +139,7 @@ const Main = () => {
     <section className="container">
       <SecurityWarning/>
       {steps.map((step, i, arr) => 
+      <>
         <Step 
           key= {step.key}
           image= {step.image}
@@ -147,6 +149,8 @@ const Main = () => {
           description = {step.description}
           listItems = {step.listItems}
         />
+        {i === arr.length - 1 ? '' : <hr/>}
+      </>
       )}
     </section>
   )

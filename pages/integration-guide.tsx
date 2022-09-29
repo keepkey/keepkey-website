@@ -21,20 +21,20 @@ export default function Onboarding() {
 const Hero = () => {
   return(
     <>
-      <div className="relative z-0 pt-52 pb-36 bg-black">
+      <div className="relative z-0 pt-28 pb-20 lg:pt-52 lg:pb-36 bg-black">
         <Image
         src={heroBgImage}
         alt='keepkey wallet on desk'
         layout="fill"
         objectFit="cover"
         quality={100}
-        objectPosition="top right"
+        objectPosition="top "
         priority={true}
         >
         </Image>
         <div className="container relative grid xl:grid-cols-[650px_1fr] items-center z-10">
           <div>
-            <h1 className="text-5xl lg:text-6xl leading-tight tracking-wide font-bold text-white mb-4">Integration Guide</h1>
+            <h1 className="text-4xl xl:text-6xl leading-tight tracking-wide font-bold text-white mb-4">Integration Guide</h1>
             {/* <p className="text-2xl text-white mb-8 leading-relaxed tracking-wide">See below for a list of our recommendations.</p> */}
 
           </div>
