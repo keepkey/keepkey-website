@@ -28,10 +28,9 @@
         @apply grid;
         @apply sm:justify-center;
         @apply grid-flow-col;
-        @apply md:gap-x-12;
         @apply gap-x-2;
+        @apply md:gap-x-12;
         grid-auto-columns: max-content;
-        // grid-template-rows: 1fr;
         width: 100%;
         overflow-x: auto;
     }
