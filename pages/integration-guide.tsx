@@ -1,18 +1,12 @@
 import Image from 'next/image'
-import Link from 'next/link'
-import supportedAppsImg from 'public/images/supported-applications/supported-apps-collage.png'
-import shapeShiftDemoImg from 'public/images/software/shapeshift-demo-mac-md.png'
-import styles from '../styles/pages/Onboarding.module.scss'
 import heroBgImage from 'public/images/heros/blue-lines.jpg'
-import SecurityWarning from "../components/SecurityWarning"
-export default function Onboarding() {
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
+export default function IntegrationGuide() {
   return (
     <>
       <Hero />
-      <div className="h-96">
-        <div className="my-80"></div>
-      </div>
-      {/* <Main /> */}
+      <Main />
     </>
   )
 }
@@ -35,7 +29,7 @@ const Hero = () => {
         <div className="container relative grid xl:grid-cols-[650px_1fr] items-center z-10">
           <div>
             <h1 className="text-4xl xl:text-6xl leading-tight tracking-wide font-bold text-white mb-4">Integration Guide</h1>
-            {/* <p className="text-2xl text-white mb-8 leading-relaxed tracking-wide">See below for a list of our recommendations.</p> */}
+            {/* <p className="text-2xl text-white mb-8 leading-relaxed tracking-wide">Choose the best SDK for your integration type</p> */}
 
           </div>
             <div className="absolute max-w-[650px] top-[-70px] right-[-30px]">
@@ -54,71 +48,41 @@ const Hero = () => {
 }
 
 
-import shapeShiftLogo from 'public/images/supported-applications/shapeshift-block-black.jpg' 
-import electrumLogo from 'public/images/supported-applications/electrum-block-black.png' 
-import myCryptoLogo from 'public/images/supported-applications/mycrypto-block-black.png' 
 
 
 const Main = () => {
   return (
-    <section>
-      <div className="container grid md:grid-cols-2 gap-32 gap-y-48">
-        <div className="self-center">
-          <h2>ShapeShift</h2>
-          <p className="my-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem est, soluta temporibus vitae atque ipsam deleniti error quasi impedit, earum adipisci accusamus quos, ad minima. Laborum, facere. Fugit, voluptate adipisc.</p>
-          {/* <p className="font-bold">KeepKey gives you:</p> */}
-          {/* <ul className="list-disc pl-10">
-            <li className="pt-4">PIN protection against unauthorized use</li>
-            <li>Additional passphrase protection</li>
-            <li>Customizable transaction speeds</li>
-            <li>Limitless wallet addresses on one device</li>
-          </ul> */}
-          <Link href="https://app.shapeshift.io">
-          <a className="btn mt-8" target="_blank">Get Started</a>
-          </Link>
-        </div>
-        <div className="w-100">
-          <Image
-            src={shapeShiftLogo}
-            alt='shapeshift logo'
-            quality={100}
-            layout="responsive"
-            >
-          </Image>
-        </div>
-        <div className="w-100 relative">
-          <Image
-            src={electrumLogo}
-            alt='my crypto logo'
-            quality={100}
-            >
-          </Image>
-          </div>
-          <div className="self-center">
-            <h2>Electrum</h2>
-            <p className="mt-6">Electrum Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum obcaecati repellat dolores necessitatibus quae animi. Odio eos vero ab quibusdam repudiandae a nam ut earum, veniam voluptatibus itaque, labore vel. ipsum</p>
-            <Link href="https://interfect.github.io/#!/posts/004-KeepKey-and-Electrum.md">
-            <a className="btn mt-8" target="_blank">View the Guide</a>
-            </Link>
-        </div>
 
-        <div className="self-center">
-          <h2>MyCrypto</h2>
-          <p className="my-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem est, soluta temporibus vitae atque ipsam deleniti error quasi impedit, earum adipisci accusamus quos, ad minima. Laborum, facere. Fugit, voluptate adipisc.</p>
-          <Link href="https://coinguides.org/electrum-multisig-wallet/">
-          <a className="btn mt-8" target="_blank" >Read the Guide</a>
-          </Link>
-        </div>
-        <div className="w-100">
-          <Image
-            src={myCryptoLogo}
-            alt='mycrypto logo'
-            quality={100}
-            layout="responsive"
-            >
-          </Image>
-        </div>
-      </div>
-    </section>
+    <section className="container">
+      <h2 className="text-center mb-16">Choose the best SDK for your integration type</h2>
+      <Tabs>
+        <TabList>
+          <Tab>ETH/Dapps</Tab>
+          <Tab>Multi-Chain</Tab>
+        </TabList>
+
+        <hr className="mt-16" />
+
+        <TabPanel>
+          <h2>Onboard.js</h2>
+          <p className="mb-6">
+            <br/>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum ad error voluptatibus perferendis nam maxime repellat, facere eum. Deleniti ex quas commodi vitae nemo earum, magni illum! Similique, ullam aut?
+            <br/>
+            <br/>
+            View the guide <a className="text-gold" href="https://docs.blocknative.com/onboard" target="_blank">here</a>
+           
+          </p>
+           <iframe className="responsive-video" src="https://www.youtube.com/embed/ohOl_rvO0KA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+        </TabPanel>
+        <TabPanel>
+          <h2 className="mb-6">HDwallet</h2>
+          <p>
+            <a href="https://github.com/shapeshift/hdwallet" target="_blank" className="text-xl text-gold">Shapeshift HDwallet</a>
+          </p>
+        </TabPanel>
+      </Tabs>
+
+      </section>
   )
 }

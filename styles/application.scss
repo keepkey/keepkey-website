@@ -1,10 +1,10 @@
 // custom sass
 @import "shared/variables";
-@import "shared/layout";
 @import "shared/nav";
 @import "shared/utils";
 @import "components/buttons";
 @import "components/overrides";
+@import "components/tabs";
 
 //tailwind
 @tailwind base;
@@ -21,7 +21,8 @@
     @apply text-6xl;
   }
   h2 {
-    @apply text-4xl;
+    @apply text-2xl;
+    @apply md:text-4xl;
     @apply leading-snug;
   }
   h3 {
@@ -34,7 +35,8 @@
     @apply text-[18px] tracking-wide font-light;
   }
   section {
-    @apply py-32;
+    @apply sm:py-32;
+    @apply py-20;
   }
 }
 

@@ -1,0 +1,47 @@
+.react-tabs {
+
+    &__tab {
+        display: inline-block;
+        @extend .btn;
+        @extend .btn--round;
+        cursor: pointer;
+
+        &:not(&--selected) {
+            @extend .btn--black-outline;
+        }
+        
+        &--selected {
+            @extend .btn--black;
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+    
+    &__tab-panel {
+        @apply py-16;
+    }
+
+    &__tab-list {
+        border-bottom: none;
+        @apply grid;
+        @apply sm:justify-center;
+        @apply grid-flow-col;
+        @apply md:gap-x-12;
+        @apply gap-x-2;
+        grid-auto-columns: max-content;
+        // grid-template-rows: 1fr;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    &__tab-panel {
+        display: none;
+
+        &--selected {
+            display: block;
+        }
+
+    }
+}

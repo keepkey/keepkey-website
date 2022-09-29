@@ -34,7 +34,7 @@ export default function Home() {
 
 const Hero = () => {
   return(
-    <div className="relative z-0 pt-44 pb-20 lg:py-4 bg-black">
+    <div className="relative z-0 pt-32 pb-20 lg:py-4 bg-black">
       <Image
         src={heroBgImage}
         alt='keepkey wallet on desk'
@@ -48,10 +48,10 @@ const Hero = () => {
       <div className="container relative grid lg:grid-cols-[730px_1fr] items-center text-center lg:text-left">
         <div>
           <h1 className="text-[39px] leading-tight tracking-wide lg:text-6xl lg:leading-tight font-bold text-white mb-4">The Next Frontier <br/> of Crypto Security</h1>
-          <div className="w-100 my-6 mx-auto lg:hidden">
+          <div className="w-[45%] mt-8 mb-5 mx-auto lg:hidden">
             <Image
               alt="KeepKey wallet"
-              src={walletHorizontalCropped}
+              src={walletVertical}
               quality={100}
               priority={true}
               layout="responsive"

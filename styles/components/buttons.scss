@@ -30,15 +30,44 @@
     }
   }
 
+  &--inverse {
+    color: $color-gold;
+    background-color: #fff;
+    border: 2px solid $color-gold;
+  }
+
   &--round {
-    border-radius: 11px;
-    padding: 5px 30px;
+    border-radius: 40px;
     font-size: 18px;
 
     &:hover {
-      background-color: #2d5fdf;
+      background-color: $color-gold;
       box-shadow: 1px 1px 8px 0 rgb(56 111 249 / 0%);
+      color: #fff;
     }
+  }
+
+  &--black {
+    background-color: $color-black;
+    color: #fff;
+    border-color: color-black;
+
+    &:hover {
+      background-color: $color-black;
+    }
+
+    &-outline {
+      background-color: #fff;
+      border-color: $color-black;
+      color: $color-black;
+
+      &:hover {
+        background-color: $color-black;
+        color: #fff;
+      }
+
+    }
+
   }
 
   &--blue {
