@@ -5,6 +5,8 @@ import ShopifyBuyButton from '../components/ShopifyBuyButton'
 import SecurityWarning from '../components/SecurityWarning'
 import heroBgImage from 'public/images/heros/home.png'
 import walletImage from 'public/images/hardware/wallet-hero.png'
+import walletVertical from 'public/images/hardware/wallet-vertical.png'
+import walletHorizontalCropped from 'public/images/hardware/wallet-horizontal-cropped.png'
 import computerLockImage from 'public/images/icons/computer-lock.svg'
 import backupImage from 'public/images/icons/backup.svg'
 import ebStorageImage from 'public/images/icons/eb-storage.svg'
@@ -43,12 +45,23 @@ const Hero = () => {
         priority={true}
         >
       </Image>
-      <div className="container relative grid lg:grid-cols-[730px_1fr] items-center">
+      <div className="container relative grid lg:grid-cols-[730px_1fr] items-center text-center lg:text-left">
         <div>
-          <h1 className="text-4xl leading-tight tracking-wide lg:text-6xl lg:leading-tight font-bold text-white mb-4">The Next Frontier <br/> of Crypto Security</h1>
-          <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8  tracking-wide">Protect your cryptocurrencies, store your private keys offline, and safeguard your 
+          <h1 className="text-[39px] leading-tight tracking-wide lg:text-6xl lg:leading-tight font-bold text-white mb-4">The Next Frontier <br/> of Crypto Security</h1>
+          <div className="w-100 my-6 mx-auto lg:hidden">
+            <Image
+              alt="KeepKey wallet"
+              src={walletHorizontalCropped}
+              quality={100}
+              priority={true}
+              layout="responsive"
+                      >
+            </Image>
+          </div>
+          <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">Protect your cryptocurrencies, store your private keys offline, and safeguard your 
             assets from hackers. It’s time to achieve financial freedom in the most secure way with KeepKey.</p>
-          <div className="text-left">
+          
+          <div className="w-100">
             <div className="mr-4 mb-4 sm:mr-4 inline-block">
               <ShopifyBuyButton></ShopifyBuyButton>
             </div>
@@ -57,8 +70,9 @@ const Hero = () => {
             </Link>
           </div>
 
+
         </div>
-        <div className="w-full mx-auto max-w-[200px] md:max-w-[400px] lg:max-w-[500px] lg:mt-40">
+        <div className="w-full mx-auto max-w-[200px] md:max-w-[400px] lg:max-w-[500px] lg:mt-40 hidden lg:block">
           <Image
             alt="KeepKey wallet"
             src={walletImage}
@@ -114,7 +128,7 @@ const features: Feature[] = [
 const FeaturesSection = () => {
   return (
     <section className="bg-white">
-      <h2 className="text-center mb-20">The Premier Hardware Wallet</h2>
+      <h2 className="text-center mb-20 px-4">The Premier Hardware Wallet</h2>
       <div className="container grid gap-24 md:grid-cols-2 xl:grid-cols-4">
       {features.map(feature => 
         <FeatureCard 
@@ -241,7 +255,7 @@ const ProductInfo = () => {
           quality={100}
           >
         </Image>
-        <div className="order-2 md:order-none">
+        <div className="order-2 md:order-none hidden md:block">
           <Image
             src={walletHorizontal}
             alt='keepkey wallet on desk'
@@ -249,13 +263,13 @@ const ProductInfo = () => {
             layout="responsive"
             >
           </Image>
-          </div>
-          <div>
-            <h2>Become a KeepKey Affiliate</h2>
-            <p className="mt-6">Earn commission on every KeepKey sale you generate! KeepKey believes that everyone should be their own bank. {`That's`} why {`we've`} designed our program and product, to set you up for success.</p>
-            <Link href="https://shapeshift.com/keepkey-affiliate">
+        </div>
+        <div>
+          <h2>Become a KeepKey Affiliate</h2>
+          <p className="mt-6">Earn commission on every KeepKey sale you generate! KeepKey believes that everyone should be their own bank. {`That's`} why {`we've`} designed our program and product, to set you up for success.</p>
+          <Link href="https://shapeshift.com/keepkey-affiliate">
             <a className="btn mt-8" target="_blank">Apply Now</a>
-            </Link>
+          </Link>
         </div>
       </div>
     </section>
