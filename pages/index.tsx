@@ -42,36 +42,34 @@ const Hero = () => {
         objectPosition="center"
         priority={true}
         >
-        </Image>
-      <div className="flex items-center">
-        <div className="container relative grid lg:grid-cols-[730px_1fr] items-center">
-          <div>
-            <h1 className="text-4xl leading-tight tracking-wide lg:text-6xl lg:leading-tight font-bold text-white mb-4">The Next Frontier <br/> of Crypto Security</h1>
-            <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8  tracking-wide">Protect your cryptocurrencies, store your private keys offline, and safeguard your 
-              assets from hackers. It’s time to achieve financial freedom in the most secure way with KeepKey.</p>
-            <div className="text-left">
-              <div className="mr-4 mb-4 sm:mr-4 inline-block">
-                <ShopifyBuyButton></ShopifyBuyButton>
-              </div>
-              <Link href="/onboarding">
-                <a className="btn btn-lg btn--transparent">Get Started</a>
-              </Link>
+      </Image>
+      <div className="container relative grid lg:grid-cols-[730px_1fr] items-center">
+        <div>
+          <h1 className="text-4xl leading-tight tracking-wide lg:text-6xl lg:leading-tight font-bold text-white mb-4">The Next Frontier <br/> of Crypto Security</h1>
+          <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8  tracking-wide">Protect your cryptocurrencies, store your private keys offline, and safeguard your 
+            assets from hackers. It’s time to achieve financial freedom in the most secure way with KeepKey.</p>
+          <div className="text-left">
+            <div className="mr-4 mb-4 sm:mr-4 inline-block">
+              <ShopifyBuyButton></ShopifyBuyButton>
             </div>
+            <Link href="/onboarding">
+              <a className="btn btn-lg btn--transparent">Get Started</a>
+            </Link>
+          </div>
 
-          </div>
-          <div className="w-full mx-auto max-w-[200px] md:max-w-[400px] lg:max-w-[500px] lg:mt-40">
-            <Image
-              alt="KeepKey wallet"
-              src={walletImage}
-              height={760}
-              unoptimized={true}
-              objectFit="cover"
-              priority={true}
-              // objectPosition="center"
-              layout="responsive"
-                      >
-            </Image>
-          </div>
+        </div>
+        <div className="w-full mx-auto max-w-[200px] md:max-w-[400px] lg:max-w-[500px] lg:mt-40">
+          <Image
+            alt="KeepKey wallet"
+            src={walletImage}
+            height={760}
+            unoptimized={true}
+            objectFit="cover"
+            priority={true}
+            // objectPosition="center"
+            layout="responsive"
+                    >
+          </Image>
         </div>
       </div>
     </div>
