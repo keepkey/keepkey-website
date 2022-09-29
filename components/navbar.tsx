@@ -14,6 +14,12 @@ interface NavLink {
 
 const navLinks: NavLink[] = [
   {
+    id: 4,
+    name: 'Onboarding',
+    url: '/onboarding',
+    external: false
+  },
+  {
     id: 1,
     name: 'Community',
     url: '/community',
@@ -31,12 +37,7 @@ const navLinks: NavLink[] = [
     url: '/integration-guide',
     external: false
   },
-  {
-    id: 4,
-    name: 'Onboarding',
-    url: '/onboarding',
-    external: false
-  }
+
 ]
 
 export default function Navbar() {
