@@ -8,11 +8,13 @@
 
         &:not(&--selected) {
             @extend .btn--black-outline;
+
+            &:hover {
+                background-color: transparent;
+                color: $color-black;
+            }
         }
-        
-        &--selected {
-            @extend .btn--black;
-        }
+    
 
         &:focus-visible {
             outline: none;

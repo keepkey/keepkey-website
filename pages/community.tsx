@@ -1,22 +1,13 @@
 import Image from 'next/image'
-import Link from 'next/link'
-import supportedAppsImg from 'public/images/supported-applications/supported-apps-collage.png'
-import shapeShiftDemoImg from 'public/images/software/shapeshift-demo-mac-md.png'
-import styles from '../styles/pages/Onboarding.module.scss'
 import heroBgImage from 'public/images/heros/community-web.jpg'
-import SecurityWarning from "../components/SecurityWarning"
 export default function Onboarding() {
   return (
     <>
       <Hero />
-      <div className="h-96">
-        <div className="my-80"></div>
-      </div>
-      {/* <Main /> */}
+      <Main />
     </>
   )
 }
-
 
 const Hero = () => {
   return(
@@ -32,19 +23,12 @@ const Hero = () => {
         objectPosition="center center"
         >
         </Image>
-        <div className="container relative grid xl:grid-cols-[650px_1fr] items-center z-10">
-          <div>
-            <h1 className="text-4xl xl:text-6xl leading-tight tracking-wide font-bold text-white mb-4">Community</h1>
+        <div className="container relative z-10">
+          <div className="">
+            <h1 className="text-4xl xl:text-6xl leading-tight tracking-wide font-bold text-white mb-4">Join our Community</h1>
             {/* <p className="text-2xl text-white mb-8 leading-relaxed tracking-wide">See below for a list of our recommendations.</p> */}
-
           </div>
             <div className="absolute max-w-[650px] top-[-70px] right-[-30px]">
-              {/* <Image
-                alt="KeepKey wallet"
-                src={supportedAppsImg}
-                quality={100}
-                        >
-              </Image> */}
             </div>
         </div>
 
@@ -54,71 +38,110 @@ const Hero = () => {
 }
 
 
-import shapeShiftLogo from 'public/images/supported-applications/shapeshift-block-black.jpg' 
-import electrumLogo from 'public/images/supported-applications/electrum-block-black.png' 
-import myCryptoLogo from 'public/images/supported-applications/mycrypto-block-black.png' 
+import discordIcon from 'public/images/icons/discord.svg' 
+import redditIcon from 'public/images/icons/reddit.svg' 
+import dworkIcon from 'public/images/icons/dwork.png' 
+import securityIcon from 'public/images/icons/security.svg' 
+import salesIcon from 'public/images/icons/sales-marketing.png' 
+import githubIcon from 'public/images/icons/github.svg' 
 
+
+interface CommunityCard {
+  icon: string,
+  url: string,
+  title: string,
+  description: string,
+  external?: boolean
+}
+
+const communityCards: CommunityCard[] = [
+  {
+    icon: discordIcon,
+    url: 'https://discord.gg/DhkdYv8g',
+    title: 'Discord',
+    description: 'Join the conversation! Discord is where our team communicates. Give us feedback, find out how to contribute or just say hello!',
+    external: true
+  },
+  {
+    icon: redditIcon,
+    url: 'https://www.reddit.com/r/keepkey/',
+    title: 'Reddit',
+    description: 'Start a thread or ask a question for the community.',
+    external: true
+  },
+  {
+    icon: dworkIcon,
+    url: 'https://app.dework.xyz/shapeshift-dao/keepkey-bounties',
+    title: 'Bounty hunters',
+    description: 'Contribute to the KeepKey DAO. View the current bounties on dework.',
+    external: true
+  },
+  {
+    icon: securityIcon,
+    url: '',
+    title: 'Security researchers',
+    description: 'Links to our responsible disclosures.',
+    external: true
+  },
+  {
+    icon: salesIcon,
+    url: 'https://shapeshift.com/keepkey-affiliate',
+    title: 'Sales/Marketing',
+    description: 'View our affiliate programs.',
+    external: true
+  },
+  {
+    icon: githubIcon,
+    url: 'https://github.com/keepkey/keepkey-firmware',
+    title: 'Github repos',
+    description: 'Got some developer skills? Check out our Github! We always welcome new contributors. Please also join one of our dev channels in Discord to say hello!',
+    external: true
+  },
+]
 
 const Main = () => {
   return (
-    <section>
-      <div className="container grid md:grid-cols-2 gap-32 gap-y-48">
-        <div className="self-center">
-          <h2>ShapeShift</h2>
-          <p className="my-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem est, soluta temporibus vitae atque ipsam deleniti error quasi impedit, earum adipisci accusamus quos, ad minima. Laborum, facere. Fugit, voluptate adipisc.</p>
-          {/* <p className="font-bold">KeepKey gives you:</p> */}
-          {/* <ul className="list-disc pl-10">
-            <li className="pt-4">PIN protection against unauthorized use</li>
-            <li>Additional passphrase protection</li>
-            <li>Customizable transaction speeds</li>
-            <li>Limitless wallet addresses on one device</li>
-          </ul> */}
-          <Link href="https://app.shapeshift.io">
-          <a className="btn mt-8" target="_blank">Get Started</a>
-          </Link>
-        </div>
-        <div className="w-100">
-          <Image
-            src={shapeShiftLogo}
-            alt='shapeshift logo'
-            quality={100}
-            layout="responsive"
-            >
-          </Image>
-        </div>
-        <div className="w-100 relative">
-          <Image
-            src={electrumLogo}
-            alt='my crypto logo'
-            quality={100}
-            >
-          </Image>
-          </div>
-          <div className="self-center">
-            <h2>Electrum</h2>
-            <p className="mt-6">Electrum Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum obcaecati repellat dolores necessitatibus quae animi. Odio eos vero ab quibusdam repudiandae a nam ut earum, veniam voluptatibus itaque, labore vel. ipsum</p>
-            <Link href="https://interfect.github.io/#!/posts/004-KeepKey-and-Electrum.md">
-            <a className="btn mt-8" target="_blank">View the Guide</a>
-            </Link>
-        </div>
+    <section className="container max-w-4xl">
+      <h2 className="text-center mb-16">Engage with us</h2>
 
-        <div className="self-center">
-          <h2>MyCrypto</h2>
-          <p className="my-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem est, soluta temporibus vitae atque ipsam deleniti error quasi impedit, earum adipisci accusamus quos, ad minima. Laborum, facere. Fugit, voluptate adipisc.</p>
-          <Link href="https://coinguides.org/electrum-multisig-wallet/">
-          <a className="btn mt-8" target="_blank" >Read the Guide</a>
-          </Link>
-        </div>
-        <div className="w-100">
-          <Image
-            src={myCryptoLogo}
-            alt='mycrypto logo'
-            quality={100}
-            layout="responsive"
-            >
-          </Image>
-        </div>
+      <div className="container grid md:grid-cols-2 gap-8 gap-y-10">
+
+        {communityCards.map((card,index) =>
+
+          <CommunityCard
+            key = {index}
+            icon = {card.icon}
+            url = {card.url}
+            title = {card.title}
+            description = {card.description}
+            external = {card.external}
+          />
+        )}
+
+            
       </div>
     </section>
+  )
+}
+
+const CommunityCard = (props: CommunityCard) => {
+  return (
+
+    <a href={props.url} target={props.external ? "_blank" : " "} rel="noreferrer">
+      <div className="text-center h-full min-h-[300px] border-solid border-[1px] border-gray-300 px-8 py-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+        <div className="w-16 mx-auto">
+          <Image
+            alt="Discord Icon"
+            src={props.icon}
+            quality={100}
+            layout="responsive"
+                    >
+          </Image>
+        </div>
+        <h3 className="py-6">{props.title}</h3>
+        <p className="text-[16px]" dangerouslySetInnerHTML={{__html: props.description}}></p>
+      </div>
+    </a>
+
   )
 }
