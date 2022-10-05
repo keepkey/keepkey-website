@@ -1,53 +1,21 @@
 import Image from 'next/image'
 import heroBgImage from 'public/images/heros/blue-lines.jpg'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import HeroSimple from '../components/hero-simple';
+console.log(process.env)
+
 
 export default function IntegrationGuide() {
   return (
     <>
-      <Hero />
+      <HeroSimple
+        heroBgImg = {heroBgImage}
+        pageTitle = "Integration Guide"
+      />
       <Main />
     </>
   )
 }
-
-
-const Hero = () => {
-  return(
-    <>
-      <div className="relative z-0 pt-28 pb-20 lg:pt-52 lg:pb-36 bg-black">
-        <Image
-        src={heroBgImage}
-        alt='keepkey wallet on desk'
-        layout="fill"
-        objectFit="cover"
-        quality={100}
-        objectPosition="top "
-        priority={true}
-        >
-        </Image>
-        <div className="container relative grid xl:grid-cols-[650px_1fr] items-center z-10">
-          <div>
-            <h1 className="text-4xl xl:text-6xl leading-tight tracking-wide font-bold text-white mb-4">Integration Guide</h1>
-            {/* <p className="text-2xl text-white mb-8 leading-relaxed tracking-wide">Choose the best SDK for your integration type</p> */}
-
-          </div>
-            <div className="absolute max-w-[650px] top-[-70px] right-[-30px]">
-              {/* <Image
-                alt="KeepKey wallet"
-                src={supportedAppsImg}
-                quality={100}
-                        >
-              </Image> */}
-            </div>
-        </div>
-
-      </div>
-  </>
-  )
-}
-
-
 
 
 const Main = () => {

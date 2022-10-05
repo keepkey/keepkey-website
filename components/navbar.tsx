@@ -2,8 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import keepkeyLogo from '../public/images/logos/keepkey_logo.png'
 import {useState, useEffect} from 'react';
-import { loadGetInitialProps } from "next/dist/shared/lib/utils";
-
 
 interface NavLink {
   id: number,
@@ -40,7 +38,7 @@ const navLinks: NavLink[] = [
 
 ]
 
-export default function Navbar() {
+export default function Navbar(slimLayout: boolean) {
 
   //add scroll class
   const [scroll, setScroll] = useState(false);
@@ -59,7 +57,11 @@ export default function Navbar() {
 
   return (
 
-     <nav className={`nav fixed w-full py-4 z-10 transition-all ease-in-out duration-400 ${scroll && !isActive ? 'bg-black lg:pt-4' : 'lg:pt-6'} ${isActive ? 'nav--is-open' : ''}`}>
+     <nav className={`nav fixed w-full py-4 z-10 transition-all ease-in-out duration-400 
+        ${scroll && !isActive ? 'bg-black lg:py-3' : 'lg:pt-6'} 
+        ${isActive ? 'nav--is-open' : ''} 
+        ${slimLayout ? 'bg-black' : '' }`
+      }>
         <div className="container mx-auto flex flex-wrap items-center">
           <Link href="/">
             <div className="nav__logo-wrap-fixed-width mr-5">
