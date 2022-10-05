@@ -1,12 +1,12 @@
 import HeroSimple from './hero-simple';
 
-const Layout = ({ children, meta, heroBgImg }) => {
+const BasicPageWrap = ({ children, meta, heroBgImg }) => {
   return (
     <>
       <HeroSimple
-          heroBgImg = {heroBgImg}
-          pageTitle = {meta.pageTitle}
-        />
+        heroBgImg={heroBgImg}
+        pageTitle={meta.pageTitle}
+      />
       <section className="container">
         {children}
       </section>
@@ -14,4 +14,4 @@ const Layout = ({ children, meta, heroBgImg }) => {
   )
 }
 
-export default Layout
+export default BasicPageWrap

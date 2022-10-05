@@ -1,14 +1,14 @@
 import heroBgImg from "public/images/heros/blue-lines.jpg";
-import SlimLayout from "../components/layout-slim";
+import BasicPageWrap from "../components/basic-page-wrap";
 
 export const meta = {
   pageTitle: "Terms of Use",
 };
 
 export default ({ children }) => (
-  <SlimLayout meta={meta} heroBgImg={heroBgImg} pageTitle={meta.pageTitle}>
+  <BasicPageWrap meta={meta} heroBgImg={heroBgImg} pageTitle={meta.pageTitle}>
     {children}
-  </SlimLayout>
+  </BasicPageWrap>
 );
 
 ### KeepKey Terms of Service
