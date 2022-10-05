@@ -17,32 +17,32 @@ export default function Onboarding() {
 
 
 const Hero = () => {
-  return(
+  return (
     <div className="relative z-0 pt-44 pb-20 xl:py-72 bg-black">
       <Image
-      src={heroBgImage}
-      alt='keepkey wallet on desk'
-      layout="fill"
-      objectFit="cover"
-      quality={100}
-      objectPosition="center"
-      priority={true}
+        src={heroBgImage}
+        alt='keepkey wallet on desk'
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        objectPosition="center"
+        priority={true}
       >
       </Image>
-      <div className="container relative grid lg:grid-cols-2 gap-20 items-center z-10">
+      <div className="container relative grid lg:grid-cols-2 gap-x-20 items-center z-10">
         <div>
           <h1 className="text-4xl leading-tight tracking-wide lg:text-5xl lg:leading-tight 2xl:text-6xl 2xl:leading-tight font-bold text-white mb-4">KeepKey Works Seamlessly with the ShapeShift Platform</h1>
           <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">Follow the guide below to get started using your KeepKey.</p>
 
         </div>
-          <div className="xl:absolute xl:max-w-[650px] xl:right-0 2xl:max-w-[765px] 2xl:right-[-150px]">
-            <Image
-              alt="KeepKey wallet"
-              src={shapeShiftDemoWalletImg}
-              quality={100}
-                      >
-            </Image>
-          </div>
+        <div className="xl:absolute xl:max-w-[650px] xl:right-0 2xl:max-w-[765px] 2xl:right-[-150px]">
+          <Image
+            alt="KeepKey wallet"
+            src={shapeShiftDemoWalletImg}
+            quality={100}
+          >
+          </Image>
+        </div>
       </div>
 
     </div>
@@ -105,20 +105,20 @@ const Step = (props: Step) => {
   return (
     <div className="grid xl:grid-cols-2 gap-16 xl:gap-26 2xl:gap-36 align-center py-20 lg:py-32 border-solid border-2 border-blue-900">
       <div>
-        <h3 className="mb-6" dangerouslySetInnerHTML={{__html: props.title}}></h3>
-        <p className="mb-6" dangerouslySetInnerHTML={{__html: props.description}}></p>
+        <h3 className="mb-6" dangerouslySetInnerHTML={{ __html: props.title }}></h3>
+        <p className="mb-6" dangerouslySetInnerHTML={{ __html: props.description }}></p>
         <ul className="list-disc pl-10">
-          {props.listItems.map((item, index) => 
+          {props.listItems.map((item, index) =>
             <li className="py-2"
               key={index}
-              dangerouslySetInnerHTML={{__html: item}}></li>
-            )}
+              dangerouslySetInnerHTML={{ __html: item }}></li>
+          )}
         </ul>
       </div>
       <div className="self-center w-100">
-        {props.hasVideo ? 
+        {props.hasVideo ?
           <div className="">
-            <div dangerouslySetInnerHTML={{__html: props.video}}></div>
+            <div dangerouslySetInnerHTML={{ __html: props.video }}></div>
           </div>
           :
           <Image
@@ -126,7 +126,7 @@ const Step = (props: Step) => {
             src={props.image}
             width={1200}
             quality={100}
-                    >
+          >
           </Image>
         }
       </div>
@@ -137,20 +137,20 @@ const Step = (props: Step) => {
 const Main = () => {
   return (
     <section className="container">
-      <SecurityWarning/>
-      {steps.map((step, i, arr) => 
-      <>
-        <Step 
-          key= {step.key}
-          image= {step.image}
-          hasVideo = {step.hasVideo}
-          video = {step.video}
-          title= {step.title}
-          description = {step.description}
-          listItems = {step.listItems}
-        />
-        {i === arr.length - 1 ? '' : <hr/>}
-      </>
+      <SecurityWarning />
+      {steps.map((step, i, arr) =>
+        <>
+          <Step
+            key={step.key}
+            image={step.image}
+            hasVideo={step.hasVideo}
+            video={step.video}
+            title={step.title}
+            description={step.description}
+            listItems={step.listItems}
+          />
+          {i === arr.length - 1 ? '' : <hr />}
+        </>
       )}
     </section>
   )

@@ -51,8 +51,14 @@ export default function Navbar() {
   //mobile nav active
   const [isActive, setIsActive] = useState(false);
 
-  const handleClick = event => {
+  const toggleMobileNav = () => {
     setIsActive(current => !current);
+  };
+
+  const closeMobileNav = () => {
+    if (isActive) {
+      setIsActive(current => !current);
+    }
   };
 
   return (
@@ -64,7 +70,7 @@ export default function Navbar() {
       <div className="container mx-auto flex flex-wrap items-center">
         <Link href="/">
           <div className="nav__logo-wrap-fixed-width mr-5">
-            <a className={`cursor-pointer nav__logo-wrap ${scroll ? 'nav__logo-wrap--scrolled' : ''}`}>
+            <a onClick={closeMobileNav} className={`cursor-pointer nav__logo-wrap ${scroll ? 'nav__logo-wrap--scrolled' : ''}`}>
               <Image
                 alt="KeepKey logo"
                 src={keepkeyLogo}
@@ -93,7 +99,7 @@ export default function Navbar() {
           </div>
 
           <MobileNav
-            handleClick={handleClick}
+            toggleMobileNav={toggleMobileNav}
             isActive={isActive}
             navLinks={navLinks}
           />
@@ -115,11 +121,11 @@ export default function Navbar() {
   )
 }
 
-const MobileNav = (props) => {
+const MobileNav = ({ isActive, toggleMobileNav, navLinks }) => {
 
   return (
     <>
-      <button className={`${props.isActive ? 'mobile-open' : ''} lg:hidden nav-mobile__toggle ml-auto`} onClick={props.handleClick} aria-label="Toggle navigation menu" type="button">
+      <button className={`${isActive ? 'mobile-open' : ''} lg:hidden nav-mobile__toggle ml-auto`} onClick={toggleMobileNav} aria-label="Toggle navigation menu" type="button">
         <span className="nav-mobile__menu-line nav-mobile__menu-line--top"></span>
         <span className="nav-mobile__menu-line nav-mobile__menu-line--bottom"></span>
       </button>
@@ -132,7 +138,7 @@ const MobileNav = (props) => {
               <button className="nav-mobile__category-item-link accordion-toggle" type="button">
                 <div className="nav-mobile__category-item-layout">
                   <Link href={link.url}>
-                    <a onClick={props.handleClick} className="nav-mobile__title-wrapper">
+                    <a onClick={toggleMobileNav} className="nav-mobile__title-wrapper">
                       <span className="nav-mobile__title">
                         <span>{link.name}</span>
                       </span>
