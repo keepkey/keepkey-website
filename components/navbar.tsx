@@ -2,6 +2,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import keepkeyLogo from '../public/images/logos/keepkey_logo.png'
 import { useState, useEffect } from 'react';
+import { loadShopifyBuyButton } from '../components/ShopifyBuyButton'
+import ShopifyBuyButton from '../components/ShopifyBuyButton'
+const shopifyBuyButtonId = 1665073941285;
+
 
 interface NavLink {
   id: number,
@@ -123,6 +127,10 @@ export default function Navbar() {
 
 const MobileNav = ({ isActive, toggleMobileNav, navLinks }) => {
 
+  useEffect(() => {
+    loadShopifyBuyButton(shopifyBuyButtonId);
+  }, []);
+
   return (
     <>
       <button className={`${isActive ? 'mobile-open' : ''} lg:hidden nav-mobile__toggle ml-auto`} onClick={toggleMobileNav} aria-label="Toggle navigation menu" type="button">
@@ -158,14 +166,14 @@ const MobileNav = ({ isActive, toggleMobileNav, navLinks }) => {
                 <div className="accordion-wrapper">
                   <ul>
                     <li>
-                      <a className="nav-mobile__menu-item-link" href="/mayhem-for-code">
-                        <span>Mayhem for Code</span>
-                      </a>
+                      {/* <a className="nav-mobile__menu-item-link" href="#">
+                        <span>Lorem ipsume</span>
+                      </a> */}
                     </li>
                     <li>
-                      <a className="nav-mobile__menu-item-link" href="/mayhem-for-api">
-                        <span>Mayhem for API</span>
-                      </a>
+                      {/* <a className="nav-mobile__menu-item-link" href="#">
+                        <span>Lorem ipsum</span>
+                      </a> */}
                     </li>
                   </ul>
                 </div>
@@ -175,6 +183,9 @@ const MobileNav = ({ isActive, toggleMobileNav, navLinks }) => {
 
         </ul>
         {/* <a className="btn btn-lg btn-blue mobile-cta" href="/request-demo">Get demo</a> */}
+        <div className="absolute bottom-[100px] left-1/2 translate-x-[-50%]">
+          <ShopifyBuyButton buttonId={shopifyBuyButtonId}></ShopifyBuyButton>
+        </div>
       </div>
     </>
   )

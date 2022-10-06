@@ -1,7 +1,9 @@
+import { useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import ShopifyBuyButton from '../components/ShopifyBuyButton'
+import { loadShopifyBuyButton } from '../components/ShopifyBuyButton'
 import SecurityWarning from '../components/SecurityWarning'
 import heroBgImage from 'public/images/heros/home.png'
 import walletImage from 'public/images/hardware/wallet-hero.png'
@@ -13,9 +15,14 @@ import ebStorageImage from 'public/images/icons/eb-storage.svg'
 import openSourceImage from 'public/images/icons/open-source.svg'
 import shapeshiftDemoImage from 'public/images/software/shapeshift-demo.png'
 import walletDeskImage from 'public/images/heros/wallet-desk-grayscale.png'
-
+const shopifyBuyButtonId = 1663605399427;
 
 export default function Home() {
+
+  useEffect(() => {
+    loadShopifyBuyButton(shopifyBuyButtonId);
+  }, []);
+
   return (
     <>
       <Hero />
@@ -33,7 +40,7 @@ export default function Home() {
 }
 
 const Hero = () => {
-  return(
+  return (
     <div className="relative z-0 pt-32 pb-20 lg:py-4 bg-black">
       <Image
         src={heroBgImage}
@@ -43,11 +50,11 @@ const Hero = () => {
         quality={100}
         objectPosition="center"
         priority={true}
-        >
+      >
       </Image>
       <div className="container relative grid lg:grid-cols-[730px_1fr] items-center text-center lg:text-left">
         <div>
-          <h1 className="text-[39px] leading-tight tracking-wide lg:text-6xl lg:leading-tight font-bold text-white mb-4">The Next Frontier <br/> of Crypto Security</h1>
+          <h1 className="text-[39px] leading-tight tracking-wide lg:text-6xl lg:leading-tight font-bold text-white mb-4">The Next Frontier <br /> of Crypto Security</h1>
           <div className="w-[45%] mt-8 mb-5 mx-auto lg:hidden">
             <Image
               alt="KeepKey wallet"
@@ -55,15 +62,15 @@ const Hero = () => {
               quality={100}
               priority={true}
               layout="responsive"
-                      >
+            >
             </Image>
           </div>
-          <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">Protect your cryptocurrencies, store your private keys offline, and safeguard your 
+          <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">Protect your cryptocurrencies, store your private keys offline, and safeguard your
             assets from hackers. It’s time to achieve financial freedom in the most secure way with KeepKey.</p>
-          
+
           <div className="w-100">
             <div className="mr-4 mb-4 sm:mr-4 inline-block">
-              <ShopifyBuyButton></ShopifyBuyButton>
+              <ShopifyBuyButton buttonId={shopifyBuyButtonId}></ShopifyBuyButton>
             </div>
             <Link href="/onboarding">
               <a className="btn btn-lg btn--transparent">Get Started</a>
@@ -82,7 +89,7 @@ const Hero = () => {
             priority={true}
             // objectPosition="center"
             layout="responsive"
-                    >
+          >
           </Image>
         </div>
       </div>
@@ -105,7 +112,7 @@ const features: Feature[] = [
     title: 'Stress-Free Security',
     description: 'Generate and manage your private keys offline in cold storage, guarded from computer vulnerabilities and viruses, while utilizing wallet software for safe transactions.'
   },
-  { 
+  {
     key: 2,
     icon: backupImage,
     title: 'Straightforward Backup and Recovery',
@@ -117,7 +124,7 @@ const features: Feature[] = [
     title: 'Sleek and Simple Display',
     description: 'The large display gives clarity to every digital asset sent and received on your device. Each transaction must be manually approved using the confirmation button, giving you control and visibility over your transactions.'
   },
-  { 
+  {
     key: 4,
     icon: openSourceImage,
     title: 'Effortless Exchanges',
@@ -130,33 +137,33 @@ const FeaturesSection = () => {
     <section className="bg-white">
       <h2 className="text-center mb-20 px-4">The Premier Hardware Wallet</h2>
       <div className="container grid gap-24 md:grid-cols-2 xl:grid-cols-4">
-      {features.map(feature => 
-        <FeatureCard 
-          key = {feature.key}
-          icon = {feature.icon}
-          title = {feature.title}
-          description = {feature.description}
-        />
-        
-      )}
+        {features.map(feature =>
+          <FeatureCard
+            key={feature.key}
+            icon={feature.icon}
+            title={feature.title}
+            description={feature.description}
+          />
+
+        )}
       </div>
     </section>
   )
 }
 
 const FeatureCard = (props: Feature) => {
-    return (
-      <div className="text-center">
-        <Image
-          src={props.icon}
-          alt='image'
-          width={60}
-          height={60}
-          >
-        </Image>
-        <h4 className="mt-6">{props.title}</h4>
-        <p className="mt-3 tracking-wide">{props.description}</p>
-      </div>
+  return (
+    <div className="text-center">
+      <Image
+        src={props.icon}
+        alt='image'
+        width={60}
+        height={60}
+      >
+      </Image>
+      <h4 className="mt-6">{props.title}</h4>
+      <p className="mt-3 tracking-wide">{props.description}</p>
+    </div>
   )
 }
 
@@ -179,7 +186,7 @@ const PromoSection = () => {
             alt='shapeshift demo'
             layout="responsive"
             quality={100}
-            >
+          >
           </Image>
         </div>
       </div>
@@ -206,7 +213,7 @@ const LeadingCryptos = () => {
         objectFit="cover"
         quality={100}
         objectPosition="center"
-        >
+      >
       </Image>
       <div className="container text-center z-10 relative">
         <h2 className="text-white z-10">Supports the World’s Leading Cryptocurrencies</h2>
@@ -228,8 +235,8 @@ const LeadingCryptos = () => {
   )
 }
 
-import walletsStackedImage from 'public/images/hardware/wallets-stacked.png' 
-import walletHorizontal from 'public/images/hardware/wallet-horizontal.png' 
+import walletsStackedImage from 'public/images/hardware/wallets-stacked.png'
+import walletHorizontal from 'public/images/hardware/wallet-horizontal.png'
 
 const ProductInfo = () => {
   return (
@@ -246,14 +253,14 @@ const ProductInfo = () => {
             <li>Limitless wallet addresses on one device</li>
           </ul>
           <Link href="/onboarding">
-          <a className="btn mt-8">Get Started</a>
+            <a className="btn mt-8">Get Started</a>
           </Link>
         </div>
         <Image
           src={walletsStackedImage}
           alt='keepkey wallet on desk'
           quality={100}
-          >
+        >
         </Image>
         <div className="order-2 md:order-none hidden md:block">
           <Image
@@ -261,7 +268,7 @@ const ProductInfo = () => {
             alt='keepkey wallet on desk'
             quality={100}
             layout="responsive"
-            >
+          >
           </Image>
         </div>
         <div>
@@ -276,21 +283,21 @@ const ProductInfo = () => {
   )
 }
 
-import forbesImg from 'public/images/customers/forbes.png' 
-import cointelegraphImg from 'public/images/customers/cointelegraph.png' 
-import coindeskImg from 'public/images/customers/coindesk.png' 
-import nasdaqImg from 'public/images/customers/nasdaq.png' 
-import bitcoinMagazineImg from 'public/images/customers/bitcoin-magazine.png' 
+import forbesImg from 'public/images/customers/forbes.png'
+import cointelegraphImg from 'public/images/customers/cointelegraph.png'
+import coindeskImg from 'public/images/customers/coindesk.png'
+import nasdaqImg from 'public/images/customers/nasdaq.png'
+import bitcoinMagazineImg from 'public/images/customers/bitcoin-magazine.png'
 
 const TrustedBy = () => {
   return (
     <section className="bg-zinc-100 py-16 mt-32">
       <div className="container flex justify-between align-center">
-          <div className="w-40"><Image src={forbesImg} alt="forbes logo" quality={100}></Image></div>
-          <div className="w-40"><Image src={cointelegraphImg} alt="coin telegraph logo" quality={100}></Image></div>
-          <div className="w-40"><Image src={coindeskImg} alt="coindesk logo" quality={100}></Image></div>
-          <div className="w-40"><Image src={nasdaqImg} alt="nasdaq logo" quality={100}></Image></div>
-          <div className="w-40"><Image src={bitcoinMagazineImg} alt="bitcoin magazine logo" quality={100}></Image></div>
+        <div className="w-40"><Image src={forbesImg} alt="forbes logo" quality={100}></Image></div>
+        <div className="w-40"><Image src={cointelegraphImg} alt="coin telegraph logo" quality={100}></Image></div>
+        <div className="w-40"><Image src={coindeskImg} alt="coindesk logo" quality={100}></Image></div>
+        <div className="w-40"><Image src={nasdaqImg} alt="nasdaq logo" quality={100}></Image></div>
+        <div className="w-40"><Image src={bitcoinMagazineImg} alt="bitcoin magazine logo" quality={100}></Image></div>
       </div>
     </section>
   )
