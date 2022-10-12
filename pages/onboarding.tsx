@@ -1,14 +1,16 @@
+import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import shapeShiftDemoWalletImg from 'public/images/hardware/shapeshift-with-keepkey.png'
 import shapeShiftDemoImg from 'public/images/software/shapeshift-demo-mac-md.png'
 import heroBgImage from 'public/images/heros/golden-lines-lg.jpg'
 import SecurityWarning from "../components/SecurityWarning"
-import { arrayBuffer } from "stream/consumers"
 
 export default function Onboarding() {
   return (
     <>
+      <Head>
+        <title>Onboarding | KeepKey</title>
+      </Head>
       <Hero />
       <Main />
     </>

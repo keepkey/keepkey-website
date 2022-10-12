@@ -8,7 +8,7 @@ import SecurityWarning from '../components/SecurityWarning'
 import heroBgImage from 'public/images/heros/home.png'
 import walletImage from 'public/images/hardware/wallet-hero.png'
 import walletVertical from 'public/images/hardware/wallet-vertical.png'
-import walletHorizontalCropped from 'public/images/hardware/wallet-horizontal-cropped.png'
+// import walletHorizontalCropped from 'public/images/hardware/wallet-horizontal-cropped.png'
 import computerLockImage from 'public/images/icons/computer-lock.svg'
 import backupImage from 'public/images/icons/backup.svg'
 import ebStorageImage from 'public/images/icons/eb-storage.svg'
@@ -25,6 +25,9 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>KeepKey Hardware Wallet - The Next Frontier of Crypto Security</title>
+      </Head>
       <Hero />
       <FeaturesSection />
       <PromoSection />
@@ -87,7 +90,6 @@ const Hero = () => {
             unoptimized={true}
             objectFit="cover"
             priority={true}
-            // objectPosition="center"
             layout="responsive"
           >
           </Image>

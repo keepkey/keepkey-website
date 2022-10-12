@@ -17,8 +17,6 @@ declare var ShopifyBuy: any;
 
 export function loadShopifyBuyButton(buttonId: number) {
 
-  console.log('loading button:', buttonId)
-
   var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
   var scriptId = 'shopifyBuyScript';
 

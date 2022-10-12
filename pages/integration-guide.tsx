@@ -1,3 +1,4 @@
+
 import heroBgImage from 'public/images/heros/blue-lines.jpg'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import HeroSimple from '../components/hero-simple';

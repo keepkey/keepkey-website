@@ -1,15 +1,16 @@
 import Image from 'next/image'
+import Head from 'next/head'
 import heroBgImg from 'public/images/heros/community-web.jpg'
 import HeroSimple from '../components/hero-simple';
 const pageTitle = "Community"
 
 export default function Onboarding() {
-  
+
   return (
     <>
       <HeroSimple
-        heroBgImg = {heroBgImg}
-        pageTitle = {pageTitle}
+        heroBgImg={heroBgImg}
+        pageTitle={pageTitle}
       />
       <Main />
     </>
@@ -17,12 +18,12 @@ export default function Onboarding() {
 }
 
 
-import discordIcon from 'public/images/icons/discord.svg' 
-import redditIcon from 'public/images/icons/reddit.svg' 
-import dworkIcon from 'public/images/icons/dwork.png' 
-import securityIcon from 'public/images/icons/security.svg' 
-import salesIcon from 'public/images/icons/sales-marketing.png' 
-import githubIcon from 'public/images/icons/github.svg' 
+import discordIcon from 'public/images/icons/discord.svg'
+import redditIcon from 'public/images/icons/reddit.svg'
+import dworkIcon from 'public/images/icons/dwork.png'
+import securityIcon from 'public/images/icons/security.svg'
+import salesIcon from 'public/images/icons/sales-marketing.png'
+import githubIcon from 'public/images/icons/github.svg'
 
 
 interface CommunityCard {
@@ -85,19 +86,19 @@ const Main = () => {
 
       <div className="container grid md:grid-cols-2 gap-8 gap-y-10">
 
-        {communityCards.map((card,index) =>
+        {communityCards.map((card, index) =>
 
           <CommunityCard
-            key = {index}
-            icon = {card.icon}
-            url = {card.url}
-            title = {card.title}
-            description = {card.description}
-            external = {card.external}
+            key={index}
+            icon={card.icon}
+            url={card.url}
+            title={card.title}
+            description={card.description}
+            external={card.external}
           />
         )}
 
-            
+
       </div>
     </section>
   )
@@ -114,11 +115,11 @@ const CommunityCard = (props: CommunityCard) => {
             src={props.icon}
             quality={100}
             layout="responsive"
-                    >
+          >
           </Image>
         </div>
         <h3 className="py-6">{props.title}</h3>
-        <p className="text-[16px]" dangerouslySetInnerHTML={{__html: props.description}}></p>
+        <p className="text-[16px]" dangerouslySetInnerHTML={{ __html: props.description }}></p>
       </div>
     </a>
 
