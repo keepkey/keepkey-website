@@ -8,9 +8,6 @@ import SecurityWarning from "../components/SecurityWarning"
 export default function Onboarding() {
   return (
     <>
-      <Head>
-        <title>Onboarding | KeepKey</title>
-      </Head>
       <Hero />
       <Main />
     </>
