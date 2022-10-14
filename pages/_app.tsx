@@ -1,5 +1,6 @@
 import Layout from '../components/layout'
 import Head from 'next/head'
+import ogImage from 'public/images/hardware/wallet-horizontal-cropped.png'
 import { useRouter } from 'next/router';
 import '../styles/application.scss'
 
@@ -17,11 +18,16 @@ function MyApp({ Component, pageProps }) {
         <meta name="robots" content="noindex" />
         {/* END REMOVE BEFORE LAUNCH */}
 
-        {/* <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" /> */}
-
         <title>{`${pageName} | KeepKey`}</title>
         <meta name="description" key="desc" content="KeepKey - The premier hardware wallet to help protect your cryptocurrencies and safeguard your assets from hackers." />
         <link rel="canonical" href={`https://www.keepkey.com${router.pathname}`} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${pageName} | KeepKey`} />
+        <meta property="og:description" content="KeepKey - The premier hardware wallet to help protect your cryptocurrencies and safeguard your assets from hackers." />
+        <meta property="og:url" content={`https://www.keepkey.com${router.pathname}`} />
+        <meta property="og:site_name" content="KeepKey" />
+        <meta property="og:image" content={ogImage.src} />
       </Head>
 
       <Layout>
