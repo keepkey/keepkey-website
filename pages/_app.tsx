@@ -6,7 +6,13 @@ import '../styles/application.scss'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  const pageName = router.pathname.replace(/\//g, "").charAt(0).toUpperCase() + router.pathname.slice(2);
+  let titleTag: string;
+
+  if (router.pathname === '/') {
+    titleTag = 'KeepKey'
+  } else {
+    titleTag = `${router.pathname.replace(/\//g, "").charAt(0).toUpperCase() + router.pathname.slice(2)} | KeepKey`;
+  }
 
   return (
     <>
@@ -18,12 +24,12 @@ function MyApp({ Component, pageProps }) {
         <meta name="robots" content="noindex" />
         {/* END REMOVE BEFORE LAUNCH */}
 
-        <title>{`${pageName} | KeepKey`}</title>
+        <title>{titleTag}</title>
         <meta name="description" key="desc" content="KeepKey - The premier hardware wallet to help protect your cryptocurrencies and safeguard your assets from hackers." />
         <link rel="canonical" href={`https://www.keepkey.com${router.pathname}`} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={`${pageName} | KeepKey`} />
+        <meta property="og:title" content={titleTag} />
         <meta property="og:description" content="KeepKey - The premier hardware wallet to help protect your cryptocurrencies and safeguard your assets from hackers." />
         <meta property="og:url" content={`https://www.keepkey.com${router.pathname}`} />
         <meta property="og:site_name" content="KeepKey" />
