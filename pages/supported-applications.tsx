@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import supportedAppsImg from 'public/images/supported-applications/supported-apps-collage.png'
@@ -6,6 +7,7 @@ import heroBgImage from 'public/images/heros/geomatric-black.jpg'
 import { loadShopifyBuyButton } from '../components/ShopifyBuyButton'
 import ShopifyBuyButton from '../components/ShopifyBuyButton'
 const shopifyBuyButtonId = 1665077510555;
+const pageTitle = "Supported Applications"
 
 export default function Onboarding() {
 
@@ -15,6 +17,7 @@ export default function Onboarding() {
 
   return (
     <>
+      <Head><title>{pageTitle} | KeepKey</title></Head>
       <Hero />
       <Main />
     </>

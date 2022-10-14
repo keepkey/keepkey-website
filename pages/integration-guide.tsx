@@ -1,15 +1,18 @@
-
+import Head from 'next/head'
 import heroBgImage from 'public/images/heros/blue-lines.jpg'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import HeroSimple from '../components/hero-simple';
+const pageTitle = "Integration Guide";
+
 
 export default function IntegrationGuide() {
 
   return (
     <>
+      <Head><title>{pageTitle} | KeepKey</title></Head>
       <HeroSimple
         heroBgImg={heroBgImage}
-        pageTitle="Integration Guide"
+        pageTitle={pageTitle}
       />
       <Main />
     </>
