@@ -1,6 +1,6 @@
 import Layout from '../components/layout'
 import Head from 'next/head'
-import ogImage from 'public/images/hardware/wallet-horizontal-cropped.png'
+import ogImage from 'public/images/hardware/wallet-horizontal-2.png'
 import { useRouter } from 'next/router';
 import '../styles/application.scss'
 

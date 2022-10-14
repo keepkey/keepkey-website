@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Image from 'next/image'
 import shapeShiftDemoWalletImg from 'public/images/hardware/shapeshift-with-keepkey.png'
 import shapeShiftDemoImg from 'public/images/software/shapeshift-demo-mac-md.png'

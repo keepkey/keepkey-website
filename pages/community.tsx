@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Head from 'next/head'
 import heroBgImg from 'public/images/heros/community-web.jpg'
 import HeroSimple from '../components/hero-simple';
 const pageTitle = "Community"
