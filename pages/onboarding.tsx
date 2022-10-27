@@ -59,11 +59,23 @@ interface Step {
 }
 
 const steps: Step[] = [
+  // {
+  //   key: 1,
+  //   image: shapeShiftDemoImg,
+  //   hasVideo: false,
+  //   title: '1. Go to <a class="text-gold font-medium text-3xl hover:underline" target="_blank" href="https://app.shapeshift.com">app.shapeshift.com</a>',
+  //   listItems: [
+  //     'Plug the KeepKey into your computer.',
+  //     'On upper left corner of the screen, select “Connect a wallet”, then select “KeepKey” in the window that opens.',
+  //     'In the next screen that opens, agree to the terms and click “Pair KeepKey.”',
+  //     'Highlight the KeepKey you would like to pair and then click "Connect".'
+  //   ]
+  // },
   {
     key: 1,
     image: shapeShiftDemoImg,
     hasVideo: false,
-    title: '1. Go to <a class="text-gold font-medium text-3xl hover:underline" target="_blank" href="https://app.shapeshift.com">app.shapeshift.com</a>',
+    title: '1. Go to <a class="text-gold font-medium text-3xl hover:underline" target="_blank" href="https://github.com/BitHighlander/keepkey-desktop/releases/latest">Download the latest KeepKey Client</a>',
     listItems: [
       'Plug the KeepKey into your computer.',
       'On upper left corner of the screen, select “Connect a wallet”, then select “KeepKey” in the window that opens.',
@@ -135,7 +147,7 @@ const Step = (props: Step) => {
 const Main = () => {
   return (
     <section className="container">
-      <SecurityWarning />
+      {/*<SecurityWarning />*/}
       {steps.map((step, i, arr) =>
         <>
           <Step

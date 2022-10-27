@@ -33,11 +33,18 @@ interface CommunityCard {
 }
 
 const communityCards: CommunityCard[] = [
+  // {
+  //   icon: discordIcon,
+  //   url: 'https://discord.gg/DhkdYv8g',
+  //   title: 'Discord',
+  //   description: 'Join ShapeShifts Discord',
+  //   external: true
+  // },
   {
     icon: discordIcon,
-    url: 'https://discord.gg/DhkdYv8g',
+    url: 'https://discord.gg/YEgmjUxr',
     title: 'Discord',
-    description: 'Join the conversation! Discord is where our team communicates. Give us feedback, find out how to contribute or just say hello!',
+    description: 'Join KeepKeys Discord Server',
     external: true
   },
   {
@@ -70,7 +77,7 @@ const communityCards: CommunityCard[] = [
   },
   {
     icon: githubIcon,
-    url: 'https://github.com/keepkey/keepkey-firmware',
+    url: 'https://github.com/keepkey',
     title: 'Github repos',
     description: 'Got some developer skills? Check out our Github! We always welcome new contributors. Please also join one of our dev channels in Discord to say hello!',
     external: true
