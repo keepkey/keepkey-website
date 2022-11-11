@@ -2,6 +2,8 @@ import Image from 'next/image'
 import shapeShiftDemoWalletImg from 'public/images/hardware/shapeshift-with-keepkey.png'
 import shapeShiftDemoImg from 'public/images/software/shapeshift-demo-mac-md.png'
 import heroBgImage from 'public/images/heros/golden-lines-lg.jpg'
+import unboxImage from 'public/images/heros/keepkey-unboxed.jpeg'
+import connectImage from 'public/images/onboarding/connect.png'
 import SecurityWarning from "../components/SecurityWarning"
 
 export default function Onboarding() {
@@ -75,38 +77,72 @@ const steps: Step[] = [
     key: 1,
     image: shapeShiftDemoImg,
     hasVideo: false,
-    title: '1. Go to <a class="text-gold font-medium text-3xl hover:underline" target="_blank" href="https://github.com/BitHighlander/keepkey-desktop/releases/latest">Download the latest KeepKey Client</a>',
+    title: '1. Download KeepKey Client</a>',
     listItems: [
-      'Plug the KeepKey into your computer.',
-      'On upper left corner of the screen, select “Connect a wallet”, then select “KeepKey” in the window that opens.',
-      'In the next screen that opens, agree to the terms and click “Pair KeepKey.”',
-      'Highlight the KeepKey you would like to pair and then click "Connect".'
+      'Go to github:',
+      ' <a class="text-gold font-medium text-3xl hover:underline" target="_blank" href="https://github.com/BitHighlander/keepkey-desktop/releases/latest">Download the latest KeepKey Client',
+      'Select the appropriate download for your OS. osx (.dmg) windows (.exe) linux (.asar) ',
+      'Complete the installation of the application.'
     ]
   },
   {
     key: 2,
-    hasVideo: true,
-    video: '<iframe class="responsive-video" src="https://www.youtube.com/embed/FO-k684Dti4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-    title: '2. Update your device',
+    image: unboxImage,
+    hasVideo: false,
+    // video: '<iframe class="responsive-video" src="https://www.youtube.com/watch?v=bKG0c7xNIFA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    title: '2. Unbox your device',
     listItems: [
-      'If see a message to update your device. Select “Download Updater App”.Then, select “Get the app.”',
-      'Install and launch the software (Important: make sure to close ShapeShift on your browser, since only one application can interact with the KeepKey at a time).',
-      'Once the application has detected your device, select “update now.”',
-      'Please follow the on-screen instruction carefully. If you get confused at any point, please make sure to watch the video.',
-      'Once you have updated your device, close the application. Then go to <a class="text-gold hover:underline" target="_blank" href="https://app.shapeshift.com">app.shapeshift.com</a>'
+      'Prepare your materials for mnemonic recovery phrase storage',
     ]
   },
   {
     key: 3,
-    hasVideo: true,
-    video: '<iframe class="responsive-video" src="https://www.youtube.com/embed/YSeLTYhkQf8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-    title: '3. Initialize your Device',
+    image: connectImage,
+    hasVideo: false,
+    // video: '<iframe class="responsive-video" src="https://www.youtube.com/watch?v=bKG0c7xNIFA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    title: '3. Connect your Device',
     listItems: [
-      'On the upper left corner of the screen, select “Connect a wallet”, then select “KeepKey” in the window that opens.',
-      'On the screen that opens select “Initialize KeepKey”.',
-      'On the following screen, select “Continue”.”',
-      'Follow the instructions on the next few screens, to label your wallet, set up a PIN code and get your back up phrase, as seen in the video.',
-      'Once you have finished setting up your KeepKey, you’re ready to go.'
+      'Connect your KeepKey to your computer',
+    ]
+  },
+  {
+    key: 4,
+    // image: connectImage,
+    hasVideo: false,
+    // video: '<iframe class="responsive-video" src="https://www.youtube.com/watch?v=bKG0c7xNIFA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    title: '4. Update your Devices Bootloader',
+    listItems: [
+      '',
+    ]
+  },
+  {
+    key: 5,
+    // image: connectImage,
+    hasVideo: false,
+    // video: '<iframe class="responsive-video" src="https://www.youtube.com/watch?v=bKG0c7xNIFA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    title: '5. Update your Devices Firmware',
+    listItems: [
+      '',
+    ]
+  },
+  {
+    key: 6,
+    // image: connectImage,
+    hasVideo: false,
+    // video: '<iframe class="responsive-video" src="https://www.youtube.com/watch?v=bKG0c7xNIFA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    title: '6. Initialize your KeepKey',
+    listItems: [
+      '',
+    ]
+  },
+  {
+    key: 7,
+    // image: connectImage,
+    hasVideo: false,
+    // video: '<iframe class="responsive-video" src="https://www.youtube.com/watch?v=bKG0c7xNIFA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    title: '(optional) 7. buy bitcoin',
+    listItems: [
+      '',
     ]
   },
 ]
