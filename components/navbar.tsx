@@ -39,7 +39,12 @@ const navLinks: NavLink[] = [
     url: '/integration-guide',
     external: false
   },
-
+  {
+    id: 4,
+    name: 'Developer Guide',
+    url: '/developer-guide',
+    external: false
+  },
 ]
 
 export default function Navbar() {
