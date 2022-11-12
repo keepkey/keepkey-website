@@ -3,7 +3,7 @@ import shapeShiftDemoWalletImg from 'public/images/hardware/shapeshift-with-keep
 import shapeShiftDemoImg from 'public/images/software/shapeshift-demo-mac-md.png'
 import heroBgImage from 'public/images/heros/golden-lines-lg.jpg'
 import unboxImage from 'public/images/heros/keepkey-unboxed.jpeg'
-import connectImage from 'public/images/desktop/connecting.png'
+import connectImage from 'public/images/desktop/Connecting.png'
 import pin from 'public/images/desktop/Pin.png'
 import download from 'public/images/desktop/Download.png'
 import updaterMode from 'public/images/desktop/UpdaterMode.png'
