@@ -72,8 +72,8 @@ const Main = () => {
         <div className="grid md:grid-cols-2 gap-y-10 gap-x-24 lg:gap-32">
           <div className="self-center order-1 md:order-none">
             <h2>ShapeShift</h2>
-            <p className="my-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem est, soluta temporibus vitae atque ipsam deleniti error quasi impedit, earum adipisci accusamus quos, ad minima. Laborum, facere. Fugit, voluptate adipisc.</p>
-            <Link href="https://app.shapeshift.io">
+            <p className="my-6">Use Your KeepKey with the ShapeShift Platform.</p>
+            <Link href="https://app.shapeshift.com">
               <a className="btn mt-8" target="_blank">Get Started</a>
             </Link>
           </div>
@@ -99,9 +99,9 @@ const Main = () => {
           </div>
           <div className="self-center">
             <h2>Electrum</h2>
-            <p className="mt-6">Electrum Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum obcaecati repellat dolores necessitatibus quae animi. Odio eos vero ab quibusdam repudiandae a nam ut earum, veniam voluptatibus itaque, labore vel. ipsum</p>
-            <Link href="https://interfect.github.io/#!/posts/004-KeepKey-and-Electrum.md">
-              <a className="btn mt-8" target="_blank">View the Guide</a>
+            <p className="mt-6">Send and Receive Bitcoin With your KeepKey with Electrom. Store Your Crypto accross multiple KeepKeys Using native Multi-sig! </p>
+            <Link href="https://electrum.org/">
+              <a className="btn mt-8" target="_blank">Download Electrum!</a>
             </Link>
           </div>
         </div>
@@ -109,9 +109,9 @@ const Main = () => {
         <div className="grid md:grid-cols-2 gap-y-10 gap-x-24 lg:gap-32">
           <div className="order-1 md:order-none">
             <h2>MyCrypto</h2>
-            <p className="my-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem est, soluta temporibus vitae atque ipsam deleniti error quasi impedit, earum adipisci accusamus quos, ad minima. Laborum, facere. Fugit, voluptate adipisc.</p>
-            <Link href="https://coinguides.org/electrum-multisig-wallet/">
-              <a className="btn mt-8" target="_blank" >Read the Guide</a>
+            <p className="my-6">Mange your Ethereum and Token Assets directly with MyEtherWallet! Store and Send NFTs. Interact with Raw Contracts. Deploy your solidity contracts. And stake and mange your ERC20 Assets with LP protocols!</p>
+            <Link href="https://www.myetherwallet.com/">
+              <a className="btn mt-8" target="_blank" >Use My Ether Wallet now!</a>
             </Link>
           </div>
           <div className="w-100">
