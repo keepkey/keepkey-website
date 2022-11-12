@@ -3,7 +3,14 @@ import shapeShiftDemoWalletImg from 'public/images/hardware/shapeshift-with-keep
 import shapeShiftDemoImg from 'public/images/software/shapeshift-demo-mac-md.png'
 import heroBgImage from 'public/images/heros/golden-lines-lg.jpg'
 import unboxImage from 'public/images/heros/keepkey-unboxed.jpeg'
-import connectImage from 'public/images/onboarding/connect.png'
+import connectImage from 'public/images/desktop/connecting.png'
+import pin from 'public/images/desktop/Pin.png'
+import download from 'public/images/desktop/Download.png'
+import updaterMode from 'public/images/desktop/UpdaterMode.png'
+import bootloader from 'public/images/desktop/Bootloader.png'
+import firmware from 'public/images/desktop/Firmware.png'
+import createWallet from 'public/images/desktop/CreateWallet.png'
+import recoverWallet from 'public/images/desktop/Recover.png'
 import SecurityWarning from "../components/SecurityWarning"
 
 export default function Onboarding() {
@@ -31,14 +38,14 @@ const Hero = () => {
       </Image>
       <div className="container relative grid lg:grid-cols-2 gap-x-20 items-center z-10">
         <div>
-          <h1 className="text-4xl leading-tight tracking-wide lg:text-5xl lg:leading-tight 2xl:text-6xl 2xl:leading-tight font-bold text-white mb-4">KeepKey Works Seamlessly with the ShapeShift Platform</h1>
+          <h1 className="text-4xl leading-tight tracking-wide lg:text-5xl lg:leading-tight 2xl:text-6xl 2xl:leading-tight font-bold text-white mb-4">Introducing the new KeepKey Client</h1>
           <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">Follow the guide below to get started using your KeepKey.</p>
 
         </div>
         <div className="xl:absolute xl:max-w-[650px] xl:right-0 2xl:max-w-[765px] 2xl:right-[-150px]">
           <Image
             alt="KeepKey wallet"
-            src={shapeShiftDemoWalletImg}
+            src={pin}
             quality={100}
           >
           </Image>
@@ -75,14 +82,14 @@ const steps: Step[] = [
   // },
   {
     key: 1,
-    image: shapeShiftDemoImg,
+    image: download,
     hasVideo: false,
-    title: '1. Download KeepKey Client</a>',
+    title: '1. <a class="text-gold font-medium text-3xl hover:underline" target="_blank" href="https://github.com/keepkey/keepkey-desktop/releases/latest">Download the latest KeepKey Client</a>',
     listItems: [
-      'Go to github:',
-      ' <a class="text-gold font-medium text-3xl hover:underline" target="_blank" href="https://github.com/BitHighlander/keepkey-desktop/releases/latest">Download the latest KeepKey Client',
-      'Select the appropriate download for your OS. osx (.dmg) windows (.exe) linux (.asar) ',
-      'Complete the installation of the application.'
+      'Select the appropriate download for your OS.',
+      'osx (.dmg)',
+      'windows (.exe)',
+      'linux (.asar)'
     ]
   },
   {
@@ -107,42 +114,58 @@ const steps: Step[] = [
   },
   {
     key: 4,
-    // image: connectImage,
+    image: updaterMode,
     hasVideo: false,
     // video: '<iframe class="responsive-video" src="https://www.youtube.com/watch?v=bKG0c7xNIFA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-    title: '4. Update your Devices Bootloader',
+    title: '4. Enter Updater Mode',
     listItems: [
-      '',
+      'Unplug Device',
+      'Hold Down Button on KeepKey',
+      'Plug Device back in',
     ]
   },
   {
     key: 5,
-    // image: connectImage,
+    image: bootloader,
     hasVideo: false,
     // video: '<iframe class="responsive-video" src="https://www.youtube.com/watch?v=bKG0c7xNIFA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-    title: '5. Update your Devices Firmware',
+    title: '5. Update your Devices Bootloader',
     listItems: [
-      '',
+      'Do NOT unplug your keepkey while uploading!',
+      'You will be prompted to unplug and reconnect your device',
+      'Do not disconnect your device until prompted to do so on device',
     ]
   },
   {
     key: 6,
-    // image: connectImage,
+    image: firmware,
     hasVideo: false,
     // video: '<iframe class="responsive-video" src="https://www.youtube.com/watch?v=bKG0c7xNIFA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-    title: '6. Initialize your KeepKey',
+    title: '6. Updater Your devices Firmware',
     listItems: [
-      '',
+      'The Latest Firmware is required to use the platform',
     ]
   },
   {
     key: 7,
-    // image: connectImage,
+    image: createWallet,
     hasVideo: false,
     // video: '<iframe class="responsive-video" src="https://www.youtube.com/watch?v=bKG0c7xNIFA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-    title: '(optional) 7. buy bitcoin',
+    title: '7. Create your Wallet',
     listItems: [
-      '',
+      'Initialize your wallet by generating a new Mnemonic recovery phrase',
+    ]
+  },
+  {
+    key: 8,
+    image: recoverWallet,
+    hasVideo: false,
+    // video: '<iframe class="responsive-video" src="https://www.youtube.com/watch?v=bKG0c7xNIFA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    title: '8. (optional) Restore your Wallet using a Mnemonic recovery phrase',
+    listItems: [
+      'You Will be Prompted to use a cypher to enter text via your keyboard',
+      'Never Enter your Mnemonic recovery phrase in an application without using a cypher',
+      'Any Application asking to enter a Mnemonic recovery phrase without a cypher is a scam!',
     ]
   },
 ]
