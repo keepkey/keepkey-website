@@ -37,6 +37,11 @@ const Main = () => {
 
         <TabPanel>
           <h2>Desktop Application</h2>
+            <br/>
+            <text>
+                Repo: <a href={'https://github.com/keepkey/keepkey-desktop'}>https://github.com/keepkey/keepkey-desktop</a>
+            </text>
+
           <p className="mb-6">
             <br />
             <Image

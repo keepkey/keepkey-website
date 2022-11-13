@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -14,6 +14,8 @@ import ebStorageImage from 'public/images/icons/eb-storage.svg'
 import openSourceImage from 'public/images/icons/open-source.svg'
 import shapeshiftDemoImage from 'public/images/software/shapeshift-demo.png'
 import walletDeskImage from 'public/images/heros/wallet-desk-grayscale.png'
+import platform from 'platform-detect/os.mjs'
+import axios from 'axios';
 const shopifyBuyButtonId = 1663605399427;
 
 export default function Home() {
@@ -42,6 +44,31 @@ export default function Home() {
 }
 
 const Hero = () => {
+
+  const [urlMacOS, seturlMacOS] = useState('')
+  const [urlWindows, seturlWindows] = useState('')
+  const [urlLinux, seturlLinux] = useState('')
+
+  //find latest release
+  let findLatestReleaseLinks = async function (){
+    try{
+      let resp = await axios({method:'GET',url: 'https://api.github.com/repos/keepkey/keepkey-desktop/releases/latest'})
+      console.log('findLatestReleaseLinks',resp.data )
+      let version = resp.data.tag_name
+      version = version.replace("v","")
+      seturlMacOS("https://github.com/keepkey/keepkey-desktop/releases/download/v"+version+"/KeepKey-Desktop-"+version+".dmg")
+      seturlWindows("https://github.com/keepkey/keepkey-desktop/releases/download/v"+version+"/KeepKey-Desktop-"+version+".exe")
+      seturlLinux("https://github.com/keepkey/keepkey-desktop/releases/download/v"+version+"/KeepKey-Desktop-"+version+".AppImage")
+
+    }catch(e){
+      console.error(' e: ',e)
+    }
+  }
+
+  useEffect(() => {
+    findLatestReleaseLinks()
+  }, []);
+
   return (
     <div className="relative z-0 pt-32 pb-20 lg:py-4 bg-black">
       <Image
@@ -74,6 +101,29 @@ const Hero = () => {
             <div className="mr-4 mb-4 sm:mr-4 inline-block">
               <ShopifyBuyButton buttonId={shopifyBuyButtonId}></ShopifyBuyButton>
             </div>
+
+            {platform.macos ? <div>
+              <a href={urlMacOS}>
+                <a className="btn btn-lg btn--transparent">download for macOS </a>
+              </a>
+            </div> : <div>
+
+            </div>}
+
+            {platform.windows ? <div>
+              <a href={urlWindows}>
+                <a className="btn btn-lg btn--transparent">download for Windows</a>
+              </a>
+            </div> : <div>
+            </div>}
+
+            {platform.linux ? <div>
+              <a href={urlLinux}>
+                <a className="btn btn-lg btn--transparent">download for Linux</a>
+              </a>
+            </div> : <div>
+            </div>}
+
             <Link href="/onboarding">
               <a className="btn btn-lg btn--transparent">Get Started</a>
             </Link>

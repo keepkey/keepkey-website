@@ -27,8 +27,9 @@ const Main = () => {
       <h2 className="text-center mb-16">Choose the best SDK for your integration type</h2>
       <Tabs>
         <TabList>
-          <Tab>ETH/Dapps</Tab>
-          <Tab>Multi-Chain</Tab>
+          <Tab>Onboard.js</Tab>
+          <Tab>KeepKey-SDK</Tab>
+          <Tab>HDwallet</Tab>
         </TabList>
 
         <hr className="mt-16" />
@@ -51,7 +52,7 @@ const Main = () => {
             Communication with a KeepKey in your Dapp or application by REST commands. Documented here
             <br />
             <br />
-            <a className="text-xl text-gold" href="https://github.com/BitHighlander/keepkey-sdk" target="_blank" rel="noreferrer" >Shapeshift HDwallet</a>
+            <a className="text-xl text-gold" href="https://github.com/BitHighlander/keepkey-sdk" target="_blank" rel="noreferrer" >KeepKey-SDK</a>
           </p>
         </TabPanel>
         <TabPanel>
@@ -60,7 +61,7 @@ const Main = () => {
             Add KeepKey into your wallet or low level native integration with the full controller library here.
             <br />
             <br />
-            <a className="text-xl text-gold" href="https://github.com/shapeshift/hdwallet" target="_blank" rel="noreferrer" >Shapeshift HDwallet</a>
+            <a className="text-xl text-gold" href="https://github.com/shapeshift/hdwallet" target="_blank" rel="noreferrer" >HDwallet</a>
           </p>
         </TabPanel>
       </Tabs>
