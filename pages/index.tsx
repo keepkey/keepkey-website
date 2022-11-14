@@ -57,7 +57,7 @@ const Hero = () => {
       let version = resp.data.tag_name
       version = version.replace("v","")
       seturlMacOS("https://github.com/keepkey/keepkey-desktop/releases/download/v"+version+"/KeepKey-Desktop-"+version+".dmg")
-      seturlWindows("https://github.com/keepkey/keepkey-desktop/releases/download/v"+version+"/KeepKey-Desktop-"+version+".exe")
+      seturlWindows("https://github.com/keepkey/keepkey-desktop/releases/download/v"+version+"/KeepKey-Desktop-Setup-"+version+".exe")
       seturlLinux("https://github.com/keepkey/keepkey-desktop/releases/download/v"+version+"/KeepKey-Desktop-"+version+".AppImage")
 
     }catch(e){
