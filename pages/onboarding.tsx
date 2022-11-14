@@ -100,6 +100,7 @@ interface Step {
   listItems?: string[]
 }
 
+// @ts-ignore
 const steps: Step[] = [
   // {
   //   key: 1,
@@ -120,9 +121,9 @@ const steps: Step[] = [
     title: '1. <a class="text-gold font-medium text-3xl hover:underline" target="_blank" href="https://github.com/keepkey/keepkey-desktop/releases/latest">Download the latest KeepKey Client</a>',
     listItems: [
       'Select the appropriate download for your OS.',
-      'osx (.dmg)',
-      'windows (.exe)',
-      'linux (.asar)'
+       'notes: (linux users) usb drivers: <a class="text-gold font-medium text-3xl hover:underline" target="_blank" href="https://github.com/keepkey/udev-rules"></a>',
+       'note: (linux users) you may need to chmod your download file to run the application and connect via USB',
+       'note: (Windows users) you may need continue past unstage download errors'
     ]
   },
   {
