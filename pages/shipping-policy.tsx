@@ -51,6 +51,7 @@ const Main = () => {
                         <p className="my-6"></p>
 
                         <text>
+                        <p>
 IMPORTANT UPDATE: Due to COVID 19 related circumstances, we've had to temporarily remove some countries from being able to place an order. International Service Suspensions from USPS can be found here.
 
 All orders ship within 5 business days of the order. Shipping facilities are open Monday–Friday, 9am–5pm.
@@ -89,6 +90,7 @@ If you return a product to us, you will be the exporter from the destination cou
 Your privacy is important to us. We strive to exceed your expectations for privacy. Cross-border shipments are subject to inspection by customs authorities. We may also be called upon to provide certain order, shipment, and product information to our international carriers. Carriers may communicate such information to customs authorities for the purpose of facilitating customs clearance and compliance with local laws.
 
 Cross-border shipments going through customs inspections can delay delivery. These delays are out of our control as well as the carriers. Please check with your local government import office to determine what you can expect for any delays associated with the arrival of your order.
+                        </p>
                         </text>
                     </div>
                 </div>

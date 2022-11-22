@@ -52,40 +52,47 @@ const Main = () => {
 
                         <text>
                             KeepKey Refund Policy
-                            Avatar Mark Moon
-                            1 year ago Updated
+                            <p>
                             Refunds are available within 30 days of your purchase. If more than 30 days have passed since your purchase, you are not eligible for a refund.
-
+                            </p>
+                            <br/>
+                            <p>
                             To be eligible for a return, your item must be in the same condition that you received it. It must also be in the original packaging.
-
+                                <br/></p>
                             To complete your return, we require a receipt or proof of purchase.
+                            <p>
+                                Refunds
+                                Once your return is received and inspected, we will send you an email to notify you that we have received your returned item. We will also notify you of the approval or rejection of your refund.
 
-                            Refunds
-                            Once your return is received and inspected, we will send you an email to notify you that we have received your returned item. We will also notify you of the approval or rejection of your refund.
-
-                            If you are approved, then your refund will be processed, and ww will contact you for your preferred method of payment.
-
-                            Late or Missing Refunds
-                            If you haven’t received a refund by this point, please contact us at support@keepkey.com.
-
-                            Bitcoin Payment Refunds
-                            Refunds for orders paid with BTC will be issued for the full USD value of the order and processed at the BTC exchange rate when the refund is completed.
-
-                            Exchanges
-                            We will only replace defective devices. If you need to exchange your KeepKey, please contact customer support.
-
-                            Shipping
-                            Please return your device to:
-
-                            Key Hodlers, LLC
-                            1550 Larimer St. Suite 221
-                            Denver, CO 80202
-
-                            You will be responsible for paying for return shipping costs. The cost of shipping is non-refundable. If you receive a refund, the cost of return shipping will be deducted from your refund.
-
-                            Shipping times may vary.
-
-                            We highly recommend that you choose a shipping method with tracking information and proof of delivery.
+                                <br/></p>
+                            <p>
+                                If you are approved, then your refund will be processed, and ww will contact you for your preferred method of payment.
+                                <br/></p>
+                            <p>
+                                Late or Missing Refunds
+                                If you haven’t received a refund by this point, please contact us at support@keepkey.com.
+                                <br/></p>
+                            <p>Bitcoin Payment Refunds
+                                Refunds for orders paid with BTC will be issued for the full USD value of the order and processed at the BTC exchange rate when the refund is completed.
+                                <br/></p>
+                            <p>Exchanges
+                                We will only replace defective devices. If you need to exchange your KeepKey, please contact customer support.
+                                <br/></p>
+                            <p>Shipping
+                                Please return your device to:
+                                <br/></p>
+                            <p>Key Hodlers, LLC
+                                1550 Larimer St. Suite 221
+                                Denver, CO 80202
+                                <br/></p>
+                            <p>You will be responsible for paying for return shipping costs. The cost of shipping is non-refundable. If you receive a refund, the cost of return shipping will be deducted from your refund.
+                                <br/></p>
+                            <p>
+                                Shipping times may vary.
+                                <br/></p>
+                            <p>
+                                We highly recommend that you choose a shipping method with tracking information and proof of delivery.
+                                <br/></p>
                         </text>
                     </div>
                 </div>
