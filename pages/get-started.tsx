@@ -17,10 +17,10 @@ import {useEffect, useState} from "react";
 
 export default function Onboarding() {
   return (
-    <>
-      <Hero />
-      <Main />
-    </>
+      <>
+        <Hero />
+        <Main />
+      </>
   )
 }
 
@@ -50,42 +50,42 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative z-0 pt-44 pb-20 xl:py-72 bg-black">
-      <Image
-        src={heroBgImage}
-        alt='keepkey wallet on desk'
-        layout="fill"
-        objectFit="cover"
-        quality={100}
-        objectPosition="center"
-        priority={true}
-      >
-      </Image>
-      <div className="container relative grid lg:grid-cols-2 gap-x-20 items-center z-10">
-        <div>
-          <h1 className="text-4xl leading-tight tracking-wide lg:text-5xl lg:leading-tight 2xl:text-6xl 2xl:leading-tight font-bold text-white mb-4">Introducing the new KeepKey Client</h1>
-          <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">Follow the guide below to get started using your KeepKey.</p>
-          <a href={urlMacOS}>
-            <a className="btn btn-lg btn--transparent">download for macOS </a>
-          </a>
-          <a href={urlWindows}>
-            <a className="btn btn-lg btn--transparent">download for Windows </a>
-          </a>
-          <a href={urlLinux}>
-            <a className="btn btn-lg btn--transparent">download for Linux </a>
-          </a>
-        </div>
-        <div className="xl:absolute xl:max-w-[650px] xl:right-0 2xl:max-w-[765px] 2xl:right-[-150px]">
-          <Image
-            alt="KeepKey wallet"
-            src={pin}
+      <div className="relative z-0 pt-44 pb-20 xl:py-72 bg-black">
+        <Image
+            src={heroBgImage}
+            alt='keepkey wallet on desk'
+            layout="fill"
+            objectFit="cover"
             quality={100}
-          >
-          </Image>
+            objectPosition="center"
+            priority={true}
+        >
+        </Image>
+        <div className="container relative grid lg:grid-cols-2 gap-x-20 items-center z-10">
+          <div>
+            <h1 className="text-4xl leading-tight tracking-wide lg:text-5xl lg:leading-tight 2xl:text-6xl 2xl:leading-tight font-bold text-white mb-4">Introducing the new KeepKey Client</h1>
+            <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">Follow the guide below to get started using your KeepKey.</p>
+            <a href={urlMacOS}>
+              <a className="btn btn-lg btn--transparent">download for macOS </a>
+            </a>
+            <a href={urlWindows}>
+              <a className="btn btn-lg btn--transparent">download for Windows </a>
+            </a>
+            <a href={urlLinux}>
+              <a className="btn btn-lg btn--transparent">download for Linux </a>
+            </a>
+          </div>
+          <div className="xl:absolute xl:max-w-[650px] xl:right-0 2xl:max-w-[765px] 2xl:right-[-150px]">
+            <Image
+                alt="KeepKey wallet"
+                src={pin}
+                quality={100}
+            >
+            </Image>
+          </div>
         </div>
-      </div>
 
-    </div>
+      </div>
   )
 }
 
@@ -121,9 +121,9 @@ const steps: Step[] = [
     title: '1. <a class="text-gold font-medium text-3xl hover:underline" target="_blank" href="https://github.com/keepkey/keepkey-desktop/releases/latest">Download the latest KeepKey Client</a>',
     listItems: [
       'Select the appropriate download for your OS.',
-       'note: (linux users) usb drivers: <a class="text-gold font-medium text-1xl hover:underline" target="_blank" href="https://github.com/keepkey/udev-rules"> Update your Udev rules</a>',
-       'note: (linux users) you may need to chmod your download file to run the application and connect via USB',
-       'note: (Windows users) you may need continue past unsafe download errors'
+      'note: (linux users) usb drivers: <a class="text-gold font-medium text-1xl hover:underline" target="_blank" href="https://github.com/keepkey/udev-rules"> Update your Udev rules</a>',
+      'note: (linux users) you may need to chmod your download file to run the application and connect via USB',
+      'note: (Windows users) you may need continue past unsafe download errors'
     ]
   },
   {
@@ -206,55 +206,55 @@ const steps: Step[] = [
 
 const Step = (props: Step) => {
   return (
-    <div className="grid xl:grid-cols-2 gap-16 xl:gap-26 2xl:gap-36 align-center py-20 lg:py-32 border-solid border-2 border-blue-900">
-      <div>
-        <h3 className="mb-6" dangerouslySetInnerHTML={{ __html: props.title }}></h3>
-        <p className="mb-6" dangerouslySetInnerHTML={{ __html: props.description }}></p>
-        <ul className="list-disc pl-10">
-          {props.listItems.map((item, index) =>
-            <li className="py-2"
-              key={index}
-              dangerouslySetInnerHTML={{ __html: item }}></li>
-          )}
-        </ul>
+      <div className="grid xl:grid-cols-2 gap-16 xl:gap-26 2xl:gap-36 align-center py-20 lg:py-32 border-solid border-2 border-blue-900">
+        <div>
+          <h3 className="mb-6" dangerouslySetInnerHTML={{ __html: props.title }}></h3>
+          <p className="mb-6" dangerouslySetInnerHTML={{ __html: props.description }}></p>
+          <ul className="list-disc pl-10">
+            {props.listItems.map((item, index) =>
+                <li className="py-2"
+                    key={index}
+                    dangerouslySetInnerHTML={{ __html: item }}></li>
+            )}
+          </ul>
+        </div>
+        <div className="self-center w-100">
+          {props.hasVideo ?
+              <div className="">
+                <div dangerouslySetInnerHTML={{ __html: props.video }}></div>
+              </div>
+              :
+              <Image
+                  alt="KeepKey wallet"
+                  src={props.image}
+                  width={1200}
+                  quality={100}
+              >
+              </Image>
+          }
+        </div>
       </div>
-      <div className="self-center w-100">
-        {props.hasVideo ?
-          <div className="">
-            <div dangerouslySetInnerHTML={{ __html: props.video }}></div>
-          </div>
-          :
-          <Image
-            alt="KeepKey wallet"
-            src={props.image}
-            width={1200}
-            quality={100}
-          >
-          </Image>
-        }
-      </div>
-    </div>
   )
 }
 
 const Main = () => {
   return (
-    <section className="container">
-      {/*<SecurityWarning />*/}
-      {steps.map((step, i, arr) =>
-        <>
-          <Step
-            key={step.key}
-            image={step.image}
-            hasVideo={step.hasVideo}
-            video={step.video}
-            title={step.title}
-            description={step.description}
-            listItems={step.listItems}
-          />
-          {i === arr.length - 1 ? '' : <hr />}
-        </>
-      )}
-    </section>
+      <section className="container">
+        {/*<SecurityWarning />*/}
+        {steps.map((step, i, arr) =>
+            <>
+              <Step
+                  key={step.key}
+                  image={step.image}
+                  hasVideo={step.hasVideo}
+                  video={step.video}
+                  title={step.title}
+                  description={step.description}
+                  listItems={step.listItems}
+              />
+              {i === arr.length - 1 ? '' : <hr />}
+            </>
+        )}
+      </section>
   )
 }
