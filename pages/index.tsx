@@ -124,7 +124,7 @@ const Hero = () => {
             </div> : <div>
             </div>}
 
-            <Link href="/onboarding">
+            <Link href="/get-started">
               <a className="btn btn-lg btn--transparent">Get Started</a>
             </Link>
           </div>
@@ -303,7 +303,7 @@ const ProductInfo = () => {
             <li>Customizable transaction speeds</li>
             <li>Limitless wallet addresses on one device</li>
           </ul>
-          <Link href="/onboarding">
+          <Link href="/get-started">
             <a className="btn mt-8">Get Started</a>
           </Link>
         </div>

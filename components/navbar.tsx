@@ -17,8 +17,8 @@ interface NavLink {
 const navLinks: NavLink[] = [
   {
     id: 4,
-    name: 'Onboarding',
-    url: '/onboarding',
+    name: 'Get Started',
+    url: '/get-started',
     external: false
   },
   {
