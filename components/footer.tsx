@@ -43,6 +43,8 @@ export default function Footer() {
         <Link href="/shipping-policy"><a className="font-normal px-4 hover:underline" >Shipping Policy</a></Link>
         <span className="self-center">|</span>
         <Link href="/terms-of-use"><a className="font-normal px-4 hover:underline" >Terms of Use</a></Link>
+        <span className="self-center">|</span>
+        <Link href="/security"><a className="font-normal px-4 hover:underline" >Security</a></Link>
       </div>
       <p className="font-normal text-center mt-6">© {new Date().getFullYear()} KeepKey</p>
     </footer>
