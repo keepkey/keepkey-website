@@ -20,10 +20,6 @@ function MyApp({ Component, pageProps }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
-        {/* REMOVE BEFORE LAUNCH - prevents search engine from crawling*/}
-        <meta name="robots" content="noindex" />
-        {/* END REMOVE BEFORE LAUNCH */}
-
         <title>{titleTag}</title>
         <meta name="description" key="desc" content="KeepKey - The premier hardware wallet to help protect your cryptocurrencies and safeguard your assets from hackers." />
         <link rel="canonical" href={`https://www.keepkey.com${router.pathname}`} />
