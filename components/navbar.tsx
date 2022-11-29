@@ -35,6 +35,12 @@ const navLinks: NavLink[] = [
   },
   {
     id: 3,
+    name: 'Dapps',
+    url: '/dapps',
+    external: false
+  },
+  {
+    id: 4,
     name: 'Integration Guide',
     url: '/integration-guide',
     external: false
