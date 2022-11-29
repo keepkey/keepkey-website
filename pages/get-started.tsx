@@ -175,7 +175,7 @@ const steps: Step[] = [
     image: firmware,
     hasVideo: false,
     // video: '<iframe class="responsive-video" src="https://www.youtube.com/watch?v=bKG0c7xNIFA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-    title: '6. Updater Your devices Firmware',
+    title: '6. Update Your devices Firmware',
     listItems: [
       'The Latest Firmware is required to use the platform',
     ]
