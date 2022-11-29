@@ -52,7 +52,7 @@ const Main = () => {
 
                         <text>
                         <p>
-IMPORTANT UPDATE: Due to COVID 19 related circumstances, we've had to temporarily remove some countries from being able to place an order. International Service Suspensions from USPS can be found here.
+IMPORTANT UPDATE: Due to COVID 19 related circumstances, we have had to temporarily remove some countries from being able to place an order. International Service Suspensions from USPS can be found here.
 
 All orders ship within 5 business days of the order. Shipping facilities are open Monday–Friday, 9am–5pm.
 
