@@ -10,7 +10,8 @@ import connect from 'public/images/walletconnect/connect.png'
 import options from 'public/images/walletconnect/options.png'
 import pasteString from 'public/images/walletconnect/pasteString.png'
 import walletconnect from 'public/images/walletconnect/walletconnect.png'
-
+import walletconnected from 'public/images/walletconnect/connected.png'
+import connectedUniswap from 'public/images/walletconnect/connectedUniswap.png'
 
 export default function Dapps() {
 
@@ -86,7 +87,15 @@ const steps: Step[] = [
             '(note) form will auto-fill from clipboard',
         ]
     },
-
+    {
+        key: 4,
+        image: walletconnected,
+        hasVideo: false,
+        title: 'Connected',
+        listItems: [
+            'Verify Your Dapp icon is correct'
+        ]
+    },
 ]
 
 const Step = (props: Step) => {
