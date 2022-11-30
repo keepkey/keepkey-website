@@ -12,7 +12,6 @@ import computerLockImage from 'public/images/icons/computer-lock.svg'
 import backupImage from 'public/images/icons/backup.svg'
 import ebStorageImage from 'public/images/icons/eb-storage.svg'
 import openSourceImage from 'public/images/icons/open-source.svg'
-import shapeshiftDemoImage from 'public/images/software/shapeshift-demo.png'
 import desktopApp from 'public/images/desktop/DappStore.png'
 import walletDeskImage from 'public/images/heros/wallet-desk-grayscale.png'
 import platform from 'platform-detect/os.mjs'
@@ -228,8 +227,8 @@ const PromoSection = () => {
           <h2>New Desktop Application!</h2>
           <p className="font-bold mt-6 mb-4">A KeepKey-secured platform built to handle all of your crypto needs</p>
           <p>KeepKey has a new stand alone application, forked from the ShapeShift Platform. a web-based interface that consolidates your many crypto tools into one, beautiful environment. Click below to experience a new era in hardware security.</p>
-          <Link href="https://beta.shapeshift.com">
-            <a className="btn mt-7">Explore Now</a>
+          <Link href="https://github.com/keepkey/keepkey-desktop">
+            <a className="btn mt-7">Open Source Desktop Application</a>
           </Link>
         </div>
         <div className="max-w-xl">
