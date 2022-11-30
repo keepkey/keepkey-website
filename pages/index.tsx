@@ -13,6 +13,7 @@ import backupImage from 'public/images/icons/backup.svg'
 import ebStorageImage from 'public/images/icons/eb-storage.svg'
 import openSourceImage from 'public/images/icons/open-source.svg'
 import shapeshiftDemoImage from 'public/images/software/shapeshift-demo.png'
+import desktopApp from 'public/images/desktop/DappStore.png'
 import walletDeskImage from 'public/images/heros/wallet-desk-grayscale.png'
 import platform from 'platform-detect/os.mjs'
 import axios from 'axios';
@@ -179,7 +180,7 @@ const features: Feature[] = [
     key: 4,
     icon: openSourceImage,
     title: 'Effortless Exchanges',
-    description: 'Quickly exchange cryptocurrencies via the ShapeShift integration, directly from your wallet.'
+    description: 'Quickly exchange cryptocurrencies via the '+<a href={'https://thorchain.org/'}>Thorchain Protocol </a> +' directly from your wallet.'
   },
 ]
 
@@ -224,16 +225,16 @@ const PromoSection = () => {
     <section className="bg-zinc-100">
       <div className="container grid gap-24 md:grid-cols-2">
         <div className="my-auto">
-          <h2>Now Available on ShapeShift!</h2>
+          <h2>New Desktop Application!</h2>
           <p className="font-bold mt-6 mb-4">A KeepKey-secured platform built to handle all of your crypto needs</p>
-          <p>KeepKey is the premier wallet in the new ShapeShift Platform, a web-based interface that consolidates your many crypto tools into one, beautiful environment. Click below to experience a new era in hardware security.</p>
+          <p>KeepKey has a new stand alone application, forked from the ShapeShift Platform. a web-based interface that consolidates your many crypto tools into one, beautiful environment. Click below to experience a new era in hardware security.</p>
           <Link href="https://beta.shapeshift.com">
             <a className="btn mt-7">Explore Now</a>
           </Link>
         </div>
         <div className="max-w-xl">
           <Image
-            src={shapeshiftDemoImage}
+            src={desktopApp}
             alt='shapeshift demo'
             layout="responsive"
             quality={100}
