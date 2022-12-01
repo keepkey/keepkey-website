@@ -4,8 +4,7 @@ import heroBgImage from 'public/images/heros/blue-lines.jpg'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import HeroSimple from '../components/hero-simple';
 const pageTitle = "Application Waltkthrough";
-import api from 'public/images/developer/OpenAPI.png'
-import keepkey from 'public/images/developer/KeepKeyDiagram.png'
+import walletVertical from 'public/images/desktop/pin.png'
 
 export default function DesktopGuide() {
 
@@ -28,9 +27,19 @@ const Main = () => {
         <section className="container">
             <h2 className="text-center mb-16">About The KeepKey Desktop Application</h2>
             <text>
-
+                <Image
+                    src={walletVertical}
+                    alt='keepkey api'
+                    objectFit="cover"
+                    quality={100}
+                    objectPosition="center"
+                    priority={true}
+                ></Image>
             </text>
-
+            <br/>
+            <p>
+                
+            </p>
         </section>
     )
 }

@@ -41,12 +41,18 @@ const navLinks: NavLink[] = [
   },
   {
     id: 4,
+    name: 'Coin Support',
+    url: '/coin-support',
+    external: false
+  },
+  {
+    id: 5,
     name: 'Dapps',
     url: '/dapps',
     external: false
   },
   {
-    id: 5,
+    id: 6,
     name: 'Integration Guide',
     url: '/integration-guide',
     external: false
