@@ -42,7 +42,7 @@ const communityCards: CommunityCard[] = [
   // },
   {
     icon: discordIcon,
-    url: 'https://discord.gg/YEgmjUxr',
+    url: 'https://discord.gg/stfRnW3Jys',
     title: 'Discord',
     description: 'Join KeepKeys Discord Server',
     external: true
