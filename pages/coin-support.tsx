@@ -13,6 +13,7 @@ import dashIcon from 'public/images/coins/dash.png'
 import bitcoin from 'public/images/coins/bitcoin.png'
 import dogecoin from 'public/images/coins/dogecoin.png'
 import ripple from 'public/images/coins/ripple.png'
+
 import {
     Input,
     FormControl,
@@ -27,7 +28,8 @@ import {
     useReactTable,
 } from '@tanstack/react-table'
 import walletVertical from "*.png";
-
+import Client from '@pioneer-platform/pioneer-client'
+import _ from 'lodash'
 
 type Person = {
     Blockchain: string
@@ -38,123 +40,87 @@ type Person = {
     WalletConnectSupport: boolean
     DesktopSupport: boolean
 }
+const columnHelper = createColumnHelper<any>()
 
-const defaultData: Person[] = [
-    {
-        Blockchain: "Bitcoin",
-        BlockchainIcon: bitcoin,
-        firmwareSupport: true,
-        HDwalletSupport: true,
-        RestSupport: true,
-        WalletConnectSupport: true,
-        DesktopSupport: true,
-    },
-    {
-        Blockchain: "litecoin",
-        BlockchainIcon: litecoinIcon,
-        firmwareSupport: true,
-        HDwalletSupport: true,
-        RestSupport: true,
-        WalletConnectSupport: true,
-        DesktopSupport: true,
-    },
-    {
-        Blockchain: "dogecoin",
-        BlockchainIcon: dogecoin,
-        firmwareSupport: true,
-        HDwalletSupport: true,
-        RestSupport: true,
-        WalletConnectSupport: true,
-        DesktopSupport: true,
-    },
-    {
-        Blockchain: "bnb (native)",
-        BlockchainIcon: binanceIcon,
-        firmwareSupport: true,
-        HDwalletSupport: true,
-        RestSupport: true,
-        WalletConnectSupport: true,
-        DesktopSupport: false,
-    },
-    {
-        Blockchain: "bnb (BSC)",
-        BlockchainIcon: binanceIcon,
-        firmwareSupport: true,
-        HDwalletSupport: true,
-        RestSupport: true,
-        WalletConnectSupport: true,
-        DesktopSupport: false,
-    },
-    {
-        Blockchain: "Ripple",
-        BlockchainIcon: ripple,
-        firmwareSupport: true,
-        HDwalletSupport: true,
-        RestSupport: true,
-        WalletConnectSupport: true,
-        DesktopSupport: false,
-    },
-    {
-        Blockchain: "Bitcoin Cash",
-        BlockchainIcon: bchIcon,
-        firmwareSupport: true,
-        HDwalletSupport: true,
-        RestSupport: true,
-        WalletConnectSupport: true,
-        DesktopSupport: false,
-    },
-    // {
-    //     Blockchain: "Bitcoin Cash",
-    //     BlockchainIcon: binanceIcon,
-    //     firmwareSupport: true,
-    //     HDwalletSupport: true,
-    //     RestSupport: true,
-    //     WalletConnectSupport: true,
-    //     DesktopSupport: false,
-    // },
-]
-
-const columnHelper = createColumnHelper<Person>()
+let fallbackIcon = function (){
+    this.onerror=null;
+    this.src='/images/noimage.gif';
+}
 
 const columns = [
-    columnHelper.accessor('BlockchainIcon', {
-        cell: info => <Image src={info.getValue()} alt='keepkey api' objectFit="cover" quality={100} height="60px" width="60px" objectPosition="center" priority={true}></Image>,
+    columnHelper.accessor('image', {
+        cell: info => <Image
+            src={info.getValue()}
+            alt='keepkey api'
+            objectFit="cover"
+            quality={100}
+            height="60px"
+            width="60px"
+            objectPosition="center"
+            priority={true}
+        >
+
+        </Image>,
         footer: info => info.column.id,
     }),
-    columnHelper.accessor('Blockchain', {
+    columnHelper.accessor('name', {
         cell: info => info.getValue(),
         footer: info => info.column.id,
     }),
-    columnHelper.accessor(row => row.firmwareSupport, {
-        id: 'firmwareSupport',
+    columnHelper.accessor('blockchain', {
+        id: 'blockchain',
         cell: info => <i>{info.getValue().toString()}</i>,
-        header: () => <span>firmwareSupport</span>,
+        header: () => <span>blockchain</span>,
         footer: info => info.column.id,
     }),
-    columnHelper.accessor(row => row.HDwalletSupport, {
-        id: 'HDwalletSupport',
+    columnHelper.accessor('symbol', {
+        id: 'symbol',
         cell: info => <i>{info.getValue().toString()}</i>,
-        header: () => <span>HDwalletSupport</span>,
+        header: () => <span>symbol</span>,
         footer: info => info.column.id,
     }),
-    columnHelper.accessor(row => row.RestSupport, {
-        id: 'RestSupport',
+    columnHelper.accessor('description', {
+        id: 'description',
         cell: info => <i>{info.getValue().toString()}</i>,
-        header: () => <span>HDwalletSupport</span>,
+        header: () => <span>description</span>,
         footer: info => info.column.id,
     }),
-    columnHelper.accessor(row => row.RestSupport, {
-        id: 'WalletConnectSupport',
-        cell: info => <i>{info.getValue().toString()}</i>,
-        header: () => <span>HDwalletSupport</span>,
-        footer: info => info.column.id,
-    }),
-    columnHelper.accessor(row => row.DesktopSupport, {
-        id: 'DesktopSupport',
-        cell: info => <i>{info.getValue().toString()}</i>,
-        header: () => <span>DesktopSupport</span>,
-        footer: info => info.column.id,
-    }),
+    // columnHelper.accessor('website', {
+    //     id: 'website',
+    //     cell: info => <i>{info.getValue().toString()}</i>,
+    //     header: () => <span>website</span>,
+    //     footer: info => info.column.id,
+    // }),
+    // columnHelper.accessor('explorer', {
+    //     id: 'explorer',
+    //     cell: info => <i>{info.getValue().toString()}</i>,
+    //     header: () => <span>explorer</span>,
+    //     footer: info => info.column.id,
+    // }),
+    // columnHelper.accessor(row => row.HDwalletSupport, {
+    //     id: 'HDwalletSupport',
+    //     cell: info => <i>{info.getValue().toString()}</i>,
+    //     header: () => <span>HDwalletSupport</span>,
+    //     footer: info => info.column.id,
+    // }),
+    // columnHelper.accessor(row => row.RestSupport, {
+    //     id: 'RestSupport',
+    //     cell: info => <i>{info.getValue().toString()}</i>,
+    //     header: () => <span>HDwalletSupport</span>,
+    //     footer: info => info.column.id,
+    // }),
+    // columnHelper.accessor(row => row.RestSupport, {
+    //     id: 'WalletConnectSupport',
+    //     cell: info => <i>{info.getValue().toString()}</i>,
+    //     header: () => <span>HDwalletSupport</span>,
+    //     footer: info => info.column.id,
+    // }),
+    // columnHelper.accessor(row => row.DesktopSupport, {
+    //     id: 'DesktopSupport',
+    //     cell: info => <i>{info.getValue().toString()}</i>,
+    //     header: () => <span>DesktopSupport</span>,
+    //     footer: info => info.column.id,
+    // }),
 ]
 
 export default function DesktopGuide() {
@@ -171,9 +137,27 @@ export default function DesktopGuide() {
 }
 
 const Main = () => {
-    const [data, setData] = React.useState(() => [...defaultData])
-    const [search, setSearch] = React.useState("")
-    const rerender = React.useReducer(() => ({}), {})[1]
+    const [data, setData] = React.useState(() => [{
+        "name": "bitcoin",
+        "type": "coin",
+        "tags": [
+            "bitcoin",
+            "isAsset",
+            "isNative",
+            "KeepKeySupport",
+            "DappSupport",
+            "WalletConnectSupport"
+        ],
+        "blockchain": "bitcoin",
+        "symbol": "BTC",
+        "decimals": 8,
+        "image": "https://pioneers.dev/coins/bitcoin.png",
+        "description": "Bitcoin is a cryptocurrency and worldwide payment system. It is the first decentralized digital currency, as the system works without a central bank or single administrator.",
+        "website": "https://bitcoin.org",
+        "explorer": "https://blockchain.info"
+    }])
+    const [query, setQuery] = useState(null);
+    const [timeOut, setTimeOut] = useState(null);
 
     const table = useReactTable({
         data,
@@ -181,29 +165,92 @@ const Main = () => {
         getCoreRowModel: getCoreRowModel(),
     })
 
-    const applyFilter = function(){
-        console.log("applyFilter: ",data)
-        setData([...defaultData])
-        for(let i = 0; i < data.length; i++){
-            let entry = data[i]
-
-            //trim entry
-            if( entry.Blockchain.indexOf(search) >= 0){
-                console.log("in search: ",search)
-                setData(data.splice(i, 1))
-            } else {
-                console.log("not in search")
-            }
-        }
+    const onStart = async function(){
+        // let spec = "https://pioneers.dev/spec/swagger.json"
+        let spec = "http://127.0.0.1:9001/spec/swagger.json"
+        let config = { queryKey: 'key:public', spec }
+        let Api = new Client(spec, config)
+        let api = await Api.init()
+        console.log("checkpoint2")
+        let KeepKeyPage1 = await api.SearchByTagNative("KeepKeySupport")
+        console.log("KeepKeyPage1: ",KeepKeyPage1.data)
+        setData(KeepKeyPage1.data)
     }
+
+    // const applyFilter = function(event){
+    //     try{
+    //         let searchNew = event.target.value
+    //         setSearch(searchNew)
+    //         console.log("event: ",event.target.value)
+    //         console.log("search: ",search)
+    //     }catch(e){
+    //         console.error(e)
+    //     }
+    // }
+
+    // const applyFilter = _.debounce(async () => {
+    //     try{
+    //         // console.log("event: ",event.target.value)
+    //         console.log("search: ",search)
+    //         // let searchNew = event.target.value
+    //         // setSearch(searchNew)
+    //         let spec = "http://127.0.0.1:9001/spec/swagger.json"
+    //         let config = { queryKey: 'key:public', spec }
+    //         let Api = new Client(spec, config)
+    //         let api = await Api.init()
+    //
+    //         let KeepKeyPage1 = await api.SearchByName(search)
+    //         console.log("KeepKeyPage1: ",KeepKeyPage1.data)
+    //         setData(KeepKeyPage1.data)
+    //     }catch(e){
+    //         console.error(e)
+    //     }
+    // }, 1500);
+    //
+    // useEffect(() => {
+    //     applyFilter();
+    // }, [search]);
+
+    const handleKeyPress = (event) => {
+        if (timeOut) {
+            clearTimeout(timeOut);
+        }
+        setQuery(event.target.value);
+        setTimeOut(setTimeout(() => {
+            search(query);
+        }, 1000));
+    }
+
+    const search = async (query) => {
+        // console.log("event: ",event.target.value)
+        console.log("query: ",query)
+        // let searchNew = event.target.value
+        // setSearch(searchNew)
+        let spec = "http://127.0.0.1:9001/spec/swagger.json"
+        let config = { queryKey: 'key:public', spec }
+        let Api = new Client(spec, config)
+        let api = await Api.init()
+
+        let KeepKeyPage1 = await api.SearchByName(query)
+        console.log("KeepKeyPage1: ",KeepKeyPage1.data)
+        setData(KeepKeyPage1.data)
+    };
+
+    // onStart()
+    useEffect(() => {
+        onStart()
+    }, [])
 
     return (
         <section className="container">
             <div className="p-2">
-                    <Input
-                        onChange={applyFilter}
-                        type='email' />
+                <Input
+                    value={query}
+                    onChange={handleKeyPress}
+                    type='email' />
                 <br/>
+            </div>
+            <div className="p-2">
                 <table>
                     <thead>
                     {table.getHeaderGroups().map(headerGroup => (
