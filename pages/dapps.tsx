@@ -138,7 +138,7 @@ const Main = () => {
             <br/>
             <text>
                 <p>
-                    A Dapp (decentralized application) is an application written by developers outside of keepkey designed to integrate with our wallet. These applications use a protocol known as Wallet-Connect and are typically hosted on a traditional domain names.
+                    A Dapp (decentralized application) is an application written by developers outside of KeepKey designed to integrate with a wallet. These applications use a protocol known as Wallet-Connect and are typically hosted on a traditional domain names.
                 </p>
                 <br/>
                 <p>
