@@ -4,7 +4,7 @@ import heroBgImage from 'public/images/heros/blue-lines.jpg'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import HeroSimple from '../components/hero-simple';
 const pageTitle = "Application Waltkthrough";
-import walletVertical from 'public/images/desktop/pin.png'
+import walletVertical from '../../assets/images/desktop/pin.png'
 
 export default function DesktopGuide() {
 
