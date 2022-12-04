@@ -29,7 +29,7 @@ const navLinks: NavLink[] = [
   },
   {
     id: 2,
-    name: 'Application Guide',
+    name: 'User Guide',
     url: '/application',
     external: false
   },
