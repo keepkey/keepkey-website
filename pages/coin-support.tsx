@@ -1,26 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import React, { useState, useEffect, useRef, memo } from 'react';
+import React, { useState, useEffect } from 'react';
 import heroBgImage from 'public/images/heros/blue-lines.jpg'
 import HeroSimple from '../components/hero-simple';
 const pageTitle = "Application Waltkthrough";
-import binanceIcon from 'public/images/coins/binancecoin.png'
-import ethIcon from 'public/images/coins/ethereum.png'
-import bchIcon from 'public/images/coins/bitcoin-cash.png'
-import litecoinIcon from 'public/images/coins/litecoin.png'
-import dashIcon from 'public/images/coins/dash.png'
-// import btgIcon from 'public/images/coins/btg.png'
 import bitcoin from 'public/images/coins/bitcoin.png'
-import dogecoin from 'public/images/coins/dogecoin.png'
-import ripple from 'public/images/coins/ripple.png'
 
-import {
-    Input,
-    FormControl,
-    FormLabel,
-    FormErrorMessage,
-    FormHelperText,
-} from '@chakra-ui/react'
 import {
     createColumnHelper,
     flexRender,
@@ -244,7 +229,7 @@ const Main = () => {
     return (
         <section className="container">
             <div className="p-2">
-                <Input
+                <input
                     value={query}
                     onChange={handleKeyPress}
                     type='email' />
