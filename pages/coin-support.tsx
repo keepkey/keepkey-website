@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { useState, useEffect } from 'react';
 import heroBgImage from 'public/images/heros/blue-lines.jpg'
 import HeroSimple from '../components/hero-simple';
-const pageTitle = "Application Waltkthrough";
+const pageTitle = "KeepKey Coin Support";
 import bitcoin from 'public/images/coins/bitcoin.png'
 
 import {
@@ -12,19 +12,10 @@ import {
     getCoreRowModel,
     useReactTable,
 } from '@tanstack/react-table'
-import walletVertical from "*.png";
 import Client from '@pioneer-platform/pioneer-client'
-import _ from 'lodash'
+const spec = "https://pioneers.dev/spec/swagger.json"
+// let spec = "http://127.0.0.1:9001/spec/swagger.json"
 
-type Person = {
-    Blockchain: string
-    BlockchainIcon: any
-    firmwareSupport: boolean
-    HDwalletSupport: boolean
-    RestSupport: boolean
-    WalletConnectSupport: boolean
-    DesktopSupport: boolean
-}
 const columnHelper = createColumnHelper<any>()
 
 let fallbackIcon = function (){
@@ -140,7 +131,7 @@ const Main = () => {
         "website": "https://bitcoin.org",
         "explorer": "https://blockchain.info"
     }])
-    const [query, setQuery] = useState(null);
+    const [query, setQuery] = useState('bitcoin...');
     const [timeOut, setTimeOut] = useState(null);
 
     const table = useReactTable({
@@ -150,8 +141,6 @@ const Main = () => {
     })
 
     const onStart = async function(){
-        let spec = "https://pioneers.dev/spec/swagger.json"
-        // let spec = "http://127.0.0.1:9001/spec/swagger.json"
         let config = { queryKey: 'key:public', spec }
         let Api = new Client(spec, config)
         let api = await Api.init()
@@ -161,39 +150,6 @@ const Main = () => {
         setData(KeepKeyPage1.data)
     }
 
-    // const applyFilter = function(event){
-    //     try{
-    //         let searchNew = event.target.value
-    //         setSearch(searchNew)
-    //         console.log("event: ",event.target.value)
-    //         console.log("search: ",search)
-    //     }catch(e){
-    //         console.error(e)
-    //     }
-    // }
-
-    // const applyFilter = _.debounce(async () => {
-    //     try{
-    //         // console.log("event: ",event.target.value)
-    //         console.log("search: ",search)
-    //         // let searchNew = event.target.value
-    //         // setSearch(searchNew)
-    //         let spec = "http://127.0.0.1:9001/spec/swagger.json"
-    //         let config = { queryKey: 'key:public', spec }
-    //         let Api = new Client(spec, config)
-    //         let api = await Api.init()
-    //
-    //         let KeepKeyPage1 = await api.SearchByName(search)
-    //         console.log("KeepKeyPage1: ",KeepKeyPage1.data)
-    //         setData(KeepKeyPage1.data)
-    //     }catch(e){
-    //         console.error(e)
-    //     }
-    // }, 1500);
-    //
-    // useEffect(() => {
-    //     applyFilter();
-    // }, [search]);
 
     const handleKeyPress = (event) => {
         if (timeOut) {
@@ -210,7 +166,7 @@ const Main = () => {
         console.log("query: ",query)
         // let searchNew = event.target.value
         // setSearch(searchNew)
-        let spec = "http://127.0.0.1:9001/spec/swagger.json"
+
         let config = { queryKey: 'key:public', spec }
         let Api = new Client(spec, config)
         let api = await Api.init()
@@ -220,18 +176,28 @@ const Main = () => {
         setData(KeepKeyPage1.data)
     };
 
+    const onClear = async () => {
+        setQuery("")
+    };
+
+
     // onStart()
     useEffect(() => {
         onStart()
     }, [])
 
+
     return (
         <section className="container">
-            <div className="p-2">
+            <div>
+                <h2>Search For Asset</h2>
                 <input
+                    onFocus={onClear}
                     value={query}
                     onChange={handleKeyPress}
-                    type='email' />
+                    type='search'
+                />
+                <br/>
                 <br/>
             </div>
             <div className="p-2">
