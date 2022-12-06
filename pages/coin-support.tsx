@@ -44,7 +44,6 @@ const columns = [
             objectPosition="center"
             priority={true}
         >
-
         </Image>,
         footer: info => info.column.id,
     }),
@@ -151,8 +150,8 @@ const Main = () => {
     })
 
     const onStart = async function(){
-        // let spec = "https://pioneers.dev/spec/swagger.json"
-        let spec = "http://127.0.0.1:9001/spec/swagger.json"
+        let spec = "https://pioneers.dev/spec/swagger.json"
+        // let spec = "http://127.0.0.1:9001/spec/swagger.json"
         let config = { queryKey: 'key:public', spec }
         let Api = new Client(spec, config)
         let api = await Api.init()

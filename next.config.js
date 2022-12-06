@@ -22,16 +22,16 @@ module.exports = withMDX({
   // Append the default value with md extensions
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 })
-// module.exports = {
-//   images: {
-//     formats: ['image/avif', 'image/webp'],
-//     remotePatterns: [
-//       {
-//         protocol: 'https',
-//         hostname: 'pioneers.dev',
-//         port: '',
-//         pathname: '/coins/**',
-//       },
-//     ],
-//   },
-// }
+module.exports = {
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'pioneers.dev',
+        port: '',
+        pathname: '/coins/**',
+      },
+    ],
+  },
+}
