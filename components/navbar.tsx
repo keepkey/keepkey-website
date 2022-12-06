@@ -23,16 +23,22 @@ const navLinks: NavLink[] = [
   },
   {
     id: 1,
-    name: 'Community',
-    url: '/community',
+    name: 'Dapps',
+    url: '/dapps',
     external: false
   },
   {
     id: 2,
-    name: 'User Guide',
-    url: '/application',
+    name: 'Community',
+    url: '/community',
     external: false
   },
+  // {
+  //   id: 2,
+  //   name: 'User Guide',
+  //   url: '/application',
+  //   external: false
+  // },
   {
     id: 3,
     name: '3rd Party Applications',
@@ -43,12 +49,6 @@ const navLinks: NavLink[] = [
     id: 4,
     name: 'Coin Support',
     url: '/coin-support',
-    external: false
-  },
-  {
-    id: 5,
-    name: 'Dapps',
-    url: '/dapps',
     external: false
   },
   {
