@@ -16,13 +16,19 @@ interface NavLink {
 
 const navLinks: NavLink[] = [
   {
-    id: 4,
+    id: 0,
     name: 'Get Started',
     url: '/get-started',
     external: false
   },
   {
     id: 1,
+    name: 'Dapps',
+    url: '/dapps',
+    external: false
+  },
+  {
+    id: 2,
     name: 'Community',
     url: '/community',
     external: false
@@ -31,12 +37,6 @@ const navLinks: NavLink[] = [
     id: 2,
     name: 'Supported Applications',
     url: '/supported-applications',
-    external: false
-  },
-  {
-    id: 3,
-    name: 'Dapps',
-    url: '/dapps',
     external: false
   },
   {
