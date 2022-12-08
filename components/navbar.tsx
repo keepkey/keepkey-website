@@ -45,12 +45,12 @@ const navLinks: NavLink[] = [
     url: '/supported-applications',
     external: false
   },
-  {
-    id: 4,
-    name: 'Coin Support',
-    url: '/coin-support',
-    external: false
-  },
+  // {
+  //   id: 4,
+  //   name: 'Coin Support',
+  //   url: '/coin-support',
+  //   external: false
+  // },
   {
     id: 6,
     name: 'Integration Guide',
