@@ -6,7 +6,6 @@ import { loadShopifyBuyButton } from '../components/ShopifyBuyButton'
 import ShopifyBuyButton from '../components/ShopifyBuyButton'
 const shopifyBuyButtonId = 1665073941285;
 
-
 interface NavLink {
   id: number,
   name: string,
@@ -16,13 +15,19 @@ interface NavLink {
 
 const navLinks: NavLink[] = [
   {
-    id: 4,
+    id: 0,
     name: 'Get Started',
     url: '/get-started',
     external: false
   },
   {
     id: 1,
+    name: 'Dapps',
+    url: '/dapps',
+    external: false
+  },
+  {
+    id: 2,
     name: 'Community',
     url: '/community',
     external: false
@@ -34,7 +39,7 @@ const navLinks: NavLink[] = [
     external: false
   },
   {
-    id: 3,
+    id: 4,
     name: 'Integration Guide',
     url: '/integration-guide',
     external: false
