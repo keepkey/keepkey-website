@@ -6,7 +6,6 @@ import { loadShopifyBuyButton } from '../components/ShopifyBuyButton'
 import ShopifyBuyButton from '../components/ShopifyBuyButton'
 const shopifyBuyButtonId = 1665073941285;
 
-
 interface NavLink {
   id: number,
   name: string,
