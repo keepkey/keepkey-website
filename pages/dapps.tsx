@@ -139,7 +139,7 @@ const Main = () => {
             <br/>
             <text>
                 <p>
-                    A Dapp (decentralized application) is an application that operates autonomously as directed by smart contracts running a decentralized blockchain. Networks of dapps and protocols are the ecosystem that connects you to the world of decentralized finance.
+                    A Dapp (decentralized application) is an application that operates autonomously as directed by smart contracts running on a decentralized blockchain. Networks of dapps and protocols are the ecosystem that connects you to the world of decentralized finance.
                 </p>
                 <br/>
                 <p>
