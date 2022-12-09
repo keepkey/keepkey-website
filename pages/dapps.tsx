@@ -139,15 +139,10 @@ const Main = () => {
             <br/>
             <text>
                 <p>
-                    A Dapp (decentralized application) is an application that operates autonomously as directed by smart contracts running on a decentralized blockchain. Networks of dapps and protocols are the ecosystem that connects you to the world of decentralized finance.
-                </p>
+                    KeepKey makes it easy to interact with decentralized applications. You can use our in-app browser to easily access these dapps and use our wallet-connect integration to securely sign transactions. Our in-app browser ensures that you are always interacting with the correct version of the application you intend to access.                </p>
                 <br/>
                 <p>
-                    As of 2022, Dapps mange hundreds of billions of dollars of assets in systems and services that are controlled without any human intervention. There are thousands of dapps out there working to change the world of finance by removing centralized parties. They provide decentralized lending, stable coin issuance, multi-chain swapping, liquidity pool providing, exchanges, games, gambling, storage, high-risk investments, governance, property, identity, media, social applications.
-                </p>
-                <br/>
-                <p>
-                    You can use KeepKey to access these dapps through our built in browser and wallet-connect integration. This provides opportunities for users to participate in these ventures and a permissionless, decentralized, and non-custodial way. Your KeepKey will help you secure and protect your assets while you interact with these systems and services by providing transaction insight.
+                    Dapps (decentralized applications) are applications that run autonomously on a decentralized blockchain according to predefined smart contracts. Dapps and related protocols make up the decentralized finance (DeFi) ecosystem, which currently has a market value of hundreds of billions of dollars and is constantly growing. With KeepKey, you can securely access this DeFi ecosystem and take part in ventures such as decentralized lending, stable coin issuance, multi-chain swapping, liquidity pool providing, exchanges, games, gambling, storage, high-risk investments, governance, property, identity, media, and social applications. KeepKeys built-in DApp Store and in-app browser provide a secure and easy way to explore and interact with these dapps.
                 </p>
             </text>
             <div className="grid xl:grid-cols-2 gap-16 xl:gap-26 2xl:gap-36 align-center py-20 lg:py-32 border-solid border-2 border-blue-900">
