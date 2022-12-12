@@ -97,7 +97,7 @@ const Hero = () => {
             >
             </Image>
           </div>
-          <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">Welcome to KeepKey, the leading hardware wallet for securely storing your digital assets. KeepKey is the perfect tool for anyone looking to secure and mange their crypto savings, protect their online identities, and maximize their yield with access to thousands of decentralized finance (DeFi) dapps. With the KeepKey Dapp Store, you can easily explore, interact with, and take advantage of the latest DeFi opportunities. Get started with KeepKey today, and gain access to the world of secure, decentralized finance.</p>
+          <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">KeepKey is the leading hardware wallet for securely storing digital assets. Our Dapp Store offers access to thousands of decentralized finance opportunities. Get started today and unlock the world of secure, decentralized finance.</p>
 
           <div className="w-100">
             <div className="mr-4 mb-4 sm:mr-4 inline-block">
