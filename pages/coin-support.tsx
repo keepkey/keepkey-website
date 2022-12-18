@@ -18,11 +18,6 @@ const spec = "https://pioneers.dev/spec/swagger.json"
 
 const columnHelper = createColumnHelper<any>()
 
-let fallbackIcon = function (){
-    this.onerror=null;
-    this.src='/images/noimage.gif';
-}
-
 const columns = [
     columnHelper.accessor('image', {
         cell: info => <Image
@@ -38,7 +33,11 @@ const columns = [
         </Image>,
         footer: info => info.column.id,
     }),
-    columnHelper.accessor('name', {
+    columnHelper.accessor('rank', {
+        cell: info => info.getValue(),
+        footer: info => info.column.id,
+    }),
+    columnHelper.accessor('symbol', {
         cell: info => info.getValue(),
         footer: info => info.column.id,
     }),
@@ -48,24 +47,18 @@ const columns = [
         header: () => <span>blockchain</span>,
         footer: info => info.column.id,
     }),
-    columnHelper.accessor('symbol', {
-        id: 'symbol',
-        cell: info => <i>{info.getValue().toString()}</i>,
-        header: () => <span>symbol</span>,
-        footer: info => info.column.id,
-    }),
     columnHelper.accessor('description', {
         id: 'description',
         cell: info => <i>{info.getValue().toString()}</i>,
         header: () => <span>description</span>,
         footer: info => info.column.id,
     }),
-    // columnHelper.accessor('website', {
-    //     id: 'website',
-    //     cell: info => <i>{info.getValue().toString()}</i>,
-    //     header: () => <span>website</span>,
-    //     footer: info => info.column.id,
-    // }),
+    columnHelper.accessor('explorer', {
+        id: 'explorer',
+        cell: info => <i>{info.getValue().toString()}</i>,
+        header: () => <span>website</span>,
+        footer: info => info.column.id,
+    }),
     // columnHelper.accessor('explorer', {
     //     id: 'explorer',
     //     cell: info => <i>{info.getValue().toString()}</i>,
@@ -99,12 +92,33 @@ const columns = [
 ]
 
 export default function DesktopGuide() {
+    const onStart = async function(){
+        let config = { queryKey: 'key:public', spec }
+        let Api = new Client(spec, config)
+        let api = await Api.init()
+        //get globals
+        let globals = await api.Globals()
+        console.log("globals: ",globals.data)
+        setAssets(globals.data.info.assets)
+        setNBlockchains(globals.data.info.blockchains)
+    }
+
+    const [assets, setAssets] = useState('...');
+    const [blockchains, setNBlockchains] = useState('...');
+
+    // onStart()
+    useEffect(() => {
+        onStart()
+    }, [])
+
     return (
         <>
             <Head><title>{pageTitle} | KeepKey</title></Head>
             <HeroSimple
                 heroBgImg={heroBgImage}
                 pageTitle={pageTitle}
+                assets={assets}
+                blockchains={blockchains}
             />
             <Main />
         </>
@@ -145,7 +159,7 @@ const Main = () => {
         let Api = new Client(spec, config)
         let api = await Api.init()
         console.log("checkpoint2")
-        let KeepKeyPage1 = await api.SearchByTagNative("KeepKeySupport")
+        let KeepKeyPage1 = await api.SearchBlockchainsPageniate({limit:100,skip:0})
         console.log("KeepKeyPage1: ",KeepKeyPage1.data)
         setData(KeepKeyPage1.data)
     }
@@ -171,7 +185,7 @@ const Main = () => {
         let Api = new Client(spec, config)
         let api = await Api.init()
 
-        let KeepKeyPage1 = await api.SearchByName(query)
+        let KeepKeyPage1 = await api.SearchByBlockchainName(query)
         console.log("KeepKeyPage1: ",KeepKeyPage1.data)
         setData(KeepKeyPage1.data)
     };
@@ -190,7 +204,14 @@ const Main = () => {
     return (
         <section className="container">
             <div>
-                <h2>Search For Asset</h2>
+                KeepKey supports an ever-growing list of cryptocurrencies and digital assets.
+                <br/>
+                Use the following page to search for assets blockchains and dapps that you can use with your KeepKey.
+                <br/>
+                <br/>
+            </div>
+            <div>
+                <h2>Search For Blockchain</h2>
                 <input
                     onFocus={onClear}
                     value={query}
