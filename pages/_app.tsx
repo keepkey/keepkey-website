@@ -1,3 +1,4 @@
+import * as React from 'react'
 import Layout from '../components/layout'
 import Head from 'next/head'
 import ogImage from 'public/images/hardware/wallet-horizontal-2.png'
