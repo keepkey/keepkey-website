@@ -28,9 +28,11 @@ const Hero = ({ heroBgImg, pageTitle, assets, blockchains, dapps }: Props) => {
                 <div className="">
                 <h1 className="text-4xl xl:text-6xl leading-tight tracking-wide font-bold text-white mb-4">{pageTitle}</h1>
                     <div className="text-2xl xl:text-6xl leading-tight tracking-wide font-bold text-white mb-4">
-                        {assets ? <div>Supported Assets: {assets}</div> : <div></div>}
-                        {blockchains ? <div>Supported Blockchains: {blockchains}</div> : <div></div>}
-                        {dapps ? <div>Supported Dapps: {dapps}</div> : <div></div>}
+                        <h4>
+                            {assets ? <div>Supported Assets: {assets}</div> : <div></div>}
+                            {blockchains ? <div>Supported Blockchains: {blockchains}</div> : <div></div>}
+                            {dapps ? <div>Supported Dapps: {dapps}</div> : <div></div>}
+                        </h4>
                     </div>
                 {/* <p className="text-2xl text-white mb-8 leading-relaxed tracking-wide">See below for a list of our recommendations.</p> */}
                 </div>

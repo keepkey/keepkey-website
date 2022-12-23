@@ -14,7 +14,7 @@ import {
 } from '@tanstack/react-table'
 import Client from '@pioneer-platform/pioneer-client'
 const spec = "https://pioneers.dev/spec/swagger.json"
-// let spec = "http://127.0.0.1:9001/spec/swagger.json"
+//let spec = "http://127.0.0.1:9001/spec/swagger.json"
 
 const columnHelper = createColumnHelper<any>()
 
@@ -47,12 +47,12 @@ const columns = [
         header: () => <span>blockchain</span>,
         footer: info => info.column.id,
     }),
-    columnHelper.accessor('description', {
-        id: 'description',
-        cell: info => <i>{info.getValue().toString()}</i>,
-        header: () => <span>description</span>,
-        footer: info => info.column.id,
-    }),
+    // columnHelper.accessor('description', {
+    //     id: 'description',
+    //     cell: info => <i>{info.getValue().toString()}</i>,
+    //     header: () => <span>description</span>,
+    //     footer: info => info.column.id,
+    // }),
     columnHelper.accessor('explorer', {
         id: 'explorer',
         cell: info => <i>{info.getValue().toString()}</i>,
@@ -100,11 +100,11 @@ export default function DesktopGuide() {
         let globals = await api.Globals()
         console.log("globals: ",globals.data)
         setAssets(globals.data.info.assets)
-        setNBlockchains(globals.data.info.blockchains)
+        setBlockchains(globals.data.info.blockchains)
     }
 
     const [assets, setAssets] = useState('...');
-    const [blockchains, setNBlockchains] = useState('...');
+    const [blockchains, setBlockchains] = useState('...');
 
     // onStart()
     useEffect(() => {
@@ -159,7 +159,7 @@ const Main = () => {
         let Api = new Client(spec, config)
         let api = await Api.init()
         console.log("checkpoint2")
-        let KeepKeyPage1 = await api.SearchBlockchainsPageniate({limit:100,skip:0})
+        let KeepKeyPage1 = await api.SearchAssetsPageniate({limit:100,skip:0})
         console.log("KeepKeyPage1: ",KeepKeyPage1.data)
         setData(KeepKeyPage1.data)
     }
@@ -185,7 +185,7 @@ const Main = () => {
         let Api = new Client(spec, config)
         let api = await Api.init()
 
-        let KeepKeyPage1 = await api.SearchByBlockchainName(query)
+        let KeepKeyPage1 = await api.SearchByName(query)
         console.log("KeepKeyPage1: ",KeepKeyPage1.data)
         setData(KeepKeyPage1.data)
     };
@@ -210,48 +210,48 @@ const Main = () => {
                 <br/>
                 <br/>
             </div>
-            <div>
-                <h2>Search For Blockchain</h2>
-                <input
-                    onFocus={onClear}
-                    value={query}
-                    onChange={handleKeyPress}
-                    type='search'
-                />
-                <br/>
-                <br/>
-            </div>
-            <div className="p-2">
-                <table>
-                    <thead>
-                    {table.getHeaderGroups().map(headerGroup => (
-                        <tr key={headerGroup.id}>
-                            {headerGroup.headers.map(header => (
-                                <th key={header.id}>
-                                    {header.isPlaceholder
-                                        ? null
-                                        : flexRender(
-                                            header.column.columnDef.header,
-                                            header.getContext()
-                                        )}
-                                </th>
-                            ))}
-                        </tr>
-                    ))}
-                    </thead>
-                    <tbody>
-                    {table.getRowModel().rows.map(row => (
-                        <tr key={row.id}>
-                            {row.getVisibleCells().map(cell => (
-                                <td key={cell.id}>
-                                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                </td>
-                            ))}
-                        </tr>
-                    ))}
-                    </tbody>
-                </table>
-                <div className="h-4" />
+            <div className="grid grid-cols-3 2 ">
+                <div className="">
+                    <h2>Search For Asset</h2>
+                    <input
+                        onFocus={onClear}
+                        value={query}
+                        onChange={handleKeyPress}
+                        type='search'
+                        style={{border: '2px solid black', padding: '15px'}}
+                    />
+                </div>
+                <div className="self-center">
+                    <table>
+                        <thead>
+                        {table.getHeaderGroups().map(headerGroup => (
+                            <tr key={headerGroup.id}>
+                                {headerGroup.headers.map(header => (
+                                    <th key={header.id}>
+                                        {header.isPlaceholder
+                                            ? null
+                                            : flexRender(
+                                                header.column.columnDef.header,
+                                                header.getContext()
+                                            )}
+                                    </th>
+                                ))}
+                            </tr>
+                        ))}
+                        </thead>
+                        <tbody>
+                        {table.getRowModel().rows.map(row => (
+                            <tr key={row.id}>
+                                {row.getVisibleCells().map(cell => (
+                                    <td key={cell.id}>
+                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                    </td>
+                                ))}
+                            </tr>
+                        ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
         </section>

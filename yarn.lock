@@ -3065,6 +3065,11 @@ quick-lru@^5.1.1:
   resolved "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
+react-columns@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/react-columns/-/react-columns-1.2.1.tgz#6d0c097f91ae279170213bffd5263fcd4d415142"
+  integrity sha512-z0sAMP6pqF0EgJhD4+m8eq67Q4PonqJ17/K+hWZrbMGLj1+aGDomkCTAkupL6v2I5HyDqiQOX/9agzMWcUZwsQ==
+
 react-dom@18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
@@ -3088,10 +3093,10 @@ react-table@^7.8.0:
   resolved "https://registry.yarnpkg.com/react-table/-/react-table-7.8.0.tgz#07858c01c1718c09f7f1aed7034fcfd7bda907d2"
   integrity sha512-hNaz4ygkZO4bESeFfnfOft73iBUj8K5oKi1EcSHPAibEydfsX2MyU6Z8KCr3mv3C9Kqqh71U+DhZkFvibbnPbA==
 
-react-tabs@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.npmjs.org/react-tabs/-/react-tabs-5.1.0.tgz"
-  integrity sha512-jsPVEPuhG7JljTo8Q4ujz4UKRpG90nHlDClAdvV5KrLxCHU+MT/kg7dmhq8fDv8+frciDtaYeFFlTVRLm4N5AQ==
+react-tabs@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/react-tabs/-/react-tabs-6.0.0.tgz#328fd61ca534e0517d24f4927e37e99b29461880"
+  integrity sha512-8jKLKrlwxmn5/+xsa76yi27ZdB8E/WhlhQZw739O5UlOeUGtVoVeWnpqIewv/KbjTw7gQf/uA51zWUNt4IVygQ==
   dependencies:
     clsx "^1.1.0"
     prop-types "^15.5.0"
