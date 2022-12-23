@@ -4,6 +4,8 @@ import Head from 'next/head'
 import ogImage from 'public/images/hardware/wallet-horizontal-2.png'
 import { useRouter } from 'next/router';
 import '../styles/application.scss'
+// pages/_app.js
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -17,6 +19,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <GoogleAnalytics trackPageViews />
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

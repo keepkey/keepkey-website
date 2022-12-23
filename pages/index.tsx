@@ -11,9 +11,12 @@ import walletVertical from 'public/images/hardware/wallet-vertical.png'
 import computerLockImage from 'public/images/icons/computer-lock.svg'
 import backupImage from 'public/images/icons/backup.svg'
 import ebStorageImage from 'public/images/icons/eb-storage.svg'
+import pin from 'public/images/desktop/Pin.png'
 import openSourceImage from 'public/images/icons/open-source.svg'
-import desktopApp from 'public/images/desktop/DappStore.png'
+import shapeshiftDemoImage from 'public/images/software/shapeshift-demo.png'
+import dappstore from 'public/images/software/shapeshift-demo.png'
 import walletDeskImage from 'public/images/heros/wallet-desk-grayscale.png'
+import thorchain from 'public/images/logos/thorchain.jpeg'
 import platform from 'platform-detect/os.mjs'
 import axios from 'axios';
 const shopifyBuyButtonId = 1663605399427;
@@ -94,8 +97,7 @@ const Hero = () => {
             >
             </Image>
           </div>
-          <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">Protect your cryptocurrencies, store your private keys offline, and safeguard your
-            assets from hackers. It’s time to achieve financial freedom in the most secure way with KeepKey.</p>
+          <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">KeepKey is the leading hardware wallet for securely storing digital assets. Our Dapp Store offers access to thousands of decentralized finance opportunities. Get started today and unlock the world of secure, decentralized finance.</p>
 
           <div className="w-100">
             <div className="mr-4 mb-4 sm:mr-4 inline-block">
@@ -179,7 +181,7 @@ const features: Feature[] = [
     key: 4,
     icon: openSourceImage,
     title: 'Effortless Exchanges',
-    description: 'Quickly exchange cryptocurrencies via the '+<a href={'https://thorchain.org/'}>Thorchain Protocol </a> +' directly from your wallet.'
+    description: 'Quickly exchange cryptocurrencies via the native Thorchain integration, directly from your wallet.'
   },
 ]
 
@@ -224,17 +226,14 @@ const PromoSection = () => {
     <section className="bg-zinc-100">
       <div className="container grid gap-24 md:grid-cols-2">
         <div className="my-auto">
-          <h2>New Desktop Application!</h2>
+          <h2>Now with a stand alone application!</h2>
           <p className="font-bold mt-6 mb-4">A KeepKey-secured platform built to handle all of your crypto needs</p>
-          <p>KeepKey has a new stand alone application, forked from the ShapeShift Platform. a web-based interface that consolidates your many crypto tools into one, beautiful environment. Click below to experience a new era in hardware security.</p>
-          <Link href="https://github.com/keepkey/keepkey-desktop">
-            <a className="btn mt-7">Open Source Desktop Application</a>
-          </Link>
+          <p>KeepKey now offers an open source application with a native RESTful API that simplifies the process of building dapps on the platform.</p>
         </div>
         <div className="max-w-xl">
           <Image
-            src={desktopApp}
-            alt='shapeshift demo'
+            src={pin}
+            alt='desktop'
             layout="responsive"
             quality={100}
           >
@@ -278,9 +277,7 @@ const LeadingCryptos = () => {
           <div className="w-40"><Image src={btgIcon} alt="btg icon" unoptimized={true}></Image></div>
           <div className="w-40"><Image src={goIcon} alt="go icon" unoptimized={true}></Image></div>
         </div>
-        <Link href="https://beta.shapeshift.com">
           <a className="btn mt-7">View all 40+ Coins!</a>
-        </Link>
       </div>
     </section>
   )
@@ -322,13 +319,13 @@ const ProductInfo = () => {
           >
           </Image>
         </div>
-        <div>
-          <h2>Become a KeepKey Affiliate</h2>
-          <p className="mt-6">Earn commission on every KeepKey sale you generate! KeepKey believes that everyone should be their own bank. {`That's`} why {`we've`} designed our program and product, to set you up for success.</p>
-          <Link href="https://shapeshift.com/keepkey-affiliate">
-            <a className="btn mt-8" target="_blank">Apply Now</a>
-          </Link>
-        </div>
+        {/*<div>*/}
+        {/*  <h2>Become a KeepKey Affiliate</h2>*/}
+        {/*  <p className="mt-6">Earn commission on every KeepKey sale you generate! KeepKey believes that everyone should be their own bank. {`That's`} why {`we've`} designed our program and product, to set you up for success.</p>*/}
+        {/*  <Link href="https://shapeshift.com/keepkey-affiliate">*/}
+        {/*    <a className="btn mt-8" target="_blank">Apply Now</a>*/}
+        {/*  </Link>*/}
+        {/*</div>*/}
       </div>
     </section>
   )
