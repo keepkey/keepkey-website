@@ -11,10 +11,6 @@ const pageTitle = "Limited Warranty"
 
 export default function Onboarding() {
 
-    useEffect(() => {
-        loadShopifyBuyButton(shopifyBuyButtonId);
-    }, []);
-
     return (
         <>
             <Head><title>{pageTitle} | KeepKey</title></Head>
