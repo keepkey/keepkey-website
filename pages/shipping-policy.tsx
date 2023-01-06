@@ -11,10 +11,6 @@ const pageTitle = "Limited Warranty"
 
 export default function Onboarding() {
 
-    useEffect(() => {
-        loadShopifyBuyButton(shopifyBuyButtonId);
-    }, []);
-
     return (
         <>
             <Head><title>{pageTitle} | KeepKey</title></Head>
@@ -27,7 +23,7 @@ export default function Onboarding() {
 
 const Hero = () => {
     return (
-        <div className="relative z-0 pt-44 pb-20 xl:py-72 bg-black">
+        <div className="relative z-0 pt-44 pb-20 xl:py-48 bg-black">
 
         </div>
     )
@@ -42,10 +38,8 @@ import myCryptoLogo from 'public/images/supported-applications/mycrypto-block-bl
 const Main = () => {
     return (
         <section>
-            <div className="container grid gap-y-24 md:gap-y-48">
+            <div className="container grid ">
 
-                <div className="grid md:grid-cols-2 gap-y-10 gap-x-24 lg:gap-32">
-                    <div className="self-center order-1 md:order-none">
                         <h2>KeepKey Shipping Policy
                         </h2>
                         <p className="my-6"></p>
@@ -93,10 +87,6 @@ Cross-border shipments going through customs inspections can delay delivery. The
                         </p>
                         </text>
                     </div>
-                </div>
-
-
-            </div>
         </section>
     )
 }
