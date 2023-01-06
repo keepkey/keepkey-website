@@ -23,7 +23,7 @@ export default function Onboarding() {
 
 const Hero = () => {
     return (
-        <div className="relative z-0 pt-44 pb-20 xl:py-72 bg-black">
+        <div className="relative z-0 pt-44 pb-20 xl:py-48 bg-black">
 
         </div>
     )
