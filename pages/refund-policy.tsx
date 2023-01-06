@@ -42,13 +42,11 @@ import myCryptoLogo from 'public/images/supported-applications/mycrypto-block-bl
 const Main = () => {
     return (
         <section>
-            <div className="container grid gap-y-24 md:gap-y-48">
+            <div className="container grid">
 
-                <div className="grid md:grid-cols-2 gap-y-10 gap-x-24 lg:gap-32">
-                    <div className="self-center order-1 md:order-none">
                         <h2>KeepKey Refund Policy
                         </h2>
-                        <h3>Refunds</h3>
+                        <h4>Refunds</h4>
                         <p className="my-6"></p>
                         To be eligible for a return, your item must be in the same condition that you received it. It must also be in the original packaging. To complete your return, we require a receipt or proof of purchase.
                         <br/>
@@ -59,16 +57,16 @@ const Main = () => {
 
                         If you are approved, then your refund will be processed, and a representative from KeepKey will contact you for your preferred method of payment.
                         <br/>
-                        <h3>Late or Missing Refunds</h3>
+                        <h4>Late or Missing Refunds</h4>
                         If you have not received a refund by this point, please contact us at support@keepkey.com.
                         <br/>
-                        <h3>Bitcoin Payment Refunds</h3>
+                        <h4>Bitcoin Payment Refunds</h4>
                         Refunds for orders paid with BTC will be issued for the full USD value of the order and processed at the BTC exchange rate when the refund is completed.
                         <br/>
-                        <h3>Exchanges</h3>
+                        <h4>Exchanges</h4>
                         We will only replace defective devices. If you need to exchange your KeepKey, please contact customer support.
                         <br/>
-                        <h3>Shipping</h3>
+                        <h4>Shipping</h4>
                         Please return your device to:
                         <br/>
                         Key Hodlers, LLC\
@@ -84,10 +82,6 @@ const Main = () => {
                         We highly recommend that you choose a shipping method with tracking information and proof of delivery.
                         <br/>
                     </div>
-                </div>
-
-
-            </div>
         </section>
     )
 }

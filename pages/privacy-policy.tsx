@@ -42,10 +42,8 @@ import myCryptoLogo from 'public/images/supported-applications/mycrypto-block-bl
 const Main = () => {
     return (
         <section>
-            <div className="container grid gap-y-24 md:gap-y-48">
+            <div className="container grid">
 
-                <div className="grid md:grid-cols-2 gap-y-10 gap-x-24 lg:gap-32">
-                    <div className="self-center order-1 md:order-none">
                         <h2>Online Privacy Notice
                         </h2>
                         <p className="my-6"></p>
@@ -58,7 +56,7 @@ const Main = () => {
                         personal data when you use our website https://shapeshift.io/keepkey/
                         (including any sub-sites and related extensions thereof; “the website”).
                         <br/>
-                        **Personal data we collect and process in order to make the website available**
+                        <h4>Personal data we collect and process in order to make the website available</h4>
                         You can visit the website and obtain information about our services
                         without telling us who you are. As with any connection with a webserver,
                         however, the server on which we host the website automatically logs and
@@ -82,7 +80,7 @@ const Main = () => {
                         https://fonts.google.com. Further information on how Google handles
                         personal data can be found here: [https://policies.google.com/privacy?hl=en](https://policies.google.com/privacy?hl=en).
                         <br/>
-                        **Personal data we collect and process to provide services to you and to respond to your inquiries**
+                        <h4>Personal data we collect and process to provide services to you and to respond to your inquiries</h4>
                         If you interact with order or inquiry forms on the website (e.g.
                         purchasing a KeepKey device or requesting support regarding a device),
                         we will collect the information that you provide to us. We collect and
@@ -114,7 +112,7 @@ const Main = () => {
                         and your options in connection with the services of BlockCypher can be
                         found here: [https://www.blockcypher.com/privacy.html](https://www.blockcypher.com/privacy.html).
                         <br/>
-                        **We store all of the personal data you provide to us in an encrypted fashion.**
+                        <h4>We store all of the personal data you provide to us in an encrypted fashion.</h4>
                         We use the services of Shopify to process orders on our website.
                         Further information on data protection and your options in connection
                         with the services of Shopify can be found here: [https://www.shopify.com/legal/privacy](https://www.shopify.com/legal/privacy).
@@ -147,7 +145,7 @@ const Main = () => {
                         data protection and your options in connection with the services of
                         Zendesk can be found here: [https://www.zendesk.com/company/customers-partners/privacy-policy/](https://www.zendesk.com/company/customers-partners/privacy-policy/) (Zendesk Privacy Policy) and [https://www.zendesk.com/company/customers-partners/cookie-policy/](https://www.zendesk.com/company/customers-partners/cookie-policy/) (Zendesk Cookie Policy).
                         <br/>
-                        **Data we collect and process to analyze and improve the use of the website; use of cookies**
+                        <h4>Data we collect and process to analyze and improve the use of the website; use of cookies</h4>
                         In addition, based on our legitimate interest to bring you the best
                         possible user experience, we analyze the use of the website to gain
                         insight on how we may improve our services. The website uses cookies
@@ -194,7 +192,7 @@ const Main = () => {
                         however, that some functions of the website may be limited or
                         unavailable if you disable the storing of cookies.
                         <br/>
-                        **Data that we collect and process to target potential customers**
+                        <h4>Data that we collect and process to target potential customers</h4>
                         We use Google Tag Manager to generate tags for the website and
                         applications. These tags enable us to tailor marketing measures for our
                         services to potential customers (re-targeting).
@@ -211,7 +209,7 @@ const Main = () => {
                         above “Data we collect and process to analyze and improve the use of the
                         website; use of cookies”.
                         <br/>
-                        **How we process and protect your personal data; how long we store it**
+                        <h4>How we process and protect your personal data; how long we store it</h4>
                         We collect, process and protect your personal data responsibly and in
                         accordance with applicable laws. We process it only for the purposes
                         for which you provide the personal data to us, as set forth in this
@@ -223,7 +221,7 @@ const Main = () => {
                         confidentiality and integrity of the personal data we collect on the
                         website.
                         <br/>
-                        **With whom we share your personal data**
+                        <h4>With whom we share your personal data</h4>
                         In connection with the offers and services provided on the website,
                         to protect our legitimate interests or to fulfill legal requirements, it
                         may be necessary to share your personal data with our affiliate
@@ -247,7 +245,7 @@ const Main = () => {
                         where applicable, the respective provisions of the EU General Data
                         Protection Regulation (GDPR).
                         <br/>
-                        **The rights you have regarding your personal data**
+                        <h4>The rights you have regarding your personal data</h4>
                         <br/>
                         If you are a citizen of the European Union, you have certain
                         individual rights regarding the personal data that we collect and
@@ -274,7 +272,7 @@ const Main = () => {
                         <br/>
                         Lastly, you have a right to lodge a complaint with the competent supervisory authority.
                         <br/>
-                        **Who we are and how to contact us**
+                        <h4>Who we are and how to contact us</h4>
                         KeepKey is the controller in relation to the collection and
                         processing of personal data through the website. Key Hodlers, LLC is an
                         LLC formed under the laws of the State of Delaware, United States.
@@ -290,7 +288,7 @@ const Main = () => {
                         information such as your name, return e-mail or physical address.
                         Failure to do so may prevent us from providing a response.
                         <br/>
-                        **Links to Other Websites**
+                        <h4>Links to Other Websites</h4>
                         Our website does contain links to affiliate and other websites.
                         KeepKey does not claim nor accept responsibility for any privacy
                         policies, practices and/or procedures of other such websites. Therefore,
@@ -300,14 +298,11 @@ const Main = () => {
                         Privacy Policy Agreement applies only and solely to the information
                         collected by our website.
                         <br/>
-                        **How we can change this Online Privacy Notice**
+                        <h4>How we can change this Online Privacy Notice</h4>
                         We reserve the right to change this Online Privacy Notice at any
                         time. The version published on the website is the applicable version.
                     </div>
-                </div>
 
-
-            </div>
         </section>
     )
 }

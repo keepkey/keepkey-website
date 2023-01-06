@@ -42,10 +42,7 @@ import myCryptoLogo from 'public/images/supported-applications/mycrypto-block-bl
 const Main = () => {
     return (
         <section>
-            <div className="container grid gap-y-24 md:gap-y-48">
-
-                <div className="grid md:grid-cols-2 gap-y-10 gap-x-24 lg:gap-32">
-                    <div className="self-center order-1 md:order-none">
+            <div className="container grid ">
                         <h2>Security Policy
                         </h2>
                         <p className="my-6"></p>
@@ -75,13 +72,16 @@ const Main = () => {
                         <br/>
                         If you would like to encrypt your vulnerability report, you can use the
                         following GPG key:
-                    </div>
                     <br/>
-                    <details>
-                        <summary>GPG Key</summary>
-                        ```
-                        -----BEGIN PGP PUBLIC KEY BLOCK-----
+                <div>
 
+                </div>
+                <details>
+                    <summary>GPG Key</summary>
+                    <p>
+
+                        -----BEGIN PGP PUBLIC KEY BLOCK-----
+                        <br/>
                         mQINBFqzSDABEAC8+iDfkjzoCiELiP4XQ5mc+UvEyYmkawy3iVJA36lXUgAXepM2
                         CqFRdcEamwukzP9XnpHlrTZIgYYkBCXPqy19bnvBiZ3LXwnPvvWG/skWQcoI9n6g
                         bgbYQ/DME/U7G8UjUXknKLfURYyAt2DE3VJP4qilJRQRIF0a3bMF1w6mSCOHwFUS
@@ -177,13 +177,14 @@ const Main = () => {
                         ELz4oMjKb0M8ooSv26UusBMS63vqCy1oN3RDzgOkt0N3rcltJ6Q87X1h/cVo+tOd
                         vdS+QrWAKcrcUEg=
                         =G0QG
+                        <br/>
                         -----END PGP PUBLIC KEY BLOCK-----
-                        ```
-                    </details>
+
+                    </p>
+
+                </details>
                 </div>
 
-
-            </div>
         </section>
     )
 }

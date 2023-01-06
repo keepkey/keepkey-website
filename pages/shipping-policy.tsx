@@ -42,10 +42,8 @@ import myCryptoLogo from 'public/images/supported-applications/mycrypto-block-bl
 const Main = () => {
     return (
         <section>
-            <div className="container grid gap-y-24 md:gap-y-48">
+            <div className="container grid ">
 
-                <div className="grid md:grid-cols-2 gap-y-10 gap-x-24 lg:gap-32">
-                    <div className="self-center order-1 md:order-none">
                         <h2>KeepKey Shipping Policy
                         </h2>
                         <p className="my-6"></p>
@@ -93,10 +91,6 @@ Cross-border shipments going through customs inspections can delay delivery. The
                         </p>
                         </text>
                     </div>
-                </div>
-
-
-            </div>
         </section>
     )
 }

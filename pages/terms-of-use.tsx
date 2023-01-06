@@ -42,15 +42,9 @@ import myCryptoLogo from 'public/images/supported-applications/mycrypto-block-bl
 const Main = () => {
     return (
         <section>
-            <div className="container grid gap-y-24 md:gap-y-48">
-
-                <div className="grid md:grid-cols-2 gap-y-10 gap-x-24 lg:gap-32">
-                    <div className="self-center order-1 md:order-none">
-                        <h2>KeepKey Terms of Service
-                        </h2>
-                    </div>
-                    <br/>
-                    <br/>
+            <div className="container grid">
+                    <h2>KeepKey Terms of Service
+                    </h2>
                     Welcome to KeepKey.com which is owned and operated by Key Hodlers, LLC (collectively, “KeepKey,” “We,” or “Us”).
                     This page explains the terms by which you may access and use KeepKey.com
                     and any other product offered by KeepKey (“Websites”) and our online
@@ -608,8 +602,6 @@ const Main = () => {
                     <br/>
                 </div>
 
-
-            </div>
         </section>
     )
 }
