@@ -77,7 +77,7 @@ const Main = () => {
                 <TabPanel>
                     <div className="article-preview-cards">
                         {articlesNews.map(article => (
-                            <div>
+                            <div key={article.title}>
                                 <Card
                                     direction={{ base: 'column', sm: 'row' }}
                                     overflow='hidden'
@@ -115,7 +115,7 @@ const Main = () => {
                 <TabPanel>
                     <div className="article-preview-cards">
                         {articlesUsers.map(article => (
-                            <div>
+                            <div key={article.title}>
                                 <Card
                                     direction={{ base: 'column', sm: 'row' }}
                                     overflow='hidden'
@@ -153,7 +153,7 @@ const Main = () => {
                 <TabPanel>
                     <div className="article-preview-cards">
                         {articlesDevelopers.map(article => (
-                            <div>
+                            <div key={article.title}>
                                 <Card
                                     direction={{ base: 'column', sm: 'row' }}
                                     overflow='hidden'
