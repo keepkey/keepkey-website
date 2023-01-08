@@ -30,6 +30,7 @@ const Hero = ({ heroBgImg, pageTitle, assets, blockchains, dapps }: Props) => {
                     <div className="text-2xl xl:text-6xl leading-tight tracking-wide font-bold text-white mb-4">
                         <h4>
                             {assets ? <div>Supported Assets: {assets}</div> : <div></div>}
+                            <br/>
                             {blockchains ? <div>Supported Blockchains: {blockchains}</div> : <div></div>}
                             {dapps ? <div>Supported Dapps: {dapps}</div> : <div></div>}
                         </h4>

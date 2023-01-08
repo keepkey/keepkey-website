@@ -5,7 +5,23 @@ import ogImage from 'public/images/hardware/wallet-horizontal-2.png'
 import { useRouter } from 'next/router';
 import '../styles/application.scss'
 // pages/_app.js
+import { ChakraProvider } from '@chakra-ui/react'
+// pages/_app.js
 import { GoogleAnalytics } from "nextjs-google-analytics";
+
+// 1. Import the extendTheme function
+import { extendTheme } from '@chakra-ui/react'
+
+// 2. Extend the theme to include custom colors, fonts, etc
+const colors = {
+  brand: {
+    900: '#f6f7f7',
+    800: '#020202',
+    700: '#ba9862',
+  },
+}
+
+const theme = extendTheme({ colors })
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -37,7 +53,9 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <Layout>
+        <ChakraProvider theme={theme}>
         <Component {...pageProps} />
+        </ChakraProvider>
       </Layout>
     </>
   )

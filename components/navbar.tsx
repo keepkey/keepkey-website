@@ -46,8 +46,8 @@ const navLinks: NavLink[] = [
   },
   {
     id: 6,
-    name: 'Integration Guide',
-    url: '/integration-guide',
+    name: 'Blog',
+    url: '/blog',
     external: false
   }
 ]
