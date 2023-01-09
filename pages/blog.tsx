@@ -40,13 +40,14 @@ const Main = () => {
             const res = response.data.items;
             const posts = response.data.items
             console.log({avatar,profileLink,posts})
-            let articlesNews = posts.filter(post => post.categories.includes("news", "keepkey"));
-            let articlesUsers = posts.filter(post => post.categories.includes('',"keepkey"));
-            let articlesDevelopers = posts.filter(post => post.categories.includes('software-development',"keepkey"));
+            // let articlesNews = posts.filter(post => post.categories.includes("news", "keepkey"));
+            // let articlesUsers = posts.filter(post => post.categories.includes('cryptocurrency',"keepkey"));
+            let articlesDevelopers = posts.filter(post => post.categories.includes("keepkey"));
+            articlesDevelopers = articlesDevelopers.reverse();
 
 
-            setArticlesNews(articlesNews)
-            setArticlesUsers(articlesUsers)
+            // setArticlesNews(articlesNews)
+            // setArticlesUsers(articlesUsers)
             setArticlesDevelopers(articlesDevelopers)
 
             //user articles
@@ -65,131 +66,40 @@ const Main = () => {
     return (
 
         <section className="container">
-            <Tabs>
-                <TabList>
-                    <Tab>News</Tab>
-                    <Tab>Users</Tab>
-                    <Tab>Developers</Tab>
-                </TabList>
+            {articlesDevelopers.map(article => (
+                <div key={article.title}>
+                    <Card
+                        direction={{ base: 'column', sm: 'row' }}
+                        overflow='hidden'
+                        variant='outline'
+                    >
+                        <Image
+                            objectFit='cover'
+                            maxW={{ base: '100%', sm: '200px' }}
+                            src={article.thumbnail}
+                            alt='Article Image'
+                        />
 
-                <hr className="mt-16" />
+                        <Stack>
+                            <CardBody>
+                                <Heading size='md'>{article.title}</Heading>
+                                <Text><small>published: {article.pubDate}</small></Text>
+                                <Text py='2'>
+                                    {article.tags}
+                                </Text>
+                            </CardBody>
 
-                <TabPanel>
-                    <div className="article-preview-cards">
-                        {articlesNews.map(article => (
-                            <div key={article.title}>
-                                <Card
-                                    direction={{ base: 'column', sm: 'row' }}
-                                    overflow='hidden'
-                                    variant='outline'
-                                >
-                                    <Image
-                                        objectFit='cover'
-                                        maxW={{ base: '100%', sm: '200px' }}
-                                        src={article.thumbnail}
-                                        alt='Article Image'
-                                    />
-
-                                    <Stack>
-                                        <CardBody>
-                                            <Heading size='md'>{article.title}</Heading>
-                                            <Text><small>published: {article.pubDate}</small></Text>
-                                            <Text py='2'>
-                                                {article.tags}
-                                            </Text>
-                                        </CardBody>
-
-                                        <CardFooter>
-                                            <Button
-                                                onClick={() => window.open(article.link, '_blank')}
-                                                variant='solid' colorScheme='blue'>
-                                                Read More
-                                            </Button>
-                                        </CardFooter>
-                                    </Stack>
-                                </Card>
-                            </div>
-                        ))}
-                    </div>
-                </TabPanel>
-                <TabPanel>
-                    <div className="article-preview-cards">
-                        {articlesUsers.map(article => (
-                            <div key={article.title}>
-                                <Card
-                                    direction={{ base: 'column', sm: 'row' }}
-                                    overflow='hidden'
-                                    variant='outline'
-                                >
-                                    <Image
-                                        objectFit='cover'
-                                        maxW={{ base: '100%', sm: '200px' }}
-                                        src={article.thumbnail}
-                                        alt='Article Image'
-                                    />
-
-                                    <Stack>
-                                        <CardBody>
-                                            <Heading size='md'>{article.title}</Heading>
-                                            <Text><small>published: {article.pubDate}</small></Text>
-                                            <Text py='2'>
-                                                {article.tags}
-                                            </Text>
-                                        </CardBody>
-
-                                        <CardFooter>
-                                            <Button
-                                                onClick={() => window.open(article.link, '_blank')}
-                                                variant='solid' colorScheme='blue'>
-                                                Read More
-                                            </Button>
-                                        </CardFooter>
-                                    </Stack>
-                                </Card>
-                            </div>
-                        ))}
-                    </div>
-                </TabPanel>
-                <TabPanel>
-                    <div className="article-preview-cards">
-                        {articlesDevelopers.map(article => (
-                            <div key={article.title}>
-                                <Card
-                                    direction={{ base: 'column', sm: 'row' }}
-                                    overflow='hidden'
-                                    variant='outline'
-                                >
-                                    <Image
-                                        objectFit='cover'
-                                        maxW={{ base: '100%', sm: '200px' }}
-                                        src={article.thumbnail}
-                                        alt='Article Image'
-                                    />
-
-                                    <Stack>
-                                        <CardBody>
-                                            <Heading size='md'>{article.title}</Heading>
-                                            <Text><small>published: {article.pubDate}</small></Text>
-                                            <Text py='2'>
-                                                {article.tags}
-                                            </Text>
-                                        </CardBody>
-
-                                        <CardFooter>
-                                            <Button
-                                                onClick={() => window.open(article.link, '_blank')}
-                                                variant='solid' colorScheme='blue'>
-                                                Read More
-                                            </Button>
-                                        </CardFooter>
-                                    </Stack>
-                                </Card>
-                            </div>
-                        ))}
-                    </div>
-                </TabPanel>
-            </Tabs>
-
+                            <CardFooter>
+                                <Button
+                                    onClick={() => window.open(article.link, '_blank')}
+                                    variant='solid' colorScheme='blue'>
+                                    Read More
+                                </Button>
+                            </CardFooter>
+                        </Stack>
+                    </Card>
+                </div>
+            ))}
 
         </section>
     )
