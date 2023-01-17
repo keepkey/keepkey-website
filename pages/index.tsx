@@ -53,18 +53,18 @@ const Hero = () => {
   const [urlLinux, seturlLinux] = useState('')
 
   //find latest release
-  let findLatestReleaseLinks = async function (){
-    try{
-      let resp = await axios({method:'GET',url: 'https://api.github.com/repos/keepkey/keepkey-desktop/releases/latest'})
-      console.log('findLatestReleaseLinks',resp.data )
+  let findLatestReleaseLinks = async function () {
+    try {
+      let resp = await axios({ method: 'GET', url: 'https://api.github.com/repos/keepkey/keepkey-desktop/releases/latest' })
+      console.log('findLatestReleaseLinks', resp.data)
       let version = resp.data.tag_name
-      version = version.replace("v","")
-      seturlMacOS("https://github.com/keepkey/keepkey-desktop/releases/download/v"+version+"/KeepKey-Desktop-"+version+".dmg")
-      seturlWindows("https://github.com/keepkey/keepkey-desktop/releases/download/v"+version+"/KeepKey-Desktop-Setup-"+version+".exe")
-      seturlLinux("https://github.com/keepkey/keepkey-desktop/releases/download/v"+version+"/KeepKey-Desktop-"+version+".AppImage")
+      version = version.replace("v", "")
+      seturlMacOS("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-" + version + ".dmg")
+      seturlWindows("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-Setup-" + version + ".exe")
+      seturlLinux("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-" + version + ".AppImage")
 
-    }catch(e){
-      console.error(' e: ',e)
+    } catch (e) {
+      console.error(' e: ', e)
     }
   }
 
@@ -104,31 +104,31 @@ const Hero = () => {
               <ShopifyBuyButton buttonId={shopifyBuyButtonId}></ShopifyBuyButton>
             </div>
 
-            {platform.macos ? <div>
+            {platform.macos ? <div className="mb-4 inline-block">
               <a href={urlMacOS}>
-                <a className="btn btn-lg btn--transparent">download for macOS </a>
+                <a className="btn btn-lg btn--transparent">Download for macOS </a>
               </a>
             </div> : <div>
 
             </div>}
 
-            {platform.windows ? <div>
+            {platform.windows ? <div className="mb-4 inline-block">
               <a href={urlWindows}>
-                <a className="btn btn-lg btn--transparent">download for Windows</a>
+                <a className="btn btn-lg btn--transparent">Download for Windows</a>
               </a>
             </div> : <div>
             </div>}
 
-            {platform.linux ? <div>
+            {platform.linux ? <div className="mb-4 inline-block">
               <a href={urlLinux}>
-                <a className="btn btn-lg btn--transparent">download for Linux</a>
+                <a className="btn btn-lg btn--transparent">Download for Linux</a>
               </a>
             </div> : <div>
             </div>}
 
-            <Link href="/get-started">
+            {/* <Link href="/get-started">
               <a className="btn btn-lg btn--transparent">Get Started</a>
-            </Link>
+            </Link> */}
           </div>
 
 
@@ -277,7 +277,7 @@ const LeadingCryptos = () => {
           <div className="w-40"><Image src={btgIcon} alt="btg icon" unoptimized={true}></Image></div>
           <div className="w-40"><Image src={goIcon} alt="go icon" unoptimized={true}></Image></div>
         </div>
-          <a className="btn mt-7">View all 40+ Coins!</a>
+        <a className="btn mt-7">View all 40+ Coins!</a>
       </div>
     </section>
   )
