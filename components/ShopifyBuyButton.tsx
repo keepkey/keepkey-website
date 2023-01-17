@@ -77,6 +77,7 @@ export function loadShopifyBuyButton(buttonId: number) {
                 "border-radius": "2px",
                 "padding-left": "22%",
                 "padding-right": "22%",
+                "text-overflow": "clip",
                 ":hover": {
                   "background-color": "#a58958"
                 },
