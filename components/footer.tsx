@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="bg-dark-gold pt-14 pb-7">
+    <footer className="bg-dark-gold dark:bg-black pt-14 pb-7">
       <div className="flex flex-wrap justify-center gap-5 align-center mt-6">
         {/* Discord */}
         <Link href="https://discord.gg/jKZ2ShRmbA">
