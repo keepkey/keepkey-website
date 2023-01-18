@@ -193,7 +193,7 @@ const MobileNav = ({ isActive, toggleMobileNav, navLinks }) => {
 
         </ul>
         {/* <a className="btn btn-lg btn-blue mobile-cta" href="/request-demo">Get demo</a> */}
-        <div className="absolute bottom-[100px] left-1/2 translate-x-[-50%]">
+        <div className="absolute bottom-[30px] left-1/2 translate-x-[-50%]">
           <ShopifyBuyButton buttonId={shopifyBuyButtonId}></ShopifyBuyButton>
         </div>
       </div>
