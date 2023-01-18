@@ -21,7 +21,24 @@ const colors = {
   },
 }
 
-const theme = extendTheme({ colors })
+const styles = {
+  global: {
+    'h1, h2, h3, h4': {
+      fontWeight: '500'
+    },
+    h2: {
+      fontSize: '36px',
+    },
+    h3: {
+      fontSize: '30px',
+    },
+    h4: {
+      fontSize: '20px',
+    }
+  },
+}
+
+const theme = extendTheme({ colors, styles })
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -54,7 +71,7 @@ function MyApp({ Component, pageProps }) {
 
       <Layout>
         <ChakraProvider theme={theme}>
-        <Component {...pageProps} />
+          <Component {...pageProps} />
         </ChakraProvider>
       </Layout>
     </>
