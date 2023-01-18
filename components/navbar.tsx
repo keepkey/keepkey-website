@@ -33,7 +33,7 @@ const navLinks: NavLink[] = [
     external: false
   },
   {
-    id: 2,
+    id: 3,
     name: 'Supported Applications',
     url: '/supported-applications',
     external: false
@@ -45,7 +45,7 @@ const navLinks: NavLink[] = [
     external: false
   },
   {
-    id: 6,
+    id: 5,
     name: 'Blog',
     url: '/blog',
     external: false

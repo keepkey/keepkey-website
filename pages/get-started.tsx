@@ -1,6 +1,5 @@
 import Image from 'next/image'
-import shapeShiftDemoWalletImg from 'public/images/hardware/shapeshift-with-keepkey.png'
-import shapeShiftDemoImg from 'public/images/software/shapeshift-demo-mac-md.png'
+import Link from 'next/link'
 import heroBgImage from 'public/images/heros/golden-lines-lg.jpg'
 import unboxImage from 'public/images/heros/keepkey-unboxed.jpeg'
 import connectImage from 'public/images/desktop/Connecting.png'
@@ -11,16 +10,15 @@ import bootloader from 'public/images/desktop/Bootloader.png'
 import firmware from 'public/images/desktop/Firmware.png'
 import createWallet from 'public/images/desktop/CreateWallet.png'
 import recoverWallet from 'public/images/desktop/Recover.png'
-import SecurityWarning from "../components/SecurityWarning"
 import axios from "axios";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 export default function Onboarding() {
   return (
-      <>
-        <Hero />
-        <Main />
-      </>
+    <>
+      <Hero />
+      <Main />
+    </>
   )
 }
 
@@ -30,18 +28,18 @@ const Hero = () => {
   const [urlWindows, seturlWindows] = useState('')
   const [urlLinux, seturlLinux] = useState('')
   //find latest release
-  let findLatestReleaseLinks = async function (){
-    try{
-      let resp = await axios({method:'GET',url: 'https://api.github.com/repos/keepkey/keepkey-desktop/releases/latest'})
-      console.log('findLatestReleaseLinks',resp.data )
+  let findLatestReleaseLinks = async function () {
+    try {
+      let resp = await axios({ method: 'GET', url: 'https://api.github.com/repos/keepkey/keepkey-desktop/releases/latest' })
+      console.log('findLatestReleaseLinks', resp.data)
       let version = resp.data.tag_name
-      version = version.replace("v","")
-      seturlMacOS("https://github.com/keepkey/keepkey-desktop/releases/download/v"+version+"/KeepKey-Desktop-"+version+".dmg")
-      seturlWindows("https://github.com/keepkey/keepkey-desktop/releases/download/v"+version+"/KeepKey-Desktop-Setup-"+version+".exe")
-      seturlLinux("https://github.com/keepkey/keepkey-desktop/releases/download/v"+version+"/KeepKey-Desktop-"+version+".AppImage")
+      version = version.replace("v", "")
+      seturlMacOS("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-" + version + ".dmg")
+      seturlWindows("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-Setup-" + version + ".exe")
+      seturlLinux("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-" + version + ".AppImage")
 
-    }catch(e){
-      console.error(' e: ',e)
+    } catch (e) {
+      console.error(' e: ', e)
     }
   }
 
@@ -50,42 +48,42 @@ const Hero = () => {
   }, []);
 
   return (
-      <div className="relative z-0 pt-44 pb-20 xl:py-72 bg-black">
-        <Image
-            src={heroBgImage}
-            alt='keepkey wallet on desk'
-            layout="fill"
-            objectFit="cover"
-            quality={100}
-            objectPosition="center"
-            priority={true}
-        >
-        </Image>
-        <div className="container relative grid lg:grid-cols-2 gap-x-20 items-center z-10">
-          <div>
-            <h1 className="text-4xl leading-tight tracking-wide lg:text-5xl lg:leading-tight 2xl:text-6xl 2xl:leading-tight font-bold text-white mb-4">Introducing the new KeepKey Client</h1>
-            <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">Follow the guide below to get started using your KeepKey.</p>
-            <a href={urlMacOS}>
-              <a className="btn btn-lg btn--transparent">download for macOS </a>
-            </a>
-            <a href={urlWindows}>
-              <a className="btn btn-lg btn--transparent">download for Windows </a>
-            </a>
-            <a href={urlLinux}>
-              <a className="btn btn-lg btn--transparent">download for Linux </a>
-            </a>
-          </div>
-          <div className="xl:absolute xl:max-w-[650px] xl:right-0 2xl:max-w-[765px] 2xl:right-[-150px]">
-            <Image
-                alt="KeepKey wallet"
-                src={pin}
-                quality={100}
-            >
-            </Image>
-          </div>
+    <div className="relative z-0 pt-44 pb-20 xl:py-72 bg-black">
+      <Image
+        src={heroBgImage}
+        alt='keepkey wallet on desk'
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        objectPosition="center"
+        priority={true}
+      >
+      </Image>
+      <div className="container relative grid lg:grid-cols-2 gap-x-20 items-center z-10">
+        <div>
+          <h1 className="text-4xl leading-tight tracking-wide lg:text-5xl lg:leading-tight 2xl:text-6xl 2xl:leading-tight font-bold text-white mb-4">Introducing the new KeepKey Client</h1>
+          <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">Follow the guide below to get started using your KeepKey.</p>
+          <Link href={urlMacOS}>
+            <a className="btn btn-lg btn--transparent">download for macOS </a>
+          </Link>
+          <Link href={urlWindows}>
+            <a className="btn btn-lg btn--transparent">download for Windows </a>
+          </Link>
+          <Link href={urlLinux}>
+            <a className="btn btn-lg btn--transparent">download for Linux </a>
+          </Link>
         </div>
-
+        <div className="xl:absolute xl:max-w-[650px] xl:right-0 2xl:max-w-[765px] 2xl:right-[-150px]">
+          <Image
+            alt="KeepKey wallet"
+            src={pin}
+            quality={100}
+          >
+          </Image>
+        </div>
       </div>
+
+    </div>
   )
 }
 
@@ -206,55 +204,55 @@ const steps: Step[] = [
 
 const Step = (props: Step) => {
   return (
-      <div className="grid xl:grid-cols-2 gap-16 xl:gap-26 2xl:gap-36 align-center py-20 lg:py-32 border-solid border-2 border-blue-900">
-        <div>
-          <h3 className="mb-6" dangerouslySetInnerHTML={{ __html: props.title }}></h3>
-          <p className="mb-6" dangerouslySetInnerHTML={{ __html: props.description }}></p>
-          <ul className="list-disc pl-10">
-            {props.listItems.map((item, index) =>
-                <li className="py-2"
-                    key={index}
-                    dangerouslySetInnerHTML={{ __html: item }}></li>
-            )}
-          </ul>
-        </div>
-        <div className="self-center w-100">
-          {props.hasVideo ?
-              <div className="">
-                <div dangerouslySetInnerHTML={{ __html: props.video }}></div>
-              </div>
-              :
-              <Image
-                  alt="KeepKey wallet"
-                  src={props.image}
-                  width={1200}
-                  quality={100}
-              >
-              </Image>
-          }
-        </div>
+    <div className="grid xl:grid-cols-2 gap-16 xl:gap-26 2xl:gap-36 align-center py-20 lg:py-32 border-solid border-2 border-blue-900">
+      <div>
+        <h3 className="mb-6" dangerouslySetInnerHTML={{ __html: props.title }}></h3>
+        <p className="mb-6" dangerouslySetInnerHTML={{ __html: props.description }}></p>
+        <ul className="list-disc pl-10">
+          {props.listItems.map((item, index) =>
+            <li className="py-2"
+              key={index}
+              dangerouslySetInnerHTML={{ __html: item }}></li>
+          )}
+        </ul>
       </div>
+      <div className="self-center w-100">
+        {props.hasVideo ?
+          <div className="">
+            <div dangerouslySetInnerHTML={{ __html: props.video }}></div>
+          </div>
+          :
+          <Image
+            alt="KeepKey wallet"
+            src={props.image}
+            width={1200}
+            quality={100}
+          >
+          </Image>
+        }
+      </div>
+    </div>
   )
 }
 
 const Main = () => {
   return (
-      <section className="container">
-        {/*<SecurityWarning />*/}
-        {steps.map((step, i, arr) =>
-            <>
-              <Step
-                  key={step.key}
-                  image={step.image}
-                  hasVideo={step.hasVideo}
-                  video={step.video}
-                  title={step.title}
-                  description={step.description}
-                  listItems={step.listItems}
-              />
-              {i === arr.length - 1 ? '' : <hr />}
-            </>
-        )}
-      </section>
+    <section className="container">
+      {/*<SecurityWarning />*/}
+      {steps.map((step, i, arr) =>
+        <>
+          <Step
+            key={step.key}
+            image={step.image}
+            hasVideo={step.hasVideo}
+            video={step.video}
+            title={step.title}
+            description={step.description}
+            listItems={step.listItems}
+          />
+          {i === arr.length - 1 ? '' : <hr />}
+        </>
+      )}
+    </section>
   )
 }

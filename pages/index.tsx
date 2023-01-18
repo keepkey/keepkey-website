@@ -13,10 +13,7 @@ import backupImage from 'public/images/icons/backup.svg'
 import ebStorageImage from 'public/images/icons/eb-storage.svg'
 import pin from 'public/images/desktop/Pin.png'
 import openSourceImage from 'public/images/icons/open-source.svg'
-import shapeshiftDemoImage from 'public/images/software/shapeshift-demo.png'
-import dappstore from 'public/images/software/shapeshift-demo.png'
 import walletDeskImage from 'public/images/heros/wallet-desk-grayscale.png'
-import thorchain from 'public/images/logos/thorchain.jpeg'
 import platform from 'platform-detect/os.mjs'
 import axios from 'axios';
 const shopifyBuyButtonId = 1663605399427;
@@ -105,24 +102,24 @@ const Hero = () => {
             </div>
 
             {platform.macos ? <div className="mb-4 inline-block">
-              <a href={urlMacOS}>
+              <Link href={urlMacOS}>
                 <a className="btn btn-lg btn--transparent">Download for macOS </a>
-              </a>
+              </Link>
             </div> : <div>
 
             </div>}
 
             {platform.windows ? <div className="mb-4 inline-block">
-              <a href={urlWindows}>
+              <Link href={urlWindows}>
                 <a className="btn btn-lg btn--transparent">Download for Windows</a>
-              </a>
+              </Link>
             </div> : <div>
             </div>}
 
             {platform.linux ? <div className="mb-4 inline-block">
-              <a href={urlLinux}>
+              <Link href={urlLinux}>
                 <a className="btn btn-lg btn--transparent">Download for Linux</a>
-              </a>
+              </Link>
             </div> : <div>
             </div>}
 
