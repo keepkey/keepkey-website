@@ -1,17 +1,17 @@
 
 import Image, { StaticImageData } from 'next/image'
 import React from "react";
-import { Heading } from '@chakra-ui/react'
 
 interface Props {
     heroBgImg: StaticImageData,
     pageTitle: string,
+    subTitle?: string,
     assets?: string,
     blockchains?: string,
     dapps?: string
 }
 
-const Hero = ({ heroBgImg, pageTitle, assets, blockchains, dapps }: Props) => {
+const Hero = ({ heroBgImg, pageTitle, subTitle, assets, blockchains, dapps }: Props) => {
 
     return (
         <div className="relative z-0 pt-28 pb-20 lg:pt-52 lg:pb-36 bg-black">
@@ -26,18 +26,13 @@ const Hero = ({ heroBgImg, pageTitle, assets, blockchains, dapps }: Props) => {
             >
             </Image>
             <div className="container relative z-10">
-                <div className="">
-                    <h1 className="text-[39px] leading-tight tracking-wide lg:text-6xl lg:leading-tight font-bold text-white mb-4">{pageTitle}</h1>
-                    <div className="text-2xl xl:text-6xl leading-tight tracking-wide font-bold text-white mb-4">
-                        <h4>
-                            {assets ? <div>Supported Assets: {assets}</div> : <div></div>}
-                            <br />
-                            {blockchains ? <div>Supported Blockchains: {blockchains}</div> : <div></div>}
-                            {dapps ? <div>Supported Dapps: {dapps}</div> : <div></div>}
-                        </h4>
-                    </div>
-                    {/* <p className="text-2xl text-white mb-8 leading-relaxed tracking-wide">See below for a list of our recommendations.</p> */}
+                <h1 className="text-[39px] leading-tight tracking-wide lg:text-6xl lg:leading-tight font-bold text-white mb-5">{pageTitle}</h1>
+                <div className="text-2xl xl:text-6xl leading-tight tracking-wide font-bold text-white mb-4">
+                    {assets ? <h3 className="mb-3">Supported Assets: {assets}</h3> : ''}
+                    {blockchains ? <h3 className="mb-3">Supported Blockchains: {blockchains}</h3> : ''}
+                    {dapps ? <h3>Supported Dapps: {dapps}</h3> : ''}
                 </div>
+                {subTitle ? <p className="text-3xl text-white mb-8 leading-relaxed tracking-wide">{subTitle}</p> : ''}
             </div>
         </div>
     )

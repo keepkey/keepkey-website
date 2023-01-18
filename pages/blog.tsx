@@ -3,9 +3,9 @@ import { Card, CardHeader, CardBody, CardFooter, Stack, Heading, Button, Image, 
 import Axios from "axios";
 import Head from 'next/head'
 import heroBgImage from 'public/images/heros/blue-lines.jpg'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import HeroSimple from '../components/hero-simple';
-const pageTitle = "Keep up to date with the latest content from KeepKey";
+const pageTitle = "Blog";
+const subTitle = "Keep up to date with the latest content from KeepKey"
 
 let mediumURL =
     "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@highlander_35968";
@@ -18,6 +18,7 @@ export default function IntegrationGuide() {
             <HeroSimple
                 heroBgImg={heroBgImage}
                 pageTitle={pageTitle}
+                subTitle={subTitle}
             />
             <Main />
         </>
@@ -30,8 +31,8 @@ const Main = () => {
     const [articlesUsers, setArticlesUsers] = useState([])
     const [articlesDevelopers, setArticlesDevelopers] = useState([])
 
-    let onStart = async function(){
-        try{
+    let onStart = async function () {
+        try {
             let response = await Axios.get(mediumURL);
             console.log(response.data);
 
@@ -39,7 +40,7 @@ const Main = () => {
             const profileLink = response.data.feed.link;
             const res = response.data.items;
             const posts = response.data.items
-            console.log({avatar,profileLink,posts})
+            console.log({ avatar, profileLink, posts })
             // let articlesNews = posts.filter(post => post.categories.includes("news", "keepkey"));
             // let articlesUsers = posts.filter(post => post.categories.includes('cryptocurrency',"keepkey"));
             let articlesDevelopers = posts.filter(post => post.categories.includes("keepkey"));
@@ -54,7 +55,7 @@ const Main = () => {
             //developer articles
             //news articles
 
-        }catch(e){
+        } catch (e) {
             console.error(e)
         }
     }
@@ -72,6 +73,7 @@ const Main = () => {
                         direction={{ base: 'column', sm: 'row' }}
                         overflow='hidden'
                         variant='outline'
+                        mb="8"
                     >
                         <Image
                             objectFit='cover'
