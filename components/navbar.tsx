@@ -60,6 +60,14 @@ export default function Navbar() {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 50);
     });
+
+    //close mobile nav on window resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1024) {
+        setIsActive(false);
+      }
+    });
+
   }, [])
 
   //mobile nav active
@@ -74,6 +82,7 @@ export default function Navbar() {
       setIsActive(current => !current);
     }
   };
+
 
   return (
 
