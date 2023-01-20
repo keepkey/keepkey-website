@@ -23,7 +23,6 @@ import {
 } from '@chakra-ui/react'
 
 import { Search2Icon } from '@chakra-ui/icons'
-
 import {
     createColumnHelper,
     flexRender,
@@ -210,14 +209,16 @@ const Main = () => {
                 Use the following page to search for assets, blockchains and dapps that you can use with your KeepKey.
             </p>
             <div>
-                <Flex alignItems="center" gap='3' w="100%">
+                <Flex alignItems="center" gap='3' flexWrap="wrap" w="100%">
                     {placeholderData.map(coin => (
                         <Tooltip placement="top" label={coin.blockchain} bg='gray.900' borderRadius={4} textTransform="capitalize">
                             <Button
                                 key={coin.id}
                                 variant="outline"
                                 py={7}
-                                w="100%"
+                                minW="75px"
+                                maxW="120px"
+                                flex="1"
                             >
                                 <Image
                                     src={coin.image}
