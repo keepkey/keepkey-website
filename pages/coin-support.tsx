@@ -1,3 +1,43 @@
+const dummyData = [
+    {
+        "name": "bitcoin",
+        "type": "coin",
+        "tags": [
+            "bitcoin",
+            "isAsset",
+            "isNative",
+            "KeepKeySupport",
+            "DappSupport",
+            "WalletConnectSupport"
+        ],
+        "blockchain": "bitcoin",
+        "symbol": "BTC",
+        "decimals": 8,
+        "image": "https://pioneers.dev/coins/bitcoin.png",
+        "description": "Bitcoin is a cryptocurrency and worldwide payment system. It is the first decentralized digital currency, as the system works without a central bank or single administrator.",
+        "website": "https://bitcoin.org",
+        "explorer": "https://blockchain.info",
+    }, {
+        "name": "ethereum",
+        "type": "coin",
+        "tags": [
+            "ethereum",
+            "isAsset",
+            "isNative",
+            "KeepKeySupport",
+            "DappSupport",
+            "WalletConnectSupport"
+        ],
+        "blockchain": "ethereum",
+        "symbol": "ETH",
+        "decimals": 8,
+        "image": "https://pioneers.dev/coins/ethereum.png",
+        "description": "Bitcoin is a cryptocurrency and worldwide payment system. It is the first decentralized digital currency, as the system works without a central bank or single administrator.",
+        "website": "https://bitcoin.org",
+        "explorer": "https://blockchain.info",
+
+    }]
+
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useState, useEffect } from 'react';
@@ -5,6 +45,9 @@ import heroBgImage from 'public/images/heros/blue-lines.jpg'
 import HeroSimple from '../components/hero-simple';
 const pageTitle = "KeepKey Coin Support";
 import bitcoin from 'public/images/coins/bitcoin.png'
+import { InputGroup, InputLeftElement, Input, Text } from '@chakra-ui/react'
+import { Search2Icon } from '@chakra-ui/icons'
+
 
 import {
     createColumnHelper,
@@ -92,13 +135,13 @@ const columns = [
 ]
 
 export default function DesktopGuide() {
-    const onStart = async function(){
+    const onStart = async function () {
         let config = { queryKey: 'key:public', spec }
         let Api = new Client(spec, config)
         let api = await Api.init()
         //get globals
         let globals = await api.Globals()
-        console.log("globals: ",globals.data)
+        console.log("globals: ", globals.data)
         setAssets(globals.data.info.assets)
         setBlockchains(globals.data.info.blockchains)
     }
@@ -126,25 +169,8 @@ export default function DesktopGuide() {
 }
 
 const Main = () => {
-    const [data, setData] = React.useState(() => [{
-        "name": "bitcoin",
-        "type": "coin",
-        "tags": [
-            "bitcoin",
-            "isAsset",
-            "isNative",
-            "KeepKeySupport",
-            "DappSupport",
-            "WalletConnectSupport"
-        ],
-        "blockchain": "bitcoin",
-        "symbol": "BTC",
-        "decimals": 8,
-        "image": "https://pioneers.dev/coins/bitcoin.png",
-        "description": "Bitcoin is a cryptocurrency and worldwide payment system. It is the first decentralized digital currency, as the system works without a central bank or single administrator.",
-        "website": "https://bitcoin.org",
-        "explorer": "https://blockchain.info"
-    }])
+    const [data, setData] = React.useState(() => dummyData)
+
     const [query, setQuery] = useState('bitcoin...');
     const [timeOut, setTimeOut] = useState(null);
 
@@ -154,13 +180,13 @@ const Main = () => {
         getCoreRowModel: getCoreRowModel(),
     })
 
-    const onStart = async function(){
+    const onStart = async function () {
         let config = { queryKey: 'key:public', spec }
         let Api = new Client(spec, config)
         let api = await Api.init()
         console.log("checkpoint2")
-        let KeepKeyPage1 = await api.SearchAssetsPageniate({limit:100,skip:0})
-        console.log("KeepKeyPage1: ",KeepKeyPage1.data)
+        let KeepKeyPage1 = await api.SearchAssetsPageniate({ limit: 100, skip: 0 })
+        console.log("KeepKeyPage1: ", KeepKeyPage1.data)
         setData(KeepKeyPage1.data)
     }
 
@@ -177,7 +203,7 @@ const Main = () => {
 
     const search = async (query) => {
         // console.log("event: ",event.target.value)
-        console.log("query: ",query)
+        console.log("query: ", query)
         // let searchNew = event.target.value
         // setSearch(searchNew)
 
@@ -186,7 +212,7 @@ const Main = () => {
         let api = await Api.init()
 
         let KeepKeyPage1 = await api.SearchByName(query)
-        console.log("KeepKeyPage1: ",KeepKeyPage1.data)
+        console.log("KeepKeyPage1: ", KeepKeyPage1.data)
         setData(KeepKeyPage1.data)
     };
 
@@ -203,27 +229,34 @@ const Main = () => {
 
     return (
         <section className="container">
-            <div>
+            <p>
                 KeepKey supports an ever-growing list of cryptocurrencies and digital assets.
-                <br/>
+                <br />
                 Use the following page to search for assets blockchains and dapps that you can use with your KeepKey.
-                <br/>
-                <br/>
-            </div>
-            <div className="grid grid-cols-3 2 ">
-                <div className="">
-                    <h2>Search For Asset</h2>
-                    <input
+                <br />
+                <br />
+            </p>
+            <div>
+                <h2>Search For Asset</h2>
+                <InputGroup my={6}>
+                    <InputLeftElement
+                        pointerEvents='none'
+                        children={<Search2Icon color='gray.300' />}
+                        boxSize="12"
+                    />
+                    <Input
+                        placeholder="Bitcoin..."
+                        size='lg'
                         onFocus={onClear}
                         value={query}
                         onChange={handleKeyPress}
                         type='search'
-                        style={{border: '2px solid black', padding: '15px'}}
                     />
-                </div>
-                <div className="self-center">
-                    <table>
-                        <thead>
+                </InputGroup>
+            </div>
+            <div>
+                <table>
+                    <thead>
                         {table.getHeaderGroups().map(headerGroup => (
                             <tr key={headerGroup.id}>
                                 {headerGroup.headers.map(header => (
@@ -238,8 +271,8 @@ const Main = () => {
                                 ))}
                             </tr>
                         ))}
-                        </thead>
-                        <tbody>
+                    </thead>
+                    <tbody>
                         {table.getRowModel().rows.map(row => (
                             <tr key={row.id}>
                                 {row.getVisibleCells().map(cell => (
@@ -249,9 +282,8 @@ const Main = () => {
                                 ))}
                             </tr>
                         ))}
-                        </tbody>
-                    </table>
-                </div>
+                    </tbody>
+                </table>
             </div>
 
         </section>
