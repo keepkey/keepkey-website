@@ -17,52 +17,12 @@ import {
     Th,
     Td,
     TableContainer,
-    Button
+    Button,
+    Flex,
+    Tooltip
 } from '@chakra-ui/react'
 
 import { Search2Icon } from '@chakra-ui/icons'
-
-// const placeholderData = [
-//     {
-//         "name": "bitcoin",
-//         "type": "coin",
-//         "tags": [
-//             "bitcoin",
-//             "isAsset",
-//             "isNative",
-//             "KeepKeySupport",
-//             "DappSupport",
-//             "WalletConnectSupport"
-//         ],
-//         "blockchain": "bitcoin",
-//         "symbol": "BTC",
-//         "decimals": 8,
-//         "image": "https://pioneers.dev/coins/bitcoin.png",
-//         "description": "Bitcoin is a cryptocurrency and worldwide payment system. It is the first decentralized digital currency, as the system works without a central bank or single administrator.",
-//         "website": "https://bitcoin.org",
-//         "explorer": "https://blockchain.info",
-//     }, {
-//         "name": "ethereum",
-//         "type": "coin",
-//         "tags": [
-//             "ethereum",
-//             "isAsset",
-//             "isNative",
-//             "KeepKeySupport",
-//             "DappSupport",
-//             "WalletConnectSupport"
-//         ],
-//         "blockchain": "ethereum",
-//         "symbol": "ETH",
-//         "decimals": 8,
-//         "image": "https://pioneers.dev/coins/ethereum.png",
-//         "description": "Bitcoin is a cryptocurrency and worldwide payment system. It is the first decentralized digital currency, as the system works without a central bank or single administrator.",
-//         "website": "https://bitcoin.org",
-//         "explorer": "https://blockchain.info",
-
-//     }]
-
-
 
 import {
     createColumnHelper,
@@ -244,14 +204,36 @@ const Main = () => {
 
     return (
         <section className="container">
-            <p>
+            <p className="text-xl leading-relaxed lg:leading-relaxed mb-8 tracking-wide mb-10">
                 KeepKey supports an ever-growing list of cryptocurrencies and digital assets.
                 <br />
                 Use the following page to search for assets, blockchains and dapps that you can use with your KeepKey.
-                <br />
-                <br />
             </p>
             <div>
+                <Flex alignItems="center" gap='3' w="100%">
+                    {placeholderData.map(coin => (
+                        <Tooltip placement="top" label={coin.blockchain} bg='gray.900' borderRadius={4} textTransform="capitalize">
+                            <Button
+                                key={coin.id}
+                                variant="outline"
+                                py={7}
+                                w="100%"
+                            >
+                                <Image
+                                    src={coin.image}
+                                    alt='keepkey api'
+                                    objectFit="contain"
+                                    height="40px"
+                                    width="40px"
+                                    quality={100}
+                                    objectPosition="center"
+                                    priority={true}
+                                >
+                                </Image>
+                            </Button>
+                        </Tooltip>
+                    ))}
+                </Flex>
                 {/* <h2>Search For Asset</h2> */}
 
                 <InputGroup my={6}>
