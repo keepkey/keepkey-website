@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import ShopifyBuyButton from '../components/ShopifyBuyButton'
-import { loadShopifyBuyButton } from '../components/ShopifyBuyButton'
+// import { loadShopifyBuyButton } from '../components/ShopifyBuyButton'
 import SecurityWarning from '../components/SecurityWarning'
 import heroBgImage from 'public/images/heros/home.png'
 import walletImage from 'public/images/hardware/wallet-hero.png'
@@ -17,12 +17,12 @@ import walletDeskImage from 'public/images/heros/wallet-desk-grayscale.png'
 import platform from 'platform-detect/os.mjs'
 import axios from 'axios';
 const shopifyBuyButtonId = 1663605399427;
-
+const shop = 'https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet'
 export default function Home() {
 
-  useEffect(() => {
-    loadShopifyBuyButton(shopifyBuyButtonId);
-  }, []);
+  // useEffect(() => {
+  //   loadShopifyBuyButton(shopifyBuyButtonId);
+  // }, []);
 
   return (
     <>
@@ -97,10 +97,20 @@ const Hero = () => {
           <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">KeepKey is the leading hardware wallet for securely storing digital assets. Our Dapp Store offers access to thousands of decentralized finance opportunities. Get started today and unlock the world of secure, decentralized finance.</p>
 
           <div className="w-100">
-            <div className="mr-4 mb-4 sm:mr-4 inline-block">
-              <ShopifyBuyButton buttonId={shopifyBuyButtonId}></ShopifyBuyButton>
-            </div>
 
+              <div className="button lg:mr-6">
+
+
+                  <span className="btn btn-lg text-white font-bold py-4" style={{backgroundColor:"#ba9862"}}>
+                      <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet" >
+                      <button>
+                    <h1 style={{fontSize:"30px"}}>Buy Now!</h1>
+                      </button></a>
+                  </span>
+
+              </div>
+
+            <br/>
             {platform.macos ? <div className="mb-4 inline-block">
               <Link href={urlMacOS}>
                 <a className="btn btn-lg btn--transparent">Download for macOS </a>
