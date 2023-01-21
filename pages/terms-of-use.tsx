@@ -1,5 +1,5 @@
 import Head from 'next/head'
-
+let pageTitle = "terms-of-use"
 export default function Onboarding() {
 
     return (
