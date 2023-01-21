@@ -13,23 +13,14 @@
 
 //tailwind customizations 
 @layer base {
-  h1, h2, h3, h4 {
-    @apply font-medium;
-  }
 
-  h1 {
-    @apply text-6xl;
-  }
   h2 {
     @apply text-2xl;
     @apply md:text-4xl;
     @apply leading-snug;
   }
-  h3 {
-    @apply text-3xl;
-  }
   h4 {
-    @apply text-xl tracking-wide;
+    @apply tracking-wide;
   }
   p, a, ul, li, i {
     @apply text-[18px] tracking-wide font-light;
@@ -38,15 +29,6 @@
     @apply sm:py-32;
     @apply py-20;
   }
-}
-
-//layout/global
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: Roboto, sans-serif;
-  color: #161721;
 }
 
 a {
