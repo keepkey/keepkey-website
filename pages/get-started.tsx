@@ -253,6 +253,8 @@ const Main = () => {
           {i === arr.length - 1 ? '' : <hr />}
         </>
       )}
+      <div><h4>Still unable to connect? troubleshoot </h4></div>
+      <a href="https://medium.com/@highlander_35968/troubleshooting-connections-with-the-keepkey-4599f1aaee0" rel="noreferrer" target="_blank">more information here</a>
     </section>
   )
 }
