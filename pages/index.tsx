@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import ShopifyBuyButton from '../components/ShopifyBuyButton'
-import { loadShopifyBuyButton } from '../components/ShopifyBuyButton'
+// import { loadShopifyBuyButton } from '../components/ShopifyBuyButton'
 import SecurityWarning from '../components/SecurityWarning'
 import heroBgImage from 'public/images/heros/home.png'
 import walletImage from 'public/images/hardware/wallet-hero.png'
@@ -13,19 +13,16 @@ import backupImage from 'public/images/icons/backup.svg'
 import ebStorageImage from 'public/images/icons/eb-storage.svg'
 import pin from 'public/images/desktop/Pin.png'
 import openSourceImage from 'public/images/icons/open-source.svg'
-import shapeshiftDemoImage from 'public/images/software/shapeshift-demo.png'
-import dappstore from 'public/images/software/shapeshift-demo.png'
 import walletDeskImage from 'public/images/heros/wallet-desk-grayscale.png'
-import thorchain from 'public/images/logos/thorchain.jpeg'
 import platform from 'platform-detect/os.mjs'
 import axios from 'axios';
 const shopifyBuyButtonId = 1663605399427;
-
+const shop = 'https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet'
 export default function Home() {
 
-  useEffect(() => {
-    loadShopifyBuyButton(shopifyBuyButtonId);
-  }, []);
+  // useEffect(() => {
+  //   loadShopifyBuyButton(shopifyBuyButtonId);
+  // }, []);
 
   return (
     <>
@@ -53,18 +50,18 @@ const Hero = () => {
   const [urlLinux, seturlLinux] = useState('')
 
   //find latest release
-  let findLatestReleaseLinks = async function (){
-    try{
-      let resp = await axios({method:'GET',url: 'https://api.github.com/repos/keepkey/keepkey-desktop/releases/latest'})
-      console.log('findLatestReleaseLinks',resp.data )
+  let findLatestReleaseLinks = async function () {
+    try {
+      let resp = await axios({ method: 'GET', url: 'https://api.github.com/repos/keepkey/keepkey-desktop/releases/latest' })
+      console.log('findLatestReleaseLinks', resp.data)
       let version = resp.data.tag_name
-      version = version.replace("v","")
-      seturlMacOS("https://github.com/keepkey/keepkey-desktop/releases/download/v"+version+"/KeepKey-Desktop-"+version+".dmg")
-      seturlWindows("https://github.com/keepkey/keepkey-desktop/releases/download/v"+version+"/KeepKey-Desktop-Setup-"+version+".exe")
-      seturlLinux("https://github.com/keepkey/keepkey-desktop/releases/download/v"+version+"/KeepKey-Desktop-"+version+".AppImage")
+      version = version.replace("v", "")
+      seturlMacOS("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-" + version + ".dmg")
+      seturlWindows("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-Setup-" + version + ".exe")
+      seturlLinux("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-" + version + ".AppImage")
 
-    }catch(e){
-      console.error(' e: ',e)
+    } catch (e) {
+      console.error(' e: ', e)
     }
   }
 
@@ -100,35 +97,45 @@ const Hero = () => {
           <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">KeepKey is the leading hardware wallet for securely storing digital assets. Our Dapp Store offers access to thousands of decentralized finance opportunities. Get started today and unlock the world of secure, decentralized finance.</p>
 
           <div className="w-100">
-            <div className="mr-4 mb-4 sm:mr-4 inline-block">
-              <ShopifyBuyButton buttonId={shopifyBuyButtonId}></ShopifyBuyButton>
-            </div>
 
-            {platform.macos ? <div>
-              <a href={urlMacOS}>
-                <a className="btn btn-lg btn--transparent">download for macOS </a>
-              </a>
+              <div className="button lg:mr-6">
+
+
+                  <span className="btn btn-lg text-white font-bold py-4" style={{backgroundColor:"#ba9862"}}>
+                      <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet" >
+                      <button>
+                    <h1 style={{fontSize:"30px"}}>Buy Now!</h1>
+                      </button></a>
+                  </span>
+
+              </div>
+
+            <br/>
+            {platform.macos ? <div className="mb-4 inline-block">
+              <Link href={urlMacOS}>
+                <a className="btn btn-lg btn--transparent">Download for macOS </a>
+              </Link>
             </div> : <div>
 
             </div>}
 
-            {platform.windows ? <div>
-              <a href={urlWindows}>
-                <a className="btn btn-lg btn--transparent">download for Windows</a>
-              </a>
+            {platform.windows ? <div className="mb-4 inline-block">
+              <Link href={urlWindows}>
+                <a className="btn btn-lg btn--transparent">Download for Windows</a>
+              </Link>
             </div> : <div>
             </div>}
 
-            {platform.linux ? <div>
-              <a href={urlLinux}>
-                <a className="btn btn-lg btn--transparent">download for Linux</a>
-              </a>
+            {platform.linux ? <div className="mb-4 inline-block">
+              <Link href={urlLinux}>
+                <a className="btn btn-lg btn--transparent">Download for Linux</a>
+              </Link>
             </div> : <div>
             </div>}
 
-            <Link href="/get-started">
+            {/* <Link href="/get-started">
               <a className="btn btn-lg btn--transparent">Get Started</a>
-            </Link>
+            </Link> */}
           </div>
 
 
@@ -277,7 +284,7 @@ const LeadingCryptos = () => {
           <div className="w-40"><Image src={btgIcon} alt="btg icon" unoptimized={true}></Image></div>
           <div className="w-40"><Image src={goIcon} alt="go icon" unoptimized={true}></Image></div>
         </div>
-          <a className="btn mt-7">View all 40+ Coins!</a>
+        <a className="btn mt-7">View all 40+ Coins!</a>
       </div>
     </section>
   )

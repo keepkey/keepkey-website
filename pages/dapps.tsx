@@ -29,7 +29,6 @@ export default function Dapps() {
 
 //Steps
 interface Step {
-    key: number
     title: string
     description?: string
     image?: any
@@ -41,7 +40,6 @@ interface Step {
 // @ts-ignore
 const steps: Step[] = [
     {
-        key: 1,
         image: uniswap,
         hasVideo: false,
         title: 'Select Dapp',
@@ -51,7 +49,6 @@ const steps: Step[] = [
         ]
     },
     {
-        key: 2,
         image: options,
         hasVideo: false,
         title: 'Connect',
@@ -61,7 +58,6 @@ const steps: Step[] = [
         ]
     },
     {
-        key: 3,
         image: connect,
         hasVideo: false,
         title: 'Copy',
@@ -71,16 +67,14 @@ const steps: Step[] = [
         ]
     },
     {
-      key: 4,
-      image: walletconnect,
-      hasVideo: false,
-      title: 'click on Wallet Connect',
-      listItems: [
-        'The Wallet connect option is in the top right corner of the KeepKey Desktop application. (click it)',
-      ]
+        image: walletconnect,
+        hasVideo: false,
+        title: 'click on Wallet Connect',
+        listItems: [
+            'The Wallet connect option is in the top right corner of the KeepKey Desktop application. (click it)',
+        ]
     },
     {
-        key: 4,
         image: pasteString,
         hasVideo: false,
         title: 'Paste your connection string',
@@ -90,7 +84,6 @@ const steps: Step[] = [
         ]
     },
     {
-        key: 4,
         image: walletconnected,
         hasVideo: false,
         title: 'Connected',
@@ -136,57 +129,57 @@ const Main = () => {
 
         <section className="container">
             <h3>Intro</h3>
-            <br/>
-            <text>
+            <br />
+            <div>
                 <p>
                     KeepKey makes it easy to interact with decentralized applications. You can use our in-app browser to easily access these dapps and use our wallet-connect integration to securely sign transactions. Our in-app browser ensures that you are always interacting with the correct version of the application you intend to access.                </p>
-                <br/>
+                <br />
                 <p>
                     Dapps (decentralized applications) are applications that run autonomously on a decentralized blockchain according to predefined smart contracts. Dapps and related protocols make up the decentralized finance (DeFi) ecosystem, which currently has a market value of hundreds of billions of dollars and is constantly growing. With KeepKey, you can securely access this DeFi ecosystem and take part in ventures such as decentralized lending, stable coin issuance, multi-chain swapping, liquidity pool providing, exchanges, games, gambling, storage, high-risk investments, governance, property, identity, media, and social applications. KeepKeys built-in DApp Store and in-app browser provide a secure and easy way to explore and interact with these dapps.
                 </p>
-            </text>
+            </div>
             <div className="grid xl:grid-cols-2 gap-16 xl:gap-26 2xl:gap-36 align-center py-20 lg:py-32 border-solid border-2 border-blue-900">
                 <div className="self-center w-100">
-                    <br/>
+                    <br />
                     <h2>Dapp Store</h2>
-                    <br/>
+                    <br />
                     <p>
                         The KeepKey Desktop client has a built in DApp-Store. This store allows you to discover and connect to a list of decentralized applications.
                     </p>
-                    <br/>
+                    <br />
                     <p>
                         Here is a preview of our applications Dapp store. It has a featured application that introduces you to new an exciting Dapps. Below is a searchable list of available and commonly used dapps.
                     </p>
-                    <br/>
+                    <br />
                 </div>
                 <div>
-                    <text>
+                    <div>
                         <Image
                             height="400"
                             width="600"
                             src={store}>
                         </Image>
-                    </text>
+                    </div>
                 </div>
             </div>
 
-            <br/>
-            <br/>
-            <br/>
+            <br />
+            <br />
+            <br />
             <h2>Walkthrough</h2>
 
             <p>
                 In this walkthough you will be shown to open a dapp the the desktop clients browser window. It will guide you through the steps of using wallet connect to connect your KeepKey to the decentralized application.
             </p>
-            <br/>
+            <br />
             <div>
-             These Steps will connect to a Dapp, copy a connection string to your clipboard, and save a connection string into the KeepKey Desktops application.
+                These Steps will connect to a Dapp, copy a connection string to your clipboard, and save a connection string into the KeepKey Desktops application.
             </div>
 
             {steps.map((step, i, arr) =>
                 <>
                     <Step
-                        key={step.key}
+                        key={i}
                         image={step.image}
                         hasVideo={step.hasVideo}
                         video={step.video}
@@ -195,8 +188,10 @@ const Main = () => {
                         listItems={step.listItems}
                     />
                     {i === arr.length - 1 ? '' : <hr />}
+
                 </>
-            )}
-        </section>
+            )
+            }
+        </section >
     )
 }

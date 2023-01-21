@@ -33,7 +33,7 @@ const navLinks: NavLink[] = [
     external: false
   },
   {
-    id: 2,
+    id: 3,
     name: 'Supported Applications',
     url: '/supported-applications',
     external: false
@@ -45,7 +45,7 @@ const navLinks: NavLink[] = [
     external: false
   },
   {
-    id: 6,
+    id: 5,
     name: 'Blog',
     url: '/blog',
     external: false
@@ -60,6 +60,14 @@ export default function Navbar() {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 50);
     });
+
+    //close mobile nav on window resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1024) {
+        setIsActive(false);
+      }
+    });
+
   }, [])
 
   //mobile nav active
@@ -74,6 +82,7 @@ export default function Navbar() {
       setIsActive(current => !current);
     }
   };
+
 
   return (
 
@@ -105,20 +114,20 @@ export default function Navbar() {
           </div>
         ))}
 
-        {/*<div className="ml-auto flex items-center mt-2">*/}
-        {/*  <div className="hidden sm:inline-block mr-8 lg:mr-0">*/}
-        {/*    <Link href="https://app.shapeshift.com">*/}
-        {/*      <a target="_blank" className="btn btn--round btn--blue ml-auto">Launch Shapeshift</a>*/}
-        {/*    </Link>*/}
-        {/*  </div>*/}
+        <div className="ml-auto flex items-center mt-2">
+          {/* <div className="hidden sm:inline-block mr-8 lg:mr-0">
+            <Link href="https://app.shapeshift.com">
+              <a target="_blank" className="btn btn--round btn--blue ml-auto">Launch Shapeshift</a>
+            </Link>
+          </div> */}
 
-        {/*  <MobileNav*/}
-        {/*    toggleMobileNav={toggleMobileNav}*/}
-        {/*    isActive={isActive}*/}
-        {/*    navLinks={navLinks}*/}
-        {/*  />*/}
+          <MobileNav
+            toggleMobileNav={toggleMobileNav}
+            isActive={isActive}
+            navLinks={navLinks}
+          />
 
-        {/*</div>*/}
+        </div>
       </div>
       {/* <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" className="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Dropdown <svg className="ml-1 w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button> */}
       {/* <div id="dropdownNavbar" className="hidden z-10 w-44 font-normal bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
@@ -193,7 +202,7 @@ const MobileNav = ({ isActive, toggleMobileNav, navLinks }) => {
 
         </ul>
         {/* <a className="btn btn-lg btn-blue mobile-cta" href="/request-demo">Get demo</a> */}
-        <div className="absolute bottom-[100px] left-1/2 translate-x-[-50%]">
+        <div className="absolute bottom-[30px] left-1/2 translate-x-[-50%]">
           <ShopifyBuyButton buttonId={shopifyBuyButtonId}></ShopifyBuyButton>
         </div>
       </div>
