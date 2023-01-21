@@ -1,6 +1,8 @@
 import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
+  initialColorMode: 'light',
+  useSystemColorMode: false,
   fonts: {
     heading: `Roboto, sans-serif`,
     body: `Roboto, sans-serif`,
