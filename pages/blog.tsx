@@ -44,7 +44,7 @@ const Main = () => {
             // let articlesNews = posts.filter(post => post.categories.includes("news", "keepkey"));
             // let articlesUsers = posts.filter(post => post.categories.includes('cryptocurrency',"keepkey"));
             let articlesDevelopers = posts.filter(post => post.categories.includes("keepkey"));
-            articlesDevelopers = articlesDevelopers.reverse();
+            // articlesDevelopers = articlesDevelopers.reverse();
 
 
             // setArticlesNews(articlesNews)
