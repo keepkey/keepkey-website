@@ -191,7 +191,7 @@ const Main = () => {
     };
 
     const onClear = async () => {
-        setQuery("")
+        setQuery(null)
     };
 
 
@@ -202,6 +202,7 @@ const Main = () => {
 
 
     return (
+
         <section className="container">
             <p className="text-xl leading-relaxed lg:leading-relaxed mb-8 tracking-wide mb-10">
                 KeepKey supports an ever-growing list of cryptocurrencies and digital assets.
@@ -210,10 +211,9 @@ const Main = () => {
             </p>
             <div>
                 <Flex alignItems="center" gap='3' flexWrap="wrap" w="100%">
-                    {placeholderData.map(coin => (
-                        <Tooltip placement="top" label={coin.blockchain} bg='gray.900' borderRadius={4} textTransform="capitalize">
+                    {placeholderData.map((coin, index) => (
+                        <Tooltip key={index} placement="top" label={coin.blockchain} bg='gray.900' borderRadius={4} textTransform="capitalize">
                             <Button
-                                key={coin.id}
                                 variant="outline"
                                 py={7}
                                 minW="75px"
@@ -240,9 +240,10 @@ const Main = () => {
                 <InputGroup my={6}>
                     <InputLeftElement
                         pointerEvents='none'
-                        children={<Search2Icon color='gray.300' />}
                         boxSize="12"
-                    />
+                    >
+                    <Search2Icon color='gray.300' />
+                    </InputLeftElement>
                     <Input
                         placeholder="Search for asset"
                         size='lg'
