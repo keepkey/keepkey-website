@@ -238,6 +238,7 @@ const Step = (props: Step) => {
 const Main = () => {
   return (
     <section className="container">
+      <text>Already set up your KeepKey? Follow this <a href="https://medium.com/@highlander_35968/updating-your-keepkey-154a49445d4c">firmware update guide</a>.</text>
       {/*<SecurityWarning />*/}
       {steps.map((step, i, arr) =>
         <>

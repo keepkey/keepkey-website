@@ -7,8 +7,11 @@ import HeroSimple from '../components/hero-simple';
 const pageTitle = "Blog";
 const subTitle = "Keep up to date with the latest content from KeepKey"
 
+// let mediumURL =
+//     "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@highlander_35968";
+
 let mediumURL =
-    "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@highlander_35968";
+    "https://medium.com/@highlander_35968/latest?format=json";
 
 export default function IntegrationGuide() {
 
@@ -33,23 +36,49 @@ const Main = () => {
 
     let onStart = async function () {
         try {
-            let response = await Axios.get(mediumURL);
-            console.log(response.data);
 
-            const avatar = response.data.feed.image;
-            const profileLink = response.data.feed.link;
-            const res = response.data.items;
-            const posts = response.data.items
-            console.log({ avatar, profileLink, posts })
-            // let articlesNews = posts.filter(post => post.categories.includes("news", "keepkey"));
-            // let articlesUsers = posts.filter(post => post.categories.includes('cryptocurrency',"keepkey"));
-            let articlesDevelopers = posts.filter(post => post.categories.includes("keepkey"));
-            articlesDevelopers = articlesDevelopers.reverse();
+            const getPosts = async (userId, page) => {
+                const response = await Axios.get(`https://api.medium.com/v1/users/${userId}/posts?limit=20&page=${page}`);
+                return response.data;
+            };
+            const getAllPosts = async (userId) => {
+                let page = 1;
+                let posts = [];
+                let morePosts = true;
 
+                while (morePosts) {
+                    const response = await getPosts(userId, page);
+                    posts = posts.concat(response.posts);
+                    page++;
 
-            // setArticlesNews(articlesNews)
-            // setArticlesUsers(articlesUsers)
-            setArticlesDevelopers(articlesDevelopers)
+                    // If there are no more posts, set morePosts to false and break out of loop
+                    if (response.posts.length === 0) {
+                        morePosts = false;
+                    }
+                }
+
+                return posts;
+            };
+            let response = await getAllPosts('@highlander_35968')
+
+            // let response = await Axios.get(mediumURL);
+            console.log(response);
+            // console.log(response.data);
+            //
+            // const avatar = response.data.feed.image;
+            // const profileLink = response.data.feed.link;
+            // const res = response.data.items;
+            // const posts = response.data.items
+            // console.log({ avatar, profileLink, posts })
+            // // let articlesNews = posts.filter(post => post.categories.includes("news", "keepkey"));
+            // // let articlesUsers = posts.filter(post => post.categories.includes('cryptocurrency',"keepkey"));
+            // let articlesDevelopers = posts.filter(post => post.categories.includes("keepkey"));
+            // articlesDevelopers = articlesDevelopers.reverse();
+            //
+            //
+            // // setArticlesNews(articlesNews)
+            // // setArticlesUsers(articlesUsers)
+            // setArticlesDevelopers(articlesDevelopers)
 
             //user articles
             //developer articles
