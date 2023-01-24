@@ -100,7 +100,6 @@ const Hero = () => {
 
               <div className="button lg:mr-6">
 
-
                   <span className="btn btn-lg text-white font-bold py-4" style={{backgroundColor:"#ba9862"}}>
                       <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet" >
                       <button>
