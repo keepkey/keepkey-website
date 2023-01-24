@@ -44,9 +44,12 @@ function FeatureDiscord({ title, desc, ...rest }) {
             <Heading fontSize='xl'>{title}</Heading>
             <Text mt={4}>{desc}</Text>
             <br/>
-            <a href="https://discord.com/" target="_blank" rel="noopener noreferrer">
-                <Button colorScheme='green' size="xlarge">Discord</Button>
-            </a>
+            <span className="btn btn-lg text-white font-bold " style={{backgroundColor:"#ba9862"}}>
+              <a href="https://discord.com/" >
+              <button>
+            <h1 style={{fontSize:"20px"}}>Download Discord.</h1>
+              </button></a>
+          </span>
         </Box>
     )
 }
@@ -65,7 +68,7 @@ const Main = () => {
                         width='100px'
                     />
                 </div>
-                <div className="md:ml-8">
+                <div className="md:ml-8 md:items-center">
                     <h4 className="font-medium">Security Warning</h4>
                     <p className="mt-2">Zendesk Support has been retired! Live Support will only be provided through our Discord Ticket system.</p>
                 </div>
@@ -81,10 +84,10 @@ const Main = () => {
                     <div className="md:justify-center self-center">
 
                         <ImageNext
-                            src={createTicket}
+                            src={ticket}
                             alt='alert icon'
                             height='400px'
-                            width='800px'
+                            width='600px'
                         />
                     </div>
                         <Feature
@@ -92,10 +95,10 @@ const Main = () => {
                             desc={'In Discord, you can open up a ticket from the Contact Support room. You can go straight to the Contact Support room by clicking.'} />
                     <div className="md:justify-center self-center">
                     <ImageNext
-                            src={ticket}
+                            src={createTicket}
                             alt='alert icon'
                             height='400px'
-                            width='800px'
+                            width='400px'
                         />
                     </div>
                         <Feature
@@ -106,18 +109,18 @@ const Main = () => {
                             src={ticket}
                             alt='alert icon'
                             height='400px'
-                            width='800px'
+                            width='600px'
                         />
                     </div>
                         <Feature
                             title='Understand the Support Channels'
-                            desc='Also, KeepKey members will never DM you first. If a user is asking you to share information or share your screen, you can verify they are a KeepKey member by looking at their tag. Only KeepKey support members will be able to see the content you post in the support thread.' />
+                            desc='KeepKey members will never DM you first. If a user is asking you to share information or share your screen, you can verify they are a KeepKey member by looking at their tag. Only KeepKey support members will be able to see the content you post in the support thread.' />
                     <div className="md:justify-center self-center">
                     <ImageNext
                             src={highlander}
                             alt='alert icon'
                             height='400px'
-                            width='800px'
+                            width='300px'
                         />
                     </div>
                         <Feature

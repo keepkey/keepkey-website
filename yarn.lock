@@ -161,20 +161,6 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@bithighlander/popup-chat-react@1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@bithighlander/popup-chat-react/-/popup-chat-react-1.0.6.tgz#d771f7ff694fbbed6c672e25546a3be612c5be74"
-  integrity sha512-ydBY2qMGhTosXlkcOuJrfAxQSOR2h7dq+iQC9sAOkTtWsBc4KY+85ypt6Thueu0+jNvOVCoCTaBdeWmvn0JD4Q==
-  dependencies:
-    classnames "^2.2.6"
-    emoji-js "^3.5.0"
-    gh-pages "^3.1.0"
-    prop-types "^15.7.2"
-    ramda "^0.27.1"
-    react-highlight.js "^1.0.7"
-    react-linkify "^1.0.0-alpha"
-    socket.io-client "^3.0.3"
-
 "@chakra-ui/accordion@2.1.8":
   version "2.1.8"
   resolved "https://registry.npmjs.org/@chakra-ui/accordion/-/accordion-2.1.8.tgz"
