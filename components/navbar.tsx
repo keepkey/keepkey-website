@@ -94,31 +94,24 @@ export default function Navbar() {
 
 
   let colorScheme: string;
-
-
   let systemPrefersDarkTheme: any;
   let toggleColorMode: any;
   let updateChakraTags: any;
 
   useEffect(() => {
     systemPrefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
-    // htmlTag = document.querySelector('html');
-    // bodyTag = document.querySelector('body');
 
-
-    if (systemPrefersDarkTheme) {
+    if (systemPrefersDarkTheme.matches) {
       colorScheme = systemPrefersDarkTheme ? 'dark' : 'light';
     }
 
     updateChakraTags(colorScheme);
-
 
   }, []);
 
   updateChakraTags = (colorScheme) => {
     let htmlTag: HTMLElement = document.querySelector('html');
     let bodyTag: HTMLElement = document.querySelector('body');
-    console.log(colorScheme)
     let prevColor = colorScheme === 'light' ? 'dark' : 'light';
 
     localStorage.setItem('chakra-ui-color-mode', colorScheme);

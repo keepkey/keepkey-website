@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { LightMode, DarkMode } from '@chakra-ui/react'
 import ShopifyBuyButton from '../components/ShopifyBuyButton'
 // import { loadShopifyBuyButton } from '../components/ShopifyBuyButton'
 import SecurityWarning from '../components/SecurityWarning'
@@ -232,7 +233,11 @@ const PromoSection = () => {
     <section className="bg-zinc-100">
       <div className="container grid gap-24 md:grid-cols-2">
         <div className="my-auto">
-          <h2>Now with a stand alone application!</h2>
+          <DarkMode>
+
+            <h2>Now with a stand alone application!</h2>
+          </DarkMode>
+
           <p className="font-bold mt-6 mb-4">A KeepKey-secured platform built to handle all of your crypto needs</p>
           <p>KeepKey now offers an open source application with a native RESTful API that simplifies the process of building dapps on the platform.</p>
         </div>
