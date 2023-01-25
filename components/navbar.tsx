@@ -4,7 +4,10 @@ import keepkeyLogo from '../public/images/logos/keepkey_logo.png'
 import { useState, useEffect } from 'react';
 import { loadShopifyBuyButton } from '../components/ShopifyBuyButton'
 import ShopifyBuyButton from '../components/ShopifyBuyButton'
+import { Button, Icon } from '@chakra-ui/react'
+import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 const shopifyBuyButtonId = 1665073941285;
+
 
 interface NavLink {
   id: number,
@@ -90,6 +93,53 @@ export default function Navbar() {
   };
 
 
+  let colorScheme: string;
+
+
+  let systemPrefersDarkTheme: any;
+  let toggleColorMode: any;
+  let updateChakraTags: any;
+
+  useEffect(() => {
+    systemPrefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
+    // htmlTag = document.querySelector('html');
+    // bodyTag = document.querySelector('body');
+
+
+    if (systemPrefersDarkTheme) {
+      colorScheme = systemPrefersDarkTheme ? 'dark' : 'light';
+    }
+
+    updateChakraTags(colorScheme);
+
+
+  }, []);
+
+  updateChakraTags = (colorScheme) => {
+    let htmlTag: HTMLElement = document.querySelector('html');
+    let bodyTag: HTMLElement = document.querySelector('body');
+    console.log(colorScheme)
+    let prevColor = colorScheme === 'light' ? 'dark' : 'light';
+
+    localStorage.setItem('chakra-ui-color-mode', colorScheme);
+    htmlTag.setAttribute('data-theme', colorScheme);
+    htmlTag.setAttribute('style', `color-scheme: ${colorScheme}`);
+    bodyTag.classList.remove(`chakra-ui-${prevColor}`);
+    bodyTag.classList.add(`chakra-ui-${colorScheme}`);
+  }
+
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  toggleColorMode = () => {
+    setIsDarkMode(current => !current);
+    colorScheme = isDarkMode ? 'dark' : 'light';
+    updateChakraTags(colorScheme);
+    console.log('mode is: ', colorScheme)
+
+  }
+
+
+
   return (
 
     <nav className={`nav fixed w-full py-4 z-10 transition-all ease-in-out duration-400 
@@ -120,6 +170,17 @@ export default function Navbar() {
           </div>
         ))}
 
+        <Button
+          onClick={toggleColorMode}
+        >
+          {isDarkMode ?
+            <MoonIcon />
+            :
+            <SunIcon />
+          }
+        </Button>
+
+        {/* <Icon>Test</Icon> */}
         <div className="ml-auto flex items-center mt-2">
           {/* <div className="hidden sm:inline-block mr-8 lg:mr-0">
             <Link href="https://app.shapeshift.com">

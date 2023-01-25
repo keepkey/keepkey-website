@@ -98,18 +98,18 @@ const Hero = () => {
 
           <div className="w-100">
 
-              <div className="button lg:mr-6">
+            <div className="button lg:mr-6">
 
-                  <span className="btn btn-lg text-white font-bold py-4" style={{backgroundColor:"#ba9862"}}>
-                      <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet" >
-                      <button>
-                    <h1 style={{fontSize:"30px"}}>Buy Now!</h1>
-                      </button></a>
-                  </span>
+              <span className="btn btn-lg text-white font-bold py-4" style={{ backgroundColor: "#ba9862" }}>
+                <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet" >
+                  <button>
+                    <h1 style={{ fontSize: "30px" }}>Buy Now!</h1>
+                  </button></a>
+              </span>
 
-              </div>
+            </div>
 
-            <br/>
+            <br />
             {platform.macos ? <div className="mb-4 inline-block">
               <Link href={urlMacOS}>
                 <a className="btn btn-lg btn--transparent">Download for macOS </a>
@@ -193,7 +193,7 @@ const features: Feature[] = [
 
 const FeaturesSection = () => {
   return (
-    <section className="bg-white">
+    <section>
       <h2 className="text-center mb-20 px-4">The Premier Hardware Wallet</h2>
       <div className="container grid gap-24 md:grid-cols-2 xl:grid-cols-4">
         {features.map(feature =>
