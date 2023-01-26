@@ -9,7 +9,7 @@ export default function SecurityWarning() {
         <Image
           src={alertIcon}
           alt='alert icon'
-          >
+        >
         </Image>
       </div>
       <div className="md:ml-8">

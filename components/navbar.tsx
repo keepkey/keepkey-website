@@ -34,18 +34,24 @@ const navLinks: NavLink[] = [
   },
   {
     id: 3,
-    name: 'Supported Applications',
+    name: 'Applications',
     url: '/supported-applications',
     external: false
   },
   {
     id: 4,
-    name: 'Coin Support',
+    name: 'Coins',
     url: '/coin-support',
     external: false
   },
   {
     id: 5,
+    name: 'Support',
+    url: '/support',
+    external: false
+  },
+  {
+    id: 6,
     name: 'Blog',
     url: '/blog',
     external: false

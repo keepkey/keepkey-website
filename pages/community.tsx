@@ -33,13 +33,6 @@ interface CommunityCard {
 }
 
 const communityCards: CommunityCard[] = [
-  // {
-  //   icon: discordIcon,
-  //   url: 'https://discord.gg/DhkdYv8g',
-  //   title: 'Discord',
-  //   description: 'Join ShapeShifts Discord',
-  //   external: true
-  // },
   {
     icon: discordIcon,
     url: 'https://discord.gg/stfRnW3Jys',

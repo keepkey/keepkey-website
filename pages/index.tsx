@@ -18,6 +18,7 @@ import platform from 'platform-detect/os.mjs'
 import axios from 'axios';
 const shopifyBuyButtonId = 1663605399427;
 const shop = 'https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet'
+import { Button } from '@chakra-ui/react'
 export default function Home() {
 
   // useEffect(() => {
@@ -98,20 +99,11 @@ const Hero = () => {
 
           <div className="w-100">
 
-              <div className="button lg:mr-6">
+            <a className="btn btn-lg w-100" href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet" >
+              Buy Now
+            </a>
 
-
-                  <span className="btn btn-lg text-white font-bold py-4" style={{backgroundColor:"#ba9862"}}>
-                      <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet" >
-                      <button>
-                    <h1 style={{fontSize:"30px"}}>Buy Now!</h1>
-                      </button></a>
-                  </span>
-
-              </div>
-
-            <br/>
-            {platform.macos ? <div className="mb-4 inline-block">
+            {platform.macos ? <div className="mb-4 inline-block ml-8">
               <Link href={urlMacOS}>
                 <a className="btn btn-lg btn--transparent">Download for macOS </a>
               </Link>
