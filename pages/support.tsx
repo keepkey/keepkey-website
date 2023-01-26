@@ -46,7 +46,7 @@ function FeatureDiscord({ title, desc, ...rest }) {
                 <Heading>{title}</Heading>
                 <Text mt={4}>{desc}</Text>
                 <br />
-                <a href="https://discord.com/" className="btn" target="_blank">
+                <a href="https://discord.com/" className="btn" target="_blank" rel="noreferrer">
                     Download Discord
                 </a>
 
