@@ -125,7 +125,9 @@ const Main = () => {
                         />
                     </div>
                 </SimpleGrid>
-
+                <a className="btn btn-lg w-100" href="https://discord.gg/FDQEbB79N2" >
+                    GET SUPPORT NOW
+                </a>
             </div>
         </section >
     )
