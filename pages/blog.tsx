@@ -5,7 +5,7 @@ import Head from 'next/head'
 import heroBgImage from 'public/images/heros/blue-lines.jpg'
 import HeroSimple from '../components/hero-simple';
 const pageTitle = "Blog";
-const subTitle = "Keep up to date with the latest content from KeepKey"
+const subTitle = "Keep up to date with the latest content from KeepKey."
 
 let mediumURL =
     "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@highlander_35968";
