@@ -21,10 +21,6 @@ const shopifyBuyButtonId = 1663605399427;
 const shop = 'https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet'
 export default function Home() {
 
-  // useEffect(() => {
-  //   loadShopifyBuyButton(shopifyBuyButtonId);
-  // }, []);
-
   return (
     <>
       <Head>

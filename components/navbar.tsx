@@ -94,20 +94,34 @@ export default function Navbar() {
 
 
   let colorScheme: string;
-  let systemPrefersDarkTheme: any;
+  let darkOnLoad: boolean;
+  // let systemPrefersDarkTheme: any;
   let toggleColorMode: any;
   let updateChakraTags: any;
 
+
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
   useEffect(() => {
-    systemPrefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
+    //   systemPrefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-    if (systemPrefersDarkTheme.matches) {
-      colorScheme = systemPrefersDarkTheme ? 'dark' : 'light';
-    }
+    //   if (systemPrefersDarkTheme.matches) {
+    //     colorScheme = systemPrefersDarkTheme ? 'dark' : 'light';
+    //   }
 
-    updateChakraTags(colorScheme);
+    //   updateChakraTags(colorScheme);
+    colorScheme = localStorage.getItem('chakra-ui-color-mode');
+    darkOnLoad = colorScheme === 'dark'
+    console.log('dark on load:', darkOnLoad);
+    setIsDarkMode(darkOnLoad);
+
+
 
   }, []);
+  console.log('isDarkMode: ', isDarkMode)
+
+  // console.log('isDarkMode', isDarkMode)
+  // console.log('dark on load:', darkOnLoad);
 
   updateChakraTags = (colorScheme) => {
     let htmlTag: HTMLElement = document.querySelector('html');
@@ -121,17 +135,17 @@ export default function Navbar() {
     bodyTag.classList.add(`chakra-ui-${colorScheme}`);
   }
 
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
   toggleColorMode = () => {
+    // console.log('mode is: ', )
+    // console.log('isDark ', isDarkMode)
+
     setIsDarkMode(current => !current);
     colorScheme = isDarkMode ? 'dark' : 'light';
     updateChakraTags(colorScheme);
-    console.log('mode is: ', colorScheme)
+    // console.log('colorScheme ', colorScheme)
 
   }
-
-
 
   return (
 
