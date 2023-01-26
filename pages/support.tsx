@@ -76,7 +76,18 @@ const Main = () => {
                 </div>
             </div >
 
+            <br/>
+            <br/>
+            <div className="flex flex-wrap md:flex-nowrap md:items-center md:justify-center max-w-5xl px-6 lg:px-8 mx-auto">
+                <div className="md:justify-center self-center">
+                    <a className="btn btn-lg w-100" href="https://discord.gg/FDQEbB79N2" >
+                        GET SUPPORT NOW
+                    </a>
+                </div>
+            </div >
+
             <div>
+
                 <SimpleGrid columns={[1, null, null, 2]} spacingX={32} spacingY={{ base: 20, lg: 40 }} my={{ base: 32, lg: 40 }}>
 
                     <FeatureDiscord
@@ -85,7 +96,7 @@ const Main = () => {
                     </FeatureDiscord>
                     <div className="md:justify-center self-center">
                         <ImageNext
-                            src={ticket}
+                            src={supportChannel}
                             alt='alert icon'
                             object-fit="contain"
                         />
@@ -125,7 +136,6 @@ const Main = () => {
                         />
                     </div>
                 </SimpleGrid>
-
             </div>
         </section >
     )
