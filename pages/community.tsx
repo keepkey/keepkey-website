@@ -42,7 +42,7 @@ const communityCards: CommunityCard[] = [
   },
   {
     icon: redditIcon,
-    url: 'https://www.reddit.com/r/keepkey/',
+    url: 'https://www.reddit.com/r/keepkeydevs',
     title: 'Reddit',
     description: 'Start a thread or ask a question for the community.',
     external: true

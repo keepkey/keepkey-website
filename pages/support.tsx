@@ -96,7 +96,7 @@ const Main = () => {
                     </FeatureDiscord>
                     <div className="md:justify-center self-center">
                         <ImageNext
-                            src={ticket}
+                            src={supportChannel}
                             alt='alert icon'
                             object-fit="contain"
                         />
