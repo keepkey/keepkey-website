@@ -50,11 +50,11 @@ const Main = () => {
 
                     {faqs.map((item, i, arr) =>
 
-                        <div className="mb-20" id={item.category.replaceAll(' ', '-').toLowerCase()}>
+                        <div key={i} className="mb-20" id={item.category.replaceAll(' ', '-').toLowerCase()}>
                             <Heading mb={10}>{item.category}</Heading>
 
                             {item.questions.map((question, i, arr) =>
-                                < AccordionItem mb={5} >
+                                <AccordionItem mb={5} key={i} >
                                     <h2>
                                         <AccordionButton >
                                             <Box as="span" flex='1' textAlign='left' fontSize={26} >
@@ -73,11 +73,11 @@ const Main = () => {
                 </Accordion>
 
                 <Show above='md'>
-                    <aside className="sticky top-[400px] p-10">
+                    <aside className="sticky top-[200px] p-10">
                         <ul>
                             {faqs.map((item, i, arr) =>
                                 <li className="mb-4">
-                                    <a href={`#${item.category.replaceAll(' ', '-').toLowerCase()}`} className="font-normal text-xl hover:text-gold transition-colors">{item.category}</a>
+                                    <a href={`#${item.category.replaceAll(' ', '-').toLowerCase()}`} className="font-normal text-xl text-black transition-colors">{item.category}</a>
                                 </li>
                             )}
                         </ul>
@@ -103,7 +103,7 @@ const faqs = [
             },
             {
                 question: "Can I return my order after it has been delivered?",
-                answer: '<a className="text-gold font-medium text-1xl hover:underline" target="_blank" href="https://github.com/keepkey/udev-rules"> Update your Udev rules</a>',
+                answer: 'lorem ipsum',
             }
         ],
     },
@@ -123,6 +123,10 @@ const faqs = [
                 question: "What are the requirements to use KeepKey?",
                 answer: "Lorem ipsum dolor sit"
             },
+            {
+                question: "What are the requirements to use KeepKey?",
+                answer: "Lorem ipsum dolor sit"
+            },
         ]
 
     },
@@ -132,7 +136,27 @@ const faqs = [
             {
                 question: "Which coins do you currently support?",
                 answer: "KeepKey supports an ever-growing list of cryptocurrencies and digital assets. Search for supported coins on our : <a href='https://www.keepkey.com/coin-support'>coin support page<a>",
-            }
+            },
+            {
+                question: "Which coins do you currently support?",
+                answer: "KeepKey supports an ever-growing list of cryptocurrencies and digital assets. Search for supported coins on our : <a href='https://www.keepkey.com/coin-support'>coin support page<a>",
+            },
+            {
+                question: "Which coins do you currently support?",
+                answer: "KeepKey supports an ever-growing list of cryptocurrencies and digital assets. Search for supported coins on our : <a href='https://www.keepkey.com/coin-support'>coin support page<a>",
+            },
+            {
+                question: "Which coins do you currently support?",
+                answer: "KeepKey supports an ever-growing list of cryptocurrencies and digital assets. Search for supported coins on our : <a href='https://www.keepkey.com/coin-support'>coin support page<a>",
+            },
+            {
+                question: "Which coins do you currently support?",
+                answer: "KeepKey supports an ever-growing list of cryptocurrencies and digital assets. Search for supported coins on our : <a href='https://www.keepkey.com/coin-support'>coin support page<a>",
+            },
+            {
+                question: "Which coins do you currently support?",
+                answer: "KeepKey supports an ever-growing list of cryptocurrencies and digital assets. Search for supported coins on our : <a href='https://www.keepkey.com/coin-support'>coin support page<a>",
+            },
 
         ]
     }
