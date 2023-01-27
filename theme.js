@@ -26,6 +26,17 @@ const theme = extendTheme({
       },
       h4: {
         fontSize: '20px',
+      },
+      a: {
+        color: '#b59761',
+        _hover: {
+          color: '#b79862',
+        }
+      },
+      'p, a, ul, li, i': {
+        fontSize: '18px',
+        letterSpacing: '0.025em',
+        fontWeight: '300'
       }
     },
   }

@@ -9,7 +9,9 @@ import {
     Heading,
     Text,
     Grid,
-    Show
+    Show,
+    Card,
+    CardBody
 } from '@chakra-ui/react'
 import Head from 'next/head'
 import heroBgImage from 'public/images/heros/blue-lines.jpg'
@@ -40,7 +42,7 @@ const Main = () => {
 
 
     return (
-        <section className="container">
+        <section className="container relative">
 
             <Grid templateColumns={{ base: "100%", md: "70% 1fr" }} gap={6}>
 
@@ -54,14 +56,14 @@ const Main = () => {
                             {item.questions.map((question, i, arr) =>
                                 < AccordionItem mb={5} >
                                     <h2>
-                                        <AccordionButton>
+                                        <AccordionButton >
                                             <Box as="span" flex='1' textAlign='left' fontSize={26} >
                                                 {question.question}
                                             </Box>
                                             <AccordionIcon />
                                         </AccordionButton>
                                     </h2>
-                                    <AccordionPanel pb={4} dangerouslySetInnerHTML={{ __html: question.answer }}>
+                                    <AccordionPanel fontSize={20} pb={4} fontWeight={300} dangerouslySetInnerHTML={{ __html: question.answer }}>
                                     </AccordionPanel>
                                 </AccordionItem>
                             )}
@@ -71,15 +73,15 @@ const Main = () => {
                 </Accordion>
 
                 <Show above='md'>
-                    <div className="sticky">
+                    <aside className="sticky top-[400px] p-10">
                         <ul>
                             {faqs.map((item, i, arr) =>
-                                <li>
-                                    <a href={`#${item.category.replaceAll(' ', '-').toLowerCase()}`}>{item.category}</a>
+                                <li className="mb-4">
+                                    <a href={`#${item.category.replaceAll(' ', '-').toLowerCase()}`} className="font-normal text-xl hover:text-gold transition-colors">{item.category}</a>
                                 </li>
                             )}
                         </ul>
-                    </div>
+                    </aside>
                 </Show>
             </Grid>
 
@@ -97,7 +99,7 @@ const faqs = [
         questions: [
             {
                 question: 'Do you ship to my country?',
-                answer: 'We ship to a number of countries. More info <a href="/shipping-policy">here</a>'
+                answer: 'We ship to a number of countries. More info on our <a href="/shipping-policy">shipping policy page</a>'
             },
             {
                 question: "Can I return my order after it has been delivered?",
@@ -118,7 +120,7 @@ const faqs = [
         category: "Technical Questions",
         questions: [
             {
-                question: "What are the requirements to use Ledger Nano X?",
+                question: "What are the requirements to use KeepKey?",
                 answer: "Lorem ipsum dolor sit"
             },
         ]
@@ -129,9 +131,8 @@ const faqs = [
         questions: [
             {
                 question: "Which coins do you currently support?",
-                answer: "KeepKey supports an ever-growing list of cryptocurrencies and digital assets. Search for supported coins on our coin support page: https://www.keepkey.com/coin-support",
-            },
-
+                answer: "KeepKey supports an ever-growing list of cryptocurrencies and digital assets. Search for supported coins on our : <a href='https://www.keepkey.com/coin-support'>coin support page<a>",
+            }
 
         ]
     }

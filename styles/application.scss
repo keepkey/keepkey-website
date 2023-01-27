@@ -22,9 +22,6 @@
   h4 {
     @apply tracking-wide;
   }
-  p, a, ul, li, i {
-    @apply text-[18px] tracking-wide font-light;
-  }
   section {
     @apply sm:py-32;
     @apply py-20;
