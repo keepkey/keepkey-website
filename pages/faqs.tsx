@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+// import React, { Component, useEffect, useState } from "react";
 import {
     Accordion,
     AccordionItem,
@@ -21,8 +21,6 @@ let mediumURL =
     "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@highlander_35968";
 
 export default function Faqs() {
-
-
 
     return (
         <>
