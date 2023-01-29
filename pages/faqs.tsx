@@ -7,12 +7,10 @@ import {
     AccordionIcon,
     Box,
     Heading,
-    Text,
     Grid,
     Show,
-    Card,
-    CardBody
 } from '@chakra-ui/react'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Head from 'next/head'
 import heroBgImage from 'public/images/heros/blue-lines.jpg'
 import HeroSimple from '../components/hero-simple';
@@ -23,6 +21,8 @@ let mediumURL =
     "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@highlander_35968";
 
 export default function Faqs() {
+
+
 
     return (
         <>
@@ -37,12 +37,34 @@ export default function Faqs() {
     )
 }
 
+const SideNav = () => (
+    <div className="relative ml-12">
+        <div className="sticky top-[150px] ">
+            <h3 className="mb-6 text-xxl">Contents</h3>
+            {faqs.map((item, i, arr) =>
+                <div
+                    key={item.id}
+                    className={`mb-4`}
+                >
+                    <AnchorLink
+                        href={`#${item.category.replaceAll(' ', '-').toLowerCase()}`}
+                        className="text-black text-xl"
+                        offset='100'
+                    >
+                        {item.category}
+                    </AnchorLink>
+
+                </div>
+            )}
+        </div>
+    </div>
+)
 
 const Main = () => {
 
 
     return (
-        <section className="container relative">
+        <section className="container">
 
             <Grid templateColumns={{ base: "100%", md: "70% 1fr" }} gap={6}>
 
@@ -50,20 +72,19 @@ const Main = () => {
 
                     {faqs.map((item, i, arr) =>
 
-                        <div key={i} className="mb-20" id={item.category.replaceAll(' ', '-').toLowerCase()}>
+                        <div key={item.id} className="mb-20" id={item.category.replaceAll(' ', '-').toLowerCase()}>
                             <Heading mb={10}>{item.category}</Heading>
 
                             {item.questions.map((question, i, arr) =>
-                                <AccordionItem mb={5} key={i} >
-                                    <h2>
-                                        <AccordionButton >
-                                            <Box as="span" flex='1' textAlign='left' fontSize={26} >
-                                                {question.question}
-                                            </Box>
-                                            <AccordionIcon />
-                                        </AccordionButton>
-                                    </h2>
-                                    <AccordionPanel fontSize={20} pb={4} fontWeight={300} dangerouslySetInnerHTML={{ __html: question.answer }}>
+                                <AccordionItem mb={5} key={item.id + 1} >
+                                    <AccordionButton >
+                                        <Box as="span" flex='1' textAlign='left' fontSize={26} >
+                                            {question.question}
+                                        </Box>
+                                        <AccordionIcon />
+                                    </AccordionButton>
+                                    <AccordionPanel fontSize={20} pb={4} fontWeight={300}>
+                                        <div dangerouslySetInnerHTML={{ __html: question.answer }}></div>
                                     </AccordionPanel>
                                 </AccordionItem>
                             )}
@@ -73,15 +94,8 @@ const Main = () => {
                 </Accordion>
 
                 <Show above='md'>
-                    <aside className="sticky top-[200px] p-10">
-                        <ul>
-                            {faqs.map((item, i, arr) =>
-                                <li className="mb-4">
-                                    <a href={`#${item.category.replaceAll(' ', '-').toLowerCase()}`} className="font-normal text-xl text-black transition-colors">{item.category}</a>
-                                </li>
-                            )}
-                        </ul>
-                    </aside>
+
+                    <SideNav />
                 </Show>
             </Grid>
 
@@ -95,6 +109,7 @@ const Main = () => {
 
 const faqs = [
     {
+        id: 1,
         category: "Orders & Shipping",
         questions: [
             {
@@ -108,6 +123,7 @@ const faqs = [
         ],
     },
     {
+        id: 2,
         category: "Warranty & Refunds",
         questions: [
             {
@@ -117,6 +133,7 @@ const faqs = [
         ]
     },
     {
+        id: 3,
         category: "Technical Questions",
         questions: [
             {
@@ -131,6 +148,7 @@ const faqs = [
 
     },
     {
+        id: 4,
         category: "Product Information",
         questions: [
             {
