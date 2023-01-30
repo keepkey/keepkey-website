@@ -138,16 +138,8 @@ const faqs = [
         category: "General",
         questions: [
             {
-                question: "What do I do if I lose my PIN?",
-                answer: "Wipe your device and proceed with recovery",
-            },
-            {
-                question: "What do I do if I lose my KeepKey?",
-                answer: "Purchase a new KeepKey and proceed with recovery",
-            },
-            {
-                question: "What do I do if I lose my Recovery Phrase?",
-                answer: "Purchase a new KeepKey. Initialize and set up the new device. Transfer your funds to the new device.",
+                question: "Is KeepKey owned by ShapeShift DAO?",
+                answer: "No, KeepKey is owned and operated by former employees of ShapeShift independently. KeepKey continues to fund the ShapeShift DAO through funding the ShapeShift DAO with 10pct of all device sale revenue.  <a target=\"_blank\" href=\"https://snapshot.org/#/shapeshiftdao.eth/proposal/0x2528af775ea702a12da168b6d7f8438ba4eae1cebf43d73b36ad1ddb3edef260\">KeepKey Workstream</a>",
             },
         ]
     },
@@ -162,7 +154,19 @@ const faqs = [
             {
                 question: "I can't get ShapeShift.com or KeepKey Desktop to recognize my device, what do I do?",
                 answer: "You can use KKcli to update your firmware. <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/using-kkcli-to-debug-your-keepkey-3830b504edff\">Using KKcli to debug your KeepKey</a>",
-            }
+            },
+            {
+                question: "What do I do if I lose my PIN?",
+                answer: "Wipe your device and proceed with recovery",
+            },
+            {
+                question: "What do I do if I lose my KeepKey?",
+                answer: "Purchase a new KeepKey and proceed with recovery",
+            },
+            {
+                question: "What do I do if I lose my Recovery Phrase?",
+                answer: "Purchase a new KeepKey. Initialize and set up the new device. Transfer your funds to the new device.",
+            },
         ]
     },
 // {
