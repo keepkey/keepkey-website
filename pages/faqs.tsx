@@ -106,74 +106,116 @@ const Main = () => {
 
 
 const faqs = [
+
     {
         id: 1,
-        category: "Orders & Shipping",
+        category: "How To",
         questions: [
             {
-                question: 'Do you ship to my country?',
-                answer: 'We ship to a number of countries. More info on our <a href="/shipping-policy">shipping policy page</a>'
+                question: 'How do I send Bitcoin with my Keepkey?',
+                answer: 'Check out this guide <a target="_blank" href="https://medium.com/@highlander_35968/how-to-send-and-receive-bitcoin-in-keepkey-desktop-858e70312611">Sending Bitcoin</a>'
             },
             {
-                question: "Can I return my order after it has been delivered?",
-                answer: 'lorem ipsum',
+                question: "How do I update my firmware?",
+                answer: 'Check out this guide <a target="_blank" href="https://medium.com/@highlander_35968/updating-your-keepkey-154a49445d4c">Updating your KeepKey</a>'
+            },
+            {
+                question: 'How do I use the Pin cipher?',
+                answer: 'Check out this guide <a target="_blank" href="https://medium.com/@highlander_35968/understanding-the-keepkey-pin-6dca3499b973">Understanding the KeepKey PIN</a>'
+            },
+            {
+                question: "Can I use a KeepKey with my Phone?",
+                answer: 'No, KeepKey requires a USB connection to KeepKey Desktop and is only compatible with Windows/MacOS/Linux.'
+            },
+            {
+                question: "What Coins can I use with KeepKey?",
+                answer: 'View our coin support page. <a target="_blank" href="https://www.keepkey.com/coin-support">Coin support</a>'
             }
         ],
     },
     {
         id: 2,
-        category: "Warranty & Refunds",
+        category: "General",
         questions: [
             {
-                question: "How long is the warranty?",
-                answer: "https://www.keepkey.com/limited-warranty",
+                question: "What do I do if I lose my PIN?",
+                answer: "Wipe your device and proceed with recovery",
+            },
+            {
+                question: "What do I do if I lose my KeepKey?",
+                answer: "Purchase a new KeepKey and proceed with recovery",
+            },
+            {
+                question: "What do I do if I lose my Recovery Phrase?",
+                answer: "Purchase a new KeepKey. Initialize and set up the new device. Transfer your funds to the new device.",
             },
         ]
     },
     {
         id: 3,
-        category: "Technical Questions",
+        category: "Troubleshooting",
         questions: [
             {
-                question: "What are the requirements to use KeepKey?",
-                answer: "Lorem ipsum dolor sit"
+                question: "My KeepKey is not recognized by my computer",
+                answer: "Check out our troubleshooting guide <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/troubleshooting-connections-with-the-keepkey-4599f1aaee0\">Troubleshooting your KeepKey</a>",
             },
             {
-                question: "What are the requirements to use KeepKey?",
-                answer: "Lorem ipsum dolor sit"
+                question: "I can't get ShapeShift.com or KeepKey Desktop to recognize my device, what do I do?",
+                answer: "You can use KKcli to update your firmware. <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/using-kkcli-to-debug-your-keepkey-3830b504edff\">Using KKcli to debug your KeepKey</a>",
+            }
+        ]
+    },
+// {
+//     id: 4,
+//     category: "Technical Questions",
+//     questions: [
+//         {
+//             question: "How do I be?",
+//             answer: "Lorem ipsum dolor sit"
+//         },
+//     ]
+//
+// },
+    {
+        id: 5,
+        category: "General Security",
+        questions: [
+            {
+                question: "Can I self-custody bitcoin between multiple devices with multi-sig?",
+                answer: "Yes, check out this Electrum guide <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/storing-bitcoin-with-multisig-with-your-keepkey-and-electrum-d959941f1dd1\">Electrum Multi-sig Guide</a>"
+            },
+            {
+                question: "How do I protect my funds from physical attacks, for instance a stolen or lost device?",
+                answer: "Protect your assets from physical attacks with a BIP39 Passphrase: <a href='https://medium.com/@highlander_35968/bip39-passphrase-and-securing-your-keepkey-from-physical-attacks-954ed4ac1dcc'>Securing your KeepKey<a>",
             },
         ]
-
     },
     {
-        id: 4,
-        category: "Product Information",
+        id: 5,
+        category: "Web3 Community",
         questions: [
             {
-                question: "Which coins do you currently support?",
-                answer: "KeepKey supports an ever-growing list of cryptocurrencies and digital assets. Search for supported coins on our : <a href='https://www.keepkey.com/coin-support'>coin support page<a>",
+                question: "Can I use my KeepKey with Uniswap?",
+                answer: "Yes, you can use Uniswap and most web3 applications via wallet-connect. See our dApp guide: <a target=\"_blank\" href='https://www.keepkey.com/dapps'>dApp guide<a>",
             },
             {
-                question: "Which coins do you currently support?",
-                answer: "KeepKey supports an ever-growing list of cryptocurrencies and digital assets. Search for supported coins on our : <a href='https://www.keepkey.com/coin-support'>coin support page<a>",
+                question: "How do I participate in DAO governance with my KeepKey?",
+                answer: "See our coin support page: <a target=\"_blank\" href='https://www.keepkey.com/coin-support'>Coin support page<a>",
+            },
+        ]
+    },
+    {
+        id: 6,
+        category: "Developer Community",
+        questions: [
+            {
+                question: "How do I support KeepKey on my application?",
+                answer: "If you are a Web3 project we recommend onboard.js and enabling wallet-connect: <a target=\"_blank\" href='https://onboard.blocknative.com/'>onboard.js developer documentation<a>",
             },
             {
-                question: "Which coins do you currently support?",
-                answer: "KeepKey supports an ever-growing list of cryptocurrencies and digital assets. Search for supported coins on our : <a href='https://www.keepkey.com/coin-support'>coin support page<a>",
+                question: "How do I build multi-chain dapps for KeepKey users and promote my product or service?",
+                answer: "See our developer guide for building multi-chain dApps: <a target=\"_blank\" href='https://medium.com/@highlander_35968/creating-a-dapp-for-the-keepkey-desktop-f61e506f5026'>Creating a DAPP for the KeepKey Desktop<a>",
             },
-            {
-                question: "Which coins do you currently support?",
-                answer: "KeepKey supports an ever-growing list of cryptocurrencies and digital assets. Search for supported coins on our : <a href='https://www.keepkey.com/coin-support'>coin support page<a>",
-            },
-            {
-                question: "Which coins do you currently support?",
-                answer: "KeepKey supports an ever-growing list of cryptocurrencies and digital assets. Search for supported coins on our : <a href='https://www.keepkey.com/coin-support'>coin support page<a>",
-            },
-            {
-                question: "Which coins do you currently support?",
-                answer: "KeepKey supports an ever-growing list of cryptocurrencies and digital assets. Search for supported coins on our : <a href='https://www.keepkey.com/coin-support'>coin support page<a>",
-            },
-
         ]
     }
 ]

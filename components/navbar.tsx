@@ -22,8 +22,8 @@ const navLinks: NavLink[] = [
   },
   {
     id: 1,
-    name: 'Dapps',
-    url: '/dapps',
+    name: 'FAQ\'s',
+    url: '/faqs',
     external: false
   },
   {
@@ -34,8 +34,8 @@ const navLinks: NavLink[] = [
   },
   {
     id: 3,
-    name: 'Applications',
-    url: '/supported-applications',
+    name: 'Dapps',
+    url: '/dapps',
     external: false
   },
   {
