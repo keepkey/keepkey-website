@@ -43,7 +43,7 @@ const SideNav = () => {
     return (
         <div className="relative ml-12">
             <div className="sticky top-[150px] ">
-                <h3 className="mb-8 text-[24px]">Contents</h3>
+                <h3 className="mb-8 text-[24px] font-bold">Contents</h3>
                 {faqs.map((item, i, arr) =>
                     <div
                         key={item.category}
@@ -52,7 +52,7 @@ const SideNav = () => {
                     >
                         <AnchorLink
                             href={`#${item.category.replaceAll(' ', '-').toLowerCase()}`}
-                            className={`${active === item ? 'font-semibold' : 'text-black'} text-xl font-normal`}
+                            className={`${active === item ? 'text-gold' : 'text-black'} text-xl font-medium hover:text-gold`}
                             offset='100'
                             onClick={() => setActive(item)}
 
