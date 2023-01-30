@@ -44,7 +44,7 @@ const theme = extendTheme({
         color: 'gold.300',
         transitionProperty: 'all',
         transitionDuration: 'normal',
-        fontWeight: '400',
+        fontWeight: '500',
         _hover: {
           color: 'gold.400',
         }
