@@ -12,6 +12,14 @@ const theme = extendTheme({
     800: '#020202',
     700: '#ba9862',
   },
+  colors: {
+    gold: {
+      100: "#b79862",
+      200: "#b59761",
+      300: "#8F7340",
+      400: "#775821"
+    }
+  },
   styles: {
     
     global: {
@@ -26,7 +34,21 @@ const theme = extendTheme({
       },
       h4: {
         fontSize: '20px',
-      }
+      },
+      'p, a, ul, li, i': {
+        fontSize: '18px',
+        letterSpacing: '0.025em',
+        fontWeight: '300'
+      },
+      a: {
+        color: 'gold.300',
+        transitionProperty: 'all',
+        transitionDuration: 'normal',
+        fontWeight: '400',
+        _hover: {
+          color: 'gold.400',
+        }
+      },
     },
   }
 })
