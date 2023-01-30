@@ -139,7 +139,7 @@ const faqs = [
         questions: [
             {
                 question: "Is KeepKey owned by ShapeShift DAO?",
-                answer: "No, KeepKey is owned and operated by former employees of ShapeShift independently. KeepKey continues to fund the ShapeShift DAO through funding the ShapeShift DAO with 10pct of all device sale revenue.  <a target=\"_blank\" href=\"https://snapshot.org/#/shapeshiftdao.eth/proposal/0x2528af775ea702a12da168b6d7f8438ba4eae1cebf43d73b36ad1ddb3edef260\">KeepKey Workstream</a>",
+                answer: "No, KeepKey is owned and operated by former employees of ShapeShift independently. KeepKey continues to fund the ShapeShift DAO through funding. 10pct of all device sale revenue goes to the ShapeShift DAO treasury.  <a target=\"_blank\" href=\"https://snapshot.org/#/shapeshiftdao.eth/proposal/0x2528af775ea702a12da168b6d7f8438ba4eae1cebf43d73b36ad1ddb3edef260\">KeepKey Workstream</a>",
             },
         ]
     },
