@@ -139,8 +139,8 @@ const faqs = [
         questions: [
             {
                 question: "Is KeepKey owned by ShapeShift DAO?",
-                answer: "No, KeepKey is owned and operated by former employees of ShapeShift independently. KeepKey continues to fund the ShapeShift DAO through funding. 10pct of all device sale revenue goes to the ShapeShift DAO treasury.  <a target=\"_blank\" href=\"https://snapshot.org/#/shapeshiftdao.eth/proposal/0x2528af775ea702a12da168b6d7f8438ba4eae1cebf43d73b36ad1ddb3edef260\">KeepKey Workstream</a>",
-            },
+                answer: "No, KeepKey is owned and operated by former employees of ShapeShift independently. KeepKey continues to fund the ShapeShift DAO. 10pct of all device sale revenue goes to the ShapeShift DAO treasury.  <a target=\"_blank\" href=\"https://snapshot.org/#/shapeshiftdao.eth/proposal/0x2528af775ea702a12da168b6d7f8438ba4eae1cebf43d73b36ad1ddb3edef260\">KeepKey Workstream</a>",
+            }
         ]
     },
     {
@@ -204,7 +204,7 @@ const faqs = [
             },
             {
                 question: "How do I participate in DAO governance with my KeepKey?",
-                answer: "See our coin support page: <a target=\"_blank\" href='https://www.keepkey.com/coin-support'>Coin support page<a>",
+                answer: "You can use the Snapshot dapp guide: <a target=\"_blank\" href='https://medium.com/@highlander_35968/how-to-use-your-keepkey-to-vote-on-snapshot-ec3c86cb5aaa'>vote-on-snapshot<a>",
             },
         ]
     },
