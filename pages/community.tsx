@@ -116,8 +116,8 @@ const CommunityCard = (props: CommunityCard) => {
           >
           </Image>
         </div>
-        <h3 className="py-6">{props.title}</h3>
-        <p className="text-[16px]" dangerouslySetInnerHTML={{ __html: props.description }}></p>
+        <h3 className="py-6 text-black">{props.title}</h3>
+        <p className="text-[16px] text-black" dangerouslySetInnerHTML={{ __html: props.description }}></p>
       </div>
     </a>
 

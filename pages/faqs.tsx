@@ -1,4 +1,4 @@
-// import React, { Component, useEffect, useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
     Accordion,
     AccordionItem,
@@ -35,28 +35,38 @@ export default function Faqs() {
     )
 }
 
-const SideNav = () => (
-    <div className="relative ml-12">
-        <div className="sticky top-[150px] ">
-            <h3 className="mb-6 text-xxl">Contents</h3>
-            {faqs.map((item, i, arr) =>
-                <div
-                    key={item.id}
-                    className={`mb-4`}
-                >
-                    <AnchorLink
-                        href={`#${item.category.replaceAll(' ', '-').toLowerCase()}`}
-                        className="text-black text-xl"
-                        offset='100'
-                    >
-                        {item.category}
-                    </AnchorLink>
+const SideNav = () => {
 
-                </div>
-            )}
-        </div>
-    </div>
-)
+    const [active, setActive] = useState(null)
+
+
+    return (
+        <div className="relative ml-12">
+            <div className="sticky top-[150px] ">
+                <h3 className="mb-8 text-[24px] font-bold">Contents</h3>
+                {faqs.map((item, i, arr) =>
+                    <div
+                        key={item.category}
+                        className={`mb-4`}
+
+                    >
+                        <AnchorLink
+                            href={`#${item.category.replaceAll(' ', '-').toLowerCase()}`}
+                            className={`${active === item ? 'text-gold' : 'text-black'} text-xl font-medium hover:text-gold`}
+                            offset='100'
+                            onClick={() => setActive(item)}
+
+                        >
+                            {item.category}
+                        </AnchorLink>
+
+                    </div>
+                )}
+            </div>
+        </div >
+    )
+
+}
 
 const Main = () => {
 
@@ -64,24 +74,25 @@ const Main = () => {
     return (
         <section className="container">
 
-            <Grid templateColumns={{ base: "100%", md: "70% 1fr" }} gap={6}>
+            <Grid templateColumns={{ base: "100%", md: "70% 1fr" }} gap={70}>
 
                 <Accordion defaultIndex={[0]} allowMultiple>
 
                     {faqs.map((item, i, arr) =>
 
-                        <div key={item.id} className="mb-20" id={item.category.replaceAll(' ', '-').toLowerCase()}>
+                        <div key={item.category} className="mb-20" id={item.category.replaceAll(' ', '-').toLowerCase()}>
                             <Heading mb={10}>{item.category}</Heading>
 
-                            {item.questions.map((question, i, arr) =>
-                                <AccordionItem mb={5} key={item.id + 1} >
-                                    <AccordionButton >
+                            {item.questions.map((question, index, arr) =>
+
+                                <AccordionItem py={5} key={`${item.id}-${index}`} >
+                                    <AccordionButton pl={0} _hover={{ bg: "none" }}>
                                         <Box as="span" flex='1' textAlign='left' fontSize={26} >
                                             {question.question}
                                         </Box>
                                         <AccordionIcon />
                                     </AccordionButton>
-                                    <AccordionPanel fontSize={20} pb={4} fontWeight={300}>
+                                    <AccordionPanel fontSize={20} pb={4} fontWeight={300} pl={0} >
                                         <div dangerouslySetInnerHTML={{ __html: question.answer }}></div>
                                     </AccordionPanel>
                                 </AccordionItem>
@@ -139,8 +150,12 @@ const faqs = [
         questions: [
             {
                 question: "Is KeepKey owned by ShapeShift DAO?",
-                answer: "No, KeepKey is owned and operated by former employees of ShapeShift independently. KeepKey continues to fund the ShapeShift DAO through funding. 10pct of all device sale revenue goes to the ShapeShift DAO treasury.  <a target=\"_blank\" href=\"https://snapshot.org/#/shapeshiftdao.eth/proposal/0x2528af775ea702a12da168b6d7f8438ba4eae1cebf43d73b36ad1ddb3edef260\">KeepKey Workstream</a>",
+                answer: "No, KeepKey is owned and operated by former employees of ShapeShift independently. KeepKey continues to fund the ShapeShift DAO. 10pct of all device sale revenue goes to the ShapeShift DAO treasury.  <a target=\"_blank\" href=\"https://snapshot.org/#/shapeshiftdao.eth/proposal/0x2528af775ea702a12da168b6d7f8438ba4eae1cebf43d73b36ad1ddb3edef260\">KeepKey Workstream</a>",
             },
+            {
+                question: "How do I use ShapeShift with my keepkey?",
+                answer: "ShapeShift is listed in our dapp store. <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/how-to-open-shapeshift-dapp-from-inside-keepkey-desktop-310bb16cc7c\">How to open ShapeShift</a>",
+            }
         ]
     },
     {
@@ -169,17 +184,6 @@ const faqs = [
             },
         ]
     },
-// {
-//     id: 4,
-//     category: "Technical Questions",
-//     questions: [
-//         {
-//             question: "How do I be?",
-//             answer: "Lorem ipsum dolor sit"
-//         },
-//     ]
-//
-// },
     {
         id: 5,
         category: "General Security",
@@ -190,35 +194,49 @@ const faqs = [
             },
             {
                 question: "How do I protect my funds from physical attacks, for instance a stolen or lost device?",
-                answer: "Protect your assets from physical attacks with a BIP39 Passphrase: <a href='https://medium.com/@highlander_35968/bip39-passphrase-and-securing-your-keepkey-from-physical-attacks-954ed4ac1dcc'>Securing your KeepKey<a>",
-            },
-        ]
-    },
-    {
-        id: 5,
-        category: "Web3 Community",
-        questions: [
-            {
-                question: "Can I use my KeepKey with Uniswap?",
-                answer: "Yes, you can use Uniswap and most web3 applications via wallet-connect. See our dApp guide: <a target=\"_blank\" href='https://www.keepkey.com/dapps'>dApp guide<a>",
-            },
-            {
-                question: "How do I participate in DAO governance with my KeepKey?",
-                answer: "See our coin support page: <a target=\"_blank\" href='https://www.keepkey.com/coin-support'>Coin support page<a>",
+                answer: "Protect your assets from physical attacks with a BIP39 Passphrase: <a href='https://medium.com/@highlander_35968/bip39-passphrase-and-securing-your-keepkey-from-physical-attacks-954ed4ac1dcc'>Securing your KeepKey</a>",
             },
         ]
     },
     {
         id: 6,
+        category: "Web3 Community",
+        questions: [
+            {
+                question: "Can I use my KeepKey with Uniswap?",
+                answer: "Yes, you can use Uniswap and most web3 applications via wallet-connect. See our dApp guide: <a target=\"_blank\" href='https://www.keepkey.com/dapps'>dApp guide</a>",
+            },
+            {
+                question: "How do I participate in DAO governance with my KeepKey?",
+                answer: "You can use the Snapshot dapp guide: <a target=\"_blank\" href='https://medium.com/@highlander_35968/how-to-use-your-keepkey-to-vote-on-snapshot-ec3c86cb5aaa'>vote-on-snapshot<a>",
+            },
+        ]
+    },
+    // {
+    //     id: 7,
+    //     category: "Cryptocurrency concepts",
+    //     questions: [
+    //     ]
+    // },
+    {
+        id: 8,
         category: "Developer Community",
         questions: [
             {
                 question: "How do I support KeepKey on my application?",
-                answer: "If you are a Web3 project we recommend onboard.js and enabling wallet-connect: <a target=\"_blank\" href='https://onboard.blocknative.com/'>onboard.js developer documentation<a>",
+                answer: "If you are a Web3 project we recommend onboard.js and enabling wallet-connect: <a target='_blank' href='https://onboard.blocknative.com/'>onboard.js developer documentation</a>",
+            },
+            {
+                question: "what is the KeepKey REST api?",
+                answer: "KeepKey REST api is the primary interface for integrating KeepKey into your application: <a target='_blank' href='https://medium.com/@highlander_35968/understanding-the-keepkey-rest-api-f9801b5db220'>KeepKey REST api.</a>",
+            },
+            {
+                question: "A dapp I use is not listed in the dapp store, how do I get it listed?",
+                answer: "You can submit the dapp yourself! chart the dapp for others to follow. guide: <a target='_blank' href='https://medium.com/@highlander_35968/how-to-list-a-dapp-on-pioneer-cdf54fc9d1de'>Charting a DAPP on Pioneer platform.</a>",
             },
             {
                 question: "How do I build multi-chain dapps for KeepKey users and promote my product or service?",
-                answer: "See our developer guide for building multi-chain dApps: <a target=\"_blank\" href='https://medium.com/@highlander_35968/creating-a-dapp-for-the-keepkey-desktop-f61e506f5026'>Creating a DAPP for the KeepKey Desktop<a>",
+                answer: "See our developer guide for building multi-chain dApps: <a target='_blank' href='https://medium.com/@highlander_35968/creating-a-dapp-for-the-keepkey-desktop-f61e506f5026'>Creating a DAPP for the KeepKey Desktop.</a>",
             },
         ]
     }
