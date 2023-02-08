@@ -151,6 +151,10 @@ const faqs = [
             {
                 question: "Is KeepKey owned by ShapeShift DAO?",
                 answer: "No, KeepKey is owned and operated by former employees of ShapeShift independently. KeepKey continues to fund the ShapeShift DAO. 10pct of all device sale revenue goes to the ShapeShift DAO treasury.  <a target=\"_blank\" href=\"https://snapshot.org/#/shapeshiftdao.eth/proposal/0x2528af775ea702a12da168b6d7f8438ba4eae1cebf43d73b36ad1ddb3edef260\">KeepKey Workstream</a>",
+            },
+            {
+                question: "How do I use ShapeShift with my keepkey?",
+                answer: "ShapeShift is listed in our dapp store. <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/how-to-open-shapeshift-dapp-from-inside-keepkey-desktop-310bb16cc7c\">How to open ShapeShift</a>",
             }
         ]
     },
@@ -208,6 +212,12 @@ const faqs = [
             },
         ]
     },
+    // {
+    //     id: 7,
+    //     category: "Cryptocurrency concepts",
+    //     questions: [
+    //     ]
+    // },
     {
         id: 8,
         category: "Developer Community",
@@ -217,8 +227,16 @@ const faqs = [
                 answer: "If you are a Web3 project we recommend onboard.js and enabling wallet-connect: <a target='_blank' href='https://onboard.blocknative.com/'>onboard.js developer documentation</a>",
             },
             {
+                question: "what is the KeepKey REST api?",
+                answer: "KeepKey REST api is the primary interface for integrating KeepKey into your application: <a target='_blank' href='https://medium.com/@highlander_35968/understanding-the-keepkey-rest-api-f9801b5db220'>KeepKey REST api.</a>",
+            },
+            {
+                question: "A dapp I use is not listed in the dapp store, how do I get it listed?",
+                answer: "You can submit the dapp yourself! chart the dapp for others to follow. guide: <a target='_blank' href='https://medium.com/@highlander_35968/how-to-list-a-dapp-on-pioneer-cdf54fc9d1de'>Charting a DAPP on Pioneer platform.</a>",
+            },
+            {
                 question: "How do I build multi-chain dapps for KeepKey users and promote my product or service?",
-                answer: "See our developer guide for building multi-chain dApps: <a target='_blank' href='https://medium.com/@highlander_35968/creating-a-dapp-for-the-keepkey-desktop-f61e506f5026'>Creating a DAPP for the KeepKey Desktop</a>",
+                answer: "See our developer guide for building multi-chain dApps: <a target='_blank' href='https://medium.com/@highlander_35968/creating-a-dapp-for-the-keepkey-desktop-f61e506f5026'>Creating a DAPP for the KeepKey Desktop.</a>",
             },
         ]
     }
