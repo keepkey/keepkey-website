@@ -61,6 +61,12 @@ const Hero = () => {
       </Image>
       <div className="container relative grid lg:grid-cols-2 gap-x-20 items-center z-10">
         <div>
+          <iframe width="560" height="415" src="https://www.youtube.com/embed/js6VMMvz9aQ" title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen></iframe>
+        </div>
+        <div className="xl:absolute xl:max-w-[650px] xl:right-0 2xl:max-w-[765px] 2xl:right-[-150px]">
           <h1 className="text-4xl leading-tight tracking-wide lg:text-5xl lg:leading-tight 2xl:text-6xl 2xl:leading-tight font-bold text-white mb-4">Introducing the new KeepKey Client</h1>
           <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">Follow the guide below to get started using your KeepKey.</p>
           <Link href={urlMacOS}>
@@ -72,14 +78,6 @@ const Hero = () => {
           <Link href={urlLinux}>
             <a className="btn btn-lg btn--transparent">download for Linux </a>
           </Link>
-        </div>
-        <div className="xl:absolute xl:max-w-[650px] xl:right-0 2xl:max-w-[765px] 2xl:right-[-150px]">
-          <Image
-            alt="KeepKey wallet"
-            src={pin}
-            quality={100}
-          >
-          </Image>
         </div>
       </div>
 
@@ -100,18 +98,6 @@ interface Step {
 
 // @ts-ignore
 const steps: Step[] = [
-  // {
-  //   key: 1,
-  //   image: shapeShiftDemoImg,
-  //   hasVideo: false,
-  //   title: '1. Go to <a class="text-gold font-medium text-3xl hover:underline" target="_blank" href="https://app.shapeshift.com">app.shapeshift.com</a>',
-  //   listItems: [
-  //     'Plug the KeepKey into your computer.',
-  //     'On upper left corner of the screen, select “Connect a wallet”, then select “KeepKey” in the window that opens.',
-  //     'In the next screen that opens, agree to the terms and click “Pair KeepKey.”',
-  //     'Highlight the KeepKey you would like to pair and then click "Connect".'
-  //   ]
-  // },
   {
     key: 1,
     image: download,
