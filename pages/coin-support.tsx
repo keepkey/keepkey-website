@@ -159,7 +159,7 @@ const Main = () => {
         let Api = new Client(spec, config)
         let api = await Api.init()
         console.log("checkpoint2")
-        let KeepKeyPage1 = await api.SearchAssetsPageniate({ limit: 10000, skip: 0 })
+        let KeepKeyPage1 = await api.SearchAssetsPageniate({ limit: 1000, skip: 0 })
         console.log("KeepKeyPage1: ", KeepKeyPage1.data)
         setData(KeepKeyPage1.data)
     }
