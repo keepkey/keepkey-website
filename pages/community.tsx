@@ -63,7 +63,7 @@ const communityCards: CommunityCard[] = [
   },
   {
     icon: salesIcon,
-    url: 'https://shapeshift.com/keepkey-affiliate',
+    url: 'https://keepkey-referral.vercel.app/',
     title: 'Sales/Marketing',
     description: 'View our affiliate programs.',
     external: true

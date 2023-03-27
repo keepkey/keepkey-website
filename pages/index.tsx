@@ -276,7 +276,6 @@ const LeadingCryptos = () => {
           <div className="w-40"><Image src={btgIcon} alt="btg icon" unoptimized={true}></Image></div>
           <div className="w-40"><Image src={goIcon} alt="go icon" unoptimized={true}></Image></div>
         </div>
-        <a className="btn mt-7">View all 40+ Coins!</a>
       </div>
     </section>
   )
