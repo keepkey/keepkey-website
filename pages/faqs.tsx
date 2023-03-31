@@ -141,6 +141,10 @@ const faqs = [
             {
                 question: "What Coins can I use with KeepKey?",
                 answer: 'View our coin support page. <a target="_blank" href="https://www.keepkey.com/coin-support">Coin support</a>'
+            },
+            {
+                question: "I cant find XRP/DASH/DGB in my dashboard how do I use my Ripple?",
+                answer: 'Unfortunately ShapeShift has removed support for these assets. You can however find our new stand alone applications for managing these assets. <a target="_blank" href="https://medium.com/@highlander_35968/how-to-send-and-receive-ripple-with-keepkey-desktop-10a83bd6415">tutorial</a>'
             }
         ],
     },
