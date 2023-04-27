@@ -156,6 +156,7 @@ const Main = () => {
                 <div>
                     <div className="max-w-[600px]">
                         <Image
+                            alt="dapp store"
                             src={store}>
                         </Image>
                     </div>

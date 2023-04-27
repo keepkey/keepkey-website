@@ -100,7 +100,7 @@ const Hero = () => {
 
           <div className="w-100">
 
-            <a className="btn btn-lg w-100" target="_blank" href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet" >
+            <a className="btn btn-lg w-100" target="_blank" rel="noreferrer" href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet" >
               Buy Now
             </a>
 
@@ -123,7 +123,7 @@ const Hero = () => {
             </div> : ""}
 
             <div className="ml-10 inline-block align-sub">
-              <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-doge-mystery-box" target="_blank">
+              <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-doge-mystery-box" target="_blank" rel="noreferrer">
                 <Image
                   alt="Dogecoin logo"
                   src={shibaSpinning}

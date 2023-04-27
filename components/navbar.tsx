@@ -115,7 +115,7 @@ export default function Navbar() {
         {/* Dogecoin logo - temporary */}
         <Link href="/">
           <div className="nav__logo-wrap-fixed-width mr-5">
-            <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-doge-mystery-box" target="_blank" onClick={closeMobileNav} className={`cursor-pointer nav__logo-wrap mr-5 z-10 ${scroll ? 'nav__logo-wrap--scrolled' : ''}`}>
+            <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-doge-mystery-box" target="_blank" rel="noreferrer" onClick={closeMobileNav} className={`cursor-pointer nav__logo-wrap mr-5 z-10 ${scroll ? 'nav__logo-wrap--scrolled' : ''}`}>
               <Image
                 alt="Dogecoin logo"
                 src={dogecoinLogo}
