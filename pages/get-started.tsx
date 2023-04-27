@@ -61,7 +61,7 @@ const Hero = () => {
       </Image>
       <div className="container relative grid lg:grid-cols-2 gap-x-20 items-center z-10">
 
-        <div className="xl:min-w-[600px]">
+        <div>
           <h1 className="text-4xl leading-tight tracking-wide lg:text-5xl lg:leading-tight 2xl:text-6xl 2xl:leading-tight font-bold text-white mb-4">Introducing the new KeepKey Client</h1>
           <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">Follow the guide below to get started using your KeepKey.</p>
           <Link href={urlMacOS}>
