@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import keepkeyLogo from '../public/images/logos/keepkey_logo.png'
-import dogecoinLogo from '../public/images/logos/dogecoin-doge-logo.svg'
+import dogecoinLogo from '../public/images/logos/doge-shiba.svg'
 import { useState, useEffect } from 'react';
 
 interface NavLink {
@@ -113,17 +113,21 @@ export default function Navbar() {
         </Link> */}
 
         {/* Dogecoin logo - temporary */}
-        <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-doge-mystery-box" target="_blank" onClick={closeMobileNav} className={`cursor-pointer nav__logo-wrap mr-5 z-10 ${scroll ? 'nav__logo-wrap--scrolled' : ''}`}>
-          <Image
-            alt="Dogecoin logo"
-            src={dogecoinLogo}
-            className="cursor-pointer nav__logo transition-all ease-in-out duration-400"
-            layout="responsive"
-            quality={100}
-            object-fit="contain"
-          >
-          </Image>
-        </a>
+        <Link href="/">
+          <div className="nav__logo-wrap-fixed-width mr-5">
+            <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-doge-mystery-box" target="_blank" onClick={closeMobileNav} className={`cursor-pointer nav__logo-wrap mr-5 z-10 ${scroll ? 'nav__logo-wrap--scrolled' : ''}`}>
+              <Image
+                alt="Dogecoin logo"
+                src={dogecoinLogo}
+                className="cursor-pointer nav__logo transition-all ease-in-out duration-400"
+                layout="responsive"
+                quality={100}
+                object-fit="contain"
+              >
+              </Image>
+            </a>
+          </div>
+        </Link>
 
         {navLinks.map(link => (
           <div key={link.id}>

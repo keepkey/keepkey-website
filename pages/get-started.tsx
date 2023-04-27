@@ -60,24 +60,25 @@ const Hero = () => {
       >
       </Image>
       <div className="container relative grid lg:grid-cols-2 gap-x-20 items-center z-10">
-        <div>
-          <iframe width="560" height="415" src="https://www.youtube.com/embed/js6VMMvz9aQ" title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen></iframe>
-        </div>
-        <div className="xl:absolute xl:max-w-[650px] xl:right-0 2xl:max-w-[765px] 2xl:right-[-150px]">
+
+        <div className="xl:min-w-[600px]">
           <h1 className="text-4xl leading-tight tracking-wide lg:text-5xl lg:leading-tight 2xl:text-6xl 2xl:leading-tight font-bold text-white mb-4">Introducing the new KeepKey Client</h1>
           <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">Follow the guide below to get started using your KeepKey.</p>
           <Link href={urlMacOS}>
-            <a className="btn btn-lg btn--transparent">download for macOS </a>
+            <a className="btn btn-md btn--transparent mb-5 md:mr-5">download for macOS </a>
           </Link>
           <Link href={urlWindows}>
-            <a className="btn btn-lg btn--transparent">download for Windows </a>
+            <a className="btn btn-md btn--transparent mb-5 md:mr-5">download for Windows </a>
           </Link>
           <Link href={urlLinux}>
-            <a className="btn btn-lg btn--transparent">download for Linux </a>
+            <a className="btn btn-md btn--transparent mb-5">download for Linux </a>
           </Link>
+        </div>
+        <div className="mb-10">
+          <iframe style={{ aspectRatio: '16/9', width: '100%' }} src="https://www.youtube.com/embed/js6VMMvz9aQ" title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen></iframe>
         </div>
       </div>
 
