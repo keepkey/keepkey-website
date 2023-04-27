@@ -3,9 +3,6 @@ import Link from 'next/link'
 import keepkeyLogo from '../public/images/logos/keepkey_logo.png'
 import dogecoinLogo from '../public/images/logos/dogecoin-doge-logo.svg'
 import { useState, useEffect } from 'react';
-import { loadShopifyBuyButton } from '../components/ShopifyBuyButton'
-import ShopifyBuyButton from '../components/ShopifyBuyButton'
-const shopifyBuyButtonId = 1665073941285;
 
 interface NavLink {
   id: number,
@@ -165,10 +162,6 @@ export default function Navbar() {
 
 const MobileNav = ({ isActive, toggleMobileNav, navLinks }) => {
 
-  useEffect(() => {
-    loadShopifyBuyButton(shopifyBuyButtonId);
-  }, []);
-
   return (
     <>
       <button className={`${isActive ? 'mobile-open' : ''} lg:hidden nav-mobile__toggle ml-auto`} onClick={toggleMobileNav} aria-label="Toggle navigation menu" type="button">
@@ -220,10 +213,6 @@ const MobileNav = ({ isActive, toggleMobileNav, navLinks }) => {
           ))}
 
         </ul>
-        {/* <a className="btn btn-lg btn-blue mobile-cta" href="/request-demo">Get demo</a> */}
-        <div className="absolute bottom-[30px] left-1/2 translate-x-[-50%]">
-          <ShopifyBuyButton buttonId={shopifyBuyButtonId}></ShopifyBuyButton>
-        </div>
       </div>
     </>
   )
