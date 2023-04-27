@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import keepkeyLogo from '../public/images/logos/keepkey_logo.png'
+import dogecoinLogo from '../public/images/logos/dogecoin-doge-logo.svg'
 import { useState, useEffect } from 'react';
 import { loadShopifyBuyButton } from '../components/ShopifyBuyButton'
 import ShopifyBuyButton from '../components/ShopifyBuyButton'
@@ -97,7 +98,7 @@ export default function Navbar() {
         ${isActive ? 'nav--is-open' : ''}`
     }>
       <div className="container mx-auto flex flex-wrap items-center">
-        <Link href="/">
+        {/* <Link href="/">
           <div className="nav__logo-wrap-fixed-width mr-5">
             <a onClick={closeMobileNav} className={`cursor-pointer nav__logo-wrap ${scroll ? 'nav__logo-wrap--scrolled' : ''}`}>
               <Image
@@ -110,7 +111,19 @@ export default function Navbar() {
               </Image>
             </a>
           </div>
-        </Link>
+        </Link> */}
+
+        <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-doge-mystery-box" target="_blank" onClick={closeMobileNav} className={`cursor-pointer nav__logo-wrap mr-5 z-10 ${scroll ? 'nav__logo-wrap--scrolled' : ''}`}>
+          <Image
+            alt="Dogecoin logo"
+            src={dogecoinLogo}
+            className="cursor-pointer nav__logo transition-all ease-in-out duration-400"
+            layout="responsive"
+            quality={100}
+            object-fit="contain"
+          >
+          </Image>
+        </a>
 
         {navLinks.map(link => (
           <div key={link.id}>
@@ -146,7 +159,7 @@ export default function Navbar() {
             <a href="#" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign out</a>
           </div>
       </div> */}
-    </nav>
+    </nav >
   )
 }
 
