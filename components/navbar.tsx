@@ -95,6 +95,8 @@ export default function Navbar() {
         ${isActive ? 'nav--is-open' : ''}`
     }>
       <div className="container mx-auto flex flex-wrap items-center">
+
+        {/* Keepkey logo - replaced by doge for now */}
         {/* <Link href="/">
           <div className="nav__logo-wrap-fixed-width mr-5">
             <a onClick={closeMobileNav} className={`cursor-pointer nav__logo-wrap ${scroll ? 'nav__logo-wrap--scrolled' : ''}`}>
@@ -110,6 +112,7 @@ export default function Navbar() {
           </div>
         </Link> */}
 
+        {/* Dogecoin logo - temporary */}
         <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-doge-mystery-box" target="_blank" onClick={closeMobileNav} className={`cursor-pointer nav__logo-wrap mr-5 z-10 ${scroll ? 'nav__logo-wrap--scrolled' : ''}`}>
           <Image
             alt="Dogecoin logo"
@@ -131,12 +134,6 @@ export default function Navbar() {
         ))}
 
         <div className="ml-auto flex items-center mt-2">
-          {/* <div className="hidden sm:inline-block mr-8 lg:mr-0">
-            <Link href="https://app.shapeshift.com">
-              <a target="_blank" className="btn btn--round btn--blue ml-auto">Launch Shapeshift</a>
-            </Link>
-          </div> */}
-
           <MobileNav
             toggleMobileNav={toggleMobileNav}
             isActive={isActive}
@@ -145,17 +142,6 @@ export default function Navbar() {
 
         </div>
       </div>
-      {/* <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" className="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Dropdown <svg className="ml-1 w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button> */}
-      {/* <div id="dropdownNavbar" className="hidden z-10 w-44 font-normal bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-          <ul className="py-1 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-            <li>
-              <a href="#" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-            </li>
-          </ul>
-          <div className="py-1">
-            <a href="#" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign out</a>
-          </div>
-      </div> */}
     </nav >
   )
 }
@@ -183,32 +169,9 @@ const MobileNav = ({ isActive, toggleMobileNav, navLinks }) => {
                       </span>
                     </a>
                   </Link>
-                  {/* <div className="chevron-wrapper">
-                    <span className="chevron">
-                      <svg fill="none" focusable="false" height="6" className="block" viewBox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="#000"></path>
-                      </svg>
-                    </span>
-                  </div> */}
                 </div>
 
               </button>
-              <div className="accordion-container">
-                <div className="accordion-wrapper">
-                  <ul>
-                    <li>
-                      {/* <a className="nav-mobile__menu-item-link" href="#">
-                        <span>Lorem ipsume</span>
-                      </a> */}
-                    </li>
-                    <li>
-                      {/* <a className="nav-mobile__menu-item-link" href="#">
-                        <span>Lorem ipsum</span>
-                      </a> */}
-                    </li>
-                  </ul>
-                </div>
-              </div>
             </li>
           ))}
 
