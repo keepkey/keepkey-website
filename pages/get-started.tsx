@@ -203,7 +203,7 @@ const Step = (props: Step) => {
           )}
         </ul>
       </div>
-      <div className="self-center w-100">
+      <div className="self-center w-100 max-w-[600px]">
         {props.hasVideo ?
           <div className="">
             <div dangerouslySetInnerHTML={{ __html: props.video }}></div>
@@ -212,7 +212,6 @@ const Step = (props: Step) => {
           <Image
             alt="KeepKey wallet"
             src={props.image}
-            width={1200}
             quality={100}
           >
           </Image>
