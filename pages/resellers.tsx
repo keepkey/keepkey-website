@@ -28,7 +28,7 @@ import salesIcon from 'public/images/icons/sales-marketing.png'
 import githubIcon from 'public/images/icons/github.svg'
 
 interface CommunityCard {
-  icon: string,
+  icon: any,
   url: string,
   title: string,
   description: string,
