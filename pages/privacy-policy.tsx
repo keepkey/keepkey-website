@@ -30,11 +30,6 @@ const Hero = () => {
 }
 
 
-import shapeShiftLogo from 'public/images/supported-applications/shapeshift-block-black.jpg'
-import electrumLogo from 'public/images/supported-applications/electrum-block-black.png'
-import myCryptoLogo from 'public/images/supported-applications/mycrypto-block-black.png'
-
-
 const Main = () => {
     return (
         <section>
@@ -49,7 +44,7 @@ const Main = () => {
                         compliance with legal requirements.
 
                         This Online Privacy Notice describes how we collect and process your
-                        personal data when you use our website https://shapeshift.io/keepkey/
+                        personal data when you use our website https://keepkey.com
                         (including any sub-sites and related extensions thereof; “the website”).
                         <br/>
                         <h4>Personal data we collect and process in order to make the website available</h4>
@@ -217,13 +212,6 @@ const Main = () => {
                         confidentiality and integrity of the personal data we collect on the
                         website.
                         <br/>
-                        <h4>With whom we share your personal data</h4>
-                        In connection with the offers and services provided on the website,
-                        to protect our legitimate interests or to fulfill legal requirements, it
-                        may be necessary to share your personal data with our affiliate
-                        ShapeShift Global Limited, with business partners of KeepKey, as well as
-                        with applicable public authorities and law enforcement upon receipt of a
-                        facially valid formal law enforcement request.
                         <br/>
                         Specifically, such sharing of data may be necessary to manage your
                         order, to respond to your inquiry, to execute the transaction, to
@@ -270,15 +258,14 @@ const Main = () => {
                         <br/>
                         <h4>Who we are and how to contact us</h4>
                         KeepKey is the controller in relation to the collection and
-                        processing of personal data through the website. Key Hodlers, LLC is an
-                        LLC formed under the laws of the State of Delaware, United States.
+                        processing of personal data through the website.
                         <br/>
                         If you have any questions or concerns, you may contact us by writing to KeepKey as set forth below.
                         <br/>
                         To inquire about the collection or processing of your personal data
                         in connection with the website, or if you have any questions or concerns
                         about this Online Privacy Notice, you may contact us through the
-                        KeepKey Help Center, located here: [https://keepkey.zendesk.com/hc/en-us](https://keepkey.zendesk.com/hc/en-us). In addition, you may also email us at [privacy@shapeshift.io](mailto:privacy@shapeshift.io) with any questions and/or requests.
+                        KeepKey Help Center, located here:(support@keepkey.com).
                         <br/>
                         For all correspondence, please include any necessary identifying
                         information such as your name, return e-mail or physical address.
