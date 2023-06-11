@@ -20,6 +20,8 @@ export default function Onboarding() {
 import brazilIcon from 'public/images/flags/brazil.png'
 import polandIcon from 'public/images/flags/poland.png'
 import shapeshiftIcon from 'public/images/supported-applications/shapeshift-block-black.jpg'
+import cryptherionIcon from 'public/images/resellers/cryptherion.svg'
+import cointrustIcon from 'public/images/resellers/cointrust.png'
 // import discordIcon from 'public/images/icons/discord.svg'
 // import redditIcon from 'public/images/icons/reddit.svg'
 import dworkIcon from 'public/images/icons/dwork.png'
@@ -55,6 +57,20 @@ const communityCards: CommunityCard[] = [
     url: 'https://swag.shapeshift.com/',
     title: 'ShapeShift',
     description: 'ShapeShift DOA swag store.',
+    external: true
+  },
+  {
+    icon: cryptherionIcon,
+    url: 'https://cryptherion.io/',
+    title: 'cryptherion',
+    description: 'Reseller in The Netherlands.',
+    external: true
+  },
+  {
+    icon: cointrustIcon,
+    url: 'https://cointrust.se/',
+    title: 'cointrust',
+    description: 'Reseller in The Sweden.',
     external: true
   }
 ]
