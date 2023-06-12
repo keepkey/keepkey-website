@@ -29,6 +29,16 @@
       padding: 16px 40px;
     }
   }
+  &-md {
+    font-size: 15px;
+    padding: 10px 25px;
+    letter-spacing: .8px;
+
+    @media (min-width: 1024px) {
+      font-size: 18px;
+      padding: 14px 34px;
+    }
+  }
 
   &--inverse {
     color: $color-gold;
