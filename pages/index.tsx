@@ -9,6 +9,7 @@ import heroBgImage from 'public/images/heros/home.png'
 import walletImage from 'public/images/hardware/wallet-hero.png'
 import walletVertical from 'public/images/hardware/wallet-vertical.png'
 import computerLockImage from 'public/images/icons/computer-lock.svg'
+import shibaSpinning from 'public/images/icons/dogecoin-spinning.gif'
 import backupImage from 'public/images/icons/backup.svg'
 import ebStorageImage from 'public/images/icons/eb-storage.svg'
 import pin from 'public/images/desktop/Pin.png'
@@ -99,7 +100,7 @@ const Hero = () => {
 
           <div className="w-100">
 
-            <a className="btn btn-lg w-100" href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet" >
+            <a className="btn btn-lg w-100" target="_blank" rel="noreferrer" href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet" >
               Buy Now
             </a>
 
@@ -107,23 +108,32 @@ const Hero = () => {
               <Link href={urlMacOS}>
                 <a className="btn btn-lg btn--transparent">Download for macOS </a>
               </Link>
-            </div> : <div>
-
-            </div>}
+            </div> : ""}
 
             {platform.windows ? <div className="mb-4 inline-block">
               <Link href={urlWindows}>
                 <a className="btn btn-lg btn--transparent">Download for Windows</a>
               </Link>
-            </div> : <div>
-            </div>}
+            </div> : ""}
 
             {platform.linux ? <div className="mb-4 inline-block">
               <Link href={urlLinux}>
                 <a className="btn btn-lg btn--transparent">Download for Linux</a>
               </Link>
-            </div> : <div>
-            </div>}
+            </div> : ""}
+
+            <div className="ml-10 inline-block align-sub">
+              <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-doge-mystery-box" target="_blank" rel="noreferrer">
+                <Image
+                  alt="Dogecoin logo"
+                  src={shibaSpinning}
+                  quality={100}
+                  width={86}
+                  height={86}
+                >
+                </Image>
+              </a>
+            </div>
 
             {/* <Link href="/get-started">
               <a className="btn btn-lg btn--transparent">Get Started</a>
@@ -145,7 +155,7 @@ const Hero = () => {
           </Image>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
