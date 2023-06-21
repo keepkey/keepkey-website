@@ -103,7 +103,7 @@ export default function Navbar() {
       <div className="container mx-auto flex flex-wrap items-center">
 
         {/* Keepkey logo - replaced by doge for now */}
-        {/* <Link href="/">
+        <Link href="/">
           <div className="nav__logo-wrap-fixed-width mr-5">
             <a onClick={closeMobileNav} className={`cursor-pointer nav__logo-wrap ${scroll ? 'nav__logo-wrap--scrolled' : ''}`}>
               <Image
@@ -116,24 +116,24 @@ export default function Navbar() {
               </Image>
             </a>
           </div>
-        </Link> */}
+        </Link>
 
         {/* Dogecoin logo - temporary */}
-        <Link href="/">
-          <div className="nav__logo-wrap-fixed-width mr-5">
-            <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-doge-mystery-box" target="_blank" rel="noreferrer" onClick={closeMobileNav} className={`cursor-pointer nav__logo-wrap mr-5 z-10 ${scroll ? 'nav__logo-wrap--scrolled' : ''}`}>
-              <Image
-                alt="Dogecoin logo"
-                src={dogecoinLogo}
-                className="cursor-pointer nav__logo transition-all ease-in-out duration-400"
-                layout="responsive"
-                quality={100}
-                object-fit="contain"
-              >
-              </Image>
-            </a>
-          </div>
-        </Link>
+        {/*<Link href="/">*/}
+        {/*  <div className="nav__logo-wrap-fixed-width mr-5">*/}
+        {/*    <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-doge-mystery-box" target="_blank" rel="noreferrer" onClick={closeMobileNav} className={`cursor-pointer nav__logo-wrap mr-5 z-10 ${scroll ? 'nav__logo-wrap--scrolled' : ''}`}>*/}
+        {/*      <Image*/}
+        {/*        alt="Dogecoin logo"*/}
+        {/*        src={dogecoinLogo}*/}
+        {/*        className="cursor-pointer nav__logo transition-all ease-in-out duration-400"*/}
+        {/*        layout="responsive"*/}
+        {/*        quality={100}*/}
+        {/*        object-fit="contain"*/}
+        {/*      >*/}
+        {/*      </Image>*/}
+        {/*    </a>*/}
+        {/*  </div>*/}
+        {/*</Link>*/}
 
         {navLinks.map(link => (
           <div key={link.id}>
