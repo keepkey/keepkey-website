@@ -56,7 +56,7 @@ const communityCards: CommunityCard[] = [
     icon: shapeshiftIcon,
     url: 'https://swag.shapeshift.com/',
     title: 'ShapeShift',
-    description: 'ShapeShift DOA swag store.',
+    description: 'ShapeShift DAO swag store.',
     external: true
   },
   {
