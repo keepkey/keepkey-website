@@ -59,13 +59,13 @@ const communityCards: CommunityCard[] = [
     description: 'ShapeShift DAO swag store.',
     external: true
   },
-  {
-    icon: cryptherionIcon,
-    url: 'https://cryptherion.io/',
-    title: 'cryptherion',
-    description: 'Reseller in The Netherlands.',
-    external: true
-  },
+  // {
+  //   icon: cryptherionIcon,
+  //   url: 'https://cryptherion.io/',
+  //   title: 'cryptherion',
+  //   description: 'Reseller in The Netherlands.',
+  //   external: true
+  // },
   {
     icon: cointrustIcon,
     url: 'https://cointrust.se/',
