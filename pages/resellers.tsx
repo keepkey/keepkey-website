@@ -21,6 +21,7 @@ import brazilIcon from 'public/images/flags/brazil.png'
 import polandIcon from 'public/images/flags/poland.png'
 import shapeshiftIcon from 'public/images/supported-applications/shapeshift-block-black.jpg'
 import cryptherionIcon from 'public/images/resellers/cryptherion.svg'
+import cryptomerchant from 'public/images/resellers/the crypto merchant.png'
 import cointrustIcon from 'public/images/resellers/cointrust.png'
 // import discordIcon from 'public/images/icons/discord.svg'
 // import redditIcon from 'public/images/icons/reddit.svg'
@@ -53,6 +54,13 @@ const communityCards: CommunityCard[] = [
     external: true
   },
   {
+    icon: ,
+    url: 'https://swag.shapeshift.com/',
+    title: 'ShapeShift',
+    description: 'ShapeShift DAO swag store.',
+    external: true
+  },
+  {
     icon: shapeshiftIcon,
     url: 'https://swag.shapeshift.com/',
     title: 'ShapeShift',
@@ -70,7 +78,14 @@ const communityCards: CommunityCard[] = [
     icon: cointrustIcon,
     url: 'https://cointrust.se/',
     title: 'cointrust',
-    description: 'Reseller in The Sweden.',
+    description: 'Reseller in Sweden.',
+    external: true
+  },
+  {
+    icon: cointrustIcon,
+    url: 'https://www.thecryptomerchant.com/',
+    title: 'The Crypto Merchant',
+    description: 'Reseller South America.',
     external: true
   }
 ]
