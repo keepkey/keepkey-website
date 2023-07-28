@@ -56,7 +56,7 @@ const communityCards: CommunityCard[] = [
   },
   {
     icon: securityIcon,
-    url: '',
+    url: 'https://www.keepkey.com/security',
     title: 'Security researchers',
     description: 'Links to our responsible disclosures.',
     external: true
