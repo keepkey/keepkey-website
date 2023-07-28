@@ -123,6 +123,10 @@ const faqs = [
         category: "How To",
         questions: [
             {
+                question: 'How do I recover my device from seed?',
+                answer: 'Check out this guide <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/keepkey-device-recovery-7b3968ff87e7\">recovery</a>'
+            },
+            {
                 question: 'How do I send Bitcoin with my Keepkey?',
                 answer: 'Check out this guide <a target="_blank" href="https://medium.com/@highlander_35968/how-to-send-and-receive-bitcoin-in-keepkey-desktop-858e70312611">Sending Bitcoin</a>'
             },
@@ -176,11 +180,11 @@ const faqs = [
             },
             {
                 question: "What do I do if I lose my PIN?",
-                answer: "Wipe your device and proceed with recovery",
+                answer: "Wipe your device and proceed with <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/keepkey-device-recovery-7b3968ff87e7\">recovery</a>",
             },
             {
                 question: "What do I do if I lose my KeepKey?",
-                answer: "Purchase a new KeepKey and proceed with recovery",
+                answer: "Purchase a new KeepKey and proceed with <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/keepkey-device-recovery-7b3968ff87e7\">recovery</a>",
             },
             {
                 question: "What do I do if I lose my Recovery Phrase?",
