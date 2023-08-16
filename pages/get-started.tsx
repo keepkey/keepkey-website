@@ -225,6 +225,9 @@ const Main = () => {
   return (
     <section className="container">
       {/*<SecurityWarning />*/}
+      <div><h4>Already Setup your device? Update </h4></div>
+      <a href="https://medium.com/@highlander_35968/updating-your-keepkey-154a49445d4c" rel="noreferrer" target="_blank">Guide on Updating your KeepKey</a>
+
       {steps.map((step, i, arr) =>
         <>
           <Step

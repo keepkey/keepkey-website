@@ -139,6 +139,10 @@ const faqs = [
                 answer: 'Check out this guide <a target="_blank" href="https://medium.com/@highlander_35968/understanding-the-keepkey-pin-6dca3499b973">Understanding the KeepKey PIN</a>'
             },
             {
+                question: 'How do I wipe my KeepKey?',
+                answer: 'Check out this guide <a target="_blank" href="https://medium.com/@highlander_35968/how-to-wipe-your-keepkey-88c8aa227950">How to wipe your KeepKey</a>'
+            },
+            {
                 question: "Can I use a KeepKey with my Phone?",
                 answer: 'No, KeepKey requires a USB connection to KeepKey Desktop and is only compatible with Windows/MacOS/Linux.'
             },
@@ -156,6 +160,18 @@ const faqs = [
         id: 2,
         category: "General",
         questions: [
+            {
+                question: "Is KeepKey Open Source?",
+                answer: "Yes! KeepKey firmware has a deterministic build process. The community is able to audit every release we have made over the last 9 years. more information:  <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/deterministic-build-process-11674787d92f\">Deterministic Build process</a>",
+            },
+            {
+                question: "How do I buy crypto?",
+                answer: "Simple! ShapeShift makes it simple buy/sell crypto and is integrated natively inside KeepKey Desktop! read more about shapeshift here <a target=\"_blank\" href=\"https://shapeshift.com\">shapeshift</a>",
+            },
+            {
+                question: "Can I trade and swap crypto without KYC?",
+                answer: "YES! Simple! Our native Thorchain integration is a dentralized protocol that allows frictionless natvie swapping without using wraped token on bridges. read more here. <a target=\"_blank\" href=\"https://thorchain.com\">thorchain</a>",
+            },
             {
                 question: "Is KeepKey owned by ShapeShift DAO?",
                 answer: "No, KeepKey is owned and operated by former employees of ShapeShift independently. KeepKey continues to fund the ShapeShift DAO. 10pct of all device sale revenue goes to the ShapeShift DAO treasury.  <a target=\"_blank\" href=\"https://snapshot.org/#/shapeshiftdao.eth/proposal/0x2528af775ea702a12da168b6d7f8438ba4eae1cebf43d73b36ad1ddb3edef260\">KeepKey Workstream</a>",
@@ -197,6 +213,10 @@ const faqs = [
         category: "General Security",
         questions: [
             {
+                question: "I want to know about Hardware wallet security. what makes KeepKey unique compared to other hardware wallets?",
+                answer: "Read more about the industry and the reasons behind the prevalence of myths when it comes to hardware wallet security. <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/title-5-myths-about-hardware-wallets-aecf21cb1520\">5 Myths about Hardware Wallets</a>",
+            },
+            {
                 question: "Can I self-custody bitcoin between multiple devices with multi-sig?",
                 answer: "Yes, check out this Electrum guide <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/storing-bitcoin-with-multisig-with-your-keepkey-and-electrum-d959941f1dd1\">Electrum Multi-sig Guide</a>"
             },
@@ -231,8 +251,8 @@ const faqs = [
         category: "Developer Community",
         questions: [
             {
-                question: "How do I support KeepKey on my application?",
-                answer: "If you are a Web3 project we recommend onboard.js and enabling wallet-connect: <a target='_blank' href='https://onboard.blocknative.com/'>onboard.js developer documentation</a>",
+                question: "How do I Integrate KeepKey into my app or service?",
+                answer: "See our developer guide for building multi-chain dApps with the KeepKey-sdk: <a target='_blank' href='https://medium.com/@highlander_35968/building-on-the-keepkey-sdk-2023fda41f38'>Building on the KeepKey-SDK</a>",
             },
             {
                 question: "what is the KeepKey REST api?",
@@ -243,8 +263,8 @@ const faqs = [
                 answer: "You can submit the dapp yourself! chart the dapp for others to follow. guide: <a target='_blank' href='https://medium.com/@highlander_35968/how-to-list-a-dapp-on-pioneer-cdf54fc9d1de'>Charting a DAPP on Pioneer platform.</a>",
             },
             {
-                question: "How do I build multi-chain dapps for KeepKey users and promote my product or service?",
-                answer: "See our developer guide for building multi-chain dApps: <a target='_blank' href='https://medium.com/@highlander_35968/creating-a-dapp-for-the-keepkey-desktop-f61e506f5026'>Creating a DAPP for the KeepKey Desktop.</a>",
+                question: "How do I support KeepKey on my Web3 based application?",
+                answer: "If you are a Web3 project we recommend onboard.js and enabling wallet-connect: <a target='_blank' href='https://onboard.blocknative.com/'>onboard.js developer documentation</a>",
             },
         ]
     }
