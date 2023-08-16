@@ -213,7 +213,7 @@ const faqs = [
         category: "General Security",
         questions: [
             {
-                question: "I want to know about the Hardware wallet security. what makes KeepKey unique compared to other hardware wallets?",
+                question: "I want to know about Hardware wallet security. what makes KeepKey unique compared to other hardware wallets?",
                 answer: "Read more about the industry and why there are many myths when it comes to Hardware Wallet security <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/title-5-myths-about-hardware-wallets-aecf21cb1520\">5 Myths about Hardware Wallets</a>",
             },
             {
