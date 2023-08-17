@@ -327,14 +327,16 @@ const ProductInfo = () => {
           >
           </Image>
         </div>
-        {/*<div>*/}
-        {/*  <h2>Become a KeepKey Affiliate</h2>*/}
-        {/*  <p className="mt-6">Earn commission on every KeepKey sale you generate! KeepKey believes that everyone should be their own bank. {`That's`} why {`we've`} designed our program and product, to set you up for success.</p>*/}
-        {/*  <Link href="https://shapeshift.com/keepkey-affiliate">*/}
-        {/*    <a className="btn mt-8" target="_blank">Apply Now</a>*/}
-        {/*  </Link>*/}
-        {/*</div>*/}
+        <div>
+          <h2>Build on Keepkey!</h2>
+          <p className="mt-6">Announcing the KeepKey SDK! Build on KeepKey! get started today.</p>
+          <Link href="https://medium.com/@highlander_35968/building-on-the-keepkey-sdk-2023fda41f38">
+            <a className="btn mt-8" target="_blank">Get started!</a>
+          </Link>
+        </div>
+        <br/>
       </div>
+      <div align={'center'}>KeepKey is OSS: to contribute to donate here: bc1qfce6cck3tcy94v8s4q6fpfeusj0g8g27asaakh</div>
     </section>
   )
 }
