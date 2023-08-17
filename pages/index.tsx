@@ -335,8 +335,8 @@ const ProductInfo = () => {
           </Link>
         </div>
         <br/>
-        <small>KeepKey is OSS: to contribute to donate here: bc1qfce6cck3tcy94v8s4q6fpfeusj0g8g27asaakh</small>
       </div>
+      <div align={'center'}>KeepKey is OSS: to contribute to donate here: bc1qfce6cck3tcy94v8s4q6fpfeusj0g8g27asaakh</div>
     </section>
   )
 }
