@@ -295,6 +295,7 @@ import walletsStackedImage from 'public/images/hardware/wallets-stacked.png'
 import walletHorizontal from 'public/images/hardware/wallet-horizontal.png'
 
 const ProductInfo = () => {
+  // @ts-ignore
   return (
     <section>
       <div className="container grid md:grid-cols-2 gap-16 gap-y-28 lg:gap-32 lg:gap-y-52">
@@ -336,7 +337,7 @@ const ProductInfo = () => {
         </div>
         <br/>
       </div>
-      <div align={'center'}>KeepKey is OSS: to contribute to donate here: bc1qfce6cck3tcy94v8s4q6fpfeusj0g8g27asaakh</div>
+      <div className="text-center">KeepKey is OSS: to contribute to donate here: bc1qfce6cck3tcy94v8s4q6fpfeusj0g8g27asaakh</div>
     </section>
   )
 }
