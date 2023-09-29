@@ -70,17 +70,25 @@ const communityCards: CommunityCard[] = [
   {
     icon: cointrustIcon,
     url: 'https://cointrust.se/',
-    title: 'cointrust',
+    title: 'Cointrust',
     description: 'Reseller in Sweden.',
     external: true
   },
   {
-    icon: cointrustIcon,
+    icon: the crypto merchant.png,
     url: 'https://www.thecryptomerchant.com/',
     title: 'The Crypto Merchant',
     description: 'Reseller South America.',
     external: true
+  },
+   {
+    icon: kripto-siyah.png,
+    url: 'https://kriptolojik.com/',
+    title: 'Kriptologic',
+    description: 'Reseller Turkey.',
+    external: true
   }
+  
 ]
 
 const Main = () => {
