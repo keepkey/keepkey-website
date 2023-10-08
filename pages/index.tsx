@@ -20,6 +20,7 @@ import axios from 'axios';
 const shopifyBuyButtonId = 1663605399427;
 const shop = 'https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet'
 import { Button } from '@chakra-ui/react'
+
 export default function Home() {
 
   // useEffect(() => {

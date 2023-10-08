@@ -21,8 +21,9 @@ import brazilIcon from 'public/images/flags/brazil.png'
 import polandIcon from 'public/images/flags/poland.png'
 import shapeshiftIcon from 'public/images/supported-applications/shapeshift-block-black.jpg'
 import cryptherionIcon from 'public/images/resellers/cryptherion.svg'
-import cryptomerchant from 'public/images/resellers/the crypto merchant.png'
+import cryptomerchant from 'public/images/resellers/thecryptomerchant.png'
 import cointrustIcon from 'public/images/resellers/cointrust.png'
+import kriptoIcon from 'public/images/resellers/kripto-siyah.png'
 // import discordIcon from 'public/images/icons/discord.svg'
 // import redditIcon from 'public/images/icons/reddit.svg'
 import dworkIcon from 'public/images/icons/dwork.png'
@@ -75,14 +76,14 @@ const communityCards: CommunityCard[] = [
     external: true
   },
   {
-    icon: the crypto merchant.png,
+    icon: cryptomerchant,
     url: 'https://www.thecryptomerchant.com/',
     title: 'The Crypto Merchant',
     description: 'Reseller South America.',
     external: true
   },
    {
-    icon: kripto-siyah.png,
+    icon: kriptoIcon,
     url: 'https://kriptolojik.com/',
     title: 'Kriptologic',
     description: 'Reseller Turkey.',
