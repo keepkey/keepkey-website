@@ -31,6 +31,7 @@ import {
     ModalCloseButton,
     Avatar,
     Link,
+    EllipsisLink,
     useDisclosure
 } from '@chakra-ui/react'
 
@@ -250,48 +251,62 @@ const Main = () => {
     return (
 
         <section className="container">
-            <Modal isOpen={isOpen} onClose={onClose} size="2xl"> {/* Adjust modal size */}
+            <Modal isOpen={isOpen} onClose={onClose} size="4xl"> {/* Adjust modal size */}
                 <ModalOverlay />
                 <ModalContent>
                     <ModalHeader>Blockchain Details</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
                         {selectedBlockchain && (
-                            <Table variant="simple">
-                                <Tbody>
-                                    <Tr><Td>Name</Td><Td>{selectedBlockchain.name}</Td></Tr>
-                                    <Tr>
-                                        <Td>caip</Td>
-                                        <Td>
-                                            <Flex>
-                                                <Text>{selectedBlockchain.caip}</Text>
-                                            </Flex>
-                                        </Td>
-                                    </Tr>
-                                    <Tr>
-                                        <Td><Avatar src={selectedBlockchain.image} size="xl" /></Td>
-                                        <Td />
-                                    </Tr>
-                                    <Tr>
-                                        <Td>Chain</Td>
-                                        <Td>
-                                            <Text>{selectedBlockchain.chainId}</Text>
-                                        </Td>
-                                    </Tr>
-                                    <Tr><Td>Symbol</Td><Td>{selectedBlockchain.symbol}</Td></Tr>
-                                    <Tr><Td>Blockchain</Td><Td>{selectedBlockchain.blockchain}</Td></Tr>
-                                    <Tr><Td>Description</Td><Td>{selectedBlockchain.description}</Td></Tr>
-                                    <Tr>
-                                        <Td>Explorer</Td>
-                                        <Td>
-                                            <Link href={selectedBlockchain.explorer} isExternal>
-                                                {selectedBlockchain.explorer}
-                                            </Link>
-                                        </Td>
-                                    </Tr>
-                                    {/* Add more fields as necessary */}
-                                </Tbody>
-                            </Table>
+                            <Box overflowX="auto"> {/* Add a Box with horizontal scroll */}
+                                <Table variant="simple" size="sm" border="1px" borderColor="gray.200">
+                                    <Tbody>
+                                        <Tr>
+                                            <Td border="1px" borderColor="gray.200">Name</Td>
+                                            <Td border="1px" borderColor="gray.200">{selectedBlockchain.name}</Td>
+                                        </Tr>
+                                        <Tr>
+                                            <Td border="1px" borderColor="gray.200">caip</Td>
+                                            <Td border="1px" borderColor="gray.200">
+                                                <Flex>
+                                                    <Text>{selectedBlockchain.caip}</Text>
+                                                </Flex>
+                                            </Td>
+                                        </Tr>
+                                        <Tr>
+                                            <Td border="1px" borderColor="gray.200">
+                                                <Avatar src={selectedBlockchain.image} size="xl" />
+                                            </Td>
+                                            <Td border="1px" borderColor="gray.200" whiteSpace="normal" wordBreak="break-word">
+                                                {selectedBlockchain.description}
+                                            </Td>
+                                        </Tr>
+                                        <Tr>
+                                            <Td border="1px" borderColor="gray.200">Chain</Td>
+                                            <Td border="1px" borderColor="gray.200">
+                                                <Text>{selectedBlockchain.chainId}</Text>
+                                            </Td>
+                                        </Tr>
+                                        <Tr>
+                                            <Td border="1px" borderColor="gray.200">Symbol</Td>
+                                            <Td border="1px" borderColor="gray.200">{selectedBlockchain.symbol}</Td>
+                                        </Tr>
+                                        <Tr>
+                                            <Td border="1px" borderColor="gray.200">Blockchain</Td>
+                                            <Td border="1px" borderColor="gray.200">{selectedBlockchain.blockchain}</Td>
+                                        </Tr>
+                                        <Tr>
+                                            <Td border="1px" borderColor="gray.200">Explorer</Td>
+                                            <Td border="1px" borderColor="gray.200">
+                                                <Link href={selectedBlockchain.explorer} isExternal>
+                                                    {selectedBlockchain.explorer}
+                                                </Link>
+                                            </Td>
+                                        </Tr>
+                                        {/* Add more fields as necessary */}
+                                    </Tbody>
+                                </Table>
+                            </Box>
                         )}
                     </ModalBody>
                     <ModalFooter>
