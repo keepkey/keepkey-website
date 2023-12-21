@@ -12,7 +12,6 @@ import {
     Table,
     Thead,
     Tbody,
-    Tfoot,
     Box,
     Tr,
     Th,
@@ -31,7 +30,6 @@ import {
     ModalCloseButton,
     Avatar,
     Link,
-    EllipsisLink,
     useDisclosure
 } from '@chakra-ui/react'
 
