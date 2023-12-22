@@ -42,8 +42,8 @@ import {
     getPaginationRowModel
 } from '@tanstack/react-table'
 import Client from '@pioneer-platform/pioneer-client'
-//const spec = "https://pioneers.dev/spec/swagger.json"
-let spec = "http://127.0.0.1:9001/spec/swagger.json"
+const spec = "https://pioneers.dev/spec/swagger.json"
+//let spec = "http://127.0.0.1:9001/spec/swagger.json"
 
 const columnHelper = createColumnHelper<any>()
 
