@@ -42,8 +42,8 @@ import {
     getPaginationRowModel
 } from '@tanstack/react-table'
 import Client from '@pioneer-platform/pioneer-client'
-const spec = "https://pioneers.dev/spec/swagger.json"
-//let spec = "http://127.0.0.1:9001/spec/swagger.json"
+//const spec = "https://pioneers.dev/spec/swagger.json"
+let spec = "http://127.0.0.1:9001/spec/swagger.json"
 
 const columnHelper = createColumnHelper<any>()
 
@@ -165,11 +165,71 @@ const Main = () => {
     const [totalAssetsCount, setTotalAssetsCount] = useState(0);
     const [selectedBlockchain, setSelectedBlockchain] = useState(null);
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const [isLoading, setIsLoading] = useState(false);
+
+    // Pagination effect
+    // useEffect(() => {
+    //     // Fetch new data based on currentPage
+    //     fetchPageData(currentPage, pageSize);
+    // }, [currentPage, pageSize]);
+
+    // Search effect
+    useEffect(() => {
+        if (query !== null) {
+            search(query);
+            setCurrentPage(0); // Reset to first page
+        }
+    }, [query]);
 
     const selectBlockchain = (blockchain) => {
         setSelectedBlockchain(blockchain);
         onOpen();
     };
+
+    function debounce(func, wait) {
+        let timeout;
+
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    };
+
+    let abortController = new AbortController();
+
+    const fetchPageData = async (page, pageSize) => {
+        setIsLoading(true);
+        abortController.abort(); // Abort previous requests
+        abortController = new AbortController();
+
+        try {
+            let skip = page * pageSize;
+            let config = { queryKey: 'key:public', spec };
+            let Api = new Client(spec, config);
+            let api = await Api.init();
+
+            let response = await api.ListAssetsPageniate({ limit: pageSize, skip: skip });
+
+            if (page === 0) {
+                setData(response.data); // If it's the first page, replace the data
+            } else {
+                setData(existingData => [...existingData, ...response.data]); // Append new data
+            }
+
+            setCurrentPage(page);
+            setTotalAssetsCount(response.totalCount || totalAssetsCount);
+            setIsLoading(false);
+        } catch (error) {
+            if (error.name !== 'AbortError') {
+                // Handle error
+            }
+        }
+    }
 
 
     const table = useReactTable({
@@ -191,7 +251,16 @@ const Main = () => {
     };
 
     const handleNextPage = () => {
-        setCurrentPage(old => old + 1);
+        const nextPage = currentPage + 1;
+        const dataAlreadyLoaded = nextPage * pageSize < data.length;
+
+        console.log(`Current Page: ${currentPage}, Next Page: ${nextPage}, Data Loaded: ${dataAlreadyLoaded}`);
+
+        if (!dataAlreadyLoaded) {
+            fetchPageData(nextPage, pageSize);
+        } else {
+            setCurrentPage(nextPage);
+        }
     };
 
     const onStart = async function () {
@@ -212,25 +281,23 @@ const Main = () => {
         if (timeOut) {
             clearTimeout(timeOut);
         }
-        setQuery(event.target.value);
+        let newQuery = event.target.value;
         setTimeOut(setTimeout(() => {
-            search(query);
+            search(newQuery);
         }, 1000));
-    }
+    };
 
     const search = async (query) => {
-        // console.log("event: ",event.target.value)
-        console.log("query: ", query)
-        // let searchNew = event.target.value
-        // setSearch(searchNew)
+        if (query) {
+            let config = { queryKey: 'key:public', spec };
+            let Api = new Client(spec, config);
+            let api = await Api.init();
 
-        let config = { queryKey: 'key:public', spec }
-        let Api = new Client(spec, config)
-        let api = await Api.init()
-
-        let KeepKeyPage1 = await api.SearchByName(query)
-        console.log("KeepKeyPage1: ", KeepKeyPage1.data)
-        setData(KeepKeyPage1.data)
+            let searchResults = await api.SearchByName(query);
+            setData(searchResults.data);
+            setTotalAssetsCount(searchResults.totalCount); // Update based on search results
+            setCurrentPage(0); // Reset to the first page
+        }
     };
 
     const onClear = async () => {
@@ -245,6 +312,8 @@ const Main = () => {
 
     const totalPages = Math.ceil(totalAssetsCount / pageSize);
 
+    // Usage
+    const debouncedNextPage = debounce(handleNextPage, 300);
 
     return (
 
@@ -395,9 +464,9 @@ const Main = () => {
                     </Tbody>
                 </Table>
                 <Flex justifyContent="space-between" my={4}>
-                    <Button onClick={handlePrevPage} disabled={currentPage === 0}>Previous</Button>
+                    <Button onClick={handlePrevPage} disabled={currentPage >= totalPages - 1 || isLoading}>Previous</Button>
                     <Text>Page {currentPage + 1} of {totalPages} Total</Text> {/* Display current page and total pages */}
-                    <Button onClick={handleNextPage} disabled={currentPage >= totalPages - 1}>Next</Button>
+                    <Button onClick={handleNextPage} disabled={currentPage >= totalPages - 1 || isLoading}>Next</Button>
                 </Flex>
             </TableContainer>
 
