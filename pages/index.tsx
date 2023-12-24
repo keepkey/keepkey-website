@@ -20,7 +20,7 @@ import axios from 'axios';
 const shopifyBuyButtonId = 1663605399427;
 const shop = 'https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet'
 import { Button } from '@chakra-ui/react'
-
+import coinSupport from 'public/images/support/CoinSupport.png'
 export default function Home() {
 
   // useEffect(() => {
@@ -276,16 +276,10 @@ const LeadingCryptos = () => {
       >
       </Image>
       <div className="container text-center z-10 relative">
-        <h2 className="text-white z-10">Supports the World’s Leading Cryptocurrencies</h2>
-        <p className="text-white my-6">Send, receive, and store dozens of the leading tokens and coins available on the market.</p>
+        <h2 className="text-white z-10">A Cut Above in Crypto Asset Support!</h2>
+        <p className="text-white my-6">Send, receive, and store MORE assets then other leading crypto wallets!</p>
         <div className="flex justify-center mt-6">
-          <div className="w-40"><Image src={binanceIcon} alt="binance icon" unoptimized={true}></Image></div>
-          <div className="w-40"><Image src={ethIcon} alt="eth icon" unoptimized={true}></Image></div>
-          <div className="w-40"><Image src={bchIcon} alt="bch icon" unoptimized={true}></Image></div>
-          <div className="w-40"><Image src={litecoinIcon} alt="litecoin icon" unoptimized={true}></Image></div>
-          <div className="w-40"><Image src={dashIcon} alt="dash icon" unoptimized={true}></Image></div>
-          <div className="w-40"><Image src={btgIcon} alt="btg icon" unoptimized={true}></Image></div>
-          <div className="w-40"><Image src={goIcon} alt="go icon" unoptimized={true}></Image></div>
+          <Image src={coinSupport} alt="go icon" unoptimized={true}></Image>
         </div>
       </div>
     </section>
