@@ -35,7 +35,7 @@ interface CommunityCard {
 const communityCards: CommunityCard[] = [
   {
     icon: discordIcon,
-    url: 'https://discord.gg/vb2YyKXFnq',
+    url: 'https://discord.gg/fYB4DPmQtW',
     title: 'Discord',
     description: 'Join KeepKeys Discord Server',
     external: true
