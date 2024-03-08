@@ -162,19 +162,19 @@ const faqs = [
         questions: [
             {
                 question: "Is KeepKey Open Source?",
-                answer: "Yes! KeepKey firmware has a deterministic build process. The community is able to audit every release we have made over the last 9 years. more information:  <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/deterministic-build-process-11674787d92f\">Deterministic Build process</a>",
+                answer: "Yes! KeepKey firmware has a deterministic build process. The community is able to audit every release we have made over the last 9 years. More information:  <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/deterministic-build-process-11674787d92f\">Deterministic Build process</a>",
             },
             {
                 question: "How do I buy crypto?",
-                answer: "Simple! ShapeShift makes it simple buy/sell crypto and is integrated natively inside KeepKey Desktop! read more about shapeshift here <a target=\"_blank\" href=\"https://shapeshift.com\">shapeshift</a>",
+                answer: "Simple! ShapeShift makes it simple buy/sell crypto and is integrated natively inside KeepKey Desktop! Read more about shapeshift here: <a target=\"_blank\" href=\"https://shapeshift.com\">shapeshift</a>",
             },
             {
                 question: "Can I trade and swap crypto without KYC?",
-                answer: "YES! Simple! Our native Thorchain integration is a dentralized protocol that allows frictionless natvie swapping without using wraped token on bridges. read more here. <a target=\"_blank\" href=\"https://thorchain.com\">thorchain</a>",
+                answer: "YES! Simple! Our native Thorchain integration is a decentralized protocol that allows frictionless native swapping without using wrapped tokens on bridges. Read more here: <a target=\"_blank\" href=\"https://thorchain.com\">thorchain</a>",
             },
             {
                 question: "Is KeepKey owned by ShapeShift DAO?",
-                answer: "No, KeepKey is owned and operated by former employees of ShapeShift independently. KeepKey continues to fund the ShapeShift DAO. 10pct of all device sale revenue goes to the ShapeShift DAO treasury.  <a target=\"_blank\" href=\"https://snapshot.org/#/shapeshiftdao.eth/proposal/0x2528af775ea702a12da168b6d7f8438ba4eae1cebf43d73b36ad1ddb3edef260\">KeepKey Workstream</a>",
+                answer: "No, KeepKey is owned and operated by former employees of ShapeShift independently. KeepKey continues to fund the ShapeShift DAO. 10pct of all device sale revenue goes to the ShapeShift DAO treasury. <a target=\"_blank\" href=\"https://snapshot.org/#/shapeshiftdao.eth/proposal/0x2528af775ea702a12da168b6d7f8438ba4eae1cebf43d73b36ad1ddb3edef260\">KeepKey Workstream</a>",
             },
             {
                 question: "How do I use ShapeShift with my keepkey?",
