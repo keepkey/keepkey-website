@@ -27,6 +27,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <GoogleAnalytics trackPageViews />
       <Head>
+        <meta name="facebook-domain-verification" content="9tvdigjfrqayvsru06yjch1n03jdaa" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
