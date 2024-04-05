@@ -25,6 +25,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <meta name="facebook-domain-verification" content="9tvdigjfrqayvsru06yjch1n03jdaa" />
       <GoogleAnalytics trackPageViews />
       <Head>
         <meta charSet="utf-8" />
