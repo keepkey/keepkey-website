@@ -79,12 +79,12 @@ const Main = () => {
                         variant='outline'
                         mb="8"
                     >
-                        <Image
-                            objectFit='cover'
-                            maxW={{ base: '100%', sm: '200px' }}
-                            src={article.thumbnail}
-                            alt='Article Image'
-                        />
+                        {/*<Image*/}
+                        {/*    objectFit='cover'*/}
+                        {/*    maxW={{ base: '100%', sm: '200px' }}*/}
+                        {/*    src={article.thumbnail}*/}
+                        {/*    alt='Article Image'*/}
+                        {/*/>*/}
 
                         <Stack>
                             <CardBody>
