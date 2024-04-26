@@ -59,7 +59,7 @@ const Hero = () => {
       console.log('findLatestReleaseLinks', resp.data)
       let version = resp.data.tag_name
       version = version.replace("v", "")
-      seturlMacOS("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-" + version + ".dmg")
+      seturlMacOS("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-" + version + "-arm64.dmg")
       seturlWindows("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-Setup-" + version + ".exe")
       seturlLinux("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-" + version + ".AppImage")
 
