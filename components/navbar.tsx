@@ -123,8 +123,17 @@ export default function Navbar() {
           <div className={`lg:flex ${isMenuOpen ? 'flex' : 'hidden'} flex-col lg:flex-row w-full lg:w-auto`}>
             {navLinks.map(link => (
                 <div key={link.id} className="relative">
-                  {link.children ? (
-                      <button className="text-white px-4" onClick={() => setIsActive(!isActive)}>{link.name}</button>
+                  {link.name === 'Security' ? (
+                      <Link href={link.url}>
+                        <a className="text-white text-base px-4 font-normal opacity-80 hover:opacity-100 flex items-center">
+                          {link.name}
+                          <span style={{ backgroundColor: '#f5f5f5', borderRadius: '50%', padding: '2px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+                              <Image src={SecurityIcon} alt="Security" width={24} height={24} />
+                          </span>
+                        </a>
+                      </Link>
+                  ) : link.children ? (
+                      <button className="text-white px-4" onClick={() => toggleDropdown(link.id)}>{link.name}</button>
                   ) : (
                       <Link href={link.url}>
                         <a className="text-white text-base px-4 font-normal opacity-80 hover:opacity-100">{link.name}</a>
