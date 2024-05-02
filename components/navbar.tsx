@@ -1,14 +1,15 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import keepkeyLogo from '../public/images/logos/keepkey_logo.png'
-import dogecoinLogo from '../public/images/logos/doge-shiba.svg'
-import { useState, useEffect } from 'react';
-
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState, useEffect, useRef } from 'react';
+import keepkeyLogo from '../public/images/logos/keepkey_logo.png';
+import githubIcon from '../public/images/icons/github.png'; // Update this path to your GitHub icon
+import SecurityIcon from '../public/images/icons/security.svg';
 interface NavLink {
   id: number,
   name: string,
-  url: string,
-  external?: boolean
+  url?: string,
+  external?: boolean,
+  children?: NavLink[]  // Optional children for dropdowns
 }
 
 const navLinks: NavLink[] = [
@@ -16,177 +17,135 @@ const navLinks: NavLink[] = [
     id: 0,
     name: 'Get Started',
     url: '/get-started',
-    external: false
+  },
+  {
+    id: 1,
+    name: 'Security',
+    url: '/security',
   },
   {
     id: 1,
     name: 'FAQ\'s',
     url: '/faqs',
-    external: false
   },
   {
     id: 2,
-    name: 'Community',
-    url: '/community',
-    external: false
-  },
-  {
-    id: 3,
-    name: 'Resellers',
-    url: '/resellers',
-    external: false
-  },
-  {
-    id: 4,
-    name: 'Dapps',
-    url: '/dapps',
-    external: false
+    name: 'Info',
+    children: [
+      {
+        id: 21,
+        name: 'Community',
+        url: '/community',
+      },
+      {
+        id: 22,
+        name: 'Resellers',
+        url: '/resellers',
+      },
+      {
+        id: 23,
+        name: 'Dapps',
+        url: '/dapps',
+      }
+    ]
   },
   {
     id: 5,
     name: 'Coins',
     url: '/coin-support',
-    external: false
   },
   {
     id: 6,
     name: 'Support',
     url: '/support',
-    external: false
   },
   {
     id: 7,
     name: 'Blog',
     url: '/blog',
-    external: false
   }
-]
+];
 
 export default function Navbar() {
-
-  //add scroll class
   const [scroll, setScroll] = useState(false);
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScroll(window.scrollY > 50);
-    });
-
-    //close mobile nav on window resize
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 1024) {
-        setIsActive(false);
-      }
-    });
-
-  }, [])
-
-  //mobile nav active
   const [isActive, setIsActive] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState<Record<number, boolean>>({});
+  const dropdownRefs = useRef<Record<number, HTMLDivElement | null>>({});
 
-  const toggleMobileNav = () => {
-    setIsActive(current => !current);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScroll(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    const handleClickOutside = (event: MouseEvent) => {
+      Object.keys(dropdownOpen).forEach(key => {
+        if (dropdownOpen[key] && dropdownRefs.current[key] && !dropdownRefs.current[key]?.contains(event.target as Node)) {
+          setDropdownOpen(prev => ({ ...prev, [key]: false }));
+        }
+      });
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropdownOpen]);
+
+  const toggleDropdown = (id: number) => {
+    setDropdownOpen(prev => ({ ...prev, [id]: !prev[id] }));
   };
-
-  const closeMobileNav = () => {
-    if (isActive) {
-      setIsActive(current => !current);
-    }
-  };
-
 
   return (
-
-    <nav className={`nav fixed w-full py-4 z-10 transition-all ease-in-out duration-400 
-        ${scroll && !isActive ? 'bg-black lg:py-3' : 'lg:pt-6'} 
-        ${isActive ? 'nav--is-open' : ''}`
-    }>
-      <div className="container mx-auto flex flex-wrap items-center">
-
-        {/* Keepkey logo - replaced by doge for now */}
-        <Link href="/">
-          <div className="nav__logo-wrap-fixed-width mr-5">
-            <a onClick={closeMobileNav} className={`cursor-pointer nav__logo-wrap ${scroll ? 'nav__logo-wrap--scrolled' : ''}`}>
-              <Image
-                alt="KeepKey logo"
-                src={keepkeyLogo}
-                className="cursor-pointer nav__logo transition-all ease-in-out duration-400"
-                layout="responsive"
-                quality={100}
-              >
-              </Image>
+      <nav className={`nav fixed w-full py-4 z-10 transition-all ease-in-out duration-400 ${scroll ? 'bg-black' : ''} ${isActive ? 'nav--is-open' : ''}`}>
+        <div className="container mx-auto flex flex-wrap items-center justify-between">
+          <Link href="/">
+            <a onClick={() => setIsActive(false)} className="nav__logo-wrap">
+              <Image src={keepkeyLogo} alt="KeepKey logo" layout="responsive" quality={100} />
             </a>
+          </Link>
+          <div className="flex-1 flex items-center justify-start">
+            {navLinks.map(link => link.children ? (
+                <div className="relative" key={link.id} ref={el => dropdownRefs.current[link.id] = el}>
+                  <button className="text-white px-4 xl:px-8" onClick={() => toggleDropdown(link.id)}>{link.name}</button>
+                  {dropdownOpen[link.id] && (
+                      <div className="absolute left-0 bg-white shadow-md">
+                        {link.children.map(sublink => (
+                            <Link href={sublink.url} key={sublink.id}>
+                              <a className="block p-2 text-black hover:bg-gray-200">{sublink.name}</a>
+                            </Link>
+                        ))}
+                      </div>
+                  )}
+                </div>
+            ) : (
+                <Link href={link.url} key={link.id}>
+                  <a className="text-white text-base px-4 xl:px-8 font-normal opacity-80 hover:opacity-100 flex items-center">
+                    {link.name}
+                    {link.name === 'Security' && (
+                        <span style={{ backgroundColor: '#f5f5f5', borderRadius: '50%', padding: '2px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <Image src={SecurityIcon} alt="Security" width={24} height={24} />
+                      </span>
+                    )}
+                  </a>
+                </Link>
+            ))}
           </div>
-        </Link>
-
-        {/* Dogecoin logo - temporary */}
-        {/*<Link href="/">*/}
-        {/*  <div className="nav__logo-wrap-fixed-width mr-5">*/}
-        {/*    <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-doge-mystery-box" target="_blank" rel="noreferrer" onClick={closeMobileNav} className={`cursor-pointer nav__logo-wrap mr-5 z-10 ${scroll ? 'nav__logo-wrap--scrolled' : ''}`}>*/}
-        {/*      <Image*/}
-        {/*        alt="Dogecoin logo"*/}
-        {/*        src={dogecoinLogo}*/}
-        {/*        className="cursor-pointer nav__logo transition-all ease-in-out duration-400"*/}
-        {/*        layout="responsive"*/}
-        {/*        quality={100}*/}
-        {/*        object-fit="contain"*/}
-        {/*      >*/}
-        {/*      </Image>*/}
-        {/*    </a>*/}
-        {/*  </div>*/}
-        {/*</Link>*/}
-
-        {navLinks.map(link => (
-          <div key={link.id}>
-            <Link href={`${link.url}`}>
-              <a className="hidden lg:block transition-opacity text-white text-base px-4 xl:px-8 font-normal opacity-80 hover:opacity-100">{link.name}</a>
+          <div className="flex items-center">
+            <Link href="https://keepkey-affiliate.vercel.app/">
+              <a className="btn" target="_blank" rel="noreferrer">Earn Crypto with Us</a>
+            </Link>
+            <Link href="https://github.com/keepkey">
+              <a className="px-4 xl:px-8">
+                <Image src={githubIcon} alt="GitHub" width={30} height={30} />
+              </a>
+            </Link>
+            <Link href="https://keepkey-docs-o9qn.vercel.app/">
+              <a className="px-4 xl:px-8">Docs</a>
             </Link>
           </div>
-        ))}
-
-        <div className="ml-auto flex items-center mt-2">
-          <MobileNav
-            toggleMobileNav={toggleMobileNav}
-            isActive={isActive}
-            navLinks={navLinks}
-          />
-
         </div>
-      </div>
-    </nav >
-  )
-}
-
-const MobileNav = ({ isActive, toggleMobileNav, navLinks }) => {
-
-  return (
-    <>
-      <button className={`${isActive ? 'mobile-open' : ''} lg:hidden nav-mobile__toggle ml-auto`} onClick={toggleMobileNav} aria-label="Toggle navigation menu" type="button">
-        <span className="nav-mobile__menu-line nav-mobile__menu-line--top"></span>
-        <span className="nav-mobile__menu-line nav-mobile__menu-line--bottom"></span>
-      </button>
-
-      <div aria-hidden="false" className="nav-mobile__menu lg:hidden" role="menu">
-        <ul className="nav-mobile__category-wrapper">
-
-          {navLinks.map(link => (
-            <li key={link.id} className="nav-mobile__category-item nav-mobile__category-line">
-              <button className="nav-mobile__category-item-link accordion-toggle" type="button">
-                <div className="nav-mobile__category-item-layout">
-                  <Link href={link.url}>
-                    <a onClick={toggleMobileNav} className="nav-mobile__title-wrapper">
-                      <span className="nav-mobile__title">
-                        <span>{link.name}</span>
-                      </span>
-                    </a>
-                  </Link>
-                </div>
-
-              </button>
-            </li>
-          ))}
-
-        </ul>
-      </div>
-    </>
-  )
+      </nav>
+  );
 }

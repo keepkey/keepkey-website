@@ -9,7 +9,6 @@ import heroBgImage from 'public/images/heros/home.png'
 import walletImage from 'public/images/hardware/wallet-hero.png'
 import walletVertical from 'public/images/hardware/wallet-vertical.png'
 import computerLockImage from 'public/images/icons/computer-lock.svg'
-import shibaSpinning from 'public/images/icons/dogecoin-spinning.gif'
 import backupImage from 'public/images/icons/backup.svg'
 import ebStorageImage from 'public/images/icons/eb-storage.svg'
 import pin from 'public/images/desktop/Pin.png'
@@ -17,15 +16,8 @@ import openSourceImage from 'public/images/icons/open-source.svg'
 import walletDeskImage from 'public/images/heros/wallet-desk-grayscale.png'
 import platform from 'platform-detect/os.mjs'
 import axios from 'axios';
-const shopifyBuyButtonId = 1663605399427;
-const shop = 'https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet'
-import { Button } from '@chakra-ui/react'
 import coinSupport from 'public/images/support/CoinSupport.png'
 export default function Home() {
-
-  // useEffect(() => {
-  //   loadShopifyBuyButton(shopifyBuyButtonId);
-  // }, []);
 
   return (
     <>
@@ -33,9 +25,9 @@ export default function Home() {
         <title>KeepKey Hardware Wallet - The Next Frontier of Crypto Security</title>
       </Head>
       <Hero />
+      <LeadingCryptos />
       <FeaturesSection />
       <PromoSection />
-      <LeadingCryptos />
       <ProductInfo />
       <div className="container">
         <SecurityWarning />
@@ -99,47 +91,45 @@ const Hero = () => {
           </div>
           <p className="text-xl leading-relaxed lg:text-2xl lg:leading-relaxed text-white mb-8 tracking-wide">KeepKey is the leading hardware wallet for securely storing digital assets. Our Dapp Store offers access to thousands of decentralized finance opportunities. Get started today and unlock the world of secure, decentralized finance.</p>
 
-          <div className="w-100">
-
-            <a className="btn btn-lg w-100" target="_blank" rel="noreferrer" href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet" >
-              Buy Now
-            </a>
-
-            {platform.macos ? <div className="mb-4 inline-block ml-8">
-              <Link href={urlMacOS}>
-                <a className="btn btn-lg btn--transparent">Download for macOS </a>
-              </Link>
-            </div> : ""}
-
-            {platform.windows ? <div className="mb-4 inline-block">
-              <Link href={urlWindows}>
-                <a className="btn btn-lg btn--transparent">Download for Windows</a>
-              </Link>
-            </div> : ""}
-
-            {platform.linux ? <div className="mb-4 inline-block">
-              <Link href={urlLinux}>
-                <a className="btn btn-lg btn--transparent">Download for Linux</a>
-              </Link>
-            </div> : ""}
-
-            <div className="ml-10 inline-block align-sub">
-              <a href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-doge-mystery-box" target="_blank" rel="noreferrer">
-                <Image
-                  alt="Dogecoin logo"
-                  src={shibaSpinning}
-                  quality={100}
-                  width={86}
-                  height={86}
-                >
-                </Image>
+          <div className="w-100 flex flex-wrap items-center">
+            <div className="w-100 mb-4">
+              <a className="btn btn-lg w-100" target="_blank" rel="noreferrer" href="https://keepkey.myshopify.com/collections/frontpage/products/keepkey-the-simple-bitcoin-hardware-wallet">
+                Buy Now
               </a>
             </div>
 
-            {/* <Link href="/get-started">
-              <a className="btn btn-lg btn--transparent">Get Started</a>
-            </Link> */}
+            {platform.macos && (
+                <div className="mb-4 flex-none ml-8 mr-4">
+                  <Link href={urlMacOS}>
+                    <a className="btn btn-lg btn--transparent">Download for macOS</a>
+                  </Link>
+                </div>
+            )}
+
+            {platform.windows && (
+                <div className="mb-4 flex-none mr-4">
+                  <Link href={urlWindows}>
+                    <a className="btn btn-lg btn--transparent">Download for Windows</a>
+                  </Link>
+                </div>
+            )}
+
+            {platform.linux && (
+                <div className="mb-4 flex-none mr-4">
+                  <Link href={urlLinux}>
+                    <a className="btn btn-lg btn--transparent">Download for Linux</a>
+                  </Link>
+                </div>
+            )}
+
+            <div className="mb-4 flex-none">
+              <Link href="/get-started">
+                <a className="btn btn-lg btn--transparent">Get Started</a>
+              </Link>
+            </div>
           </div>
+
+
 
 
         </div>
