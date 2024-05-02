@@ -99,7 +99,7 @@ export default function Navbar() {
 
   return (
       <nav className={`nav fixed w-full py-4 z-10 transition-all ease-in-out duration-400 ${scroll ? 'bg-black' : ''} ${isActive ? 'nav--is-open' : ''}`}>
-        <div className="container mx-auto flex items-center justify-between">
+        <div className="container mx-auto flex flex-wrap lg:flex-nowrap items-center justify-between">
           <Link href="/">
             <a onClick={() => setIsActive(false)} className="nav__logo-wrap">
               <Image src={keepkeyLogo} alt="KeepKey logo" layout="responsive" quality={100} />
