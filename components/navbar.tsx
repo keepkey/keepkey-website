@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import keepkeyLogo from '../public/images/logos/keepkey_logo.png';
 import githubIcon from '../public/images/icons/github.png'; // Update this path to your GitHub icon
 import SecurityIcon from '../public/images/icons/security.svg';
+
 interface NavLink {
   id: number,
   name: string,
@@ -68,10 +69,20 @@ const navLinks: NavLink[] = [
 
 export default function Navbar() {
   const [scroll, setScroll] = useState(false);
-  const [isActive, setIsActive] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState<Record<number, boolean>>({});
   const dropdownRefs = useRef<Record<number, HTMLDivElement | null>>({});
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Toggle for hamburger menu
+
+  // Initialize dropdownOpen based on navLinks with children
+  useEffect(() => {
+    const initialDropdownState = {};
+    navLinks.forEach(link => {
+      if (link.children) {
+        initialDropdownState[link.id] = false;
+      }
+    });
+    setDropdownOpen(initialDropdownState);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -84,11 +95,6 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScroll(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-
     const handleClickOutside = (event: MouseEvent) => {
       Object.keys(dropdownOpen).forEach(key => {
         if (dropdownOpen[key] && dropdownRefs.current[key] && !dropdownRefs.current[key]?.contains(event.target as Node)) {
@@ -99,13 +105,17 @@ export default function Navbar() {
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [dropdownOpen]);
 
   const toggleDropdown = (id: number) => {
-    setDropdownOpen(prev => ({ ...prev, [id]: !prev[id] }));
+    setDropdownOpen(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+    // Close the menu on mobile when clicking a dropdown item
+    setIsMenuOpen(false);
   };
 
   return (
@@ -139,8 +149,8 @@ export default function Navbar() {
                         <a className="text-white text-base px-4 font-normal opacity-80 hover:opacity-100">{link.name}</a>
                       </Link>
                   )}
-                  {isActive && link.children && (
-                      <div className="absolute left-0 bg-white shadow-md">
+                  {dropdownOpen[link.id] && (
+                      <div className="absolute left-0 bg-white shadow-md" ref={el => dropdownRefs.current[link.id] = el}>
                         {link.children.map(sublink => (
                             <Link href={sublink.url} key={sublink.id}>
                               <a className="block p-2 text-black hover:bg-gray-200">{sublink.name}</a>
