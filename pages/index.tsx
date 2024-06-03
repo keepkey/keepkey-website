@@ -6,6 +6,7 @@ import ShopifyBuyButton from '../components/ShopifyBuyButton'
 // import { loadShopifyBuyButton } from '../components/ShopifyBuyButton'
 import SecurityWarning from '../components/SecurityWarning'
 import heroBgImage from 'public/images/heros/home.png'
+import affiliate from 'public/images/resellers/affiliate.png'
 import walletImage from 'public/images/hardware/wallet-hero.png'
 import walletVertical from 'public/images/hardware/wallet-vertical.png'
 import computerLockImage from 'public/images/icons/computer-lock.svg'
@@ -318,6 +319,19 @@ const ProductInfo = () => {
           <p className="mt-6">Announcing the KeepKey SDK! Build on KeepKey! get started today.</p>
           <Link href="https://medium.com/@highlander_35968/building-on-the-keepkey-sdk-2023fda41f38">
             <a className="btn mt-8" target="_blank">Get started!</a>
+          </Link>
+        </div>
+        <div>
+          <Image
+              src={affiliate}
+              alt='keepkey wallet on desk'
+              quality={100}
+              layout="responsive"
+          ></Image>
+        </div>
+        <div className="order-2 md:order-none hidden md:block">
+          <Link href="https://keepkey-affiliate.vercel.app/">
+            <a className="btn btn-lg text-black" target="_blank" rel="noreferrer">Earn Crypto with Us</a>
           </Link>
         </div>
         <br/>

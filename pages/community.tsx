@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link';
 import heroBgImg from 'public/images/heros/community-web.jpg'
 import HeroSimple from '../components/hero-simple';
 const pageTitle = "Community"
@@ -80,7 +81,6 @@ const communityCards: CommunityCard[] = [
 const Main = () => {
   return (
     <section className="container max-w-4xl">
-      <h2 className="text-center mb-16">Engage with us</h2>
 
       <div className="container grid md:grid-cols-2 gap-8 gap-y-10">
 

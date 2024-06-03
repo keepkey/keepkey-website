@@ -170,7 +170,7 @@ const faqs = [
                 answer: "Simple! ShapeShift makes it simple buy/sell crypto and is integrated natively inside KeepKey Desktop! Read more about shapeshift here: <a target=\"_blank\" href=\"https://shapeshift.com\">shapeshift</a>",
             },
             {
-                question: "Can I trade and swap crypto without KYC?",
+                question: "Can I trade and swap crypto?",
                 answer: "YES! Simple! Our native Thorchain integration is a decentralized protocol that allows frictionless native swapping without using wrapped tokens on bridges. Read more here: <a target=\"_blank\" href=\"https://thorchain.com\">thorchain</a>",
             },
             {

@@ -2,15 +2,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import keepkeyLogo from '../public/images/logos/keepkey_logo.png';
-import githubIcon from '../public/images/icons/github.png'; // Update this path to your GitHub icon
+import githubIcon from '../public/images/icons/github.png';
 import SecurityIcon from '../public/images/icons/security.svg';
 
 interface NavLink {
-  id: number,
-  name: string,
-  url?: string,
-  external?: boolean,
-  children?: NavLink[]  // Optional children for dropdowns
+  id: number;
+  name: string;
+  url?: string;
+  external?: boolean;
+  children?: NavLink[];
 }
 
 const navLinks: NavLink[] = [
@@ -25,58 +25,57 @@ const navLinks: NavLink[] = [
     url: '/security',
   },
   {
-    id: 1,
-    name: 'FAQ\'s',
+    id: 2,
+    name: 'FAQs',
     url: '/faqs',
   },
   {
-    id: 2,
+    id: 3,
     name: 'Info',
     children: [
       {
-        id: 21,
+        id: 31,
         name: 'Community',
         url: '/community',
       },
       {
-        id: 22,
+        id: 32,
         name: 'Resellers',
         url: '/resellers',
       },
       {
-        id: 23,
+        id: 33,
         name: 'Dapps',
         url: '/dapps',
-      }
-    ]
+      },
+    ],
   },
   {
-    id: 5,
+    id: 4,
     name: 'Coins',
     url: '/coin-support',
   },
   {
-    id: 6,
+    id: 5,
     name: 'Support',
     url: '/support',
   },
   {
-    id: 7,
+    id: 6,
     name: 'Blog',
     url: '/blog',
-  }
+  },
 ];
 
 export default function Navbar() {
   const [scroll, setScroll] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState<Record<number, boolean>>({});
   const dropdownRefs = useRef<Record<number, HTMLDivElement | null>>({});
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Toggle for hamburger menu
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Initialize dropdownOpen based on navLinks with children
   useEffect(() => {
-    const initialDropdownState = {};
-    navLinks.forEach(link => {
+    const initialDropdownState: Record<number, boolean> = {};
+    navLinks.forEach((link) => {
       if (link.children) {
         initialDropdownState[link.id] = false;
       }
@@ -88,33 +87,32 @@ export default function Navbar() {
     const handleScroll = () => {
       setScroll(window.scrollY > 50);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      Object.keys(dropdownOpen).forEach(key => {
+      Object.keys(dropdownOpen).forEach((key) => {
         if (dropdownOpen[key] && dropdownRefs.current[key] && !dropdownRefs.current[key]?.contains(event.target as Node)) {
-          setDropdownOpen(prev => ({ ...prev, [key]: false }));
+          setDropdownOpen((prev) => ({ ...prev, [key]: false }));
         }
       });
     };
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [dropdownOpen]);
 
   const toggleDropdown = (id: number) => {
-    setDropdownOpen(prev => ({
+    setDropdownOpen((prev) => ({
       ...prev,
-      [id]: !prev[id]
+      [id]: !prev[id],
     }));
-    // Close the menu on mobile when clicking a dropdown item
     setIsMenuOpen(false);
   };
 
@@ -127,19 +125,18 @@ export default function Navbar() {
             </a>
           </Link>
           <button className="lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {/* Hamburger Icon */}
             <span className="hamburger-icon"></span>
           </button>
           <div className={`lg:flex ${isMenuOpen ? 'flex' : 'hidden'} flex-col lg:flex-row w-full lg:w-auto`}>
-            {navLinks.map(link => (
+            {navLinks.map((link) => (
                 <div key={link.id} className="relative">
                   {link.name === 'Security' ? (
                       <Link href={link.url}>
                         <a className="text-white text-base px-4 font-normal opacity-80 hover:opacity-100 flex items-center">
                           {link.name}
                           <span style={{ backgroundColor: '#f5f5f5', borderRadius: '50%', padding: '2px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-                              <Image src={SecurityIcon} alt="Security" width={24} height={24} />
-                          </span>
+                      <Image src={SecurityIcon} alt="Security" width={24} height={24} />
+                    </span>
                         </a>
                       </Link>
                   ) : link.children ? (
@@ -150,8 +147,8 @@ export default function Navbar() {
                       </Link>
                   )}
                   {dropdownOpen[link.id] && (
-                      <div className="absolute left-0 bg-white shadow-md" ref={el => dropdownRefs.current[link.id] = el}>
-                        {link.children.map(sublink => (
+                      <div className="absolute left-0 bg-white shadow-md" ref={(el) => (dropdownRefs.current[link.id] = el)}>
+                        {link.children.map((sublink) => (
                             <Link href={sublink.url} key={sublink.id}>
                               <a className="block p-2 text-black hover:bg-gray-200">{sublink.name}</a>
                             </Link>
@@ -162,9 +159,9 @@ export default function Navbar() {
             ))}
           </div>
           <div className="hidden lg:flex items-center">
-            <Link href="https://keepkey-affiliate.vercel.app/">
-              <a className="btn btn-lg w-100 text-black" target="_blank" rel="noreferrer">Earn Crypto with Us</a>
-            </Link>
+            {/*<Link href="https://keepkey-affiliate.vercel.app/">*/}
+            {/*  <a className="btn btn-lg w-100 text-black" target="_blank" rel="noreferrer">Earn Crypto with Us</a>*/}
+            {/*</Link>*/}
             <Link href="https://github.com/keepkey">
               <a className="px-4">
                 <Image src={githubIcon} alt="GitHub" width={30} height={30} />
