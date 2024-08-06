@@ -65,6 +65,10 @@ const Hero = () => {
     findLatestReleaseLinks()
   }, []);
 
+  let launchApp = async function () {
+    window.location.assign('keepkey://launch');
+  }
+
   return (
     <div className="relative z-0 pt-32 pb-20 lg:py-4 bg-black">
       <Image
@@ -128,8 +132,14 @@ const Hero = () => {
                 <a className="btn btn-lg btn--transparent">Get Started</a>
               </Link>
             </div>
+
+            <div className="mb-4 flex-none" onClick={launchApp}>
+              <a className="btn btn-lg">Launch KeepKey Desktop</a>
+            </div>
+
           </div>
 
+          <br/>
 
 
 
