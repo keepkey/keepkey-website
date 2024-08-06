@@ -10,28 +10,6 @@ import Link from "next/link";
 const pageTitle = "Launch";
 
 export default function Launch() {
-    const [urlMacOS, seturlMacOS] = useState('')
-    const [urlWindows, seturlWindows] = useState('')
-    const [urlLinux, seturlLinux] = useState('')
-    //find latest release
-    let findLatestReleaseLinks = async function () {
-        try {
-            let resp = await axios({ method: 'GET', url: 'https://api.github.com/repos/keepkey/keepkey-desktop/releases/latest' })
-            console.log('findLatestReleaseLinks', resp.data)
-            let version = resp.data.tag_name
-            version = version.replace("v", "")
-            seturlMacOS("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-" + version + "-arm64.dmg")
-            seturlWindows("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-Setup-" + version + ".exe")
-            seturlLinux("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-" + version + ".AppImage")
-
-        } catch (e) {
-            console.error(' e: ', e)
-        }
-    }
-
-    useEffect(() => {
-        findLatestReleaseLinks()
-    }, []);
 
     const launchKeepKey = () => {
         try {
@@ -58,7 +36,37 @@ export default function Launch() {
                 heroBgImg={heroBgImage}
                 pageTitle={pageTitle}
             />
-            <div className="container mx-auto flex flex-col items-center justify-center text-center py-12">
+            <Main />
+        </>
+    );
+}
+
+const Main = () => {
+    const [urlMacOS, seturlMacOS] = useState('')
+    const [urlWindows, seturlWindows] = useState('')
+    const [urlLinux, seturlLinux] = useState('')
+    //find latest release
+    let findLatestReleaseLinks = async function () {
+        try {
+            let resp = await axios({ method: 'GET', url: 'https://api.github.com/repos/keepkey/keepkey-desktop/releases/latest' })
+            console.log('findLatestReleaseLinks', resp.data)
+            let version = resp.data.tag_name
+            version = version.replace("v", "")
+            seturlMacOS("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-" + version + "-arm64.dmg")
+            seturlWindows("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-Setup-" + version + ".exe")
+            seturlLinux("https://github.com/keepkey/keepkey-desktop/releases/download/v" + version + "/KeepKey-Desktop-" + version + ".AppImage")
+
+        } catch (e) {
+            console.error(' e: ', e)
+        }
+    }
+
+    useEffect(() => {
+        findLatestReleaseLinks()
+    }, []);
+    return (
+        <section className="container bg-black">
+            <div className="container mx-auto flex flex-col items-center justify-center text-center py-12 ">
                 <div>
                     <h1 className="text-4xl leading-tight tracking-wide lg:text-5xl lg:leading-tight 2xl:text-6xl 2xl:leading-tight font-bold text-white mb-4">
                         Introducing the new KeepKey Client
@@ -79,14 +87,6 @@ export default function Launch() {
                     </div>
                 </div>
             </div>
-            <Main />
-        </>
-    );
-}
-
-const Main = () => {
-    return (
-        <section className="container">
             <Image
                 src={pin}
                 alt='desktop'
