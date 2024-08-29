@@ -17,7 +17,7 @@ import openSourceImage from 'public/images/icons/open-source.svg'
 import walletDeskImage from 'public/images/heros/wallet-desk-grayscale.png'
 import platform from 'platform-detect/os.mjs'
 import axios from 'axios';
-import coinSupport from 'public/images/support/CoinSupport.png'
+import coinSupport from 'public/images/support/coinsupport.png'
 export default function Home() {
 
   return (
