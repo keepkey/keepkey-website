@@ -4,7 +4,7 @@ import heroBgImage from 'public/images/heros/blue-lines.jpg'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import HeroSimple from '../components/hero-simple';
 const pageTitle = "Dapp Guide";
-import store from 'public/images/desktop/DappStore.png'
+import store from 'public/images/desktop/dappstore.png'
 import uniswap from 'public/images/walletconnect/uniswap.png'
 import connect from 'public/images/walletconnect/connect.png'
 import options from 'public/images/walletconnect/options.png'
