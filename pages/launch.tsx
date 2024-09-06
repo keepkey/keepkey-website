@@ -3,7 +3,7 @@ import Head from 'next/head';
 import heroBgImage from 'public/images/heros/blue-lines.jpg';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import HeroSimple from '../components/hero-simple';
-import pin from 'public/images/desktop/Pin.png'
+import pin from 'public/images/desktop/pin.png'
 import Image from "next/image";
 import axios from "axios";
 import Link from "next/link";

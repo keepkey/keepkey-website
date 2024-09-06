@@ -3,7 +3,7 @@ import Image from 'next/image'
 import heroBgImage from 'public/images/heros/blue-lines.jpg'
 import HeroSimple from '../components/hero-simple';
 const pageTitle = "Application Waltkthrough";
-import walletVertical from 'public/images/desktop/Pin.png'
+import walletVertical from 'public/images/desktop/pin.png'
 
 export default function DesktopGuide() {
 
