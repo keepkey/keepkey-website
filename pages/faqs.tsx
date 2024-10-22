@@ -117,8 +117,6 @@ const Main = () => {
 
 
 const faqs = [
-
-
     {
         id: 1,
         category: "How To",
