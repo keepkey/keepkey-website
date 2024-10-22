@@ -249,7 +249,7 @@ const Main = () => {
                     </ListItem>
                     <ListItem>
                         <ListIcon as={CheckCircleIcon} color="teal.500" />
-                        <strong>Enhanced User Experience:</strong> A sleek and intuitive interface makes managing your crypto assets effortless, whether you're a seasoned trader or a newcomer.
+                        <strong>Enhanced User Experience:</strong> A sleek and intuitive interface makes managing your crypto assets effortless, whether youre a seasoned trader or a newcomer.
                     </ListItem>
                     <ListItem>
                         <ListIcon as={CheckCircleIcon} color="teal.500" />
