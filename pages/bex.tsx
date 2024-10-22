@@ -16,8 +16,7 @@ import {
 import { CheckCircleIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 import Head from "next/head";
-import heroBgImage from "public/images/bex/PromoBig.png";
-import bexPagesImage from "public/images/bex/bex-pages.png";
+import heroBgImage from "public/images/bex/promobig.png";
 import dappsImage from "public/images/bex/keepkey-bex-uni.png";
 
 const pageTitle = "KeepKey Browser Extension";
