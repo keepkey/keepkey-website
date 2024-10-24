@@ -117,61 +117,70 @@ export default function Navbar() {
   };
 
   return (
-      <nav className={`nav fixed w-full py-4 z-10 transition-all ease-in-out duration-400 ${scroll ? 'bg-black' : ''} ${isMenuOpen ? 'bg-black' : ''}`}>
-        <div className="container mx-auto flex flex-wrap items-center justify-between">
-          <Link href="/">
-            <a className="nav__logo-wrap" onClick={() => setIsMenuOpen(false)}>
-              <Image src={keepkeyLogo} alt="KeepKey logo" layout="responsive" quality={100} />
+      <>
+        {/* Yellow title bar for browser extension */}
+        <div className="w-full bg-yellow-500 text-center py-2 fixed top-0 left-0 z-50">
+          <Link href="https://keepkey.com/bex" passHref>
+            <a className="text-black font-bold hover:underline">
+              Try the new KeepKey Browser Extension! Click here to learn more.
             </a>
           </Link>
-          <button className="lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <span className="hamburger-icon"></span>
-          </button>
-          <div className={`lg:flex ${isMenuOpen ? 'flex' : 'hidden'} flex-col lg:flex-row w-full lg:w-auto`}>
-            {navLinks.map((link) => (
-                <div key={link.id} className="relative">
-                  {link.name === 'Security' ? (
-                      <Link href={link.url}>
-                        <a className="text-white text-base px-4 font-normal opacity-80 hover:opacity-100 flex items-center">
-                          {link.name}
-                          <span style={{ backgroundColor: '#f5f5f5', borderRadius: '50%', padding: '2px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Image src={SecurityIcon} alt="Security" width={24} height={24} />
-                    </span>
-                        </a>
-                      </Link>
-                  ) : link.children ? (
-                      <button className="text-white px-4" onClick={() => toggleDropdown(link.id)}>{link.name}</button>
-                  ) : (
-                      <Link href={link.url}>
-                        <a className="text-white text-base px-4 font-normal opacity-80 hover:opacity-100">{link.name}</a>
-                      </Link>
-                  )}
-                  {dropdownOpen[link.id] && (
-                      <div className="absolute left-0 bg-white shadow-md" ref={(el) => (dropdownRefs.current[link.id] = el)}>
-                        {link.children.map((sublink) => (
-                            <Link href={sublink.url} key={sublink.id}>
-                              <a className="block p-2 text-black hover:bg-gray-200">{sublink.name}</a>
-                            </Link>
-                        ))}
-                      </div>
-                  )}
-                </div>
-            ))}
-          </div>
-          <div className="hidden lg:flex items-center">
-            {/*<Link href="https://keepkey-affiliate.vercel.app/">*/}
-            {/*  <a className="btn btn-lg w-100 text-black" target="_blank" rel="noreferrer">Earn Crypto with Us</a>*/}
-            {/*</Link>*/}
-            <Link href="https://github.com/keepkey">
-              <a className="px-4">
-                <Image src={githubIcon} alt="GitHub" width={30} height={30} />
+        </div>
+
+        {/* Navigation bar */}
+        <nav className={`nav fixed w-full py-4 z-40 top-8 transition-all ease-in-out duration-400 ${scroll ? 'bg-black' : ''} ${isMenuOpen ? 'bg-black' : ''}`}>
+          <div className="container mx-auto flex flex-wrap items-center justify-between">
+            <Link href="/">
+              <a className="nav__logo-wrap" onClick={() => setIsMenuOpen(false)}>
+                <Image src={keepkeyLogo} alt="KeepKey logo" layout="responsive" quality={100} />
               </a>
             </Link>
-            <Link href="https://keepkey-docs-o9qn.vercel.app/">
-              <a className="px-4">Docs</a>
-            </Link>
+            <button className="lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <span className="hamburger-icon"></span>
+            </button>
+            <div className={`lg:flex ${isMenuOpen ? 'flex' : 'hidden'} flex-col lg:flex-row w-full lg:w-auto`}>
+              {navLinks.map((link) => (
+                  <div key={link.id} className="relative">
+                    {link.name === 'Security' ? (
+                        <Link href={link.url}>
+                          <a className="text-white text-base px-4 font-normal opacity-80 hover:opacity-100 flex items-center">
+                            {link.name}
+                            <span style={{ backgroundColor: '#f5f5f5', borderRadius: '50%', padding: '2px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <Image src={SecurityIcon} alt="Security" width={24} height={24} />
+                      </span>
+                          </a>
+                        </Link>
+                    ) : link.children ? (
+                        <button className="text-white px-4" onClick={() => toggleDropdown(link.id)}>{link.name}</button>
+                    ) : (
+                        <Link href={link.url}>
+                          <a className="text-white text-base px-4 font-normal opacity-80 hover:opacity-100">{link.name}</a>
+                        </Link>
+                    )}
+                    {dropdownOpen[link.id] && (
+                        <div className="absolute left-0 bg-white shadow-md" ref={(el) => (dropdownRefs.current[link.id] = el)}>
+                          {link.children.map((sublink) => (
+                              <Link href={sublink.url} key={sublink.id}>
+                                <a className="block p-2 text-black hover:bg-gray-200">{sublink.name}</a>
+                              </Link>
+                          ))}
+                        </div>
+                    )}
+                  </div>
+              ))}
+            </div>
+            <div className="hidden lg:flex items-center">
+              <Link href="https://github.com/keepkey">
+                <a className="px-4">
+                  <Image src={githubIcon} alt="GitHub" width={30} height={30} />
+                </a>
+              </Link>
+              <Link href="https://keepkey-docs-o9qn.vercel.app/">
+                <a className="px-4">Docs</a>
+              </Link>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </>
   );
 }
