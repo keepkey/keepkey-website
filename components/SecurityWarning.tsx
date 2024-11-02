@@ -41,7 +41,7 @@ export default function SecurityWarning() {
                     <div className="md:ml-8 mt-4 md:mt-0">
                         <h4 className="font-medium">Security Warning</h4>
                         <p className="mt-2">
-                            The KeepKey Chrome app has been retired, and there are scam versions which can steal your money. NEVER enter a recovery phrase into any software unencrypted. Official clients will always use KeepKeys built-in text cipher.
+                            there are scam versions of browser exensions and wallet which can steal your money. NEVER enter a recovery phrase into any software unencrypted. Official clients will always use KeepKeys built-in text cipher.
                         </p>
                     </div>
                 </div>
