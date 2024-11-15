@@ -7,10 +7,10 @@ import Footer from './footer'
 const Layout = ({ children }) => {
   const router = useRouter()
   const isNavigating = useRef(false)
+  const walletInitialized = useRef(false)
 
   useEffect(() => {
     const handleStart = (url) => {
-      // Prevent duplicate navigations to the same URL
       if (isNavigating.current && url === router.asPath) {
         return
       }
@@ -19,6 +19,9 @@ const Layout = ({ children }) => {
 
     const handleComplete = () => {
       isNavigating.current = false
+      if (!walletInitialized.current) {
+        walletInitialized.current = true
+      }
     }
 
     const handleError = () => {
