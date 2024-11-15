@@ -6,36 +6,44 @@ import Footer from './footer'
 
 const Layout = ({ children }) => {
   const router = useRouter()
-  const isNavigating = useRef(false)
-  const walletInitialized = useRef(false)
+  const lastNavigationUrl = useRef('')
+  const navigationTimeout = useRef(null)
 
   useEffect(() => {
     const handleStart = (url) => {
-      if (isNavigating.current && url === router.asPath) {
+      if (url === lastNavigationUrl.current) {
         return
       }
-      isNavigating.current = true
+
+      lastNavigationUrl.current = url
+
+      if (navigationTimeout.current) {
+        clearTimeout(navigationTimeout.current)
+      }
+
+      navigationTimeout.current = setTimeout(() => {
+        lastNavigationUrl.current = ''
+      }, 500)
     }
 
     const handleComplete = () => {
-      isNavigating.current = false
-      if (!walletInitialized.current) {
-        walletInitialized.current = true
+      if (navigationTimeout.current) {
+        clearTimeout(navigationTimeout.current)
       }
-    }
-
-    const handleError = () => {
-      isNavigating.current = false
+      lastNavigationUrl.current = ''
     }
 
     router.events.on('routeChangeStart', handleStart)
     router.events.on('routeChangeComplete', handleComplete)
-    router.events.on('routeChangeError', handleError)
+    router.events.on('routeChangeError', handleComplete)
 
     return () => {
+      if (navigationTimeout.current) {
+        clearTimeout(navigationTimeout.current)
+      }
       router.events.off('routeChangeStart', handleStart)
       router.events.off('routeChangeComplete', handleComplete)
-      router.events.off('routeChangeError', handleError)
+      router.events.off('routeChangeError', handleComplete)
     }
   }, [router])
 
