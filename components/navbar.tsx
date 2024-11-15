@@ -136,9 +136,9 @@ export default function Navbar() {
   };
 
   return (
-    <>
+    <div className="fixed w-full top-0 left-0 z-50">
       <div
-        className={`w-full bg-yellow-500 text-center py-2 fixed top-0 left-0 z-[60] flex justify-center items-center transition-opacity duration-300 ${!isMounted || !showBanner ? 'opacity-0 pointer-events-none' : 'opacity-100'
+        className={`w-full bg-yellow-500 text-center py-2 flex justify-center items-center transition-opacity duration-300 ${!isMounted || !showBanner ? 'opacity-0 pointer-events-none h-0' : 'opacity-100'
           }`}
       >
         <Link href="https://keepkey.com/bex" passHref>
@@ -155,8 +155,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Navigation bar */}
-      <nav className={`nav fixed w-full py-4 z-[50] ${showBanner ? 'top-8' : 'top-0'} transition-all ease-in-out duration-400 ${scroll ? 'bg-black' : ''
+      <nav className={`nav w-full py-4 transition-all ease-in-out duration-400 ${scroll ? 'bg-black' : ''
         } ${isMenuOpen ? 'bg-black' : ''}`}>
         <div className="container mx-auto flex flex-wrap items-center justify-between">
           <Link href="/">
@@ -210,6 +209,6 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-    </>
+    </div>
   );
 }
