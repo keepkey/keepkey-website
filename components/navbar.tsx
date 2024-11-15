@@ -137,8 +137,9 @@ export default function Navbar() {
 
   return (
     <div className="fixed w-full top-0 left-0 z-50">
+      {/* banner */}
       <div
-        className={`w-full bg-yellow-500 text-center py-2 flex justify-center items-center transition-opacity duration-300 ${!isMounted || !showBanner ? 'opacity-0 pointer-events-none h-0' : 'opacity-100'
+        className={`w-full bg-yellow-500 text-center py-2 flex justify-center items-center transition-opacity duration-300 ${!isMounted || !showBanner ? 'opacity-0 pointer-events-none h-0 py-0' : 'opacity-100'
           }`}
       >
         <Link href="https://keepkey.com/bex" passHref>
@@ -166,12 +167,12 @@ export default function Navbar() {
           <button className="lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <span className="hamburger-icon"></span>
           </button>
-          <div className={`lg:flex ${isMenuOpen ? 'flex' : 'hidden'} flex-col lg:flex-row w-full lg:w-auto`}>
+          <div className={`lg:flex ${isMenuOpen ? 'flex gap-y-5 pt-4' : 'hidden'} flex-col lg:flex-row w-full lg:w-auto`}>
             {navLinks.map((link) => (
               <div key={link.id} className="relative">
                 {link.name === 'Security' ? (
                   <Link href={link.url}>
-                    <a className="text-white text-base px-4 font-normal opacity-80 hover:opacity-100 flex items-center">
+                    <a className="text-white text-xl lg:text-base px-0 lg:px-4 font-normal opacity-80 hover:opacity-100 flex items-center">
                       {link.name}
                       <span style={{ backgroundColor: '#f5f5f5', borderRadius: '50%', padding: '2px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
                         <Image src={SecurityIcon} alt="Security" width={24} height={24} />
@@ -179,10 +180,10 @@ export default function Navbar() {
                     </a>
                   </Link>
                 ) : link.children ? (
-                  <button className="text-white px-4" onClick={() => toggleDropdown(link.id)}>{link.name}</button>
+                  <button className="text-white text-xl lg:text-base px-0 lg:px-4" onClick={() => toggleDropdown(link.id)}>{link.name}</button>
                 ) : (
                   <Link href={link.url}>
-                    <a className="text-white text-base px-4 font-normal opacity-80 hover:opacity-100">{link.name}</a>
+                    <a className="text-white text-xl lg:text-base px-0 lg:px-4 font-normal opacity-80 hover:opacity-100">{link.name}</a>
                   </Link>
                 )}
                 {dropdownOpen[link.id] && (
