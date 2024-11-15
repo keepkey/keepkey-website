@@ -70,7 +70,7 @@ const Hero = () => {
   }
 
   return (
-    <div className="relative z-0 pt-32 pb-20 lg:py-4 bg-black">
+    <div className="relative z-0 pt-40 pb-20 lg:py-4 bg-black">
       <Image
         src={heroBgImage}
         alt='keepkey wallet on desk'
@@ -104,27 +104,27 @@ const Hero = () => {
             </div>
 
             {platform.macos && (
-                <div className="mb-4 flex-none ml-8 mr-4">
-                  <Link href={urlMacOS}>
-                    <a className="btn btn-lg btn--transparent">Download for macOS</a>
-                  </Link>
-                </div>
+              <div className="mb-4 flex-none ml-8 mr-4">
+                <Link href={urlMacOS}>
+                  <a className="btn btn-lg btn--transparent">Download for macOS</a>
+                </Link>
+              </div>
             )}
 
             {platform.windows && (
-                <div className="mb-4 flex-none mr-4">
-                  <Link href={urlWindows}>
-                    <a className="btn btn-lg btn--transparent">Download for Windows</a>
-                  </Link>
-                </div>
+              <div className="mb-4 flex-none mr-4">
+                <Link href={urlWindows}>
+                  <a className="btn btn-lg btn--transparent">Download for Windows</a>
+                </Link>
+              </div>
             )}
 
             {platform.linux && (
-                <div className="mb-4 flex-none mr-4">
-                  <Link href={urlLinux}>
-                    <a className="btn btn-lg btn--transparent">Download for Linux</a>
-                  </Link>
-                </div>
+              <div className="mb-4 flex-none mr-4">
+                <Link href={urlLinux}>
+                  <a className="btn btn-lg btn--transparent">Download for Linux</a>
+                </Link>
+              </div>
             )}
 
             <div className="mb-4 flex-none">
@@ -139,7 +139,7 @@ const Hero = () => {
 
           </div>
 
-          <br/>
+          <br />
 
 
 
@@ -331,7 +331,7 @@ const ProductInfo = () => {
             <a className="btn mt-8" target="_blank">Get started!</a>
           </Link>
         </div>
-        <br/>
+        <br />
       </div>
       <div className="text-center">KeepKey is OSS: to contribute to donate here: bc1qfce6cck3tcy94v8s4q6fpfeusj0g8g27asaakh</div>
     </section>

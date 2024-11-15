@@ -14,7 +14,7 @@ interface Props {
 const Hero = ({ heroBgImg, pageTitle, subTitle, assets, blockchains, dapps }: Props) => {
 
     return (
-        <div className="relative z-0 pt-28 pb-20 lg:pt-52 lg:pb-36 bg-black">
+        <div className="relative z-0 pt-40 pb-20 lg:pt-52 lg:pb-36 bg-black">
             <Image
                 src={heroBgImg}
                 alt='keepkey wallet on desk'
