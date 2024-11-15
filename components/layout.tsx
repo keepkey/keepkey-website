@@ -8,16 +8,36 @@ const Layout = ({ children }) => {
   const router = useRouter()
 
   useEffect(() => {
-    // Disable route change animation to prevent duplicate wallet initialization
-    router.events.on('beforeHistoryChange', () => {
-      // Remove any transition classes that might be slowing things down
-      document.documentElement.style.scrollBehavior = 'auto'
+    const logNavigationEvent = (type, url) => {
+      console.log(`[Navigation ${type}] ${url} - ${new Date().toISOString()}`)
+      if (window.performance) {
+        const perfEntry = window.performance.getEntriesByType('navigation')[0]
+        console.log(`[Performance] Load Time: ${perfEntry.loadEventEnd}ms`)
+      }
+    }
+
+    router.events.on('routeChangeStart', (url) => {
+      console.log('🚀 Navigation Started:', url)
+      performance.mark('routeChangeStart')
+      logNavigationEvent('Start', url)
+    })
+
+    router.events.on('routeChangeComplete', (url) => {
+      console.log('✅ Navigation Complete:', url)
+      performance.mark('routeChangeComplete')
+      performance.measure('Navigation Duration', 'routeChangeStart', 'routeChangeComplete')
+      logNavigationEvent('Complete', url)
+    })
+
+    router.events.on('routeChangeError', (err, url) => {
+      console.error('❌ Navigation Error:', url, err)
+      logNavigationEvent('Error', url)
     })
 
     return () => {
-      router.events.off('beforeHistoryChange', () => {
-        document.documentElement.style.scrollBehavior = ''
-      })
+      router.events.off('routeChangeStart', logNavigationEvent)
+      router.events.off('routeChangeComplete', logNavigationEvent)
+      router.events.off('routeChangeError', logNavigationEvent)
     }
   }, [router])
 
