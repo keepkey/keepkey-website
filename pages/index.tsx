@@ -104,27 +104,27 @@ const Hero = () => {
             </div>
 
             {platform.macos && (
-                <div className="mb-4 flex-none ml-8 mr-4">
-                  <Link href={urlMacOS}>
-                    <a className="btn btn-lg btn--transparent">Download for macOS</a>
-                  </Link>
-                </div>
+              <div className="mb-4 flex-none ml-8 mr-4">
+                <Link href={urlMacOS}>
+                  <a className="btn btn-lg btn--transparent">Download for macOS</a>
+                </Link>
+              </div>
             )}
 
             {platform.windows && (
-                <div className="mb-4 flex-none mr-4">
-                  <Link href={urlWindows}>
-                    <a className="btn btn-lg btn--transparent">Download for Windows</a>
-                  </Link>
-                </div>
+              <div className="mb-4 flex-none mr-4">
+                <Link href={urlWindows}>
+                  <a className="btn btn-lg btn--transparent">Download for Windows</a>
+                </Link>
+              </div>
             )}
 
             {platform.linux && (
-                <div className="mb-4 flex-none mr-4">
-                  <Link href={urlLinux}>
-                    <a className="btn btn-lg btn--transparent">Download for Linux</a>
-                  </Link>
-                </div>
+              <div className="mb-4 flex-none mr-4">
+                <Link href={urlLinux}>
+                  <a className="btn btn-lg btn--transparent">Download for Linux</a>
+                </Link>
+              </div>
             )}
 
             <div className="mb-4 flex-none">
@@ -139,7 +139,7 @@ const Hero = () => {
 
           </div>
 
-          <br/>
+          <br />
 
 
 
@@ -331,7 +331,7 @@ const ProductInfo = () => {
             <a className="btn mt-8" target="_blank">Get started!</a>
           </Link>
         </div>
-        <br/>
+        <br />
       </div>
       <div className="text-center">KeepKey is OSS: to contribute to donate here: bc1qfce6cck3tcy94v8s4q6fpfeusj0g8g27asaakh</div>
     </section>
@@ -345,14 +345,22 @@ import nasdaqImg from 'public/images/customers/nasdaq.png'
 import bitcoinMagazineImg from 'public/images/customers/bitcoin-magazine.png'
 
 const TrustedBy = () => {
+  const logos = [
+    { id: 1, src: forbesImg, alt: "forbes logo" },
+    { id: 2, src: cointelegraphImg, alt: "coin telegraph logo" },
+    { id: 3, src: coindeskImg, alt: "coindesk logo" },
+    { id: 4, src: nasdaqImg, alt: "nasdaq logo" },
+    { id: 5, src: bitcoinMagazineImg, alt: "bitcoin magazine logo" }
+  ]
+
   return (
     <section className="bg-zinc-100 py-16 mt-32">
       <div className="container flex justify-between align-center">
-        <div className="w-40"><Image src={forbesImg} alt="forbes logo" quality={100}></Image></div>
-        <div className="w-40"><Image src={cointelegraphImg} alt="coin telegraph logo" quality={100}></Image></div>
-        <div className="w-40"><Image src={coindeskImg} alt="coindesk logo" quality={100}></Image></div>
-        <div className="w-40"><Image src={nasdaqImg} alt="nasdaq logo" quality={100}></Image></div>
-        <div className="w-40"><Image src={bitcoinMagazineImg} alt="bitcoin magazine logo" quality={100}></Image></div>
+        {logos.map(logo => (
+          <div key={logo.id} className="w-40">
+            <Image src={logo.src} alt={logo.alt} quality={100} />
+          </div>
+        ))}
       </div>
     </section>
   )
