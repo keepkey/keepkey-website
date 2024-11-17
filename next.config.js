@@ -4,7 +4,8 @@ const nextConfig = {
   swcMinify: true,
   env: {
     layout: 'default'
-  }
+  },
+  productionBrowserSourceMaps: true
 }
 
 module.exports = nextConfig
