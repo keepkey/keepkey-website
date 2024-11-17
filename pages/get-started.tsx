@@ -224,12 +224,11 @@ const Step = (props: Step) => {
 const Main = () => {
   return (
     <section className="container">
-      {/*<SecurityWarning />*/}
       <div><h4>Already Setup your device? Update </h4></div>
       <a href="https://medium.com/@highlander_35968/updating-your-keepkey-154a49445d4c" rel="noreferrer" target="_blank">Guide on Updating your KeepKey</a>
 
-      {steps.map((step, i, arr) =>
-        <>
+      {steps.map((step, i, arr) => (
+        <div key={step.key}>
           <Step
             key={step.key}
             image={step.image}
@@ -239,9 +238,10 @@ const Main = () => {
             description={step.description}
             listItems={step.listItems}
           />
-          {i === arr.length - 1 ? '' : <hr />}
-        </>
-      )}
+          {i === arr.length - 1 ? null : <hr />}
+        </div>
+      ))}
+
       <div><h4>Still unable to connect? troubleshoot </h4></div>
       <a href="https://medium.com/@highlander_35968/troubleshooting-connections-with-the-keepkey-4599f1aaee0" rel="noreferrer" target="_blank">more information here</a>
     </section>
