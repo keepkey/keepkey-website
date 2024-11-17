@@ -1,63 +1,57 @@
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
-import Navbar from './navbar'
-import Footer from './footer'
-
+import { useEffect } from 'react'
 
 const Layout = ({ children }) => {
   const router = useRouter()
-  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    setIsMounted(true)
+    const logPerformanceMetrics = (type: string, url: string) => {
+      console.log(`[Navigation Event] ${type} - ${url}`)
 
-    const logNavigationEvent = (type: string, url: string) => {
-      if (typeof window === 'undefined') return
-
-      if (url === router.asPath) {
-        console.warn(`Prevented navigation to same path: ${url}`)
-        return
-      }
-
-      console.log(`[Navigation ${type}] ${url} - ${new Date().toISOString()}`)
       if (window.performance) {
-        const perfEntry = window.performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming
-        if (perfEntry) {
-          console.log(`[Performance] Load Time: ${perfEntry.loadEventEnd}ms`)
+        const perfEntries = performance.getEntriesByType('navigation')
+        const metrics = {
+          url,
+          type,
+          timestamp: new Date().toISOString(),
+          loadTime: perfEntries[0]?.loadEventEnd,
+          domComplete: perfEntries[0]?.domComplete,
+          navigationStart: perfEntries[0]?.navigationStart,
         }
+
+        // Log to server
+        fetch('/api/log-performance', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(metrics)
+        }).catch(console.error)
       }
     }
 
-    if (isMounted) {
-      router.events.on('routeChangeStart', (url) => {
-        if (url === router.asPath) return
-        performance.mark('routeChangeStart')
-        logNavigationEvent('Start', url)
-      })
+    router.events.on('routeChangeStart', (url) => {
+      performance.mark('routeChangeStart')
+      logPerformanceMetrics('start', url)
+    })
 
-      router.events.on('routeChangeComplete', (url) => {
-        if (url === router.asPath) return
-        performance.mark('routeChangeComplete')
-        performance.measure('Navigation Duration', 'routeChangeStart', 'routeChangeComplete')
-        logNavigationEvent('Complete', url)
-      })
-    }
+    router.events.on('routeChangeComplete', (url) => {
+      performance.mark('routeChangeComplete')
+      performance.measure('navigationDuration', 'routeChangeStart', 'routeChangeComplete')
+      logPerformanceMetrics('complete', url)
+    })
+
+    router.events.on('routeChangeError', (err, url) => {
+      logPerformanceMetrics('error', url)
+      console.error('[Navigation Error]', err)
+    })
 
     return () => {
-      if (isMounted) {
-        router.events.off('routeChangeStart', logNavigationEvent)
-        router.events.off('routeChangeComplete', logNavigationEvent)
-      }
+      router.events.off('routeChangeStart', logPerformanceMetrics)
+      router.events.off('routeChangeComplete', logPerformanceMetrics)
+      router.events.off('routeChangeError', logPerformanceMetrics)
     }
-  }, [router, isMounted])
+  }, [router])
 
-  return (
-    <>
-      <Navbar />
-      <main>{children}</main>
-      <Footer />
-    </>
-  )
+  return <>{children}</>
 }
 
 export default Layout
