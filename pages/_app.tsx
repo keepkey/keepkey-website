@@ -18,9 +18,15 @@ function MyApp({ Component, pageProps }) {
   let titleTag: string;
 
   if (router.pathname === '/') {
-    titleTag = 'KeepKey'
+    titleTag = 'KeepKey';
   } else {
-    titleTag = `${router.pathname.replace(/\//g, "").charAt(0).toUpperCase() + router.pathname.slice(2)} | KeepKey`;
+    const pageName = router.pathname
+      .split('/')
+      .pop()
+      .replace(/-/g, ' ')
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+
+    titleTag = `${pageName} | KeepKey`;
   }
 
   return (
