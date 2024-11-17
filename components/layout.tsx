@@ -14,6 +14,11 @@ const Layout = ({ children }) => {
     const logNavigationEvent = (type: string, url: string) => {
       if (typeof window === 'undefined') return
 
+      if (url === router.asPath) {
+        console.warn(`Prevented navigation to same path: ${url}`)
+        return
+      }
+
       console.log(`[Navigation ${type}] ${url} - ${new Date().toISOString()}`)
       if (window.performance) {
         const perfEntry = window.performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming
@@ -25,11 +30,13 @@ const Layout = ({ children }) => {
 
     if (isMounted) {
       router.events.on('routeChangeStart', (url) => {
+        if (url === router.asPath) return
         performance.mark('routeChangeStart')
         logNavigationEvent('Start', url)
       })
 
       router.events.on('routeChangeComplete', (url) => {
+        if (url === router.asPath) return
         performance.mark('routeChangeComplete')
         performance.measure('Navigation Duration', 'routeChangeStart', 'routeChangeComplete')
         logNavigationEvent('Complete', url)
