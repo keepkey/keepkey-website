@@ -12,6 +12,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { GoogleAnalytics } from "nextjs-google-analytics";
 
 import theme from '../theme'
+import ErrorBoundary from '../components/ErrorBoundary'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -30,7 +31,7 @@ function MyApp({ Component, pageProps }) {
   }
 
   return (
-    <>
+    <ErrorBoundary>
       <meta name="facebook-domain-verification" content="9tvdigjfrqayvsru06yjch1n03jdaa" />
       <GoogleAnalytics trackPageViews />
       <Head>
@@ -54,7 +55,7 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </ChakraProvider>
       </Layout>
-    </>
+    </ErrorBoundary>
   )
 }
 
