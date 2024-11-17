@@ -69,6 +69,12 @@ const Hero = () => {
     window.location.assign('keepkey://launch');
   }
 
+  const downloadButtons = [
+    { id: 1, show: platform.macos, url: urlMacOS, text: "Download for macOS" },
+    { id: 2, show: platform.windows, url: urlWindows, text: "Download for Windows" },
+    { id: 3, show: platform.linux, url: urlLinux, text: "Download for Linux" }
+  ]
+
   return (
     <div className="relative z-0 pt-32 pb-20 lg:py-4 bg-black">
       <Image
@@ -103,29 +109,13 @@ const Hero = () => {
               </a>
             </div>
 
-            {platform.macos && (
-              <div className="mb-4 flex-none ml-8 mr-4">
-                <Link href={urlMacOS}>
-                  <a className="btn btn-lg btn--transparent">Download for macOS</a>
+            {downloadButtons.map(button => button.show && (
+              <div key={button.id} className="mb-4 flex-none mr-4">
+                <Link href={button.url}>
+                  <a className="btn btn-lg btn--transparent">{button.text}</a>
                 </Link>
               </div>
-            )}
-
-            {platform.windows && (
-              <div className="mb-4 flex-none mr-4">
-                <Link href={urlWindows}>
-                  <a className="btn btn-lg btn--transparent">Download for Windows</a>
-                </Link>
-              </div>
-            )}
-
-            {platform.linux && (
-              <div className="mb-4 flex-none mr-4">
-                <Link href={urlLinux}>
-                  <a className="btn btn-lg btn--transparent">Download for Linux</a>
-                </Link>
-              </div>
-            )}
+            ))}
 
             <div className="mb-4 flex-none">
               <Link href="/get-started">
@@ -140,8 +130,6 @@ const Hero = () => {
           </div>
 
           <br />
-
-
 
         </div>
         <div className="w-full mx-auto max-w-[200px] md:max-w-[400px] lg:max-w-[500px] lg:mt-40 hidden lg:block">
