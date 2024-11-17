@@ -8,10 +8,10 @@ const Layout = ({ children }) => {
   const router = useRouter()
 
   useEffect(() => {
-    const logNavigationEvent = (type, url) => {
+    const logNavigationEvent = (type: string, url: string) => {
       console.log(`[Navigation ${type}] ${url} - ${new Date().toISOString()}`)
       if (window.performance) {
-        const perfEntry = window.performance.getEntriesByType('navigation')[0]
+        const perfEntry = window.performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming
         console.log(`[Performance] Load Time: ${perfEntry.loadEventEnd}ms`)
       }
     }
