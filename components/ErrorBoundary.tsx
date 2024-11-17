@@ -1,16 +1,28 @@
 import React from 'react'
 
-class ErrorBoundary extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = { hasError: false, error: null }
+type ErrorBoundaryProps = {
+    children: React.ReactNode
+}
+
+type ErrorBoundaryState = {
+    hasError: boolean
+    error: Error | null
+}
+
+class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+    public state: ErrorBoundaryState = {
+        hasError: false,
+        error: null
     }
 
-    static getDerivedStateFromError(error) {
-        return { hasError: true, error }
+    public static getDerivedStateFromError(error: Error): ErrorBoundaryState {
+        return {
+            hasError: true,
+            error
+        }
     }
 
-    componentDidCatch(error, errorInfo) {
+    public componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
         console.error('[ErrorBoundary]', {
             error,
             errorInfo,
@@ -19,7 +31,7 @@ class ErrorBoundary extends React.Component {
         })
     }
 
-    render() {
+    public render(): React.ReactNode {
         if (this.state.hasError) {
             return <div>Something went wrong. Please try again.</div>
         }
