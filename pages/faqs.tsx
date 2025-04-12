@@ -123,23 +123,23 @@ const faqs = [
         questions: [
             {
                 question: 'How do I recover my device from seed?',
-                answer: 'Check out this guide <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/keepkey-device-recovery-7b3968ff87e7\">recovery</a>'
+                answer: 'Check out this guide <a target=\"_blank\" href=\"https://x.com/KeepKeyDevs/status/1818337467541450842\">recovery</a>'
             },
             {
                 question: 'How do I send Bitcoin with my Keepkey?',
-                answer: 'Check out this guide <a target="_blank" href="https://medium.com/@highlander_35968/how-to-send-and-receive-bitcoin-in-keepkey-desktop-858e70312611">Sending Bitcoin</a>'
+                answer: 'Check out this guide <a target="_blank" href="https://x.com/KeepKeyDevs/status/1876469691436143015">Sending Bitcoin</a>'
             },
             {
                 question: "How do I update my firmware?",
-                answer: 'Check out this guide <a target="_blank" href="https://medium.com/@highlander_35968/updating-your-keepkey-154a49445d4c">Updating your KeepKey</a>'
+                answer: 'Check out this guide <a target="_blank" href="https://x.com/cryptokeepkey/status/1910892138432278821">Updating your KeepKey</a>'
             },
             {
                 question: 'How do I use the Pin cipher?',
-                answer: 'Check out this guide <a target="_blank" href="https://medium.com/@highlander_35968/understanding-the-keepkey-pin-6dca3499b973">Understanding the KeepKey PIN</a>'
+                answer: 'Check out this guide <a target="_blank" href="https://x.com/cryptokeepkey/status/1910892797978100089">Understanding the KeepKey PIN</a>'
             },
             {
                 question: 'How do I wipe my KeepKey?',
-                answer: 'Check out this guide <a target="_blank" href="https://medium.com/@highlander_35968/how-to-wipe-your-keepkey-88c8aa227950">How to wipe your KeepKey</a>'
+                answer: 'Check out this guide <a target="_blank" href="https://x.com/KeepKeyDevs/status/1861737457160753484">How to wipe your KeepKey</a>'
             },
             {
                 question: "Can I use a KeepKey with my Phone?",
@@ -161,7 +161,7 @@ const faqs = [
         questions: [
             {
                 question: "Is KeepKey Open Source?",
-                answer: "Yes! KeepKey firmware has a deterministic build process. The community is able to audit every release we have made over the last 9 years. More information:  <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/deterministic-build-process-11674787d92f\">Deterministic Build process</a>",
+                answer: "Yes! KeepKey firmware has a deterministic build process. The community is able to audit every release we have made over the last 9 years. More information:  <a target=\"_blank\" href=\"https://x.com/KeepKeyDevs/status/1820548509130698930\">Deterministic Build process</a>",
             },
             {
                 question: "How do I buy crypto?",
@@ -169,7 +169,7 @@ const faqs = [
             },
             {
                 question: "Can I trade and swap crypto?",
-                answer: "YES! Simple! Our native Thorchain integration is a decentralized protocol that allows frictionless native swapping without using wrapped tokens on bridges. Read more here: <a target=\"_blank\" href=\"https://thorchain.com\">thorchain</a>",
+                answer: "YES! Simple! Our native Thorchain integration is a decentralized protocol that allows frictionless native swapping without using wrapped tokens on bridges. Read more here: <a target=\"_blank\" href=\"https://x.com/KeepKeyDevs/status/1828870800767603116\">thorchain</a>",
             },
             {
                 question: "Is KeepKey owned by ShapeShift DAO?",
@@ -177,7 +177,7 @@ const faqs = [
             },
             {
                 question: "How do I use ShapeShift with my keepkey?",
-                answer: "ShapeShift is listed in our dapp store. <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/how-to-open-shapeshift-dapp-from-inside-keepkey-desktop-310bb16cc7c\">How to open ShapeShift</a>",
+                answer: "ShapeShift is listed in our dapp store. <a target=\"_blank\" href=\"https://x.com/cryptokeepkey/status/1852426385899565566\">How to open ShapeShift</a>",
             }
         ]
     },
@@ -187,19 +187,19 @@ const faqs = [
         questions: [
             {
                 question: "My KeepKey is not recognized by my computer",
-                answer: "Check out our troubleshooting guide <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/troubleshooting-connections-with-the-keepkey-4599f1aaee0\">Troubleshooting your KeepKey</a>",
+                answer: "Check out our troubleshooting guide <a target=\"_blank\" href=\"https://x.com/KeepKeyDevs/status/1815806110655295523\">Troubleshooting your KeepKey</a>",
             },
             {
                 question: "I can't get ShapeShift.com or KeepKey Desktop to recognize my device, what do I do?",
-                answer: "You can use KKcli to update your firmware. <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/using-kkcli-to-debug-your-keepkey-3830b504edff\">Using KKcli to debug your KeepKey</a>",
+                answer: "You can use KKcli to update your firmware. <a target=\"_blank\" href=\"https://x.com/cryptokeepkey/status/1910894300637913094\">Using KKcli to debug your KeepKey</a>",
             },
             {
                 question: "What do I do if I lose my PIN?",
-                answer: "Wipe your device and proceed with <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/keepkey-device-recovery-7b3968ff87e7\">recovery</a>",
+                answer: "Wipe your device and proceed with <a target=\"_blank\" href=\"https://x.com/KeepKeyDevs/status/1818337467541450842\">recovery</a>",
             },
             {
                 question: "What do I do if I lose my KeepKey?",
-                answer: "Purchase a new KeepKey and proceed with <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/keepkey-device-recovery-7b3968ff87e7\">recovery</a>",
+                answer: "Purchase a new KeepKey and proceed with <a target=\"_blank\" href=\"https://x.com/KeepKeyDevs/status/1818337467541450842\">recovery</a>",
             },
             {
                 question: "What do I do if I lose my Recovery Phrase?",
@@ -212,16 +212,20 @@ const faqs = [
         category: "General Security",
         questions: [
             {
+                question: "How do I validate the Devices Firmware?",
+                answer: "Review the process to compile the KeepKey firmware and show you how to verify that the code on your device is indeed the code available publicly from KeepKey. <a target=\"_blank\" href=\"https://x.com/KeepKeyDevs/status/1811434857945350232\">Verifying KeepKey firmware \n</a>",
+            },
+            {
                 question: "I want to know about Hardware wallet security. what makes KeepKey unique compared to other hardware wallets?",
-                answer: "Read more about the industry and the reasons behind the prevalence of myths when it comes to hardware wallet security. <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/title-5-myths-about-hardware-wallets-aecf21cb1520\">5 Myths about Hardware Wallets</a>",
+                answer: "Read more about the industry and the reasons behind the prevalence of myths when it comes to hardware wallet security. <a target=\"_blank\" href=\"https://x.com/KeepKeyDevs/status/1820172985254420801\">5 Myths about Hardware Wallets</a>",
             },
             {
                 question: "Can I self-custody bitcoin between multiple devices with multi-sig?",
-                answer: "Yes, check out this Electrum guide <a target=\"_blank\" href=\"https://medium.com/@highlander_35968/storing-bitcoin-with-multisig-with-your-keepkey-and-electrum-d959941f1dd1\">Electrum Multi-sig Guide</a>"
+                answer: "Yes, check out this Electrum guide <a target=\"_blank\" href=\"https://x.com/KeepKeyDevs/status/1829927803434750449\">Electrum Multi-sig Guide</a>"
             },
             {
                 question: "How do I protect my funds from physical attacks, for instance a stolen or lost device?",
-                answer: "Protect your assets from physical attacks with a BIP39 Passphrase: <a href='https://medium.com/@highlander_35968/bip39-passphrase-and-securing-your-keepkey-from-physical-attacks-954ed4ac1dcc'>Securing your KeepKey</a>",
+                answer: "Protect your assets from physical attacks with a BIP39 Passphrase: <a href='https://x.com/cryptokeepkey/status/1910895411507716204'>Securing your KeepKey</a>",
             },
         ]
     },
@@ -232,11 +236,7 @@ const faqs = [
             {
                 question: "Can I use my KeepKey with Uniswap?",
                 answer: "Yes, you can use Uniswap and most web3 applications via wallet-connect. See our dApp guide: <a target=\"_blank\" href='https://www.keepkey.com/dapps'>dApp guide</a>",
-            },
-            {
-                question: "How do I participate in DAO governance with my KeepKey?",
-                answer: "You can use the Snapshot dapp guide: <a target=\"_blank\" href='https://medium.com/@highlander_35968/how-to-use-your-keepkey-to-vote-on-snapshot-ec3c86cb5aaa'>vote-on-snapshot<a>",
-            },
+            }
         ]
     },
     // {
@@ -250,21 +250,9 @@ const faqs = [
         category: "Developer Community",
         questions: [
             {
-                question: "How do I Integrate KeepKey into my app or service?",
-                answer: "See our developer guide for building multi-chain dApps with the KeepKey-sdk: <a target='_blank' href='https://medium.com/@highlander_35968/building-on-the-keepkey-sdk-2023fda41f38'>Building on the KeepKey-SDK</a>",
-            },
-            {
                 question: "what is the KeepKey REST api?",
                 answer: "KeepKey REST api is the primary interface for integrating KeepKey into your application: <a target='_blank' href='https://medium.com/@highlander_35968/understanding-the-keepkey-rest-api-f9801b5db220'>KeepKey REST api.</a>",
-            },
-            {
-                question: "A dapp I use is not listed in the dapp store, how do I get it listed?",
-                answer: "You can submit the dapp yourself! chart the dapp for others to follow. guide: <a target='_blank' href='https://medium.com/@highlander_35968/how-to-list-a-dapp-on-pioneer-cdf54fc9d1de'>Charting a DAPP on Pioneer platform.</a>",
-            },
-            {
-                question: "How do I support KeepKey on my Web3 based application?",
-                answer: "If you are a Web3 project we recommend onboard.js and enabling wallet-connect: <a target='_blank' href='https://onboard.blocknative.com/'>onboard.js developer documentation</a>",
-            },
+            }
         ]
     }
 ]
