@@ -272,15 +272,21 @@ const LeadingCryptos = () => {
         alt='keepkey wallet on desk'
         layout="fill"
         objectFit="cover"
-        quality={100}
+        quality={85}
+        loading="lazy"
         objectPosition="center"
       >
       </Image>
       <div className="container text-center z-10 relative">
         <h2 className="text-white z-10">A Cut Above in Crypto Asset Support!</h2>
-        <p className="text-white my-6">Send, receive, and store MORE assets then other leading crypto wallets!</p>
+        <p className="text-white my-6">Send, receive, and store MORE assets than other leading crypto wallets!</p>
         <div className="flex justify-center mt-6">
-          <Image src={coinSupport} alt="go icon" unoptimized={true}></Image>
+          <Image 
+            src={coinSupport} 
+            alt="supported coins" 
+            quality={85}
+            loading="lazy"
+          />
         </div>
       </div>
     </section>

@@ -1,30 +1,25 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  env: {
-    layout: 'default'
-  }
-}
-
-module.exports = nextConfig
-
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [],
     rehypePlugins: [],
-    // If you use `MDXProvider`, uncomment the following line.
-    // providerImportSource: "@mdx-js/react",
   },
 })
-module.exports = withMDX({
-  // Append the default value with md extensions
+
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-})
-module.exports = {
+  env: {
+    layout: 'default'
+  },
   images: {
+    domains: ['pioneers.dev', 'assets.coincap.io', 'coincap.io', 'rawcdn.githack.com', 'assets.coingecko.com', 'raw.githack.com', 'raw.githubusercontent.com'],
     formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
     remotePatterns: [
       {
         protocol: 'https',
@@ -69,5 +64,7 @@ module.exports = {
         pathname: '/**',
       },
     ],
-  },
+  }
 }
+
+module.exports = withMDX(nextConfig)

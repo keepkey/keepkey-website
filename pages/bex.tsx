@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
     Box,
     Heading,
@@ -38,7 +38,7 @@ export default function IntegrationGuide() {
 
 const HeroSection = () => {
     return (
-        <Box position="relative" textAlign="center" color="white">
+        <Box position="relative" textAlign="center" color="white" pt="80px">
             <ChakraImage
                 src={heroBgImage.src}
                 alt="KeepKey Browser Extension Hero"
@@ -53,9 +53,11 @@ const HeroSection = () => {
                 top="50%"
                 left="50%"
                 transform="translate(-50%, -50%)"
-                bg="rgba(0, 0, 0)"
-                p={6}
+                bg="rgba(0, 0, 0, 0.8)"
+                p={8}
                 borderRadius="md"
+                maxW="600px"
+                w="90%"
             >
                 <Heading as="h1" size="2xl" mb={4}>
                     {pageTitle}
