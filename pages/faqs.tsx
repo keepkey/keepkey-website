@@ -17,9 +17,6 @@ import HeroSimple from '../components/hero-simple';
 const pageTitle = "FAQs";
 const subTitle = "Frequently asked questions about Keepkey."
 
-let mediumURL =
-    "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@highlander_35968";
-
 export default function Faqs() {
 
     return (
@@ -151,7 +148,7 @@ const faqs = [
             },
             {
                 question: "I cant find XRP/DASH/DGB in my dashboard how do I use my Ripple?",
-                answer: 'Unfortunately ShapeShift has removed support for these assets. You can however find our new stand alone applications for managing these assets. <a target="_blank" href="https://medium.com/@highlander_35968/how-to-send-and-receive-ripple-with-keepkey-desktop-10a83bd6415">tutorial</a>'
+                answer: 'Unfortunately ShapeShift has removed support for these assets. You can however find our new stand alone applications for managing these assets. <a target="_blank" href="https://peakd.com/ripple/@keepkey/using-the-keepkey-browser-extension-to-self-custody-your-xrp">tutorial</a>'
             }
         ],
     },
@@ -251,7 +248,7 @@ const faqs = [
         questions: [
             {
                 question: "what is the KeepKey REST api?",
-                answer: "KeepKey REST api is the primary interface for integrating KeepKey into your application: <a target='_blank' href='https://medium.com/@highlander_35968/understanding-the-keepkey-rest-api-f9801b5db220'>KeepKey REST api.</a>",
+                answer: "KeepKey REST api is the primary interface for integrating KeepKey into your application: <a target='_blank' href='https://x.com/KeepKeyDevs/status/1916344099432546431'>KeepKey REST api.</a>",
             }
         ]
     }
