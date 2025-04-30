@@ -184,7 +184,7 @@ const faqs = [
         questions: [
             {
                 question: "My KeepKey is not recognized by my computer",
-                answer: "Check out our troubleshooting guide <a target=\"_blank\" href=\"https://x.com/KeepKeyDevs/status/1815806110655295523\">Troubleshooting your KeepKey</a>",
+                answer: "Check out our troubleshooting guide <a target=\"_blank\" href=\"https://x.com/KeepKeyDevs/status/1916342274197278813\">Troubleshooting your KeepKey</a>",
             },
             {
                 question: "I can't get ShapeShift.com or KeepKey Desktop to recognize my device, what do I do?",
